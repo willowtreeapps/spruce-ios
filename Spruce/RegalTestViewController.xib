@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegalTestViewController" customModule="Spruce" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="iIF-zX-mZj"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QoV-pC-C8s">
+                    <color key="backgroundColor" red="0.1450980392" green="0.4941176471" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="53" id="hRe-y8-cT5"/>
+                    </constraints>
+                    <state key="normal" title="Animated">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="animated" destination="-1" eventType="touchUpInside" id="ubg-Xg-JG1"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRu-h2-jea">
+                    <color key="backgroundColor" red="0.1450980392" green="0.4941176471" blue="0.53725490200000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="53" id="Mvh-5X-UR3"/>
+                    </constraints>
+                    <state key="normal" title="Not Animated">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="notAnimated" destination="-1" eventType="touchUpInside" id="jJx-6o-XoY"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="cRu-h2-jea" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="Epw-DT-lwF"/>
+                <constraint firstItem="QoV-pC-C8s" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="IWe-lh-a5h"/>
+                <constraint firstItem="cRu-h2-jea" firstAttribute="top" secondItem="QoV-pC-C8s" secondAttribute="bottom" constant="50" id="XWs-S4-P3R"/>
+                <constraint firstItem="QoV-pC-C8s" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="50" id="YH5-Pw-poe"/>
+                <constraint firstAttribute="trailing" secondItem="cRu-h2-jea" secondAttribute="trailing" constant="20" id="fed-d6-TnX"/>
+                <constraint firstAttribute="trailing" secondItem="QoV-pC-C8s" secondAttribute="trailing" constant="20" id="fzd-Ie-WJm"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="67.5"/>
+        </view>
+    </objects>
+</document>
