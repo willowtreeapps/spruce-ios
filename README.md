@@ -23,4 +23,6 @@ Variable     | Type          | Description
 ------------ | ------------- | -------------
 animations | [SpruceStandardAnimation] | An array of all the animations that should be run when the view appears. See the `SpruceStandardAnimation` enumeration for types.
 duration   | TimeInterval | Duration for each of the animations that are applied to the subviews. Default value 0.3s.
-animationType | 
+animationType | SpruceAnimation | The style of the animation that should be applied to the subviews
+sortFunction | SortFunction | The function in which to define the inter-interval timings between each of the subviews
+animationView | UIView? | The view that will be used to grab the subviews from
