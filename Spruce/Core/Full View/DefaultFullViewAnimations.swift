@@ -8,43 +8,32 @@
 
 import UIKit
 
+enum SlideDirection {
+    case up
+    case down
+    case left
+    case right
+}
+
+enum SpruceSize {
+    case small
+    case medium
+    case large
+}
+
 enum SpruceStandardAnimation {
-    case slideUpSmall
-    case slideUpMedium
-    case slideUpLarge
-    
-    case slideDownSmall
-    case slideDownMedium
-    case slideDownLarge
-    
-    case slideLeftSmall
-    case slideLeftMedium
-    case slideLeftLarge
-    
-    case slideRightSmall
-    case slideRightMedium
-    case slideRightLarge
+    case slide(SlideDirection, SpruceSize)
     
     case fadeIn
     
-    case spinSmall
-    case spinMedium
-    case spinLarge
+    case spin(SpruceSize)
     
-    case expandSmall
-    case expandMedium
-    case expandLarge
-    
-    case contractSmall
-    case contractMedium
-    case contractLarge
+    case expand(SpruceSize)
+    case contract(SpruceSize)
     
     func getClearFunction() -> SpruceChangeFunction {
         switch self {
-        case .slideUpSmall, .slideUpMedium, .slideUpLarge,
-             .slideDownSmall, .slideDownMedium, .slideDownLarge,
-             .slideLeftSmall, .slideLeftMedium, .slideLeftLarge,
-             .slideRightSmall, .slideRightMedium, .slideRightLarge:
+        case .slide:
             let offset = getClearSlideOffset()
             return { view in
                 let currentTransform = view.transform
@@ -55,15 +44,14 @@ enum SpruceStandardAnimation {
             return { view in
                 view.alpha = 0.0
             }
-        case .spinSmall, .spinMedium, .spinLarge:
+        case .spin:
             let angle = getSpinAngle()
             return { view in
                 let currentTransform = view.transform
                 let spinTransform = CGAffineTransform(rotationAngle: angle)
                 view.transform = currentTransform.concatenating(spinTransform)
             }
-        case .expandSmall, .expandMedium, .expandLarge,
-             .contractSmall, .contractMedium, .contractLarge:
+        case .expand, .contract:
             let scale = getScale()
             return { view in
                 let currentTransform = view.transform
@@ -75,10 +63,7 @@ enum SpruceStandardAnimation {
     
     func getAnimationFunction() -> SpruceChangeFunction {
         switch self {
-        case .slideUpSmall, .slideUpMedium, .slideUpLarge,
-             .slideDownSmall, .slideDownMedium, .slideDownLarge,
-             .slideLeftSmall, .slideLeftMedium, .slideLeftLarge,
-             .slideRightSmall, .slideRightMedium, .slideRightLarge:
+        case .slide:
             return { view in
                 view.transform = CGAffineTransform(translationX: 0.0, y: 0.0)
             }
@@ -86,12 +71,11 @@ enum SpruceStandardAnimation {
             return { view in
                 view.alpha = 1.0
             }
-        case .spinSmall, .spinMedium, .spinLarge:
+        case .spin:
             return { view in
                 view.transform = CGAffineTransform(rotationAngle: 0.0)
             }
-        case .expandSmall, .expandMedium, .expandLarge,
-             .contractSmall, .contractMedium, .contractLarge:
+        case .expand, .contract:
             return { view in
                 view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
             }
@@ -99,31 +83,35 @@ enum SpruceStandardAnimation {
     }
     
     func getClearSlideOffset() -> CGPoint {
+        
         switch self {
-        case .slideUpSmall:
-            return CGPoint(x: 0.0, y: 10.0)
-        case .slideUpMedium:
-            return CGPoint(x: 0.0, y: 30.0)
-        case .slideUpLarge:
-            return CGPoint(x: 0.0, y: 50.0)
-        case .slideDownSmall:
-            return CGPoint(x: 0.0, y: -10.0)
-        case .slideDownMedium:
-            return CGPoint(x: 0.0, y: -30.0)
-        case .slideDownLarge:
-            return CGPoint(x: 0.0, y: -50.0)
-        case .slideLeftSmall:
-            return CGPoint(x: 10.0, y: 0.0)
-        case .slideLeftMedium:
-            return CGPoint(x: 30.0, y: 0.0)
-        case .slideLeftLarge:
-            return CGPoint(x: 50.0, y: 0.0)
-        case .slideRightSmall:
-            return CGPoint(x: -10.0, y: 0.0)
-        case .slideRightMedium:
-            return CGPoint(x: -30.0, y: 0.0)
-        case .slideRightLarge:
-            return CGPoint(x: -50.0, y: 0.0)
+        case .slide(let direction, let size):
+            switch (direction, size) {
+            case (.up, .small):
+                return CGPoint(x: 0.0, y: 10.0)
+            case (.up, .medium):
+                return CGPoint(x: 0.0, y: 30.0)
+            case (.up, .large):
+                return CGPoint(x: 0.0, y: 50.0)
+            case (.down, .small):
+                return CGPoint(x: 0.0, y: -10.0)
+            case (.down, .medium):
+                return CGPoint(x: 0.0, y: -30.0)
+            case (.down, .large):
+                return CGPoint(x: 0.0, y: -50.0)
+            case (.left, .small):
+                return CGPoint(x: 10.0, y: 0.0)
+            case (.left, .medium):
+                return CGPoint(x: 30.0, y: 0.0)
+            case (.left, .large):
+                return CGPoint(x: 50.0, y: 0.0)
+            case (.right, .small):
+                return CGPoint(x: -10.0, y: 0.0)
+            case (.right, .medium):
+                return CGPoint(x: -30.0, y: 0.0)
+            case (.right, .large):
+                return CGPoint(x: -50.0, y: 0.0)
+            }
         default:
             return CGPoint.zero
         }
@@ -131,12 +119,15 @@ enum SpruceStandardAnimation {
     
     func getSpinAngle() -> CGFloat {
         switch self {
-        case .spinSmall:
-            return CGFloat(M_PI_4)
-        case .spinMedium:
-            return CGFloat(M_PI_2)
-        case .spinLarge:
-            return CGFloat(M_PI)
+        case .spin(let size):
+            switch size {
+            case .small:
+                return CGFloat(M_PI_4)
+            case .medium:
+                return CGFloat(M_PI_2)
+            case .large:
+                return CGFloat(M_PI)
+            }
         default:
             return 0.0
         }
@@ -144,18 +135,24 @@ enum SpruceStandardAnimation {
     
     func getScale() -> CGFloat {
         switch self {
-        case .contractSmall:
-            return 1.1
-        case .contractMedium:
-            return 1.3
-        case .contractLarge:
-            return 1.5
-        case .expandSmall:
-            return 0.9
-        case .expandMedium:
-            return 0.7
-        case .expandLarge:
-            return 0.5
+        case .contract(let size):
+            switch size {
+            case .small:
+                return 1.1
+            case .medium:
+                return 1.3
+            case .large:
+                return 1.5
+            }
+        case .expand(let size):
+            switch size {
+            case .small:
+                return 0.9
+            case .medium:
+                return 0.7
+            case .large:
+                return 0.5
+            }
         default:
             return 0.0
         }
@@ -199,7 +196,14 @@ extension UIView {
             }
         }
         
-        let isFading = animations.contains(.fadeIn)
+        let isFading = animations.contains(where: { value in
+            switch value {
+            case .fadeIn:
+                return true
+            default:
+                return false
+            }
+        })
         
         UIView.performWithoutAnimation {
             for subView in subviews {

@@ -25,6 +25,6 @@ class TestViewController2: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        containerView?.spruceUp(withAnimations: [.fadeIn, .expandMedium, .spinLarge, .slideUpMedium])
+        containerView?.spruceUp(withAnimations: [.fadeIn, .expand(.medium), .spin(.large), .slide(.up,.medium)])
     }
 }

@@ -44,7 +44,7 @@ class TestCollectionView: UIViewController {
     }
     
     func callAnimation2() {
-        collectionView.spruceUp(withAnimations: [.contractMedium, .fadeIn], duration: 0.3)
+        collectionView.spruceUp(withAnimations: [.contract(.medium), .fadeIn], duration: 0.3)
     }
 }
 

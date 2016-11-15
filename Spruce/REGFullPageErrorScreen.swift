@@ -16,7 +16,7 @@ class REGFullPageErrorScreen: SpruceViewController {
     
     class func build(animated: Bool) -> REGFullPageErrorScreen {
         let errorScreen = REGFullPageErrorScreen(nibName: "REGFullPageErrorScreen", bundle: nil)
-        errorScreen.animations = animated ? [.fadeIn, .slideUpLarge, .expandSmall] : []
+        errorScreen.animations = animated ? [.fadeIn, .slide(.up, .large), .expand(.small)] : []
         errorScreen.duration = 0.5
 //        errorScreen.animationType = SpringAnimation(duration: 0.33)
         return errorScreen
