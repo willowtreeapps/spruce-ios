@@ -1,0 +1,6 @@
+framework module Spruce {
+  umbrella header "Spruce-umbrella.h"
+
+  export *
+  module * { export * }
+}

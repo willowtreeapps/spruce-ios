@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'Spruce_Example' do
+  pod 'Spruce', :path => '../'
+
+  target 'Spruce_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

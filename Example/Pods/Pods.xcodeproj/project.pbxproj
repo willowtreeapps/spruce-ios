@@ -1,0 +1,824 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04259D314C64660330FC9B65A89747A7 /* RadialSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6AA5446A78C288383D11C1536C0C59 /* RadialSortFunction.swift */; };
+		055B5469C7C3FF860BCC9C5F4B0B7382 /* ViewOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A3A1985B614FD049BC0866A944E141 /* ViewOperations.swift */; };
+		078F2691E7CDB4222B80804FF9E92A0B /* Pods-Spruce_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BF9A148D4AEDCB38BA3D05DC67413C1 /* Pods-Spruce_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0B576018939899704AE2D280242125B1 /* StandardAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B762774F96DAB1753064DD6C3B7046C5 /* StandardAnimation.swift */; };
+		1180BA6FFA0D226963DDB2A705C11CFD /* Spruce.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25E3312C783A916AAC807C0A7251E7D /* Spruce.swift */; };
+		16122EA4B07AB226DF90564DBD16C8F2 /* DefaultFullViewAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A50AB2E31EACA5DDB9BEB91E36DCDD9 /* DefaultFullViewAnimations.swift */; };
+		22DF3316C67C6961621A26BBBA639DA4 /* SortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC066718A92797B3E685DFFC033CDE7 /* SortFunction.swift */; };
+		30BFA214C6DFF1256B6A32ECC1C0B310 /* DefaultSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5972EEF2D52B71C348D230A0E777369 /* DefaultSortFunction.swift */; };
+		389FC243005275278B89A626FD12DD2E /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558B7DA87515D3057B3B27C13ED51805 /* SpringAnimation.swift */; };
+		4D24B97E25ECA4868BC69DFAF6668EB5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		5A709EE7E34827F7499AEBDFE9BD7259 /* Spruce-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 71F792301555302C2DB7C830769A896A /* Spruce-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5CAFC2170BBC5C93BC2D26448C7718AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		5DAB2EF6B59AA2CA006F11C072C244F2 /* Pods-Spruce_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 944201B6552D4C2C2309D0E762D43C34 /* Pods-Spruce_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		61BB62F324566F6B8399ED500478949E /* LinearSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C230A0F7A7B5B1A28BD0CF472060DB /* LinearSortFunction.swift */; };
+		75739A85FC647F5AD23A2B82A79830BF /* SpruceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3AAF330EE49B9E1081048682326FE80 /* SpruceViewController.swift */; };
+		7EF08D839FE38101F0B4DB51BCF031EB /* DefaultAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BF4987EFE22B77789631F91227E781 /* DefaultAnimations.swift */; };
+		7F204E75BBC011BAA3903B7943FBC63F /* Pods-Spruce_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C3EAF5B8C1AD74CE465B95C5C8C3153 /* Pods-Spruce_Tests-dummy.m */; };
+		8EFEE27DE436D21BFE8FF7EED042A6FD /* NoDelaySortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291957596CF4404576FE2877E13C6CEA /* NoDelaySortFunction.swift */; };
+		91832C601B289B7CFE8FE0C97A52C829 /* CorneredSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353411ADC9FE0E4916F30810ED6EABD6 /* CorneredSortFunction.swift */; };
+		982A4B31996C1F143079BE59AC4B28B7 /* PointOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DDC529F641E0529FC3437B391420856 /* PointOperations.swift */; };
+		9AF58D1A7EB58DA3B92C40E9F66D1B16 /* Spruce-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A4122AB321A4174AAD98CBD009EE55 /* Spruce-dummy.m */; };
+		B16549263A0E88866CCB96E761617C6F /* Pods-Spruce_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AD634D3FAD541D877367EDE05F0B8D /* Pods-Spruce_Example-dummy.m */; };
+		B3030EE94920C08E2ED4BA6F93D0B1C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		B6B644C3C6C747D7CF8BEC1A1C7ED0F1 /* RandomSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFA568C807579D267F82D859932156 /* RandomSortFunction.swift */; };
+		BA8ABCABB4A611DEAE0B6060E735FD52 /* BaseDistancedSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7433EBBDED059A414D9C9EC496991507 /* BaseDistancedSortFunction.swift */; };
+		C40B19542E178531734266FFD0A7D849 /* SpruceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AF82DFB0B553B7AC68A1E828BF7E17 /* SpruceButton.swift */; };
+		DD15D53DA68DA641DB4E2537C2AC1220 /* FullViewAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09595A049ED1A8177E3A27E3E0DD17A7 /* FullViewAnimation.swift */; };
+		E5A905EC8809D0D76F68D26AB746BC4D /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CBC27EE07A3781CC6550BA4B5CBEF3 /* Animation.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5C9A097675087D7AE27DA0A4AD95C7D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 889446D12CC42CF3FA024DB1A3366501;
+			remoteInfo = Spruce;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		09595A049ED1A8177E3A27E3E0DD17A7 /* FullViewAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FullViewAnimation.swift; sourceTree = "<group>"; };
+		0CADC92BADB3034E48F38D776995E189 /* Pods-Spruce_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Spruce_Example-frameworks.sh"; sourceTree = "<group>"; };
+		0DDC529F641E0529FC3437B391420856 /* PointOperations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PointOperations.swift; sourceTree = "<group>"; };
+		12766F2F2B7B71C85F174F8F4C923EA4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1369A2CFA136FAB0229E7C016D3E67F7 /* Pods-Spruce_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Spruce_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		16A4122AB321A4174AAD98CBD009EE55 /* Spruce-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Spruce-dummy.m"; sourceTree = "<group>"; };
+		19F7922B131E3116ADCA6BC0B3C98EEB /* Spruce.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Spruce.modulemap; sourceTree = "<group>"; };
+		1A64F96EB37BE0A885651008A16F016D /* Pods-Spruce_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Spruce_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		23E7013232AB26A7CDF4F539958A88DA /* Spruce.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Spruce.xcconfig; sourceTree = "<group>"; };
+		291957596CF4404576FE2877E13C6CEA /* NoDelaySortFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NoDelaySortFunction.swift; sourceTree = "<group>"; };
+		2A50AB2E31EACA5DDB9BEB91E36DCDD9 /* DefaultFullViewAnimations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DefaultFullViewAnimations.swift; sourceTree = "<group>"; };
+		2E043D2FFC01F0C4DE42254DB8F30569 /* Pods-Spruce_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Spruce_Example.modulemap"; sourceTree = "<group>"; };
+		353411ADC9FE0E4916F30810ED6EABD6 /* CorneredSortFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CorneredSortFunction.swift; sourceTree = "<group>"; };
+		4AD054F71CF439C5BA54B2228072AEEF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4BF9A148D4AEDCB38BA3D05DC67413C1 /* Pods-Spruce_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Spruce_Tests-umbrella.h"; sourceTree = "<group>"; };
+		55616E35201003565304A5DE3F1F1C3E /* Pods-Spruce_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Spruce_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		558B7DA87515D3057B3B27C13ED51805 /* SpringAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpringAnimation.swift; sourceTree = "<group>"; };
+		57C3CA3BB49F6F52EFB79CC3738B300E /* Spruce.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Spruce.framework; path = Spruce.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D6AA5446A78C288383D11C1536C0C59 /* RadialSortFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RadialSortFunction.swift; sourceTree = "<group>"; };
+		622186B9D0A15D16C664C253DFDDF343 /* Pods-Spruce_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Spruce_Example-resources.sh"; sourceTree = "<group>"; };
+		69213D97DCE41DA6B2DB9BD872682DC5 /* Spruce-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Spruce-prefix.pch"; sourceTree = "<group>"; };
+		69BF4987EFE22B77789631F91227E781 /* DefaultAnimations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DefaultAnimations.swift; sourceTree = "<group>"; };
+		71F792301555302C2DB7C830769A896A /* Spruce-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Spruce-umbrella.h"; sourceTree = "<group>"; };
+		7346BA1B7FBFE7D742C26AC4EFEA849E /* Pods-Spruce_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Spruce_Tests-resources.sh"; sourceTree = "<group>"; };
+		7433EBBDED059A414D9C9EC496991507 /* BaseDistancedSortFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BaseDistancedSortFunction.swift; sourceTree = "<group>"; };
+		745C218783730A33D6B82C5E9F1CDF17 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75BC1B05EE6AA516FFE2F32AD8DAB8BD /* Pods_Spruce_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Spruce_Example.framework; path = "Pods-Spruce_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		85C230A0F7A7B5B1A28BD0CF472060DB /* LinearSortFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LinearSortFunction.swift; sourceTree = "<group>"; };
+		89BA1067F35A94869E8DD3BADD0255F1 /* Pods_Spruce_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Spruce_Tests.framework; path = "Pods-Spruce_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		89BEFCEB9618821EA82227F0316BD2EA /* Pods-Spruce_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Spruce_Example.release.xcconfig"; sourceTree = "<group>"; };
+		8BC066718A92797B3E685DFFC033CDE7 /* SortFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SortFunction.swift; sourceTree = "<group>"; };
+		90CBC27EE07A3781CC6550BA4B5CBEF3 /* Animation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		92AD634D3FAD541D877367EDE05F0B8D /* Pods-Spruce_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Spruce_Example-dummy.m"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		944201B6552D4C2C2309D0E762D43C34 /* Pods-Spruce_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Spruce_Example-umbrella.h"; sourceTree = "<group>"; };
+		986C2689F32FFD57FDF73E41131712ED /* Pods-Spruce_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Spruce_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		9C147CDF3CF695F8EDBB22607035D46A /* Pods-Spruce_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Spruce_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		9C3EAF5B8C1AD74CE465B95C5C8C3153 /* Pods-Spruce_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Spruce_Tests-dummy.m"; sourceTree = "<group>"; };
+		9CA537CEC3F170238E47E078E7C35E45 /* Pods-Spruce_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Spruce_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A25E3312C783A916AAC807C0A7251E7D /* Spruce.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Spruce.swift; sourceTree = "<group>"; };
+		A5972EEF2D52B71C348D230A0E777369 /* DefaultSortFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DefaultSortFunction.swift; sourceTree = "<group>"; };
+		B762774F96DAB1753064DD6C3B7046C5 /* StandardAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StandardAnimation.swift; sourceTree = "<group>"; };
+		B7EFA568C807579D267F82D859932156 /* RandomSortFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RandomSortFunction.swift; sourceTree = "<group>"; };
+		C6AF82DFB0B553B7AC68A1E828BF7E17 /* SpruceButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpruceButton.swift; sourceTree = "<group>"; };
+		CB7E0533B0EC994AFC086E324A096ADF /* Pods-Spruce_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Spruce_Tests.modulemap"; sourceTree = "<group>"; };
+		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D87409DAC88107B4FF98F7EF404BFC12 /* Pods-Spruce_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Spruce_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		E0BBEF058E73902230A3CE2EA03B1118 /* Pods-Spruce_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Spruce_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F1A3A1985B614FD049BC0866A944E141 /* ViewOperations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ViewOperations.swift; sourceTree = "<group>"; };
+		F3AAF330EE49B9E1081048682326FE80 /* SpruceViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpruceViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4FCC6502932DD34E491A20DDEF9EAFEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D24B97E25ECA4868BC69DFAF6668EB5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3D3B95F3F41BAB97EE7898DB07D6440 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3030EE94920C08E2ED4BA6F93D0B1C4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF4BB24C609F7A00889E927DED43E938 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CAFC2170BBC5C93BC2D26448C7718AA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		092F77707E4D0D7DF2C6EA21D6DEB39A /* Full View */ = {
+			isa = PBXGroup;
+			children = (
+				2A50AB2E31EACA5DDB9BEB91E36DCDD9 /* DefaultFullViewAnimations.swift */,
+				09595A049ED1A8177E3A27E3E0DD17A7 /* FullViewAnimation.swift */,
+				F3AAF330EE49B9E1081048682326FE80 /* SpruceViewController.swift */,
+			);
+			name = "Full View";
+			path = "Full View";
+			sourceTree = "<group>";
+		};
+		28C9430A8FD17088ACAB0A9D6318D53C /* UI Elements */ = {
+			isa = PBXGroup;
+			children = (
+				C6AF82DFB0B553B7AC68A1E828BF7E17 /* SpruceButton.swift */,
+			);
+			name = "UI Elements";
+			path = "UI Elements";
+			sourceTree = "<group>";
+		};
+		3BA638F9FF0A44F013F92F44D3372803 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				0DDC529F641E0529FC3437B391420856 /* PointOperations.swift */,
+				F1A3A1985B614FD049BC0866A944E141 /* ViewOperations.swift */,
+			);
+			name = Operations;
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				8B7D3866E47C6D980D5F6737C947ABBE /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				88B2AD4E6DBBF5F5B52C4429DA34E8AA /* Products */,
+				8A6F285DFA5734E829CC53BF21E469B6 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		88B2AD4E6DBBF5F5B52C4429DA34E8AA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				75BC1B05EE6AA516FFE2F32AD8DAB8BD /* Pods_Spruce_Example.framework */,
+				89BA1067F35A94869E8DD3BADD0255F1 /* Pods_Spruce_Tests.framework */,
+				57C3CA3BB49F6F52EFB79CC3738B300E /* Spruce.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8A6F285DFA5734E829CC53BF21E469B6 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				FD935C59D54F063F51D5A437E6E143D1 /* Pods-Spruce_Example */,
+				F785331CA42358FF0DABBBD5044F5349 /* Pods-Spruce_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		8B7D3866E47C6D980D5F6737C947ABBE /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FB6FC6635344ACC99EF00E4EB8A2982E /* Spruce */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		9C95B0FBC0A62A67AFBECD8AAE5659E0 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A25E3312C783A916AAC807C0A7251E7D /* Spruce.swift */,
+				DECAB41E133D7CC247A0F3723C0BA0D7 /* Animations */,
+				092F77707E4D0D7DF2C6EA21D6DEB39A /* Full View */,
+				F0E5D028D2701ABA678E2BEB6BC6CEFB /* Sort Functions */,
+				28C9430A8FD17088ACAB0A9D6318D53C /* UI Elements */,
+			);
+			name = Classes;
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CDD72CBCF1B46C38E2616F1E7189AF1B /* Spruce */ = {
+			isa = PBXGroup;
+			children = (
+				9C95B0FBC0A62A67AFBECD8AAE5659E0 /* Classes */,
+			);
+			name = Spruce;
+			path = Spruce;
+			sourceTree = "<group>";
+		};
+		DECAB41E133D7CC247A0F3723C0BA0D7 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				90CBC27EE07A3781CC6550BA4B5CBEF3 /* Animation.swift */,
+				69BF4987EFE22B77789631F91227E781 /* DefaultAnimations.swift */,
+				558B7DA87515D3057B3B27C13ED51805 /* SpringAnimation.swift */,
+				B762774F96DAB1753064DD6C3B7046C5 /* StandardAnimation.swift */,
+			);
+			name = Animations;
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		F0E5D028D2701ABA678E2BEB6BC6CEFB /* Sort Functions */ = {
+			isa = PBXGroup;
+			children = (
+				7433EBBDED059A414D9C9EC496991507 /* BaseDistancedSortFunction.swift */,
+				353411ADC9FE0E4916F30810ED6EABD6 /* CorneredSortFunction.swift */,
+				A5972EEF2D52B71C348D230A0E777369 /* DefaultSortFunction.swift */,
+				85C230A0F7A7B5B1A28BD0CF472060DB /* LinearSortFunction.swift */,
+				291957596CF4404576FE2877E13C6CEA /* NoDelaySortFunction.swift */,
+				5D6AA5446A78C288383D11C1536C0C59 /* RadialSortFunction.swift */,
+				B7EFA568C807579D267F82D859932156 /* RandomSortFunction.swift */,
+				8BC066718A92797B3E685DFFC033CDE7 /* SortFunction.swift */,
+				3BA638F9FF0A44F013F92F44D3372803 /* Operations */,
+			);
+			name = "Sort Functions";
+			path = "Sort Functions";
+			sourceTree = "<group>";
+		};
+		F2470CFE7FBBB2640558CFEC75ADF05E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4AD054F71CF439C5BA54B2228072AEEF /* Info.plist */,
+				19F7922B131E3116ADCA6BC0B3C98EEB /* Spruce.modulemap */,
+				23E7013232AB26A7CDF4F539958A88DA /* Spruce.xcconfig */,
+				16A4122AB321A4174AAD98CBD009EE55 /* Spruce-dummy.m */,
+				69213D97DCE41DA6B2DB9BD872682DC5 /* Spruce-prefix.pch */,
+				71F792301555302C2DB7C830769A896A /* Spruce-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/Spruce";
+			sourceTree = "<group>";
+		};
+		F785331CA42358FF0DABBBD5044F5349 /* Pods-Spruce_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				12766F2F2B7B71C85F174F8F4C923EA4 /* Info.plist */,
+				CB7E0533B0EC994AFC086E324A096ADF /* Pods-Spruce_Tests.modulemap */,
+				9CA537CEC3F170238E47E078E7C35E45 /* Pods-Spruce_Tests-acknowledgements.markdown */,
+				1369A2CFA136FAB0229E7C016D3E67F7 /* Pods-Spruce_Tests-acknowledgements.plist */,
+				9C3EAF5B8C1AD74CE465B95C5C8C3153 /* Pods-Spruce_Tests-dummy.m */,
+				986C2689F32FFD57FDF73E41131712ED /* Pods-Spruce_Tests-frameworks.sh */,
+				7346BA1B7FBFE7D742C26AC4EFEA849E /* Pods-Spruce_Tests-resources.sh */,
+				4BF9A148D4AEDCB38BA3D05DC67413C1 /* Pods-Spruce_Tests-umbrella.h */,
+				55616E35201003565304A5DE3F1F1C3E /* Pods-Spruce_Tests.debug.xcconfig */,
+				D87409DAC88107B4FF98F7EF404BFC12 /* Pods-Spruce_Tests.release.xcconfig */,
+			);
+			name = "Pods-Spruce_Tests";
+			path = "Target Support Files/Pods-Spruce_Tests";
+			sourceTree = "<group>";
+		};
+		FB6FC6635344ACC99EF00E4EB8A2982E /* Spruce */ = {
+			isa = PBXGroup;
+			children = (
+				CDD72CBCF1B46C38E2616F1E7189AF1B /* Spruce */,
+				F2470CFE7FBBB2640558CFEC75ADF05E /* Support Files */,
+			);
+			name = Spruce;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		FD935C59D54F063F51D5A437E6E143D1 /* Pods-Spruce_Example */ = {
+			isa = PBXGroup;
+			children = (
+				745C218783730A33D6B82C5E9F1CDF17 /* Info.plist */,
+				2E043D2FFC01F0C4DE42254DB8F30569 /* Pods-Spruce_Example.modulemap */,
+				E0BBEF058E73902230A3CE2EA03B1118 /* Pods-Spruce_Example-acknowledgements.markdown */,
+				1A64F96EB37BE0A885651008A16F016D /* Pods-Spruce_Example-acknowledgements.plist */,
+				92AD634D3FAD541D877367EDE05F0B8D /* Pods-Spruce_Example-dummy.m */,
+				0CADC92BADB3034E48F38D776995E189 /* Pods-Spruce_Example-frameworks.sh */,
+				622186B9D0A15D16C664C253DFDDF343 /* Pods-Spruce_Example-resources.sh */,
+				944201B6552D4C2C2309D0E762D43C34 /* Pods-Spruce_Example-umbrella.h */,
+				9C147CDF3CF695F8EDBB22607035D46A /* Pods-Spruce_Example.debug.xcconfig */,
+				89BEFCEB9618821EA82227F0316BD2EA /* Pods-Spruce_Example.release.xcconfig */,
+			);
+			name = "Pods-Spruce_Example";
+			path = "Target Support Files/Pods-Spruce_Example";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		66CBDB9E81A0F8C2C858C589CDD933B0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DAB2EF6B59AA2CA006F11C072C244F2 /* Pods-Spruce_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		788FA6A1C886F3C7FEAB19AB70D3D662 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				078F2691E7CDB4222B80804FF9E92A0B /* Pods-Spruce_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0F6477ABA1A9E1E8A4F232728D923CB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A709EE7E34827F7499AEBDFE9BD7259 /* Spruce-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2B7321D1E525D2BA824577402C83D8E6 /* Pods-Spruce_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 388BE1A2B65C1F7F2819B54E36F9535B /* Build configuration list for PBXNativeTarget "Pods-Spruce_Example" */;
+			buildPhases = (
+				3CF8902A520CB6681EA3D9B6520A506C /* Sources */,
+				D3D3B95F3F41BAB97EE7898DB07D6440 /* Frameworks */,
+				66CBDB9E81A0F8C2C858C589CDD933B0 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5EE6379DD850C30688B01ED25CBE5F5B /* PBXTargetDependency */,
+			);
+			name = "Pods-Spruce_Example";
+			productName = "Pods-Spruce_Example";
+			productReference = 75BC1B05EE6AA516FFE2F32AD8DAB8BD /* Pods_Spruce_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		889446D12CC42CF3FA024DB1A3366501 /* Spruce */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 06F74E89843A23C56577F38F566F4B3D /* Build configuration list for PBXNativeTarget "Spruce" */;
+			buildPhases = (
+				29D2ABEC44EDFFA0CAFCF69A7E7DF5CF /* Sources */,
+				4FCC6502932DD34E491A20DDEF9EAFEA /* Frameworks */,
+				C0F6477ABA1A9E1E8A4F232728D923CB /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Spruce;
+			productName = Spruce;
+			productReference = 57C3CA3BB49F6F52EFB79CC3738B300E /* Spruce.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DE2FBFC5C3EC89E291968B42F109C4D6 /* Pods-Spruce_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D25524F38FBC177AD13396670FC9E2C /* Build configuration list for PBXNativeTarget "Pods-Spruce_Tests" */;
+			buildPhases = (
+				2BA80353CB83DA7EFD28B1F6404176F2 /* Sources */,
+				DF4BB24C609F7A00889E927DED43E938 /* Frameworks */,
+				788FA6A1C886F3C7FEAB19AB70D3D662 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Spruce_Tests";
+			productName = "Pods-Spruce_Tests";
+			productReference = 89BA1067F35A94869E8DD3BADD0255F1 /* Pods_Spruce_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 88B2AD4E6DBBF5F5B52C4429DA34E8AA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2B7321D1E525D2BA824577402C83D8E6 /* Pods-Spruce_Example */,
+				DE2FBFC5C3EC89E291968B42F109C4D6 /* Pods-Spruce_Tests */,
+				889446D12CC42CF3FA024DB1A3366501 /* Spruce */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		29D2ABEC44EDFFA0CAFCF69A7E7DF5CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5A905EC8809D0D76F68D26AB746BC4D /* Animation.swift in Sources */,
+				BA8ABCABB4A611DEAE0B6060E735FD52 /* BaseDistancedSortFunction.swift in Sources */,
+				91832C601B289B7CFE8FE0C97A52C829 /* CorneredSortFunction.swift in Sources */,
+				7EF08D839FE38101F0B4DB51BCF031EB /* DefaultAnimations.swift in Sources */,
+				16122EA4B07AB226DF90564DBD16C8F2 /* DefaultFullViewAnimations.swift in Sources */,
+				30BFA214C6DFF1256B6A32ECC1C0B310 /* DefaultSortFunction.swift in Sources */,
+				DD15D53DA68DA641DB4E2537C2AC1220 /* FullViewAnimation.swift in Sources */,
+				61BB62F324566F6B8399ED500478949E /* LinearSortFunction.swift in Sources */,
+				8EFEE27DE436D21BFE8FF7EED042A6FD /* NoDelaySortFunction.swift in Sources */,
+				982A4B31996C1F143079BE59AC4B28B7 /* PointOperations.swift in Sources */,
+				04259D314C64660330FC9B65A89747A7 /* RadialSortFunction.swift in Sources */,
+				B6B644C3C6C747D7CF8BEC1A1C7ED0F1 /* RandomSortFunction.swift in Sources */,
+				22DF3316C67C6961621A26BBBA639DA4 /* SortFunction.swift in Sources */,
+				389FC243005275278B89A626FD12DD2E /* SpringAnimation.swift in Sources */,
+				9AF58D1A7EB58DA3B92C40E9F66D1B16 /* Spruce-dummy.m in Sources */,
+				1180BA6FFA0D226963DDB2A705C11CFD /* Spruce.swift in Sources */,
+				C40B19542E178531734266FFD0A7D849 /* SpruceButton.swift in Sources */,
+				75739A85FC647F5AD23A2B82A79830BF /* SpruceViewController.swift in Sources */,
+				0B576018939899704AE2D280242125B1 /* StandardAnimation.swift in Sources */,
+				055B5469C7C3FF860BCC9C5F4B0B7382 /* ViewOperations.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2BA80353CB83DA7EFD28B1F6404176F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F204E75BBC011BAA3903B7943FBC63F /* Pods-Spruce_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3CF8902A520CB6681EA3D9B6520A506C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B16549263A0E88866CCB96E761617C6F /* Pods-Spruce_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5EE6379DD850C30688B01ED25CBE5F5B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Spruce;
+			target = 889446D12CC42CF3FA024DB1A3366501 /* Spruce */;
+			targetProxy = 5C9A097675087D7AE27DA0A4AD95C7D6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		4BF1C16CA3EBF8A0A7FA0BCF8D69B0B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C147CDF3CF695F8EDBB22607035D46A /* Pods-Spruce_Example.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Spruce_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Spruce_Example/Pods-Spruce_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Spruce_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5093CA52E8EC242D1E35A3CA32733501 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D87409DAC88107B4FF98F7EF404BFC12 /* Pods-Spruce_Tests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Spruce_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Spruce_Tests/Pods-Spruce_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Spruce_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		88A8939B29D108E71D6131F318669B1D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89BEFCEB9618821EA82227F0316BD2EA /* Pods-Spruce_Example.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Spruce_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Spruce_Example/Pods-Spruce_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Spruce_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8DED8AD26D381A6ACFF202E5217EC498 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9E1E4E48AF2EAB23169E611BF694090A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		A4BF9367C3FB88C4724BE8F25A720DBD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23E7013232AB26A7CDF4F539958A88DA /* Spruce.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Spruce/Spruce-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Spruce/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Spruce/Spruce.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Spruce;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D10DC50463C1EC394CAB605C27E963FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55616E35201003565304A5DE3F1F1C3E /* Pods-Spruce_Tests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Spruce_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Spruce_Tests/Pods-Spruce_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Spruce_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E7FD3C44AC265D64499C3822BAFE5A84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23E7013232AB26A7CDF4F539958A88DA /* Spruce.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Spruce/Spruce-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Spruce/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Spruce/Spruce.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Spruce;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		06F74E89843A23C56577F38F566F4B3D /* Build configuration list for PBXNativeTarget "Spruce" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7FD3C44AC265D64499C3822BAFE5A84 /* Debug */,
+				A4BF9367C3FB88C4724BE8F25A720DBD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E1E4E48AF2EAB23169E611BF694090A /* Debug */,
+				8DED8AD26D381A6ACFF202E5217EC498 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		388BE1A2B65C1F7F2819B54E36F9535B /* Build configuration list for PBXNativeTarget "Pods-Spruce_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BF1C16CA3EBF8A0A7FA0BCF8D69B0B5 /* Debug */,
+				88A8939B29D108E71D6131F318669B1D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D25524F38FBC177AD13396670FC9E2C /* Build configuration list for PBXNativeTarget "Pods-Spruce_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D10DC50463C1EC394CAB605C27E963FE /* Debug */,
+				5093CA52E8EC242D1E35A3CA32733501 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
