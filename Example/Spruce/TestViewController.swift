@@ -60,7 +60,7 @@ class TestLinearViewController: TestViewController {
             view.alpha = 1.0
             view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
         }
-        let sortFunction = LinearSortFunction(direction: .topToBottom, interObjectDelay: 0.05)
+        let sortFunction = LinearSortFunction(direction: direction, interObjectDelay: 0.05)
         containerView?.spruceSubViews(withSortFunction: sortFunction, animation: animation)
 
     }
