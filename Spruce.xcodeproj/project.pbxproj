@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB21020A1DEF810F0097B08E /* SpruceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2102091DEF810F0097B08E /* SpruceButton.swift */; };
+		DB21020C1DEF81850097B08E /* DefaultAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB21020B1DEF81850097B08E /* DefaultAnimations.swift */; };
+		DB21020E1DEF836B0097B08E /* TestViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB21020D1DEF836B0097B08E /* TestViewController3.swift */; };
 		DB33AA331DD2607A00BB98A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB33AA321DD2607A00BB98A6 /* AppDelegate.swift */; };
 		DB33AA3A1DD2607A00BB98A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB33AA391DD2607A00BB98A6 /* Assets.xcassets */; };
 		DB33AA481DD2607A00BB98A6 /* SpruceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB33AA471DD2607A00BB98A6 /* SpruceTests.swift */; };
@@ -37,6 +40,7 @@
 		DBB4EE741DDB63880063E614 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB4EE731DDB63880063E614 /* TableViewController.swift */; };
 		DBB4EE761DDB67C70063E614 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBB4EE751DDB67C70063E614 /* LaunchScreen.xib */; };
 		DBB4EE781DDB9AD00063E614 /* RandomSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB4EE771DDB9AD00063E614 /* RandomSortFunction.swift */; };
+		DBB4EE7A1DDD0DB50063E614 /* NoDelaySortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB4EE791DDD0DB50063E614 /* NoDelaySortFunction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +54,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DB2102091DEF810F0097B08E /* SpruceButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpruceButton.swift; sourceTree = "<group>"; };
+		DB21020B1DEF81850097B08E /* DefaultAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultAnimations.swift; sourceTree = "<group>"; };
+		DB21020D1DEF836B0097B08E /* TestViewController3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController3.swift; sourceTree = "<group>"; };
 		DB33AA2F1DD2607A00BB98A6 /* Spruce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spruce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB33AA321DD2607A00BB98A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB33AA391DD2607A00BB98A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -84,6 +91,7 @@
 		DBB4EE731DDB63880063E614 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		DBB4EE751DDB67C70063E614 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		DBB4EE771DDB9AD00063E614 /* RandomSortFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomSortFunction.swift; sourceTree = "<group>"; };
+		DBB4EE791DDD0DB50063E614 /* NoDelaySortFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoDelaySortFunction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +112,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DB2102081DEF80EF0097B08E /* UI Elements */ = {
+			isa = PBXGroup;
+			children = (
+				DB2102091DEF810F0097B08E /* SpruceButton.swift */,
+			);
+			path = "UI Elements";
+			sourceTree = "<group>";
+		};
 		DB33AA261DD2607A00BB98A6 = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +147,7 @@
 				DB9D28CF1DD268F4005537AE /* TestViewController.swift */,
 				DBB4EE6D1DDB62B40063E614 /* TestViewControllerSetup.swift */,
 				DBB4EE711DDB62EB0063E614 /* TestViewController2.swift */,
+				DB21020D1DEF836B0097B08E /* TestViewController3.swift */,
 				DBB4EE6F1DDB62D80063E614 /* TestViewController2Setup.swift */,
 				DB9D28E21DD27A03005537AE /* TestCollectionVIew.swift */,
 				DBB4EE691DDAD2910063E614 /* RegalTestViewController.swift */,
@@ -156,6 +173,7 @@
 		DB33AA521DD260B000BB98A6 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				DB2102081DEF80EF0097B08E /* UI Elements */,
 				DB9D28D31DD269F8005537AE /* Animations */,
 				DB33AA541DD260E300BB98A6 /* Full View */,
 				DB33AA531DD260BF00BB98A6 /* Sort Functions */,
@@ -175,6 +193,7 @@
 				DB9D28DC1DD271B4005537AE /* RadialSortFunction.swift */,
 				DB9D28E01DD276C9005537AE /* LinearSortFunction.swift */,
 				DBB4EE771DDB9AD00063E614 /* RandomSortFunction.swift */,
+				DBB4EE791DDD0DB50063E614 /* NoDelaySortFunction.swift */,
 			);
 			path = "Sort Functions";
 			sourceTree = "<group>";
@@ -204,6 +223,7 @@
 				DB9D28D41DD26A10005537AE /* Animation.swift */,
 				DB9D28D61DD26A5D005537AE /* StandardAnimation.swift */,
 				DB9D28DA1DD270AB005537AE /* SpringAnimation.swift */,
+				DB21020B1DEF81850097B08E /* DefaultAnimations.swift */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -314,6 +334,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBB4EE7A1DDD0DB50063E614 /* NoDelaySortFunction.swift in Sources */,
 				DBB4EE6E1DDB62B40063E614 /* TestViewControllerSetup.swift in Sources */,
 				DB9D28D21DD2695B005537AE /* DefaultSortFunction.swift in Sources */,
 				DB33AA331DD2607A00BB98A6 /* AppDelegate.swift in Sources */,
@@ -331,11 +352,14 @@
 				DBB4EE701DDB62D80063E614 /* TestViewController2Setup.swift in Sources */,
 				DB33AA5E1DD2633000BB98A6 /* PointOperations.swift in Sources */,
 				DB9D28DB1DD270AB005537AE /* SpringAnimation.swift in Sources */,
+				DB21020C1DEF81850097B08E /* DefaultAnimations.swift in Sources */,
 				DBB4EE6A1DDAD2910063E614 /* RegalTestViewController.swift in Sources */,
 				DBB4EE681DDACE280063E614 /* SpruceViewController.swift in Sources */,
+				DB21020A1DEF810F0097B08E /* SpruceButton.swift in Sources */,
 				DBB4EE741DDB63880063E614 /* TableViewController.swift in Sources */,
 				DB9D28D71DD26A5D005537AE /* StandardAnimation.swift in Sources */,
 				DBB4EE781DDB9AD00063E614 /* RandomSortFunction.swift in Sources */,
+				DB21020E1DEF836B0097B08E /* TestViewController3.swift in Sources */,
 				DB9D28D01DD268F4005537AE /* TestViewController.swift in Sources */,
 				DB9D28E51DD35AF8005537AE /* ViewOperations.swift in Sources */,
 				DB33AA571DD2610900BB98A6 /* Spruce.swift in Sources */,

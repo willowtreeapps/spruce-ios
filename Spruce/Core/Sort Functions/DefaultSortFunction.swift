@@ -11,7 +11,11 @@ import UIKit
 
 class DefaultSortFunction: SortFunction {
     
-    let interObjectDelay: TimeInterval = 0.1
+    let interObjectDelay: TimeInterval
+    
+    init(interObjectDelay: TimeInterval) {
+        self.interObjectDelay = interObjectDelay
+    }
     
     func getTimeOffsets(view: UIView) -> [SpruceTimedView] {
         var timedViews: [SpruceTimedView] = []

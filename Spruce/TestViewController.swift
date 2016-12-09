@@ -46,7 +46,7 @@ class TestRadialViewController: TestViewController {
             view.alpha = 1.0
             view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
         }
-        let sortFunction = RadialSortFunction(position: .middle, interObjectDelay: 0.05)
+        let sortFunction = RadialSortFunction(position: .topMiddle, interObjectDelay: 0.05)
         sortFunction.reversed = reversed
         containerView?.spruceSubViews(withSortFunction: sortFunction, animation: animation)
     }

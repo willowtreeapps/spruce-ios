@@ -17,7 +17,7 @@ class StandardAnimation: SpruceAnimation {
         self.duration = duration
     }
     
-    convenience init(duration: TimeInterval, changes: @escaping (_ view: UIView) -> Void) {
+    convenience init(duration: TimeInterval, changes: @escaping SpruceChangeFunction) {
         self.init(duration: duration)
         self.changeFunction = changes
     }
