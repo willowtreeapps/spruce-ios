@@ -1,5 +1,11 @@
 # Spruce iOS Animation Library
 
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![CocoaPods compatible](https://img.shields.io/badge/CocoaPods-compatible-4BC51D.svg?style=flat)](https://github.com/CocoaPods/CocoaPods)
+[![License None](https://img.shields.io/badge/License-none-blue.svg?style=flat)]()
+[![Public No](https://img.shields.io/badge/Public-no-red.svg?style=flat)]()
+
+
 ## What is it?
 Spruce is a very small, lightweight animation library that hopes to handle all of the 
 complications of animations for you. So many developers use standard animations because
