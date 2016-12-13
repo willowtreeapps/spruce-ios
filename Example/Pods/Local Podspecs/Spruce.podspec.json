@@ -18,5 +18,5 @@
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "Spruce/Classes/**/*"
+  "source_files": "Sources/Classes/**/*"
 }

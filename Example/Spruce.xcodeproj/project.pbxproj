@@ -515,7 +515,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 810EF25AEB3B66AF72D6DC08 /* Pods-Spruce_Example.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Spruce/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -531,7 +530,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 180431F59A6BB6C1511A5258 /* Pods-Spruce_Example.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Spruce/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

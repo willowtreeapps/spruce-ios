@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0810"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2B7321D1E525D2BA824577402C83D8E6"
-               BuildableName = "Pods_Spruce_Example.framework"
-               BlueprintName = "Pods-Spruce_Example"
-               ReferencedContainer = "container:Pods.xcodeproj">
+               BlueprintIdentifier = "DB9357FD1E008D6300ADC5BE"
+               BuildableName = "Spruce.framework"
+               BlueprintName = "Spruce"
+               ReferencedContainer = "container:Spruce.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DB9358061E008D6400ADC5BE"
+               BuildableName = "SpruceTests.xctest"
+               BlueprintName = "SpruceTests"
+               ReferencedContainer = "container:Spruce.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "DB9357FD1E008D6300ADC5BE"
+            BuildableName = "Spruce.framework"
+            BlueprintName = "Spruce"
+            ReferencedContainer = "container:Spruce.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -45,10 +64,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2B7321D1E525D2BA824577402C83D8E6"
-            BuildableName = "Pods_Spruce_Example.framework"
-            BlueprintName = "Pods-Spruce_Example"
-            ReferencedContainer = "container:Pods.xcodeproj">
+            BlueprintIdentifier = "DB9357FD1E008D6300ADC5BE"
+            BuildableName = "Spruce.framework"
+            BlueprintName = "Spruce"
+            ReferencedContainer = "container:Spruce.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -60,6 +79,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "DB9357FD1E008D6300ADC5BE"
+            BuildableName = "Spruce.framework"
+            BlueprintName = "Spruce"
+            ReferencedContainer = "container:Spruce.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
