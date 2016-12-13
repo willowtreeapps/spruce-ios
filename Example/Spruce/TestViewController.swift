@@ -35,7 +35,9 @@ class TestViewController: UIViewController {
             view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
         }
         let sortFunction = CorneredSortFunction(corner: corner, interObjectDelay: 0.05)
-        containerView?.spruceSubViews(withSortFunction: sortFunction, animation: animation)
+        containerView?.spruceSubViews(withSortFunction: sortFunction, animation: animation, completion: { finished in
+            print("Finished the animation")
+        })
     }
 }
 

@@ -9,6 +9,14 @@
 import UIKit
 
 public extension UIView {
+    
+    // Use this to prepare all of your views for animation. Including hiding them, fading them, translating them, etc...
+    open func sprucePrepare(withChangeFunction changeFunction: SpruceChangeFunction) {
+        for view in self.subviews {
+            changeFunction(view)
+        }
+    }
+    
     open func spruceSubViews(withSortFunction sortFunction: SortFunction, animation: SpruceAnimation, completion: SpruceCompletionHandler? = nil) {
         var timedViews = sortFunction.getTimeOffsets(view: self)
         timedViews = timedViews.sorted { (left, right) -> Bool in
