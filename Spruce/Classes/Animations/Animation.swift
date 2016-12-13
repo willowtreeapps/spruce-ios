@@ -9,9 +9,10 @@
 import UIKit
 
 public typealias SpruceChangeFunction = (_ view: UIView) -> Void
+public typealias SpruceCompletionHandler = (_ finished: Bool) -> Void
 
 public protocol SpruceAnimation {
-    func animate(delay: TimeInterval, view: UIView)
+    func animate(delay: TimeInterval, view: UIView, completion:SpruceCompletionHandler?)
     
     var changeFunction: SpruceChangeFunction? { get set }
 }

@@ -23,7 +23,7 @@ open class SpruceButton: UIButton {
                 function = changeFunction.getResetFunction()
             }
             animation.changeFunction = function
-            animation.animate(delay: 0.0, view: self)
+            animation.animate(delay: 0.0, view: self, completion: nil)
         }
     }
 }

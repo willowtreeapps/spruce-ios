@@ -160,17 +160,17 @@ public enum SpruceStandardAnimation {
 }
 
 public extension UIView {
-    open func spruceUp(withAnimations animations: [SpruceStandardAnimation], duration: TimeInterval = 0.3) {
+    open func spruceUp(withAnimations animations: [SpruceStandardAnimation], duration: TimeInterval = 0.3, completion: SpruceCompletionHandler? = nil ) {
         let animation = StandardAnimation(duration: duration)
-        self.spruceUp(withAnimations: animations, duration: duration, animationType: animation)
+        self.spruceUp(withAnimations: animations, duration: duration, animationType: animation, completion: completion)
     }
     
-    open func spruceUp(withAnimations animations: [SpruceStandardAnimation], duration: TimeInterval = 0.3, animationType: SpruceAnimation) {
+    open func spruceUp(withAnimations animations: [SpruceStandardAnimation], duration: TimeInterval = 0.3, animationType: SpruceAnimation, completion: SpruceCompletionHandler? = nil) {
         let sortFunction = LinearSortFunction(direction: .topToBottom, interObjectDelay: 0.05)
-        self.spruceUp(withAnimations: animations, duration: duration, animationType: animationType, sortFunction: sortFunction)
+        self.spruceUp(withAnimations: animations, duration: duration, animationType: animationType, sortFunction: sortFunction, completion: completion)
     }
     
-    open func spruceUp(withAnimations animations: [SpruceStandardAnimation], duration: TimeInterval = 0.3, animationType: SpruceAnimation, sortFunction: SortFunction, prepare: Bool = true) {
+    open func spruceUp(withAnimations animations: [SpruceStandardAnimation], duration: TimeInterval = 0.3, animationType: SpruceAnimation, sortFunction: SortFunction, prepare: Bool = true, completion: SpruceCompletionHandler? = nil) {
         
         if prepare {
             self.sprucePrepare(withAnimations: animations)
@@ -184,7 +184,7 @@ public extension UIView {
                 animationFunc(view)
             }
         }
-        self.spruceSubViews(withSortFunction: sortFunction, animation: animationType)
+        self.spruceSubViews(withSortFunction: sortFunction, animation: animationType, completion: completion)
     }
     
     open func sprucePrepare(withAnimations animations: [SpruceStandardAnimation]) {

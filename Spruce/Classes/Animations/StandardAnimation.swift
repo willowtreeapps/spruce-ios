@@ -22,9 +22,9 @@ open class StandardAnimation: SpruceAnimation {
         self.changeFunction = changes
     }
     
-    open func animate(delay: TimeInterval, view: UIView) {
+    open func animate(delay: TimeInterval, view: UIView, completion: SpruceCompletionHandler?) {
         UIView.animate(withDuration: duration, delay: delay, options: [.curveEaseOut], animations: { [weak self] in
             self?.changeFunction?(view)
-        }, completion: nil)
+        }, completion: completion)
     }
 }

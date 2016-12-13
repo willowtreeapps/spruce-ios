@@ -25,9 +25,9 @@ open class SpringAnimation: SpruceAnimation {
         self.changeFunction = changes
     }
     
-    open func animate(delay: TimeInterval, view: UIView) {
+    open func animate(delay: TimeInterval, view: UIView, completion: SpruceCompletionHandler?) {
         UIView.animate(withDuration: duration, delay: delay, usingSpringWithDamping: damping, initialSpringVelocity: initialVelocity, options: [], animations: { [weak self] in
             self?.changeFunction?(view)
-        }, completion: nil)
+        }, completion: completion)
     }
 }
