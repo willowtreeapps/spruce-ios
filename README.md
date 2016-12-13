@@ -9,6 +9,21 @@ on fading, scale, spin, and many more. A key component of Spruce is that it is e
 customizable. If we don't have the exact animation you are looking to build, subclass
 one of our types and everything will just work. 
 
+## Installation Instructions
+To make everything super easy, we currently support both CocoaPods and Carthage. If you want to just do everything yourself without a package manager, checkout our releases page and download the pre-built frameworks there or you can download the exact source from this github project.
+
+### CocoaPods
+Add the following to your `Podfile`.
+```
+pod "https://github.com/willowtreeapps/spruce-ios"
+```
+
+### Carthage
+Add the following to your `Cartfile`.
+```
+github "willowtreeapps/spruce-ios"
+```
+
 ## How to use it
 
 ### UIViewController Subclass
