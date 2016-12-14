@@ -18,10 +18,9 @@ Pod::Spec.new do |s|
   s.homepage         = 'https://github.com/willowtreeapps/spruce-ios'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Jackson Taylor' => 'jackson.taylor@willowtreeapps.com' }
-  s.source           = { :git => 'https://github.com/willowtreeapps/Spruce.git', :tag => s.version.to_s }
-
-  s.ios.deployment_target = '8.0'
-  s.tvos.deployment_target = '9.0'
+  s.source           = { :git => 'https://github.com/willowtreeapps/spruce-ios.git' }
+  
+  s.platforms = { :ios => "8.0", :tvos => "9.0" }
 
   s.source_files = 'Sources/Classes/**/*'
 end
