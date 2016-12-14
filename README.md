@@ -21,7 +21,7 @@ To make everything super easy, we currently support both CocoaPods and Carthage.
 ### CocoaPods
 Add the following to your `Podfile`.
 ```
-pod "https://github.com/willowtreeapps/spruce-ios"
+pod "Spruce", :git => "https://github.com/willowtreeapps/spruce-ios"
 ```
 
 ### Carthage
