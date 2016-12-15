@@ -17,9 +17,7 @@
 		DB9357ED1DFB026400ADC5BE /* TestCollectionVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9357E41DFB026400ADC5BE /* TestCollectionVIew.swift */; };
 		DB9357EE1DFB026400ADC5BE /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9357E51DFB026400ADC5BE /* TestViewController.swift */; };
 		DB9357EF1DFB026400ADC5BE /* TestViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9357E61DFB026400ADC5BE /* TestViewController2.swift */; };
-		DB9357F01DFB026400ADC5BE /* TestViewController2Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9357E71DFB026400ADC5BE /* TestViewController2Setup.swift */; };
 		DB9357F11DFB026400ADC5BE /* TestViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9357E81DFB026400ADC5BE /* TestViewController3.swift */; };
-		DB9357F21DFB026400ADC5BE /* TestViewControllerSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9357E91DFB026400ADC5BE /* TestViewControllerSetup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,9 +50,7 @@
 		DB9357E41DFB026400ADC5BE /* TestCollectionVIew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCollectionVIew.swift; sourceTree = "<group>"; };
 		DB9357E51DFB026400ADC5BE /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		DB9357E61DFB026400ADC5BE /* TestViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController2.swift; sourceTree = "<group>"; };
-		DB9357E71DFB026400ADC5BE /* TestViewController2Setup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController2Setup.swift; sourceTree = "<group>"; };
 		DB9357E81DFB026400ADC5BE /* TestViewController3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController3.swift; sourceTree = "<group>"; };
-		DB9357E91DFB026400ADC5BE /* TestViewControllerSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewControllerSetup.swift; sourceTree = "<group>"; };
 		F4D59F4B84B3E292C02F5FD8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		FDBE5745B9DE9B1EAB8C910C /* Pods_Spruce_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spruce_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -166,9 +162,7 @@
 				DB9357E41DFB026400ADC5BE /* TestCollectionVIew.swift */,
 				DB9357E51DFB026400ADC5BE /* TestViewController.swift */,
 				DB9357E61DFB026400ADC5BE /* TestViewController2.swift */,
-				DB9357E71DFB026400ADC5BE /* TestViewController2Setup.swift */,
 				DB9357E81DFB026400ADC5BE /* TestViewController3.swift */,
-				DB9357E91DFB026400ADC5BE /* TestViewControllerSetup.swift */,
 			);
 			name = "Test Controllers";
 			sourceTree = "<group>";
@@ -383,13 +377,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB9357F01DFB026400ADC5BE /* TestViewController2Setup.swift in Sources */,
 				DB9357EE1DFB026400ADC5BE /* TestViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				DB9357EC1DFB026400ADC5BE /* TableViewController.swift in Sources */,
 				DB9357EF1DFB026400ADC5BE /* TestViewController2.swift in Sources */,
 				DB9357ED1DFB026400ADC5BE /* TestCollectionVIew.swift in Sources */,
-				DB9357F21DFB026400ADC5BE /* TestViewControllerSetup.swift in Sources */,
 				DB9357F11DFB026400ADC5BE /* TestViewController3.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

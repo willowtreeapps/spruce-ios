@@ -17,13 +17,21 @@ public extension UIView {
         }
     }
     
-    public func spruceSubViews(withSortFunction sortFunction: SortFunction, animation: SpruceAnimation, completion: SpruceCompletionHandler? = nil) {
+    public func spruceSubViews(withSortFunction sortFunction: SortFunction, prepare: SprucePrepareHandler? = nil, animation: SpruceAnimation, completion: SpruceCompletionHandler? = nil, exclude: [UIView]? = nil) {
         var timedViews = sortFunction.getTimeOffsets(view: self)
         timedViews = timedViews.sorted { (left, right) -> Bool in
             return left.timeOffset < right.timeOffset
         }
-        for index in 0..<timedViews.count {
-            let view = timedViews[index]
+        for (index, view) in timedViews.enumerated() {
+            if let exclude = exclude, exclude.reduce(false, { $0 || $1 == view.view }) {
+                continue
+            }
+
+
+            if let prepare = prepare {
+                prepare(view.view)
+            }
+
             animation.animate(delay: view.timeOffset,
                               view: view.view,
                               completion: ((index == timedViews.count - 1) ? completion : nil))
