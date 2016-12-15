@@ -17,8 +17,8 @@ public extension UIView {
         }
     }
     
-    public func spruceSubViews(withSortFunction sortFunction: SortFunction, prepare: SprucePrepareHandler? = nil, animation: SpruceAnimation, completion: SpruceCompletionHandler? = nil, exclude: [UIView]? = nil) {
-        var timedViews = sortFunction.getTimeOffsets(view: self)
+    public func spruceSubViews(withSortFunction sortFunction: SortFunction, prepare: SprucePrepareHandler? = nil, animation: SpruceAnimation, completion: SpruceCompletionHandler? = nil, exclude: [UIView]? = nil, recursive: Bool = false) {
+        var timedViews = sortFunction.getTimeOffsets(view: self, recursive: recursive)
         timedViews = timedViews.sorted { (left, right) -> Bool in
             return left.timeOffset < right.timeOffset
         }

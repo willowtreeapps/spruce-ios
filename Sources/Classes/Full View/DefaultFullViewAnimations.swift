@@ -187,7 +187,7 @@ public extension UIView {
         self.spruceSubViews(withSortFunction: sortFunction, animation: animationType, completion: completion)
     }
     
-    public func sprucePrepare(withAnimations animations: [SpruceStandardAnimation]) {
+    public func sprucePrepare(withAnimations animations: [SpruceStandardAnimation], recursive: Bool = false) {
         /* Reset the views to prepare for the animations */
         let clearFunction: SpruceChangeFunction = { view in
             for animation in animations {
@@ -205,6 +205,7 @@ public extension UIView {
             }
         })
         
+        let subviews = self.getSubviews(recursive: recursive)
         UIView.performWithoutAnimation {
             for subView in subviews {
                 clearFunction(subView)
@@ -215,7 +216,8 @@ public extension UIView {
         }
     }
     
-    public func hideAllSubviews() {
+    public func hideAllSubviews(recursive: Bool = false) {
+        let subviews = self.getSubviews(recursive: recursive)
         UIView.performWithoutAnimation {
             for subView in subviews {
                 subView.isHidden = true

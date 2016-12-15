@@ -15,4 +15,11 @@ public struct SpruceTimedView {
 
 public protocol SortFunction {
     func getTimeOffsets(view: UIView) -> [SpruceTimedView]
+    func getTimeOffsets(view: UIView, recursive: Bool) -> [SpruceTimedView]
+}
+
+public extension SortFunction {
+    func getTimeOffsets(view: UIView) -> [SpruceTimedView] {
+        return getTimeOffsets(view: view, recursive: false)
+    }
 }

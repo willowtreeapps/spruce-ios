@@ -17,9 +17,9 @@ open class BaseDistancedSortFunction: SortFunction {
         self.interObjectDelay = interObjectDelay
     }
     
-    open func getTimeOffsets(view: UIView) -> [SpruceTimedView] {
+    open func getTimeOffsets(view: UIView, recursive: Bool) -> [SpruceTimedView] {
         let comparisonPoint = getDistancePoint(bounds: view.bounds)
-        let subviews = view.subviews
+        let subviews = view.getSubviews(recursive: recursive)
         
         let distancedViews = subviews.map {
             return (view: $0, distance: getDistanceBetweenPoints(left: comparisonPoint, right: $0.center))

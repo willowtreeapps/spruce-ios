@@ -24,9 +24,9 @@ open class CorneredSortFunction: BaseDistancedSortFunction {
         super.init(interObjectDelay: interObjectDelay)
     }
     
-    open override func getTimeOffsets(view: UIView) -> [SpruceTimedView] {
+    open override func getTimeOffsets(view: UIView, recursive: Bool) -> [SpruceTimedView] {
         let comparisonPoint = getDistancePoint(bounds: view.bounds)
-        let subviews = view.subviews
+        let subviews = view.getSubviews(recursive: recursive)
         
         let distancedViews = subviews.map {
             return (view: $0, distance: comparisonPoint.euclideanDistance($0.center))
