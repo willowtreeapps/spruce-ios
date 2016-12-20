@@ -23,51 +23,26 @@ open class InlineSortFunction: BaseDistancedSortFunction {
         let subviews = view.getSubviews(recursive: recursive)
 
         let distancedViews = subviews.map {
-            return (view: $0, distance: comparisonPoint.euclideanDistance($0.center), verticalDistance: comparisonPoint.horizontalDistance($0.center))
+            return (view: $0, horizontalDistance: comparisonPoint.horizontalDistance($0.center), verticalDistance: comparisonPoint.verticalDistance($0.center))
             }.sorted { (left, right) -> Bool in
-                if left.distance < right.distance && left.verticalDistance <= right.verticalDistance {
+                if left.verticalDistance < right.verticalDistance {
                     return true
                 }
-                if left.distance < right.distance {
+                if left.verticalDistance == right.verticalDistance && left.horizontalDistance < right.horizontalDistance {
                     return true
                 }
                 return false
         }
 
-        guard var lastDistance = distancedViews.first?.distance else {
-            return []
-        }
-
         var currentTimeOffset = 0.0
         var timedViews: [SpruceTimedView] = []
         for view in distancedViews {
-            if lastDistance != view.distance {
-                lastDistance = view.distance
-                currentTimeOffset += interObjectDelay
-            }
+            currentTimeOffset += interObjectDelay
             let timedView = SpruceTimedView(view: view.view, timeOffset: currentTimeOffset)
             timedViews.append(timedView)
         }
 
         return timedViews
-    }
-
-    func getVerticalDistanceBetweenPoints(left: CGPoint, right: CGPoint) -> Double {
-        return sqrt(Double(pow(left.x - right.x, 2.0)))
-    }
-
-    open override func getDistanceBetweenPoints(left: CGPoint, right: CGPoint) -> Double {
-        var left = left
-        var right = right
-        switch corner {
-        case .topLeft, .topRight:
-            left.x = 0.0
-            right.x = 0.0
-        case .bottomLeft, .bottomRight:
-            left.y = 0.0
-            right.y = 0.0
-        }
-        return left.euclideanDistance(right)
     }
 
     open override func getDistancePoint(bounds: CGRect) -> CGPoint {

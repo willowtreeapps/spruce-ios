@@ -24,5 +24,4 @@ public extension CGPoint {
         let y = Double(pow(self.y - point.y, 2.0))
         return sqrt(y)
     }
-
 }
