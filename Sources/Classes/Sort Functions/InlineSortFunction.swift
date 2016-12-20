@@ -13,7 +13,7 @@ open class InlineSortFunction: BaseDistancedSortFunction {
 
     let corner: SpruceCorner
 
-    public init(corner: SpruceCorner, interObjectDelay: TimeInterval, interRowDelay: TimeInterval) {
+    public init(corner: SpruceCorner, interObjectDelay: TimeInterval) {
         self.corner = corner
         super.init(interObjectDelay: interObjectDelay)
     }
