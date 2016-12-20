@@ -16,7 +16,7 @@ open class InlineSortFunction: CorneredSortFunction {
         let subviews = view.getSubviews(recursive: recursive)
 
         let distancedViews = subviews.map {
-            return (view: $0, horizontalDistance: comparisonPoint.horizontalDistance($0.center), verticalDistance: comparisonPoint.verticalDistance($0.center))
+            return (view: $0, horizontalDistance: comparisonPoint.horizontalDistance(to: $0.center), verticalDistance: comparisonPoint.verticalDistance(to: $0.center))
             }.sorted { (left, right) -> Bool in
                 if left.verticalDistance < right.verticalDistance {
                     return true

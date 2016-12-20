@@ -48,7 +48,7 @@ open class BaseDistancedSortFunction: SortFunction {
     }
     
     open func getDistanceBetweenPoints(left: CGPoint, right: CGPoint) -> Double {
-        return left.euclideanDistance(right)
+        return left.euclideanDistance(to: right)
     }
     
     open func getDistancePoint(bounds: CGRect) -> CGPoint {

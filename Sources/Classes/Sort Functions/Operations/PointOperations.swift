@@ -9,18 +9,18 @@
 import UIKit
 
 public extension CGPoint {
-    public func euclideanDistance(_ point: CGPoint) -> Double {
+    public func euclideanDistance(to point: CGPoint) -> Double {
         let x = Double(pow(self.x - point.x, 2.0))
         let y = Double(pow(self.y - point.y, 2.0))
         return sqrt(x + y)
     }
 
-    public func horizontalDistance(_ point: CGPoint) -> Double {
+    public func horizontalDistance(to point: CGPoint) -> Double {
         let x = Double(pow(self.x - point.x, 2.0))
         return sqrt(x)
     }
 
-    public func verticalDistance(_ point: CGPoint) -> Double {
+    public func verticalDistance(to point: CGPoint) -> Double {
         let y = Double(pow(self.y - point.y, 2.0))
         return sqrt(y)
     }

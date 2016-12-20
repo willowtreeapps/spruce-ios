@@ -29,7 +29,7 @@ open class CorneredSortFunction: BaseDistancedSortFunction {
         let subviews = view.getSubviews(recursive: recursive)
         
         let distancedViews = subviews.map {
-            return (view: $0, distance: comparisonPoint.euclideanDistance($0.center))
+            return (view: $0, distance: comparisonPoint.euclideanDistance(to: $0.center))
         }.sorted { (left, right) -> Bool in
             return left.distance < right.distance
         }
