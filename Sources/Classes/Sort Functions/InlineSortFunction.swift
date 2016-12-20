@@ -9,15 +9,8 @@
 import Foundation
 
 
-open class InlineSortFunction: BaseDistancedSortFunction {
+open class InlineSortFunction: CorneredSortFunction {
 
-    let corner: SpruceCorner
-
-    public init(corner: SpruceCorner, interObjectDelay: TimeInterval) {
-        self.corner = corner
-        super.init(interObjectDelay: interObjectDelay)
-    }
-    
     open override func getTimeOffsets(view: UIView, recursive: Bool) -> [SpruceTimedView] {
         let comparisonPoint = getDistancePoint(bounds: view.bounds)
         let subviews = view.getSubviews(recursive: recursive)
@@ -43,18 +36,5 @@ open class InlineSortFunction: BaseDistancedSortFunction {
         }
 
         return timedViews
-    }
-
-    open override func getDistancePoint(bounds: CGRect) -> CGPoint {
-        switch corner {
-        case .topLeft:
-            return CGPoint.zero
-        case .topRight:
-            return CGPoint(x: bounds.size.width, y: 0.0)
-        case .bottomLeft:
-            return CGPoint(x: 0.0, y: bounds.size.height)
-        case .bottomRight:
-            return CGPoint(x: bounds.size.width, y: bounds.size.height)
-        }
     }
 }
