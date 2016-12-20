@@ -90,3 +90,14 @@ class TestLinearViewController: TestViewController {
 
     }
 }
+
+class TestInlineViewController: TestViewController {
+    override func callAnimation() {
+        let animation = SpringAnimation(duration: 0.5) { view in
+            view.alpha = 1.0
+            view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+        }
+        let sortFunction = InlineSortFunction(corner: .topLeft, interObjectDelay: 0.05)
+        containerView?.spruceSubViews(withSortFunction: sortFunction, animation: animation)
+    }
+}
