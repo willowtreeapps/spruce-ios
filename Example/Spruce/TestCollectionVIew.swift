@@ -10,6 +10,9 @@ import UIKit
 import Spruce
 
 class TestCollectionView: UIViewController {
+
+    var squaresPerRow: Int = 7
+
     var collectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -68,7 +71,7 @@ extension TestCollectionView: UICollectionViewDataSource {
 
 extension TestCollectionView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let viewSize = (self.view.bounds.size.width / 7.0)
+        let viewSize = (self.view.bounds.size.width / CGFloat(squaresPerRow))
         return CGSize(width: viewSize, height: viewSize)
     }
     

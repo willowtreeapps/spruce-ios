@@ -10,7 +10,9 @@ import UIKit
 import Spruce
 
 class TestViewController2: UIViewController {
-    
+
+    var squaresPerRow: Int = 7
+
     var containerView: UIView?
     
     override func viewDidLoad() {
@@ -30,12 +32,12 @@ class TestViewController2: UIViewController {
 
 extension TestViewController2 {
     func setup() {
-        let viewSize = (self.view.bounds.size.width / 7.0)
+        let viewSize = (self.view.bounds.size.width / CGFloat(squaresPerRow))
 
-        self.containerView = UIView(frame: CGRect(x: 0.0, y: 30.0, width: view.bounds.size.width, height: viewSize * 7.0))
+        self.containerView = UIView(frame: CGRect(x: 0.0, y: 30.0, width: view.bounds.size.width, height: viewSize * CGFloat(squaresPerRow)))
         self.view.addSubview(self.containerView!)
-        for row in 0..<7 {
-            for col in 0..<7 {
+        for row in 0..<squaresPerRow {
+            for col in 0..<squaresPerRow {
                 let view = UIView(frame: CGRect(x: CGFloat(col) * viewSize, y: CGFloat(row) * viewSize, width: viewSize, height: viewSize))
                 view.backgroundColor = .blue
                 containerView?.addSubview(view)
