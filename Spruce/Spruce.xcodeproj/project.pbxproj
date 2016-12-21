@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3208F65B1E0B144600847FF0 /* ContinuousSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3208F65A1E0B144600847FF0 /* ContinuousSortFunction.swift */; };
+		3208F65D1E0B145800847FF0 /* WeightedContinuousSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3208F65C1E0B145800847FF0 /* WeightedContinuousSortFunction.swift */; };
 		32DC68471E09BA5B00DF8286 /* InlineSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DC68461E09BA5B00DF8286 /* InlineSortFunction.swift */; };
 		DB9358081E008D6400ADC5BE /* Spruce.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB9357FE1E008D6300ADC5BE /* Spruce.framework */; };
 		DB93580D1E008D6400ADC5BE /* SpruceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB93580C1E008D6400ADC5BE /* SpruceTests.swift */; };
@@ -62,6 +64,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3208F65A1E0B144600847FF0 /* ContinuousSortFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContinuousSortFunction.swift; sourceTree = "<group>"; };
+		3208F65C1E0B145800847FF0 /* WeightedContinuousSortFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightedContinuousSortFunction.swift; sourceTree = "<group>"; };
 		32DC68461E09BA5B00DF8286 /* InlineSortFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InlineSortFunction.swift; sourceTree = "<group>"; };
 		DB9357FE1E008D6300ADC5BE /* Spruce.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Spruce.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB9358011E008D6300ADC5BE /* Spruce.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Spruce.h; sourceTree = "<group>"; };
@@ -191,6 +195,8 @@
 				DB93583A1E008DF200ADC5BE /* RandomSortFunction.swift */,
 				DB93583B1E008DF200ADC5BE /* SortFunction.swift */,
 				32DC68461E09BA5B00DF8286 /* InlineSortFunction.swift */,
+				3208F65A1E0B144600847FF0 /* ContinuousSortFunction.swift */,
+				3208F65C1E0B145800847FF0 /* WeightedContinuousSortFunction.swift */,
 			);
 			path = "Sort Functions";
 			sourceTree = "<group>";
@@ -350,11 +356,13 @@
 				32DC68471E09BA5B00DF8286 /* InlineSortFunction.swift in Sources */,
 				DB9358561E008E1A00ADC5BE /* SpruceButton.swift in Sources */,
 				DB9358311E008DE900ADC5BE /* SpruceViewController.swift in Sources */,
+				3208F65D1E0B145800847FF0 /* WeightedContinuousSortFunction.swift in Sources */,
 				DB9358281E008DE100ADC5BE /* StandardAnimation.swift in Sources */,
 				DB93582F1E008DE900ADC5BE /* FullViewAnimation.swift in Sources */,
 				DB9358511E008E1200ADC5BE /* PointOperations.swift in Sources */,
 				DB93582D1E008DE900ADC5BE /* DefaultFullViewAnimations.swift in Sources */,
 				DB9358531E008E1200ADC5BE /* ViewOperations.swift in Sources */,
+				3208F65B1E0B144600847FF0 /* ContinuousSortFunction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,6 +589,7 @@
 				DB9358141E008D6400ADC5BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DB9358151E008D6400ADC5BE /* Build configuration list for PBXNativeTarget "SpruceTests" */ = {
 			isa = XCConfigurationList;
@@ -589,6 +598,7 @@
 				DB9358171E008D6400ADC5BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -10,7 +10,9 @@ import UIKit
 import Spruce
 
 class TestViewController: UIViewController {
-    
+
+    var squaresPerRow: Int = 13
+
     var containerView: UIView?
     
     var corner: SpruceCorner = .bottomRight
@@ -45,12 +47,12 @@ class TestViewController: UIViewController {
 
 extension TestViewController {
     func setup() {
-        let viewSize = (self.view.bounds.size.width / 7.0)
+        let viewSize = (self.view.bounds.size.width / CGFloat(squaresPerRow))
 
-        self.containerView = UIView(frame: CGRect(x: 0.0, y: 30.0, width: view.bounds.size.width, height: viewSize * 7.0))
+        self.containerView = UIView(frame: CGRect(x: 0.0, y: 30.0, width: view.bounds.size.width, height: viewSize * CGFloat(squaresPerRow)))
         self.view.addSubview(self.containerView!)
-        for row in 0..<7 {
-            for col in 0..<7 {
+        for row in 0..<squaresPerRow {
+            for col in 0..<squaresPerRow {
                 let view = UIView(frame: CGRect(x: CGFloat(col) * viewSize, y: CGFloat(row) * viewSize, width: viewSize, height: viewSize))
                 view.backgroundColor = .blue
                 view.alpha = 0.0
@@ -98,6 +100,29 @@ class TestInlineViewController: TestViewController {
             view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
         }
         let sortFunction = InlineSortFunction(corner: .topLeft, interObjectDelay: 0.05)
+        containerView?.spruceSubViews(withSortFunction: sortFunction, animation: animation)
+    }
+}
+
+class TestWeightedContinuousViewController: TestViewController {
+    override func callAnimation() {
+        let animation = SpringAnimation(duration: 0.5) { view in
+            view.alpha = 1.0
+            view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+        }
+        let sortFunction = ContinuousWeightedSortFunction(position: .topLeft, duration: 1.0, horizontalWeight: .heavy, verticalWeight: .light)
+        containerView?.spruceSubViews(withSortFunction: sortFunction, animation: animation)
+    }
+}
+
+
+class TestWeightedContinuousViewController2: TestViewController {
+    override func callAnimation() {
+        let animation = SpringAnimation(duration: 0.5) { view in
+            view.alpha = 1.0
+            view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+        }
+        let sortFunction = ContinuousWeightedSortFunction(position: .middle, duration: 1.0, horizontalWeight: .light, verticalWeight: .heavy)
         containerView?.spruceSubViews(withSortFunction: sortFunction, animation: animation)
     }
 }
