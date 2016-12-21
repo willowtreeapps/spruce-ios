@@ -14,17 +14,15 @@ public enum SpruceWeight {
     case heavy
 }
 
-open class ContinuousWeightedSortFunction: RadialSortFunction {
+open class ContinuousWeightedSortFunction: ContinuousSortFunction {
 
-    let duration: TimeInterval
     let horizontalWeight: SpruceWeight
     let verticalWeight: SpruceWeight
 
     public init(position: SprucePosition, duration: TimeInterval, horizontalWeight: SpruceWeight = .medium, verticalWeight: SpruceWeight = .medium) {
-        self.duration = duration
         self.horizontalWeight = horizontalWeight
         self.verticalWeight = verticalWeight
-        super.init(position: position, interObjectDelay: 0.0)
+        super.init(position: position, duration: duration)
     }
 
     open override func getTimeOffsets(view: UIView, recursive: Bool) -> [SpruceTimedView] {
