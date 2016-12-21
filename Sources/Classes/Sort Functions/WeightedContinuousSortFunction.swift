@@ -8,13 +8,19 @@
 
 import Foundation
 
+public enum SpruceWeight {
+    case light
+    case medium
+    case heavy
+}
+
 open class ContinuousWeightedSortFunction: RadialSortFunction {
 
     let duration: TimeInterval
-    let horizontalWeight: Double
-    let verticalWeight: Double
+    let horizontalWeight: SpruceWeight
+    let verticalWeight: SpruceWeight
 
-    public init(position: SprucePosition, duration: TimeInterval, horizontalWeight: Double = 1.0, verticalWeight: Double = 1.0) {
+    public init(position: SprucePosition, duration: TimeInterval, horizontalWeight: SpruceWeight = .medium, verticalWeight: SpruceWeight = .medium) {
         self.duration = duration
         self.horizontalWeight = horizontalWeight
         self.verticalWeight = verticalWeight
@@ -37,11 +43,22 @@ open class ContinuousWeightedSortFunction: RadialSortFunction {
         for view in distancedViews {
             let normalizedHorizontalDistance = view.horizontalDistance / maxHorizontalDistance
             let normalizedVerticalDistance = view.verticalDistance / maxVerticalDistance
-            let offset = duration * (normalizedHorizontalDistance * horizontalWeight + normalizedVerticalDistance * verticalWeight)
+            let offset = duration * (normalizedHorizontalDistance * getWeightCoefficient(for: horizontalWeight) + normalizedVerticalDistance * getWeightCoefficient(for: verticalWeight))
             let timedView = SpruceTimedView(view: view.view, timeOffset: offset)
             timedViews.append(timedView)
         }
         
         return timedViews
+    }
+
+    private func getWeightCoefficient(for weight: SpruceWeight) -> Double {
+        switch weight {
+        case .light:
+            return 0.5
+        case .medium:
+            return 1.0
+        case .heavy:
+            return 2.0
+        }
     }
 }
