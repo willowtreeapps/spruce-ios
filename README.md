@@ -96,3 +96,23 @@ let sortFunction = LinearSortFunction(direction: .topToBottom, interObjectDelay:
 yourView.spruceUp(withAnimations: [.fadeIn, .slide(.up, .small), .expand(.small)], duration: 0.3, animationType: animation, sortFunction: sortFunction)
 ```
 
+# Basic Concepts
+
+## Sort Functions
+With all different types of animations, especially those dealing with subviews, we have to consider a way in which we want to animate them. Some views can have 0 subviews while others may have hundreds. To handle this, we have the notion of a `SortFunction`. What this will do is take each of the subviews in the animated view, and apply a mapping from the specific subview to the exact delay that it should wait before animating. Some of these will sort in a radial formation while others may actually sort randomly. This is one of the cool features of Spruce, is you can actually define your own `SortFunction` and then the animation will look completely different. Luckily, Spruce also comes jam packed with a ton of default `SortFunction` classes to make everything easier on you as the developer. Take a look at some of the default `SortFunction` classes we have and see if you can use them or branch off of them for your cool and custom animations!
+
+### The SortFunction Protocol
+A very simple protocol that requires classes to implement the following function
+
+```swift
+func getTimeOffsets(view: UIView, recursive: Bool) -> [SpruceTimedView]
+```
+
+What the above function needs to do is take in a `UIView` and generate a list of subviews. This list of subviews can be generated recursively or not depending on what the boolean has set. Once the list of subviews has been generated, you can define your own sort metric to determine in which order the `UIView`'s should animate. To do so, you need to create an array of `SpruceTimedView`'s. This special struct has two properties: (1) `view: UIView` and (2) `timeOffset: TimeInterval`. Your `SortFunction` can define the `timeOffset` however it likes, but the animation classes will use this to determine how long it should delay the start of that specific view from animating. The best way to learn, is to play around. So why not have some fun and make your own `SortFunction`!
+
+
+### Default SortFunction Classes
+This is the list of `SortFunction` classes that come default with Spruce so that you can have a beautiful animation up and running in seconds. 
+
+#### LinearSortFunction
+
