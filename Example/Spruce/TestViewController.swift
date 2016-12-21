@@ -101,3 +101,26 @@ class TestInlineViewController: TestViewController {
         containerView?.spruceSubViews(withSortFunction: sortFunction, animation: animation)
     }
 }
+
+class TestWeightedContinuousViewController: TestViewController {
+    override func callAnimation() {
+        let animation = SpringAnimation(duration: 0.5) { view in
+            view.alpha = 1.0
+            view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+        }
+        let sortFunction = ContinuousWeightedSortFunction(position: .topLeft, duration: 1.5, horizontalWeight: .heavy, verticalWeight: .light)
+        containerView?.spruceSubViews(withSortFunction: sortFunction, animation: animation)
+    }
+}
+
+
+class TestWeightedContinuousViewController2: TestViewController {
+    override func callAnimation() {
+        let animation = SpringAnimation(duration: 0.5) { view in
+            view.alpha = 1.0
+            view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+        }
+        let sortFunction = ContinuousWeightedSortFunction(position: .middle, duration: 1.5, horizontalWeight: .light, verticalWeight: .heavy)
+        containerView?.spruceSubViews(withSortFunction: sortFunction, animation: animation)
+    }
+}

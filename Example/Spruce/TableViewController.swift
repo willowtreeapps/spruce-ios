@@ -28,7 +28,7 @@ extension TableViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 13
+        return 15
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -62,6 +62,10 @@ extension TableViewController: UITableViewDataSource {
             cellText = "SpruceButton Example (grow, bounce)"
         case 12:
             cellText = "Inline Sort Function (top-left)"
+        case 13:
+            cellText = "Weighted continuous sort function (top-left, heavy, light)"
+        case 14:
+            cellText = "Weighted continuous sort function (middle, light, heavy)"
         default:
             cellText = ""
         }
@@ -126,6 +130,12 @@ extension TableViewController: UITableViewDelegate {
             controller = tempController
         case 12:
             let tempController = TestInlineViewController(nibName: nil, bundle: nil)
+            controller = tempController
+        case 13:
+            let tempController = TestWeightedContinuousViewController(nibName: nil, bundle: nil)
+            controller = tempController
+        case 14:
+            let tempController = TestWeightedContinuousViewController2(nibName: nil, bundle: nil)
             controller = tempController
         default:
             let tempController = TestViewController(nibName: nil, bundle: nil)
