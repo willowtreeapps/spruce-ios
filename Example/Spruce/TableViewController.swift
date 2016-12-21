@@ -28,7 +28,7 @@ extension TableViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 12
+        return 13
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -60,6 +60,8 @@ extension TableViewController: UITableViewDataSource {
             cellText = "SpruceButton Example (grow)"
         case 11:
             cellText = "SpruceButton Example (grow, bounce)"
+        case 12:
+            cellText = "Inline Sort Function (top-left)"
         default:
             cellText = ""
         }
@@ -121,6 +123,9 @@ extension TableViewController: UITableViewDelegate {
             controller = tempController
         case 11:
             let tempController = SpruceButtonBounceViewController(nibName: nil, bundle: nil)
+            controller = tempController
+        case 12:
+            let tempController = TestInlineViewController(nibName: nil, bundle: nil)
             controller = tempController
         default:
             let tempController = TestViewController(nibName: nil, bundle: nil)

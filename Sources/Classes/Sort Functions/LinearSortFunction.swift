@@ -34,7 +34,7 @@ open class LinearSortFunction: BaseDistancedSortFunction {
             left.y = 0.0
             right.y = 0.0
         }
-        return left.euclideanDistance(right)
+        return left.euclideanDistance(to: right)
     }
     
     open override func getDistancePoint(bounds: CGRect) -> CGPoint {
