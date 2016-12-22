@@ -115,4 +115,15 @@ What the above function needs to do is take in a `UIView` and generate a list of
 This is the list of `SortFunction` classes that come default with Spruce so that you can have a beautiful animation up and running in seconds. 
 
 #### LinearSortFunction
+A `LinearSortFunction` is a subclass of `BaseDistanceSortFunction`. With a `LinearSortFunction` you are able to define a `SpruceDirection` and a `TimeInterval` for which is used to determine the inter object delay. To create a `LinearSortFunction`:
 
+```swift
+LinearSortFunction(direction: <SpruceDirection>, interObjectDelay: <TimeInterval>)
+
+// Example
+let sortFunction = LinearSortFunction(direction: .leftToRight, interObjectDelay: 0.2)
+```
+
+With the above `sortFunction` we can create a simple animation that looks like. [Insert Image here of linear Sort Funtion]
+
+Values for `SpruceDirection` include: `.topToBottom`, `.bottomToTop`, `.leftToRight`, and `.rightToLeft`.
