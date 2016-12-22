@@ -114,8 +114,8 @@ What the above function needs to do is take in a `UIView` and generate a list of
 ### Default SortFunction Classes
 This is the list of `SortFunction` classes that come default with Spruce so that you can have a beautiful animation up and running in seconds. 
 
-#### LinearSortFunction
-A `LinearSortFunction` is a subclass of `BaseDistanceSortFunction`. With a `LinearSortFunction` you are able to define a `SpruceDirection` and a `TimeInterval` for which is used to determine the inter object delay. To create a `LinearSortFunction`:
+#### Linear Sort Function
+With a `LinearSortFunction` you are able to define a `SpruceDirection` and a `TimeInterval` for which is used to determine the inter object delay. To create a `LinearSortFunction`:
 
 ```swift
 LinearSortFunction(direction: <SpruceDirection>, interObjectDelay: <TimeInterval>)
@@ -127,3 +127,53 @@ let sortFunction = LinearSortFunction(direction: .leftToRight, interObjectDelay:
 With the above `sortFunction` we can create a simple animation that looks like. [Insert Image here of linear Sort Funtion]
 
 Values for `SpruceDirection` include: `.topToBottom`, `.bottomToTop`, `.leftToRight`, and `.rightToLeft`.
+
+#### Cornered Sort Function
+With a `CorneredSortFunction` you can specify a `SpruceCorner` and a `TimeInterval` to determine the inter object delay. To create a `CorneredSortFunction`:
+
+```swift
+CorneredSortFunction(corner: <SpruceCorner>, interObjectDelay: TimeInterval)
+
+// Example
+let sortFunction = CorneredSortFunction(corner: .topLeft, interObjectDelay: 0.2)
+```
+
+With the above `sortFunction` the animation looks like. [Insert Image here]
+
+Values for `SpruceCorner` include: `.topLeft`, .`topRight`, `.bottomLeft`, `.bottomRight`.
+
+#### Default Sort Function
+A `DefaultSortFunction` gives each view an inter object delay based on where it is located in the `subviews` array. No sorting is done on the `SortFunction` side. To create a `DefaultSortFunction`:
+
+```swift
+DefaultSortFunction(interObjectDelay: <TimeInterval>)
+
+// Example
+let sortFunction = DefaultSortFunction(interObjectDelay: 0.2)
+```
+
+The above `sortFunction` would make an animation look like. [Insert Image here]
+
+#### Inline Sort Function
+An `InlineSortFunction` animates the views as if they were lines in a paragraph. Meaning that it will finish animating a line before starting the next line. To create an `InlineSortFunction`:
+
+```swift
+InlineSortFunction(interObjectDelay: <TimeInterval>)
+
+// Example
+let sortFunction = InlineSortFunction(interObjectDelay: 0.2)
+```
+
+The above `sortFunction` would make an animation look like. [Insert Image here]
+
+#### Radial Sort Function
+To create an animation that emits in a circular pattern from a given point, you would want to use a `RadialSortFunction`. Like the other `BaseDistanceSortFunctions` you can use the `reversed` flag to sort the subviews in the initial way and then animate in the opposite direction. This way rather than the views animating outwards, they will start on the outside and then animate in. To create a `RadialSortFunction`:
+
+```swift
+RadialSortFunction(position: <SprucePosition>, interObjectDelay: <TimeInterval>)
+
+// Example
+let sortFunction = RadialSortFunction(position: .topMiddle, interObjectDelay: 0.2)
+```
+
+The above `sortFunction` would make an animation look like. [Insert Image here]
