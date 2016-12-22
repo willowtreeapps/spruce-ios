@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		321671381E0C75F8003E6A0B /* SortFunctionTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321671371E0C75F8003E6A0B /* SortFunctionTestViewController.swift */; };
+		3216713A1E0C760F003E6A0B /* SortFunctionTestViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 321671391E0C760F003E6A0B /* SortFunctionTestViewController.storyboard */; };
 		4A43C1DAC694719AE6B7A749 /* Pods_Spruce_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B828A1EFFD048AD3A2E0675 /* Pods_Spruce_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
@@ -15,9 +17,10 @@
 		8D0D1A6A199FC9630A10DED3 /* Pods_Spruce_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDBE5745B9DE9B1EAB8C910C /* Pods_Spruce_Example.framework */; };
 		DB9357EC1DFB026400ADC5BE /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9357E31DFB026400ADC5BE /* TableViewController.swift */; };
 		DB9357ED1DFB026400ADC5BE /* TestCollectionVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9357E41DFB026400ADC5BE /* TestCollectionVIew.swift */; };
-		DB9357EE1DFB026400ADC5BE /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9357E51DFB026400ADC5BE /* TestViewController.swift */; };
+		DB9357EE1DFB026400ADC5BE /* CustomAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9357E51DFB026400ADC5BE /* CustomAnimationViewController.swift */; };
 		DB9357EF1DFB026400ADC5BE /* TestViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9357E61DFB026400ADC5BE /* TestViewController2.swift */; };
 		DB9357F11DFB026400ADC5BE /* TestViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9357E81DFB026400ADC5BE /* TestViewController3.swift */; };
+		DBA608D41E3267B9006207C9 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA608D31E3267B9006207C9 /* Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +36,8 @@
 /* Begin PBXFileReference section */
 		180431F59A6BB6C1511A5258 /* Pods-Spruce_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spruce_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Spruce_Example/Pods-Spruce_Example.release.xcconfig"; sourceTree = "<group>"; };
 		1A7230AE9B3F14A5CD036320 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		321671371E0C75F8003E6A0B /* SortFunctionTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortFunctionTestViewController.swift; sourceTree = "<group>"; };
+		321671391E0C760F003E6A0B /* SortFunctionTestViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SortFunctionTestViewController.storyboard; sourceTree = "<group>"; };
 		4B828A1EFFD048AD3A2E0675 /* Pods_Spruce_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spruce_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* Spruce_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spruce_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -48,9 +53,10 @@
 		810EF25AEB3B66AF72D6DC08 /* Pods-Spruce_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spruce_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Spruce_Example/Pods-Spruce_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		DB9357E31DFB026400ADC5BE /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		DB9357E41DFB026400ADC5BE /* TestCollectionVIew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCollectionVIew.swift; sourceTree = "<group>"; };
-		DB9357E51DFB026400ADC5BE /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		DB9357E51DFB026400ADC5BE /* CustomAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnimationViewController.swift; sourceTree = "<group>"; };
 		DB9357E61DFB026400ADC5BE /* TestViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController2.swift; sourceTree = "<group>"; };
 		DB9357E81DFB026400ADC5BE /* TestViewController3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController3.swift; sourceTree = "<group>"; };
+		DBA608D31E3267B9006207C9 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		F4D59F4B84B3E292C02F5FD8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		FDBE5745B9DE9B1EAB8C910C /* Pods_Spruce_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spruce_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -112,6 +118,7 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				DB9357E31DFB026400ADC5BE /* TableViewController.swift */,
+				DBA608D31E3267B9006207C9 /* Theme.swift */,
 				DB9357F31DFB027800ADC5BE /* Test Controllers */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -160,9 +167,11 @@
 			isa = PBXGroup;
 			children = (
 				DB9357E41DFB026400ADC5BE /* TestCollectionVIew.swift */,
-				DB9357E51DFB026400ADC5BE /* TestViewController.swift */,
+				DB9357E51DFB026400ADC5BE /* CustomAnimationViewController.swift */,
 				DB9357E61DFB026400ADC5BE /* TestViewController2.swift */,
 				DB9357E81DFB026400ADC5BE /* TestViewController3.swift */,
+				321671371E0C75F8003E6A0B /* SortFunctionTestViewController.swift */,
+				321671391E0C760F003E6A0B /* SortFunctionTestViewController.storyboard */,
 			);
 			name = "Test Controllers";
 			sourceTree = "<group>";
@@ -265,6 +274,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3216713A1E0C760F003E6A0B /* SortFunctionTestViewController.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -377,9 +387,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB9357EE1DFB026400ADC5BE /* TestViewController.swift in Sources */,
+				DB9357EE1DFB026400ADC5BE /* CustomAnimationViewController.swift in Sources */,
+				DBA608D41E3267B9006207C9 /* Theme.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				DB9357EC1DFB026400ADC5BE /* TableViewController.swift in Sources */,
+				321671381E0C75F8003E6A0B /* SortFunctionTestViewController.swift in Sources */,
 				DB9357EF1DFB026400ADC5BE /* TestViewController2.swift in Sources */,
 				DB9357ED1DFB026400ADC5BE /* TestCollectionVIew.swift in Sources */,
 				DB9357F11DFB026400ADC5BE /* TestViewController3.swift in Sources */,

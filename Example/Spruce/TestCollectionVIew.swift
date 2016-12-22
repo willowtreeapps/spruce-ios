@@ -63,7 +63,9 @@ extension TestCollectionView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = .blue
+        cell.backgroundColor = UIColor.spruceGreen
+        cell.layer.cornerRadius = 2.0
+        cell.clipsToBounds = true
         cell.isHidden = true
         return cell
     }
@@ -71,15 +73,18 @@ extension TestCollectionView: UICollectionViewDataSource {
 
 extension TestCollectionView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let viewSize = (self.view.bounds.size.width / CGFloat(squaresPerRow))
+        let spacing: CGFloat = 3.0
+        let frameWidth = view.bounds.size.width - (spacing * CGFloat(squaresPerRow - 1))
+        let viewSize = (frameWidth / CGFloat(squaresPerRow))
+        
         return CGSize(width: viewSize, height: viewSize)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0.0
+        return 3.0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0.0
+        return 3.0
     }
 }

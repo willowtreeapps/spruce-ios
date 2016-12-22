@@ -9,12 +9,12 @@
 import UIKit
 
 open class SpruceViewController: UIViewController {
-    var animations: [SpruceStandardAnimation] = []
-    var duration: TimeInterval = 0.3
-    var animationType: SpruceAnimation
-    var sortFunction: SortFunction
+    open var animations: [SpruceStandardAnimation] = []
+    open var duration: TimeInterval = 0.3
+    open var animationType: SpruceAnimation
+    open var sortFunction: SortFunction
     
-    var animationView: UIView?
+    open var animationView: UIView?
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         animationType = StandardAnimation(duration: duration)

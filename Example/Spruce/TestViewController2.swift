@@ -11,7 +11,7 @@ import Spruce
 
 class TestViewController2: UIViewController {
 
-    var squaresPerRow: Int = 7
+    var squaresPerRow: Int = 11
 
     var containerView: UIView?
     
@@ -32,14 +32,20 @@ class TestViewController2: UIViewController {
 
 extension TestViewController2 {
     func setup() {
-        let viewSize = (self.view.bounds.size.width / CGFloat(squaresPerRow))
+        let spacing: CGFloat = 3.0
+        let frameWidth = view.bounds.size.width - (spacing * CGFloat(squaresPerRow + 1))
+        let viewSize = (frameWidth / CGFloat(squaresPerRow))
 
-        self.containerView = UIView(frame: CGRect(x: 0.0, y: 30.0, width: view.bounds.size.width, height: viewSize * CGFloat(squaresPerRow)))
+        self.containerView = UIView(frame: CGRect(x: spacing, y: 67.0,
+                                                  width: view.bounds.size.width - (spacing * 2.0),
+                                                  height: viewSize * CGFloat(squaresPerRow)))
         self.view.addSubview(self.containerView!)
         for row in 0..<squaresPerRow {
             for col in 0..<squaresPerRow {
-                let view = UIView(frame: CGRect(x: CGFloat(col) * viewSize, y: CGFloat(row) * viewSize, width: viewSize, height: viewSize))
-                view.backgroundColor = .blue
+                let view = UIView(frame: CGRect(x: CGFloat(col) * (viewSize + spacing), y: CGFloat(row) * (viewSize + spacing), width: viewSize, height: viewSize))
+                view.backgroundColor = UIColor.spruceGreen
+                view.layer.cornerRadius = 2.0
+                view.clipsToBounds = true
                 containerView?.addSubview(view)
             }
         }
