@@ -35,8 +35,8 @@ public extension UIView {
         }
     }
     
-    public func spruceSubViews(withSortFunction sortFunction: SortFunction, prepare: SprucePrepareHandler? = nil, animation: SpruceAnimation, completion: SpruceCompletionHandler? = nil, exclude: [UIView]? = nil, recursive: Bool = false) {
-        var timedViews = sortFunction.getTimeOffsets(view: self, recursive: recursive)
+    public func spruceSubViews(withSortFunction sortFunction: SortFunction, prepare: SprucePrepareHandler? = nil, animation: SpruceAnimation, completion: SpruceCompletionHandler? = nil, exclude: [UIView]? = nil, recursiveDepth: Int = 0) {
+        var timedViews = sortFunction.getTimeOffsets(view: self, recursiveDepth: recursiveDepth)
         timedViews = timedViews.sorted { (left, right) -> Bool in
             return left.timeOffset < right.timeOffset
         }

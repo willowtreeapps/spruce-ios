@@ -35,9 +35,9 @@ open class ContinuousSortFunction: RadialSortFunction {
         super.init(position: position, interObjectDelay: 0.0)
     }
 
-    open override func getTimeOffsets(view: UIView, recursive: Bool) -> [SpruceTimedView] {
+    open override func getTimeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView] {
         let comparisonPoint = getDistancePoint(bounds: view.bounds)
-        let subviews = view.getSubviews(recursive: recursive)
+        let subviews = view.getSubviews(recursiveDepth: recursiveDepth)
 
         let distancedViews = subviews.map {
             return (view: $0, distance: comparisonPoint.euclideanDistance(to: $0.center))

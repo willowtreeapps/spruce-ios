@@ -33,11 +33,16 @@ public struct SpruceTimedView {
 
 public protocol SortFunction {
     func getTimeOffsets(view: UIView) -> [SpruceTimedView]
-    func getTimeOffsets(view: UIView, recursive: Bool) -> [SpruceTimedView]
+    /*
+     * recursiveDepth -> An integer defining how deep the recursive subview search should go. A value
+     *                   of 0 is the same as calling the `subviews` on the actual view itself. Therefore
+     *                   a depth of 1 will be getting the subviews of each of the subviews, etc...
+     */
+    func getTimeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView]
 }
 
 public extension SortFunction {
     func getTimeOffsets(view: UIView) -> [SpruceTimedView] {
-        return getTimeOffsets(view: view, recursive: false)
+        return getTimeOffsets(view: view, recursiveDepth: 0)
     }
 }
