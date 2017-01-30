@@ -126,7 +126,7 @@ let sortFunction = LinearSortFunction(direction: .leftToRight, interObjectDelay:
 
 With the above `sortFunction` we can create a simple animation that looks like.
 
-![Linear Sort Function](https://github.com/willowtreeapps/spruce-ios/blob/documentation/sort-functions/imgs/sort-function-linear.gif "Linear Sort Function")
+![Linear Sort Function](https://github.com/willowtreeapps/spruce-ios/blob/develop/imgs/sort-function-linear.gif "Linear Sort Function")
 
 Values for `SpruceDirection` include: `.topToBottom`, `.bottomToTop`, `.leftToRight`, and `.rightToLeft`.
 
@@ -142,7 +142,7 @@ let sortFunction = CorneredSortFunction(corner: .topLeft, interObjectDelay: 0.2)
 
 With the above `sortFunction` the animation looks like. 
 
-![Cornered Sort Function](https://github.com/willowtreeapps/spruce-ios/blob/documentation/sort-functions/imgs/sort-function-cornered.gif "Cornered Sort Function")
+![Cornered Sort Function](https://github.com/willowtreeapps/spruce-ios/blob/develop/imgs/sort-function-cornered.gif "Cornered Sort Function")
 
 Values for `SpruceCorner` include: `.topLeft`, .`topRight`, `.bottomLeft`, `.bottomRight`.
 
@@ -168,7 +168,7 @@ let sortFunction = InlineSortFunction(interObjectDelay: 0.2)
 
 The above `sortFunction` would make an animation look like. 
 
-![Inline Sort Function](https://github.com/willowtreeapps/spruce-ios/blob/documentation/sort-functions/imgs/sort-function-inline.gif "Inline Sort Function")
+![Inline Sort Function](https://github.com/willowtreeapps/spruce-ios/blob/develop/imgs/sort-function-inline.gif "Inline Sort Function")
 
 #### Radial Sort Function
 To create an animation that emits in a circular pattern from a given point, you would want to use a `RadialSortFunction`. Like the other `BaseDistanceSortFunctions` you can use the `reversed` flag to sort the subviews in the initial way and then animate in the opposite direction. This way rather than the views animating outwards, they will start on the outside and then animate in. To create a `RadialSortFunction`:
@@ -182,7 +182,7 @@ let sortFunction = RadialSortFunction(position: .topMiddle, interObjectDelay: 0.
 
 The above `sortFunction` would make an animation look like: 
 
-![Radial Sort Function](https://github.com/willowtreeapps/spruce-ios/blob/documentation/sort-functions/imgs/sort-function-radial.gif "Radial Sort Function")
+![Radial Sort Function](https://github.com/willowtreeapps/spruce-ios/blob/develop/imgs/sort-function-radial.gif "Radial Sort Function")
 
 #### Continuous Sort Function
 To create an animation that radiates from a certain point, using distance from that point as the timing offset value, use the `ContinuousSortFunction`. Rather than specifying an exact value to wait inbetween views, this sort function will make the animation appear smoother because the timing offset is determined by how far the subview is from the point, rather than a discrete value. To create a `ContinuousSortFunction`:
@@ -196,5 +196,5 @@ let sortFunction = ContinuousSortFunction(position: .topMiddle, duration: 0.5)
 
 Rather than specifying the `interObjectDelay`, we are specifying how long we want the full animation to last. The above `sortFunction` would make an animation look like:
 
-![Continuous Sort Function](https://github.com/willowtreeapps/spruce-ios/blob/documentation/sort-functions/imgs/sort-function-continuous.gif "Continuous Sort Function")
+![Continuous Sort Function](https://github.com/willowtreeapps/spruce-ios/blob/develop/imgs/sort-function-continuous.gif "Continuous Sort Function")
 
