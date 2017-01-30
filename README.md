@@ -96,3 +96,105 @@ let sortFunction = LinearSortFunction(direction: .topToBottom, interObjectDelay:
 yourView.spruceUp(withAnimations: [.fadeIn, .slide(.up, .small), .expand(.small)], duration: 0.3, animationType: animation, sortFunction: sortFunction)
 ```
 
+# Basic Concepts
+
+## Sort Functions
+With all different types of animations, especially those dealing with subviews, we have to consider a way in which we want to animate them. Some views can have 0 subviews while others may have hundreds. To handle this, we have the notion of a `SortFunction`. What this will do is take each of the subviews in the animated view, and apply a mapping from the specific subview to the exact delay that it should wait before animating. Some of these will sort in a radial formation while others may actually sort randomly. This is one of the cool features of Spruce, is you can actually define your own `SortFunction` and then the animation will look completely different. Luckily, Spruce also comes jam packed with a ton of default `SortFunction` classes to make everything easier on you as the developer. Take a look at some of the default `SortFunction` classes we have and see if you can use them or branch off of them for your cool and custom animations!
+
+### The SortFunction Protocol
+A very simple protocol that requires classes to implement the following function
+
+```swift
+func getTimeOffsets(view: UIView, recursive: Bool) -> [SpruceTimedView]
+```
+
+What the above function needs to do is take in a `UIView` and generate a list of subviews. This list of subviews can be generated recursively or not depending on what the boolean has set. Once the list of subviews has been generated, you can define your own sort metric to determine in which order the `UIView`'s should animate. To do so, you need to create an array of `SpruceTimedView`'s. This special struct has two properties: (1) `view: UIView` and (2) `timeOffset: TimeInterval`. Your `SortFunction` can define the `timeOffset` however it likes, but the animation classes will use this to determine how long it should delay the start of that specific view from animating. The best way to learn, is to play around. So why not have some fun and make your own `SortFunction`!
+
+
+### Default SortFunction Classes
+This is the list of `SortFunction` classes that come default with Spruce so that you can have a beautiful animation up and running in seconds. 
+
+#### Linear Sort Function
+With a `LinearSortFunction` you are able to define a `SpruceDirection` and a `TimeInterval` for which is used to determine the inter object delay. To create a `LinearSortFunction`:
+
+```swift
+LinearSortFunction(direction: <SpruceDirection>, interObjectDelay: <TimeInterval>)
+
+// Example
+let sortFunction = LinearSortFunction(direction: .leftToRight, interObjectDelay: 0.2)
+```
+
+With the above `sortFunction` we can create a simple animation that looks like.
+
+![Linear Sort Function](https://github.com/willowtreeapps/spruce-ios/blob/documentation/sort-functions/imgs/sort-function-linear.gif "Linear Sort Function")
+
+Values for `SpruceDirection` include: `.topToBottom`, `.bottomToTop`, `.leftToRight`, and `.rightToLeft`.
+
+#### Cornered Sort Function
+With a `CorneredSortFunction` you can specify a `SpruceCorner` and a `TimeInterval` to determine the inter object delay. To create a `CorneredSortFunction`:
+
+```swift
+CorneredSortFunction(corner: <SpruceCorner>, interObjectDelay: TimeInterval)
+
+// Example
+let sortFunction = CorneredSortFunction(corner: .topLeft, interObjectDelay: 0.2)
+```
+
+With the above `sortFunction` the animation looks like. 
+
+![Cornered Sort Function](https://github.com/willowtreeapps/spruce-ios/blob/documentation/sort-functions/imgs/sort-function-cornered.gif "Cornered Sort Function")
+
+Values for `SpruceCorner` include: `.topLeft`, .`topRight`, `.bottomLeft`, `.bottomRight`.
+
+#### Default Sort Function
+A `DefaultSortFunction` gives each view an inter object delay based on where it is located in the `subviews` array. No sorting is done on the `SortFunction` side. To create a `DefaultSortFunction`:
+
+```swift
+DefaultSortFunction(interObjectDelay: <TimeInterval>)
+
+// Example
+let sortFunction = DefaultSortFunction(interObjectDelay: 0.2)
+```
+
+#### Inline Sort Function
+An `InlineSortFunction` animates the views as if they were lines in a paragraph. Meaning that it will finish animating a line before starting the next line. To create an `InlineSortFunction`:
+
+```swift
+InlineSortFunction(interObjectDelay: <TimeInterval>)
+
+// Example
+let sortFunction = InlineSortFunction(interObjectDelay: 0.2)
+```
+
+The above `sortFunction` would make an animation look like. 
+
+![Inline Sort Function](https://github.com/willowtreeapps/spruce-ios/blob/documentation/sort-functions/imgs/sort-function-inline.gif "Inline Sort Function")
+
+#### Radial Sort Function
+To create an animation that emits in a circular pattern from a given point, you would want to use a `RadialSortFunction`. Like the other `BaseDistanceSortFunctions` you can use the `reversed` flag to sort the subviews in the initial way and then animate in the opposite direction. This way rather than the views animating outwards, they will start on the outside and then animate in. To create a `RadialSortFunction`:
+
+```swift
+RadialSortFunction(position: <SprucePosition>, interObjectDelay: <TimeInterval>)
+
+// Example
+let sortFunction = RadialSortFunction(position: .topMiddle, interObjectDelay: 0.2)
+```
+
+The above `sortFunction` would make an animation look like: 
+
+![Radial Sort Function](https://github.com/willowtreeapps/spruce-ios/blob/documentation/sort-functions/imgs/sort-function-radial.gif "Radial Sort Function")
+
+#### Continuous Sort Function
+To create an animation that radiates from a certain point, using distance from that point as the timing offset value, use the `ContinuousSortFunction`. Rather than specifying an exact value to wait inbetween views, this sort function will make the animation appear smoother because the timing offset is determined by how far the subview is from the point, rather than a discrete value. To create a `ContinuousSortFunction`:
+
+```swift
+ContinuousSortFunction(position: <SprucePosition>, duration: <TimeInterval>)
+
+// Example
+let sortFunction = ContinuousSortFunction(position: .topMiddle, duration: 0.5)
+```
+
+Rather than specifying the `interObjectDelay`, we are specifying how long we want the full animation to last. The above `sortFunction` would make an animation look like:
+
+![Continuous Sort Function](https://github.com/willowtreeapps/spruce-ios/blob/documentation/sort-functions/imgs/sort-function-continuous.gif "Continuous Sort Function")
+
