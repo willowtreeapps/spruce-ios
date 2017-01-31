@@ -98,6 +98,24 @@ yourView.spruceUp(withAnimations: [.fadeIn, .slide(.up, .small), .expand(.small)
 
 # Basic Concepts
 
+## Animations
+Given a change function that specifies how the views are modified, you are able to specify any type of animation that you would like. Feel free to implement the `SpruceAnimation` protocol and create your own animation classes.
+
+### The SpruceAnimation Protocol
+The protocol has one function and a variable that need to be implemented in your class. First is the `changeFunction`. This is a `void` function that takes one parameter of a `UIView`. The change function will specify all of the modifications that are going to be made to that view and this is what you would use to animate the changes. The function `animate` is called when Spruce wants to go ahead and run the animations on the view. It's important that the `changeFunction` is set before this call but Spruce should handle all of that for you. The `completion` parameter in the function call should be called by your function once the animation is complete.
+
+```swift
+var changeFunction: SpruceChangeFunction? { get set }
+
+func animate(delay: TimeInterval, view: UIView, completion:SpruceCompletionHandler?)
+```
+
+### Standard Animation
+The `StandardAnimation` class uses the default `UIView.animate` function to apply the change function to the view. Use this class if you want to have a stock linear movement of the changes.
+
+### Spring Animation
+The `SpringAnimation` class uses the `UIView.animate(...usingSpringWithDamping)` function. With this class you can edit the `springDampening` and `initialVelocity` values so that your views will bounce on the screen.
+
 ## Sort Functions
 With all different types of animations, especially those dealing with subviews, we have to consider a way in which we want to animate them. Some views can have 0 subviews while others may have hundreds. To handle this, we have the notion of a `SortFunction`. What this will do is take each of the subviews in the animated view, and apply a mapping from the specific subview to the exact delay that it should wait before animating. Some of these will sort in a radial formation while others may actually sort randomly. This is one of the cool features of Spruce, is you can actually define your own `SortFunction` and then the animation will look completely different. Luckily, Spruce also comes jam packed with a ton of default `SortFunction` classes to make everything easier on you as the developer. Take a look at some of the default `SortFunction` classes we have and see if you can use them or branch off of them for your cool and custom animations!
 
