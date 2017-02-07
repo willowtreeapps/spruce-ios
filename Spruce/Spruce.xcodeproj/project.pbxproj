@@ -51,6 +51,7 @@
 		DB9358571E008E1A00ADC5BE /* SpruceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9358551E008E1A00ADC5BE /* SpruceButton.swift */; };
 		DB9358591E008E1E00ADC5BE /* Spruce.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9358581E008E1E00ADC5BE /* Spruce.swift */; };
 		DB93585A1E008E1E00ADC5BE /* Spruce.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9358581E008E1E00ADC5BE /* Spruce.swift */; };
+		DBB4CBE81E3A7D7300C3060B /* SpruceViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB4CBE71E3A7D7300C3060B /* SpruceViewTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		DB9358501E008E1200ADC5BE /* ViewOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewOperations.swift; sourceTree = "<group>"; };
 		DB9358551E008E1A00ADC5BE /* SpruceButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpruceButton.swift; sourceTree = "<group>"; };
 		DB9358581E008E1E00ADC5BE /* Spruce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spruce.swift; sourceTree = "<group>"; };
+		DBB4CBE71E3A7D7300C3060B /* SpruceViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpruceViewTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				DB93580C1E008D6400ADC5BE /* SpruceTests.swift */,
+				DBB4CBE71E3A7D7300C3060B /* SpruceViewTests.swift */,
 				DB93580E1E008D6400ADC5BE /* Info.plist */,
 			);
 			path = SpruceTests;
@@ -390,6 +393,7 @@
 				DB93585A1E008E1E00ADC5BE /* Spruce.swift in Sources */,
 				DB9358321E008DE900ADC5BE /* SpruceViewController.swift in Sources */,
 				DB9358271E008DE100ADC5BE /* SpringAnimation.swift in Sources */,
+				DBB4CBE81E3A7D7300C3060B /* SpruceViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

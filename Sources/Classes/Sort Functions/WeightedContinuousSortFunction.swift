@@ -43,9 +43,9 @@ open class ContinuousWeightedSortFunction: ContinuousSortFunction {
         super.init(position: position, duration: duration)
     }
 
-    open override func getTimeOffsets(view: UIView, recursive: Bool) -> [SpruceTimedView] {
+    open override func getTimeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView] {
         let comparisonPoint = getDistancePoint(bounds: view.bounds)
-        let subviews = view.getSubviews(recursive: recursive)
+        let subviews = view.getSubviews(recursiveDepth: recursiveDepth)
 
         let distancedViews = subviews.map {
             return (view: $0, horizontalDistance: comparisonPoint.horizontalDistance(to: $0.center), verticalDistance: comparisonPoint.verticalDistance(to: $0.center))

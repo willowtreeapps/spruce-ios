@@ -34,14 +34,14 @@ open class RandomSortFunction: SortFunction {
         self.interObjectDelay = interObjectDelay
     }
     
-    open func getTimeOffsets(view: UIView, recursive: Bool) -> [SpruceTimedView] {
-        var subViews = view.getSubviews(recursive: recursive)
-        subViews.shuffle()
+    open func getTimeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView] {
+        var subviews = view.getSubviews(recursiveDepth: recursiveDepth)
+        subviews.shuffle()
         
         var timedViews: [SpruceTimedView] = []
         var currentTimeOffset: TimeInterval = 0.0
-        for subView in subViews {
-            let timedView = SpruceTimedView(view: subView, timeOffset: currentTimeOffset)
+        for subview in subviews {
+            let timedView = SpruceTimedView(view: subview, timeOffset: currentTimeOffset)
             timedViews.append(timedView)
             currentTimeOffset += interObjectDelay
         }
