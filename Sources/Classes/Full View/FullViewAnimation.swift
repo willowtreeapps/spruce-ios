@@ -29,13 +29,14 @@ import UIKit
 public extension UIView {
     
     // Use this to prepare all of your views for animation. Including hiding them, fading them, translating them, etc...
-    public func sprucePrepare(withChangeFunction changeFunction: SpruceChangeFunction) {
-        for view in self.subviews {
+    public func sprucePrepare(withRecursiveDepth recursiveDepth: Int = 0, changeFunction: SpruceChangeFunction) {
+        let subviews = self.getSubviews(recursiveDepth: recursiveDepth)
+        for view in subviews {
             changeFunction(view)
         }
     }
     
-    public func spruceSubViews(withSortFunction sortFunction: SortFunction, prepare: SprucePrepareHandler? = nil, animation: SpruceAnimation, completion: SpruceCompletionHandler? = nil, exclude: [UIView]? = nil, recursiveDepth: Int = 0) {
+    public func spruceUp(withSortFunction sortFunction: SortFunction, prepare: SprucePrepareHandler? = nil, animation: SpruceAnimation, exclude: [UIView]? = nil, recursiveDepth: Int = 0, completion: SpruceCompletionHandler? = nil) {
         var timedViews = sortFunction.getTimeOffsets(view: self, recursiveDepth: recursiveDepth)
         timedViews = timedViews.sorted { (left, right) -> Bool in
             return left.timeOffset < right.timeOffset

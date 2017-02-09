@@ -46,7 +46,8 @@ open class RadialSortFunction: BaseDistancedSortFunction {
         super.init(interObjectDelay: interObjectDelay)
     }
     
-    open override func getDistancePoint(bounds: CGRect) -> CGPoint {
+    open override func getDistancePoint(view: UIView, subviews: [UIView] = []) -> CGPoint {
+        let bounds = view.bounds
         switch position {
         case .topLeft:
             return CGPoint.zero
