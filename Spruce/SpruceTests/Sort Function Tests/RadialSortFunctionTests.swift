@@ -42,6 +42,15 @@ class RadialSortFunctionTests: SortFunctionTests {
                         1.0,0.9,0.8,0.9,1.0,
                         1.3,1.2,1.1,1.2,1.3]
         compare(timedViews: timedViews, toExpected: expected)
+        
+        sortFunction.reversed = true
+        let timedViewsReversed = sortFunction.getTimeOffsets(view: animatableView)
+        let expectedReversed = [0.9,1.2,1.3,1.2,0.9,
+                                0.8,1.0,1.1,1.0,0.8,
+                                0.6,0.7,0.8,0.7,0.6,
+                                0.3,0.4,0.5,0.4,0.3,
+                                0.0,0.1,0.2,0.1,0.0]
+        compare(timedViews: timedViewsReversed, toExpected: expectedReversed)
     }
     
     func testTopRightRadialSortFunction() {
@@ -54,6 +63,15 @@ class RadialSortFunctionTests: SortFunctionTests {
                         1.2,1.0,0.7,0.6,0.5,
                         1.3,1.2,1.1,0.9,0.8]
         compare(timedViews: timedViews, toExpected: expected)
+        
+        sortFunction.reversed = true
+        let timedViewsReversed = sortFunction.getTimeOffsets(view: animatableView)
+        let expectedReversed = [0.5,0.8,1.0,1.2,1.3,
+                                0.4,0.7,0.9,1.1,1.2,
+                                0.2,0.6,0.8,0.9,1.0,
+                                0.1,0.3,0.6,0.7,0.8,
+                                0.0,0.1,0.2,0.4,0.5]
+        compare(timedViews: timedViewsReversed, toExpected: expectedReversed)
     }
     
     func testLeftRadialSortFunction() {
@@ -66,6 +84,15 @@ class RadialSortFunctionTests: SortFunctionTests {
                         0.1,0.3,0.6,0.9,1.2,
                         0.4,0.5,0.7,1.0,1.3]
         compare(timedViews: timedViews, toExpected: expected)
+        
+        sortFunction.reversed = true
+        let timedViewsReversed = sortFunction.getTimeOffsets(view: animatableView)
+        let expectedReversed = [0.9,0.8,0.6,0.3,0.0,
+                                1.2,1.0,0.7,0.4,0.1,
+                                1.3,1.1,0.8,0.5,0.2,
+                                1.2,1.0,0.7,0.4,0.1,
+                                0.9,0.8,0.6,0.3,0.0]
+        compare(timedViews: timedViewsReversed, toExpected: expectedReversed)
     }
     
     func testMiddleRadialSortFunction() {
@@ -78,6 +105,15 @@ class RadialSortFunctionTests: SortFunctionTests {
                         0.4,0.2,0.1,0.2,0.4,
                         0.5,0.4,0.3,0.4,0.5]
         compare(timedViews: timedViews, toExpected: expected)
+        
+        sortFunction.reversed = true
+        let timedViewsReversed = sortFunction.getTimeOffsets(view: animatableView)
+        let expectedReversed = [0.0,0.1,0.2,0.1,0.0,
+                                0.1,0.3,0.4,0.3,0.1,
+                                0.2,0.4,0.5,0.4,0.2,
+                                0.1,0.3,0.4,0.3,0.1,
+                                0.0,0.1,0.2,0.1,0.0]
+        compare(timedViews: timedViewsReversed, toExpected: expectedReversed)
     }
     
     func testRightRadialSortFunction() {
@@ -90,6 +126,15 @@ class RadialSortFunctionTests: SortFunctionTests {
                         1.2,0.9,0.6,0.3,0.1,
                         1.3,1.0,0.7,0.5,0.4]
         compare(timedViews: timedViews, toExpected: expected)
+        
+        sortFunction.reversed = true
+        let timedViewsReversed = sortFunction.getTimeOffsets(view: animatableView)
+        let expectedReversed = [0.0,0.3,0.6,0.8,0.9,
+                                0.1,0.4,0.7,1.0,1.2,
+                                0.2,0.5,0.8,1.1,1.3,
+                                0.1,0.4,0.7,1.0,1.2,
+                                0.0,0.3,0.6,0.8,0.9]
+        compare(timedViews: timedViewsReversed, toExpected: expectedReversed)
     }
     
     func testBottomLeftRadialSortFunction() {
@@ -102,6 +147,15 @@ class RadialSortFunctionTests: SortFunctionTests {
                         0.1,0.2,0.4,0.6,0.9,
                         0.0,0.1,0.3,0.5,0.8]
         compare(timedViews: timedViews, toExpected: expected)
+        
+        sortFunction.reversed = true
+        let timedViewsReversed = sortFunction.getTimeOffsets(view: animatableView)
+        let expectedReversed = [0.5,0.4,0.2,0.1,0.0,
+                                0.8,0.7,0.6,0.3,0.1,
+                                1.0,0.9,0.8,0.6,0.2,
+                                1.2,1.1,0.9,0.7,0.4,
+                                1.3,1.2,1.0,0.8,0.5]
+        compare(timedViews: timedViewsReversed, toExpected: expectedReversed)
     }
     
     func testBottomMiddleRadialSortFunction() {
@@ -114,6 +168,15 @@ class RadialSortFunctionTests: SortFunctionTests {
                         0.5,0.3,0.2,0.3,0.5,
                         0.4,0.1,0.0,0.1,0.4]
         compare(timedViews: timedViews, toExpected: expected)
+        
+        sortFunction.reversed = true
+        let timedViewsReversed = sortFunction.getTimeOffsets(view: animatableView)
+        let expectedReversed = [0.0,0.1,0.2,0.1,0.0,
+                                0.3,0.4,0.5,0.4,0.3,
+                                0.6,0.7,0.8,0.7,0.6,
+                                0.8,1.0,1.1,1.0,0.8,
+                                0.9,1.2,1.3,1.2,0.9]
+        compare(timedViews: timedViewsReversed, toExpected: expectedReversed)
     }
     
     func testBottomRightRadialSortFunction() {
@@ -126,5 +189,14 @@ class RadialSortFunctionTests: SortFunctionTests {
                         0.9,0.6,0.4,0.2,0.1,
                         0.8,0.5,0.3,0.1,0.0]
         compare(timedViews: timedViews, toExpected: expected)
+        
+        sortFunction.reversed = true
+        let timedViewsReversed = sortFunction.getTimeOffsets(view: animatableView)
+        let expectedReversed = [0.0,0.1,0.2,0.4,0.5,
+                                0.1,0.3,0.6,0.7,0.8,
+                                0.2,0.6,0.8,0.9,1.0,
+                                0.4,0.7,0.9,1.1,1.2,
+                                0.5,0.8,1.0,1.2,1.3]
+        compare(timedViews: timedViewsReversed, toExpected: expectedReversed)
     }
 }
