@@ -28,7 +28,7 @@ import UIKit
 
 public struct SpruceTimedView {
     let view: UIView
-    let timeOffset: TimeInterval
+    var timeOffset: TimeInterval
 }
 
 public protocol SortFunction {

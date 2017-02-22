@@ -24,7 +24,7 @@
 //  THE SOFTWARE.
 //
 
-import Foundation
+import UIKit
 
 
 open class InlineSortFunction: CorneredSortFunction {
@@ -33,7 +33,7 @@ open class InlineSortFunction: CorneredSortFunction {
         let comparisonPoint = getDistancePoint(view: view)
         let subviews = view.getSubviews(recursiveDepth: recursiveDepth)
 
-        let distancedViews = subviews.map {
+        var distancedViews = subviews.map {
             return (view: $0, horizontalDistance: comparisonPoint.horizontalDistance(to: $0.center), verticalDistance: comparisonPoint.verticalDistance(to: $0.center))
             }.sorted { (left, right) -> Bool in
                 if left.verticalDistance < right.verticalDistance {
@@ -43,14 +43,17 @@ open class InlineSortFunction: CorneredSortFunction {
                     return true
                 }
                 return false
+            }
+        if self.reversed {
+            distancedViews.reverse()
         }
 
         var currentTimeOffset = 0.0
         var timedViews: [SpruceTimedView] = []
         for view in distancedViews {
-            currentTimeOffset += interObjectDelay
             let timedView = SpruceTimedView(view: view.view, timeOffset: currentTimeOffset)
             timedViews.append(timedView)
+            currentTimeOffset += interObjectDelay
         }
 
         return timedViews

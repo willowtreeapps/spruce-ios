@@ -24,12 +24,28 @@
 //  THE SOFTWARE.
 //
 
-import Foundation
+import UIKit
 
 public enum SpruceWeight {
     case light
     case medium
     case heavy
+    case custom(Double)
+    
+    var coefficient: Double {
+        get {
+            switch self {
+            case .light:
+                return 0.5
+            case .medium:
+                return 1.0
+            case .heavy:
+                return 2.0
+            case .custom(let value):
+                return max(0.0, value)
+            }
+        }
+    }
 }
 
 open class ContinuousWeightedSortFunction: ContinuousSortFunction {
@@ -44,11 +60,11 @@ open class ContinuousWeightedSortFunction: ContinuousSortFunction {
     }
 
     open override func getTimeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView] {
-        let comparisonPoint = getDistancePoint(view: view)
         let subviews = view.getSubviews(recursiveDepth: recursiveDepth)
+        let comparisonPoint = getDistancePoint(view: view, subviews: subviews)
 
         let distancedViews = subviews.map {
-            return (view: $0, horizontalDistance: comparisonPoint.horizontalDistance(to: $0.center), verticalDistance: comparisonPoint.verticalDistance(to: $0.center))
+            return (view: $0, horizontalDistance: comparisonPoint.horizontalDistance(to: $0.center) * horizontalWeight.coefficient, verticalDistance: comparisonPoint.verticalDistance(to: $0.center) * verticalWeight.coefficient)
         }
 
         guard let maxHorizontalDistance = distancedViews.max(by: { $0.horizontalDistance < $1.horizontalDistance })?.horizontalDistance, let maxVerticalDistance = distancedViews.max(by: { $0.verticalDistance < $1.verticalDistance })?.verticalDistance, maxHorizontalDistance > 0.0, maxVerticalDistance > 0.0 else {
@@ -56,25 +72,27 @@ open class ContinuousWeightedSortFunction: ContinuousSortFunction {
         }
 
         var timedViews: [SpruceTimedView] = []
+        var maxTimeOffset: TimeInterval = 0.0
         for view in distancedViews {
             let normalizedHorizontalDistance = view.horizontalDistance / maxHorizontalDistance
             let normalizedVerticalDistance = view.verticalDistance / maxVerticalDistance
-            let offset = duration * (normalizedHorizontalDistance * getWeightCoefficient(for: horizontalWeight) + normalizedVerticalDistance * getWeightCoefficient(for: verticalWeight))
+            let offset = duration * (normalizedHorizontalDistance * horizontalWeight.coefficient + normalizedVerticalDistance * verticalWeight.coefficient)
+            if offset > maxTimeOffset {
+                maxTimeOffset = offset
+            }
             let timedView = SpruceTimedView(view: view.view, timeOffset: offset)
             timedViews.append(timedView)
         }
         
-        return timedViews
-    }
-
-    private func getWeightCoefficient(for weight: SpruceWeight) -> Double {
-        switch weight {
-        case .light:
-            return 0.5
-        case .medium:
-            return 1.0
-        case .heavy:
-            return 2.0
+        for index in 0..<timedViews.count {
+            let timeOffset = timedViews[index].timeOffset
+            let normalizedTimeOffset = (timeOffset / maxTimeOffset) * duration
+            timedViews[index].timeOffset = normalizedTimeOffset
+            if reversed {
+                timedViews[index].timeOffset = duration - normalizedTimeOffset
+            }
         }
+        
+        return timedViews
     }
 }

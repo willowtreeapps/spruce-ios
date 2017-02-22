@@ -8,11 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3208F65B1E0B144600847FF0 /* ContinuousSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3208F65A1E0B144600847FF0 /* ContinuousSortFunction.swift */; };
-		3208F65D1E0B145800847FF0 /* WeightedContinuousSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3208F65C1E0B145800847FF0 /* WeightedContinuousSortFunction.swift */; };
+		3208F65D1E0B145800847FF0 /* ContinuousWeightedSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3208F65C1E0B145800847FF0 /* ContinuousWeightedSortFunction.swift */; };
 		32DC68471E09BA5B00DF8286 /* InlineSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DC68461E09BA5B00DF8286 /* InlineSortFunction.swift */; };
 		DB20E5771E4BADA9004C5A96 /* RadialSortFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB20E5761E4BADA9004C5A96 /* RadialSortFunctionTests.swift */; };
 		DB9358081E008D6400ADC5BE /* Spruce.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB9357FE1E008D6300ADC5BE /* Spruce.framework */; };
-		DB93580D1E008D6400ADC5BE /* SpruceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB93580C1E008D6400ADC5BE /* SpruceTests.swift */; };
 		DB93580F1E008D6400ADC5BE /* Spruce.h in Headers */ = {isa = PBXBuildFile; fileRef = DB9358011E008D6300ADC5BE /* Spruce.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB9358221E008DE000ADC5BE /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB93581E1E008DE000ADC5BE /* Animation.swift */; };
 		DB9358231E008DE000ADC5BE /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB93581E1E008DE000ADC5BE /* Animation.swift */; };
@@ -53,6 +52,14 @@
 		DB9358591E008E1E00ADC5BE /* Spruce.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9358581E008E1E00ADC5BE /* Spruce.swift */; };
 		DB93585A1E008E1E00ADC5BE /* Spruce.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9358581E008E1E00ADC5BE /* Spruce.swift */; };
 		DBB4CBE81E3A7D7300C3060B /* SpruceViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB4CBE71E3A7D7300C3060B /* SpruceViewTests.swift */; };
+		DBFA708F1E5CBC44000CF1DB /* DefaultSortFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFA708E1E5CBC44000CF1DB /* DefaultSortFunctionTests.swift */; };
+		DBFA70911E5CBF10000CF1DB /* LinearSortFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFA70901E5CBF10000CF1DB /* LinearSortFunctionTests.swift */; };
+		DBFA70931E5CC052000CF1DB /* InlineSortFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFA70921E5CC052000CF1DB /* InlineSortFunctionTests.swift */; };
+		DBFA70941E5CC0BA000CF1DB /* InlineSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DC68461E09BA5B00DF8286 /* InlineSortFunction.swift */; };
+		DBFA70951E5CC0BE000CF1DB /* ContinuousSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3208F65A1E0B144600847FF0 /* ContinuousSortFunction.swift */; };
+		DBFA70961E5CC0C1000CF1DB /* ContinuousWeightedSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3208F65C1E0B145800847FF0 /* ContinuousWeightedSortFunction.swift */; };
+		DBFA70981E5DDE4A000CF1DB /* ContinuousSortFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFA70971E5DDE4A000CF1DB /* ContinuousSortFunctionTests.swift */; };
+		DBFA709A1E5DEBE5000CF1DB /* ContinuousWeightedSortFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFA70991E5DEBE5000CF1DB /* ContinuousWeightedSortFunctionTests.swift */; };
 		DBFAC1311E4A5DEE00F534D5 /* SortFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFAC1301E4A5DEE00F534D5 /* SortFunctionTests.swift */; };
 		DBFAC1331E4A606D00F534D5 /* NoDelaySortFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFAC1321E4A606D00F534D5 /* NoDelaySortFunctionTests.swift */; };
 		DBFAC1351E4A625E00F534D5 /* BaseDistanceSortFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFAC1341E4A625E00F534D5 /* BaseDistanceSortFunctionTests.swift */; };
@@ -71,20 +78,19 @@
 
 /* Begin PBXFileReference section */
 		3208F65A1E0B144600847FF0 /* ContinuousSortFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContinuousSortFunction.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		3208F65C1E0B145800847FF0 /* WeightedContinuousSortFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightedContinuousSortFunction.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		3208F65C1E0B145800847FF0 /* ContinuousWeightedSortFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContinuousWeightedSortFunction.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		32DC68461E09BA5B00DF8286 /* InlineSortFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InlineSortFunction.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DB20E5761E4BADA9004C5A96 /* RadialSortFunctionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadialSortFunctionTests.swift; sourceTree = "<group>"; };
 		DB9357FE1E008D6300ADC5BE /* Spruce.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Spruce.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB9358011E008D6300ADC5BE /* Spruce.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Spruce.h; sourceTree = "<group>"; };
 		DB9358021E008D6300ADC5BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB9358071E008D6400ADC5BE /* SpruceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpruceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB93580C1E008D6400ADC5BE /* SpruceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpruceTests.swift; sourceTree = "<group>"; };
 		DB93580E1E008D6400ADC5BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB93581E1E008DE000ADC5BE /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		DB93581F1E008DE000ADC5BE /* DefaultAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultAnimations.swift; sourceTree = "<group>"; };
 		DB9358201E008DE000ADC5BE /* SpringAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringAnimation.swift; sourceTree = "<group>"; };
 		DB9358211E008DE000ADC5BE /* StandardAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardAnimation.swift; sourceTree = "<group>"; };
-		DB93582A1E008DE900ADC5BE /* DefaultFullViewAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultFullViewAnimations.swift; sourceTree = "<group>"; };
+		DB93582A1E008DE900ADC5BE /* DefaultFullViewAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultFullViewAnimations.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DB93582B1E008DE900ADC5BE /* FullViewAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullViewAnimation.swift; sourceTree = "<group>"; };
 		DB93582C1E008DE900ADC5BE /* SpruceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpruceViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DB9358331E008DF200ADC5BE /* BaseDistancedSortFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDistancedSortFunction.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -100,6 +106,11 @@
 		DB9358551E008E1A00ADC5BE /* SpruceButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpruceButton.swift; sourceTree = "<group>"; };
 		DB9358581E008E1E00ADC5BE /* Spruce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spruce.swift; sourceTree = "<group>"; };
 		DBB4CBE71E3A7D7300C3060B /* SpruceViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpruceViewTests.swift; sourceTree = "<group>"; };
+		DBFA708E1E5CBC44000CF1DB /* DefaultSortFunctionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultSortFunctionTests.swift; sourceTree = "<group>"; };
+		DBFA70901E5CBF10000CF1DB /* LinearSortFunctionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinearSortFunctionTests.swift; sourceTree = "<group>"; };
+		DBFA70921E5CC052000CF1DB /* InlineSortFunctionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InlineSortFunctionTests.swift; sourceTree = "<group>"; };
+		DBFA70971E5DDE4A000CF1DB /* ContinuousSortFunctionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContinuousSortFunctionTests.swift; sourceTree = "<group>"; };
+		DBFA70991E5DEBE5000CF1DB /* ContinuousWeightedSortFunctionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContinuousWeightedSortFunctionTests.swift; sourceTree = "<group>"; };
 		DBFAC1301E4A5DEE00F534D5 /* SortFunctionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortFunctionTests.swift; sourceTree = "<group>"; };
 		DBFAC1321E4A606D00F534D5 /* NoDelaySortFunctionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoDelaySortFunctionTests.swift; sourceTree = "<group>"; };
 		DBFAC1341E4A625E00F534D5 /* BaseDistanceSortFunctionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDistanceSortFunctionTests.swift; sourceTree = "<group>"; };
@@ -156,7 +167,6 @@
 		DB93580B1E008D6400ADC5BE /* SpruceTests */ = {
 			isa = PBXGroup;
 			children = (
-				DB93580C1E008D6400ADC5BE /* SpruceTests.swift */,
 				DBB4CBE71E3A7D7300C3060B /* SpruceViewTests.swift */,
 				DBFAC12F1E4A5DD200F534D5 /* Sort Function Tests */,
 				DB93580E1E008D6400ADC5BE /* Info.plist */,
@@ -210,7 +220,7 @@
 				DB93583B1E008DF200ADC5BE /* SortFunction.swift */,
 				32DC68461E09BA5B00DF8286 /* InlineSortFunction.swift */,
 				3208F65A1E0B144600847FF0 /* ContinuousSortFunction.swift */,
-				3208F65C1E0B145800847FF0 /* WeightedContinuousSortFunction.swift */,
+				3208F65C1E0B145800847FF0 /* ContinuousWeightedSortFunction.swift */,
 			);
 			path = "Sort Functions";
 			sourceTree = "<group>";
@@ -250,6 +260,11 @@
 				DBFAC1341E4A625E00F534D5 /* BaseDistanceSortFunctionTests.swift */,
 				DBFAC1361E4A67E600F534D5 /* CorneredSortFunctionTests.swift */,
 				DB20E5761E4BADA9004C5A96 /* RadialSortFunctionTests.swift */,
+				DBFA708E1E5CBC44000CF1DB /* DefaultSortFunctionTests.swift */,
+				DBFA70901E5CBF10000CF1DB /* LinearSortFunctionTests.swift */,
+				DBFA70921E5CC052000CF1DB /* InlineSortFunctionTests.swift */,
+				DBFA70971E5DDE4A000CF1DB /* ContinuousSortFunctionTests.swift */,
+				DBFA70991E5DEBE5000CF1DB /* ContinuousWeightedSortFunctionTests.swift */,
 			);
 			path = "Sort Function Tests";
 			sourceTree = "<group>";
@@ -382,7 +397,7 @@
 				32DC68471E09BA5B00DF8286 /* InlineSortFunction.swift in Sources */,
 				DB9358561E008E1A00ADC5BE /* SpruceButton.swift in Sources */,
 				DB9358311E008DE900ADC5BE /* SpruceViewController.swift in Sources */,
-				3208F65D1E0B145800847FF0 /* WeightedContinuousSortFunction.swift in Sources */,
+				3208F65D1E0B145800847FF0 /* ContinuousWeightedSortFunction.swift in Sources */,
 				DB9358281E008DE100ADC5BE /* StandardAnimation.swift in Sources */,
 				DB93582F1E008DE900ADC5BE /* FullViewAnimation.swift in Sources */,
 				DB9358511E008E1200ADC5BE /* PointOperations.swift in Sources */,
@@ -404,21 +419,28 @@
 				DBFAC1351E4A625E00F534D5 /* BaseDistanceSortFunctionTests.swift in Sources */,
 				DB20E5771E4BADA9004C5A96 /* RadialSortFunctionTests.swift in Sources */,
 				DB93583F1E008DF200ADC5BE /* CorneredSortFunction.swift in Sources */,
+				DBFA70951E5CC0BE000CF1DB /* ContinuousSortFunction.swift in Sources */,
 				DB9358291E008DE100ADC5BE /* StandardAnimation.swift in Sources */,
 				DBFAC1371E4A67E600F534D5 /* CorneredSortFunctionTests.swift in Sources */,
 				DB93584B1E008DF200ADC5BE /* RandomSortFunction.swift in Sources */,
 				DB9358231E008DE000ADC5BE /* Animation.swift in Sources */,
+				DBFA709A1E5DEBE5000CF1DB /* ContinuousWeightedSortFunctionTests.swift in Sources */,
+				DBFA70961E5CC0C1000CF1DB /* ContinuousWeightedSortFunction.swift in Sources */,
 				DB9358521E008E1200ADC5BE /* PointOperations.swift in Sources */,
-				DB93580D1E008D6400ADC5BE /* SpruceTests.swift in Sources */,
+				DBFA708F1E5CBC44000CF1DB /* DefaultSortFunctionTests.swift in Sources */,
+				DBFA70911E5CBF10000CF1DB /* LinearSortFunctionTests.swift in Sources */,
 				DBFAC1331E4A606D00F534D5 /* NoDelaySortFunctionTests.swift in Sources */,
 				DB9358491E008DF200ADC5BE /* RadialSortFunction.swift in Sources */,
 				DB93583D1E008DF200ADC5BE /* BaseDistancedSortFunction.swift in Sources */,
 				DB93584D1E008DF200ADC5BE /* SortFunction.swift in Sources */,
+				DBFA70941E5CC0BA000CF1DB /* InlineSortFunction.swift in Sources */,
 				DB9358301E008DE900ADC5BE /* FullViewAnimation.swift in Sources */,
 				DB93582E1E008DE900ADC5BE /* DefaultFullViewAnimations.swift in Sources */,
 				DB9358571E008E1A00ADC5BE /* SpruceButton.swift in Sources */,
 				DB93585A1E008E1E00ADC5BE /* Spruce.swift in Sources */,
 				DB9358321E008DE900ADC5BE /* SpruceViewController.swift in Sources */,
+				DBFA70931E5CC052000CF1DB /* InlineSortFunctionTests.swift in Sources */,
+				DBFA70981E5DDE4A000CF1DB /* ContinuousSortFunctionTests.swift in Sources */,
 				DB9358271E008DE100ADC5BE /* SpringAnimation.swift in Sources */,
 				DBB4CBE81E3A7D7300C3060B /* SpruceViewTests.swift in Sources */,
 				DBFAC1311E4A5DEE00F534D5 /* SortFunctionTests.swift in Sources */,

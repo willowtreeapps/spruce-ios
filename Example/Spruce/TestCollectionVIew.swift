@@ -62,7 +62,7 @@ class TestCollectionView: UIViewController {
         //sortFunction.reversed = true
         //let sortFunction = CorneredSortFunction(corner: .topLeft, interObjectDelay: 0.05)
         //let sortFunction = LinearSortFunction(direction: .topToBottom, interObjectDelay: 0.05)
-        collectionView.spruceSubViews(withSortFunction: sortFunction, animation: animation)
+        collectionView.spruceUp(withSortFunction: sortFunction, animation: animation)
     }
     
     func callAnimation2() {
