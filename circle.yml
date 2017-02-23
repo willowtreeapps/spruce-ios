@@ -1,0 +1,9 @@
+machine:
+  xcode:
+    version: "8.1"
+general:
+  artifacts:
+    - artifacts
+test:
+  override:
+	 - bundle exec fastlane run_tests
