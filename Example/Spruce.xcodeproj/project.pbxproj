@@ -15,12 +15,9 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		8D0D1A6A199FC9630A10DED3 /* Pods_Spruce_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDBE5745B9DE9B1EAB8C910C /* Pods_Spruce_Example.framework */; };
-		DB9357EC1DFB026400ADC5BE /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9357E31DFB026400ADC5BE /* TableViewController.swift */; };
-		DB9357ED1DFB026400ADC5BE /* TestCollectionVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9357E41DFB026400ADC5BE /* TestCollectionVIew.swift */; };
 		DB9357EE1DFB026400ADC5BE /* CustomAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9357E51DFB026400ADC5BE /* CustomAnimationViewController.swift */; };
-		DB9357EF1DFB026400ADC5BE /* TestViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9357E61DFB026400ADC5BE /* TestViewController2.swift */; };
-		DB9357F11DFB026400ADC5BE /* TestViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9357E81DFB026400ADC5BE /* TestViewController3.swift */; };
 		DBA608D41E3267B9006207C9 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA608D31E3267B9006207C9 /* Theme.swift */; };
+		DBFA709C1E5F39AE000CF1DB /* ExampleCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFA709B1E5F39AE000CF1DB /* ExampleCodeGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,12 +48,9 @@
 		6FCD75E68B76D05C1368631A /* Spruce.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Spruce.podspec; path = ../Spruce.podspec; sourceTree = "<group>"; };
 		763FD0B1F1E8374A748D0636 /* Pods-Spruce_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spruce_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Spruce_Tests/Pods-Spruce_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		810EF25AEB3B66AF72D6DC08 /* Pods-Spruce_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spruce_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Spruce_Example/Pods-Spruce_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		DB9357E31DFB026400ADC5BE /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = TableViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		DB9357E41DFB026400ADC5BE /* TestCollectionVIew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = TestCollectionVIew.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DB9357E51DFB026400ADC5BE /* CustomAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CustomAnimationViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		DB9357E61DFB026400ADC5BE /* TestViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = TestViewController2.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		DB9357E81DFB026400ADC5BE /* TestViewController3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = TestViewController3.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DBA608D31E3267B9006207C9 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		DBFA709B1E5F39AE000CF1DB /* ExampleCodeGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleCodeGenerator.swift; sourceTree = "<group>"; };
 		F4D59F4B84B3E292C02F5FD8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		FDBE5745B9DE9B1EAB8C910C /* Pods_Spruce_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spruce_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -117,7 +111,6 @@
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				DB9357E31DFB026400ADC5BE /* TableViewController.swift */,
 				DBA608D31E3267B9006207C9 /* Theme.swift */,
 				DB9357F31DFB027800ADC5BE /* Test Controllers */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
@@ -166,10 +159,8 @@
 		DB9357F31DFB027800ADC5BE /* Test Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				DB9357E41DFB026400ADC5BE /* TestCollectionVIew.swift */,
 				DB9357E51DFB026400ADC5BE /* CustomAnimationViewController.swift */,
-				DB9357E61DFB026400ADC5BE /* TestViewController2.swift */,
-				DB9357E81DFB026400ADC5BE /* TestViewController3.swift */,
+				DBFA709B1E5F39AE000CF1DB /* ExampleCodeGenerator.swift */,
 				321671371E0C75F8003E6A0B /* SortFunctionTestViewController.swift */,
 				321671391E0C760F003E6A0B /* SortFunctionTestViewController.storyboard */,
 			);
@@ -387,14 +378,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBFA709C1E5F39AE000CF1DB /* ExampleCodeGenerator.swift in Sources */,
 				DB9357EE1DFB026400ADC5BE /* CustomAnimationViewController.swift in Sources */,
 				DBA608D41E3267B9006207C9 /* Theme.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
-				DB9357EC1DFB026400ADC5BE /* TableViewController.swift in Sources */,
 				321671381E0C75F8003E6A0B /* SortFunctionTestViewController.swift in Sources */,
-				DB9357EF1DFB026400ADC5BE /* TestViewController2.swift in Sources */,
-				DB9357ED1DFB026400ADC5BE /* TestCollectionVIew.swift in Sources */,
-				DB9357F11DFB026400ADC5BE /* TestViewController3.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,7 +509,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Spruce/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
@@ -536,7 +524,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Spruce/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
