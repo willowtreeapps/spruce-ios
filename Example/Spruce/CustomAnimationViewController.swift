@@ -61,7 +61,7 @@ extension CustomAnimationViewController {
         let frameWidth = view.bounds.size.width - (spacing * CGFloat(squaresPerRow - 1))
         let viewSize = (frameWidth / CGFloat(squaresPerRow))
 
-        self.containerView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: view.bounds.size.width, height: viewSize * CGFloat(squaresPerRow)))
+        self.containerView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: view.bounds.size.width, height: view.bounds.size.height))
         self.view.addSubview(self.containerView!)
         for row in 0..<squaresPerRow {
             for col in 0..<squaresPerRow {

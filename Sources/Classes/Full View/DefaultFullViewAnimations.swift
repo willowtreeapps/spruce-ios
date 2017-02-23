@@ -226,9 +226,9 @@ public extension UIView {
         let subviews = self.getSubviews(recursiveDepth: recursiveDepth)
         UIView.performWithoutAnimation {
             for subView in subviews {
-                clearFunction(subView)
+                clearFunction(subView.view)
                 if isFading {
-                    subView.isHidden = false
+                    subView.view.isHidden = false
                 }
             }
         }
@@ -238,7 +238,7 @@ public extension UIView {
         let subviews = self.getSubviews(recursiveDepth: recursiveDepth)
         UIView.performWithoutAnimation {
             for subView in subviews {
-                subView.isHidden = true
+                subView.view.isHidden = true
             }
         }
     }

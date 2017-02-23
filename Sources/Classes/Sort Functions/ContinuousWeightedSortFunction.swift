@@ -64,7 +64,7 @@ open class ContinuousWeightedSortFunction: ContinuousSortFunction {
         let comparisonPoint = getDistancePoint(view: view, subviews: subviews)
 
         let distancedViews = subviews.map {
-            return (view: $0, horizontalDistance: comparisonPoint.horizontalDistance(to: $0.center) * horizontalWeight.coefficient, verticalDistance: comparisonPoint.verticalDistance(to: $0.center) * verticalWeight.coefficient)
+            return (view: $0, horizontalDistance: comparisonPoint.horizontalDistance(to: $0.referencePoint) * horizontalWeight.coefficient, verticalDistance: comparisonPoint.verticalDistance(to: $0.referencePoint) * verticalWeight.coefficient)
         }
 
         guard let maxHorizontalDistance = distancedViews.max(by: { $0.horizontalDistance < $1.horizontalDistance })?.horizontalDistance, let maxVerticalDistance = distancedViews.max(by: { $0.verticalDistance < $1.verticalDistance })?.verticalDistance, maxHorizontalDistance > 0.0, maxVerticalDistance > 0.0 else {
@@ -80,7 +80,7 @@ open class ContinuousWeightedSortFunction: ContinuousSortFunction {
             if offset > maxTimeOffset {
                 maxTimeOffset = offset
             }
-            let timedView = SpruceTimedView(view: view.view, timeOffset: offset)
+            let timedView = SpruceTimedView(spruceView: view.view, timeOffset: offset)
             timedViews.append(timedView)
         }
         

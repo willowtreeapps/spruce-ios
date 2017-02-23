@@ -40,7 +40,7 @@ open class DefaultSortFunction: SortFunction {
         var currentTimeOffset: TimeInterval = 0.0
         let subviews = view.getSubviews(recursiveDepth: recursiveDepth)
         for subView in subviews {
-            let timedView = SpruceTimedView(view: subView, timeOffset: currentTimeOffset)
+            let timedView = SpruceTimedView(spruceView: subView, timeOffset: currentTimeOffset)
             timedViews.append(timedView)
             currentTimeOffset += interObjectDelay
         }

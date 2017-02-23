@@ -40,7 +40,7 @@ open class ContinuousSortFunction: RadialSortFunction {
         let comparisonPoint = getDistancePoint(view: view, subviews: subviews)
 
         let distancedViews = subviews.map {
-            return (view: $0, distance: comparisonPoint.euclideanDistance(to: $0.center))
+            return (view: $0, distance: comparisonPoint.euclideanDistance(to: $0.referencePoint))
         }
 
         guard let maxDistance: Double = distancedViews.max(by: { $0.distance < $1.distance })?.distance , maxDistance > 0 else {
@@ -57,7 +57,7 @@ open class ContinuousSortFunction: RadialSortFunction {
                 normalizedDistance = view.distance / maxDistance
             }
             let offset = duration * normalizedDistance
-            let timedView = SpruceTimedView(view: view.view, timeOffset: offset)
+            let timedView = SpruceTimedView(spruceView: view.view, timeOffset: offset)
             timedViews.append(timedView)
         }
 
