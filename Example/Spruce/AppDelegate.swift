@@ -36,6 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         let sortFunctionController = UIStoryboard(name: "SortFunctionTestViewController", bundle: Bundle.main).instantiateViewController(withIdentifier: "SortFunctionTestViewController")
         let navController = UINavigationController(rootViewController: sortFunctionController)
+        navController.navigationBar.tintColor = UIColor.spruceGreen
         
         window?.rootViewController = navController
         window?.makeKeyAndVisible()

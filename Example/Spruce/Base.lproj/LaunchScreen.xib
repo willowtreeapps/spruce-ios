@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Pl-9k-Z1W">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Spruce_logomark" translatesAutoresizingMaskIntoConstraints="NO" id="4Pl-9k-Z1W">
                     <rect key="frame" x="90" y="90" width="300" height="300"/>
                     <constraints>
                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="nQL-0Y-TOU"/>
@@ -24,7 +24,7 @@
                     </constraints>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.98039215686274506" green="0.97647058823529409" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="4Pl-9k-Z1W" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="T5Z-d1-ZaN"/>
                 <constraint firstItem="4Pl-9k-Z1W" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="aRZ-fM-OgB"/>
@@ -36,4 +36,7 @@
             <point key="canvasLocation" x="548" y="455"/>
         </view>
     </objects>
+    <resources>
+        <image name="Spruce_logomark" width="512" height="512"/>
+    </resources>
 </document>

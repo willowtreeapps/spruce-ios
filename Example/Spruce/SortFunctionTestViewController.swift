@@ -81,6 +81,7 @@ class SortFunctionTestViewController: UIViewController {
     @IBOutlet weak var cornerPicker: UISegmentedControl!
     @IBOutlet weak var reverseSwitch: UISwitch!
     @IBOutlet weak var functionTextField: UITextField!
+    @IBOutlet weak var codeLabel: UILabel!
 
     // Preview
     @IBOutlet weak var sortView: UIView!
@@ -118,6 +119,9 @@ class SortFunctionTestViewController: UIViewController {
         for view in controlViews {
             view.isHidden = !activeControlViews.contains(view)
         }
+        let codeForFunction = ExampleCodeGenerator.generateCode(forSettings: settings)
+        print("\n\(codeForFunction)\n")
+        codeLabel.text = codeForFunction
     }
 
     func sortFunctionForCurrentSettings() -> SortFunction {

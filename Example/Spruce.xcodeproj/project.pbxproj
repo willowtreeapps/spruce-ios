@@ -232,10 +232,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = FL5QX6Q6KM;
 						LastSwiftMigration = 0810;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = FL5QX6Q6KM;
 						LastSwiftMigration = 0810;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -508,6 +510,7 @@
 			baseConfigurationReference = 810EF25AEB3B66AF72D6DC08 /* Pods-Spruce_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FL5QX6Q6KM;
 				INFOPLIST_FILE = Spruce/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -523,6 +526,7 @@
 			baseConfigurationReference = 180431F59A6BB6C1511A5258 /* Pods-Spruce_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FL5QX6Q6KM;
 				INFOPLIST_FILE = Spruce/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -537,6 +541,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6C04A6F7ABEF198F183B1617 /* Pods-Spruce_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = FL5QX6Q6KM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -557,6 +562,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 763FD0B1F1E8374A748D0636 /* Pods-Spruce_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = FL5QX6Q6KM;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

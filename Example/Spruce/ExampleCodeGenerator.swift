@@ -11,11 +11,63 @@ import Spruce
 
 class ExampleCodeGenerator {
     class func generateCode(forSettings settings: SortFunctionTestSettings) -> String {
-        return ""
+        let sortFunctionFormatString = formatString(forSortFunction: settings.function)
+        let sortFunctionString: String
+        switch settings.function {
+        case .base, .random:
+            sortFunctionString = String(format: sortFunctionFormatString, settings.delay)
+        case .linear:
+            sortFunctionString = String(format: sortFunctionFormatString,
+                                        string(forDirection: settings.direction),
+                                        settings.delay)
+        case .cornered, .inline:
+            sortFunctionString = String(format: sortFunctionFormatString,
+                                        string(forCorner: settings.corner),
+                                        settings.delay)
+        case .radial:
+            sortFunctionString = String(format: sortFunctionFormatString,
+                                        string(forPosition: settings.position),
+                                        settings.delay)
+        case .continuous, .weightedContinuous:
+            sortFunctionString = String(format: sortFunctionFormatString,
+                                        string(forPosition: settings.position),
+                                        settings.duration)
+        }
+        
+        var codeString = "let sortFunction = \(sortFunctionString)"
+        
+        switch settings.function {
+        case .base, .random:
+            break
+        default:
+            guard settings.reverse else {
+                break
+            }
+            codeString += "\nsortFunction.reversed = true"
+        }
+        
+        return codeString
     }
     
     class func formatString(forSortFunction sortFunction: SortFunctions) -> String {
-        return ""
+        switch sortFunction {
+        case .base:
+            return "DefaultSortFunction(interObjectDelay: %.2f)"
+        case .linear:
+            return "LinearSortFunction(direction: %@, interObjectDelay: %.2f)"
+        case .cornered:
+            return "CorneredSortFunction(corner: %@, interObjectDelay: %.2f)"
+        case .radial:
+            return "RadialSortFunction(position: %@, interObjectDelay: %.2f)"
+        case .inline:
+            return "InlineSortFunction(corner: %@, interObjectDelay: %.2f)"
+        case .continuous:
+            return "ContinuousSortFunction(position: %@, duration: %.2f)"
+        case .weightedContinuous:
+            return "ContinuousWeightedSortFunction(position: %@, duration: %.2f, horizontalWeight: .light, verticalWeight: .heavy)"
+        case .random:
+            return "RandomSortFunction(interObjectDelay: %.2f)"
+        }
     }
     
     class func string(forCorner corner: SpruceCorner) -> String {
