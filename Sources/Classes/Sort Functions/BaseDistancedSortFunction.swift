@@ -40,7 +40,7 @@ open class BaseDistancedSortFunction: SortFunction {
         let subviews = view.getSubviews(recursiveDepth: recursiveDepth)
         
         let distancedViews = subviews.map {
-            return (view: $0, distance: getDistanceBetweenPoints(left: comparisonPoint, right: $0.center))
+            return (view: $0, distance: getDistanceBetweenPoints(left: comparisonPoint, right: $0.referencePoint))
         }.sorted { (left, right) -> Bool in
             if reversed {
                 return left.distance > right.distance
@@ -58,7 +58,7 @@ open class BaseDistancedSortFunction: SortFunction {
                 lastDistance = view.distance
                 currentTimeOffset += interObjectDelay
             }
-            let timedView = SpruceTimedView(view: view.view, timeOffset: currentTimeOffset)
+            let timedView = SpruceTimedView(spruceView: view.view, timeOffset: currentTimeOffset)
             timedViews.append(timedView)
         }
         
@@ -69,18 +69,18 @@ open class BaseDistancedSortFunction: SortFunction {
         return left.euclideanDistance(to: right)
     }
     
-    open func getDistancePoint(view: UIView, subviews: [UIView] = []) -> CGPoint {
+    open func getDistancePoint(view: UIView, subviews: [SpruceView] = []) -> CGPoint {
         let distancePoint = CGPoint.zero
         return translate(distancePoint: distancePoint, intoSubviews: subviews)
     }
     
-    open func translate(distancePoint: CGPoint, intoSubviews subviews: [UIView]) -> CGPoint {
-        if let referencePoint = subviews.min(by: {(left, right) in
-            let leftDistance = left.center.euclideanDistance(to: distancePoint)
-            let rightDistance = right.center.euclideanDistance(to: distancePoint)
+    open func translate(distancePoint: CGPoint, intoSubviews subviews: [SpruceView]) -> CGPoint {
+        if let referenceView = subviews.min(by: {(left, right) in
+            let leftDistance = left.referencePoint.euclideanDistance(to: distancePoint)
+            let rightDistance = right.referencePoint.euclideanDistance(to: distancePoint)
             return leftDistance < rightDistance
         }) {
-            return referencePoint.center
+            return referenceView.referencePoint
         }
         return distancePoint
     }

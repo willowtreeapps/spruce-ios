@@ -47,7 +47,7 @@ open class CorneredSortFunction: BaseDistancedSortFunction {
         let subviews = view.getSubviews(recursiveDepth: recursiveDepth)
         
         let distancedViews = subviews.map {
-            return (view: $0, distance: comparisonPoint.euclideanDistance(to: $0.center))
+            return (view: $0, distance: comparisonPoint.euclideanDistance(to: $0.referencePoint))
         }.sorted { (left, right) -> Bool in
             if self.reversed {
                 return left.distance > right.distance
@@ -65,14 +65,14 @@ open class CorneredSortFunction: BaseDistancedSortFunction {
                 lastDistance = view.distance
                 currentTimeOffset += interObjectDelay
             }
-            let timedView = SpruceTimedView(view: view.view, timeOffset: currentTimeOffset)
+            let timedView = SpruceTimedView(spruceView: view.view, timeOffset: currentTimeOffset)
             timedViews.append(timedView)
         }
         
         return timedViews
     }
     
-    open override func getDistancePoint(view: UIView, subviews: [UIView] = []) -> CGPoint {
+    open override func getDistancePoint(view: UIView, subviews: [SpruceView] = []) -> CGPoint {
         let distancePoint: CGPoint
         let bounds = view.bounds
         switch corner {

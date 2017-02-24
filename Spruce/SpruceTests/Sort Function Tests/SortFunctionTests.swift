@@ -55,7 +55,7 @@ class SortFunctionTests: XCTestCase {
         }
         
         for timedView in timedViews {
-            let index = timedView.view.tag
+            let index = timedView.spruceView.view.tag
             let expectedDelay = expected[index]
             XCTAssertEqualWithAccuracy(timedView.timeOffset, expectedDelay, accuracy: 0.000001)
         }
@@ -63,7 +63,7 @@ class SortFunctionTests: XCTestCase {
     
     func printTimedViews(_ timedViews: [SpruceTimedView]) {
         let timedViews = timedViews.sorted { (left, right) -> Bool in
-            return left.view.tag < right.view.tag
+            return left.spruceView.view.tag < right.spruceView.view.tag
         }
         print("[", terminator: "")
         for index in 0..<timedViews.count {

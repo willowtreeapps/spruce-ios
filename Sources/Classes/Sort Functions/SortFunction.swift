@@ -27,7 +27,7 @@
 import UIKit
 
 public struct SpruceTimedView {
-    let view: UIView
+    let spruceView: SpruceView
     var timeOffset: TimeInterval
 }
 

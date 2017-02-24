@@ -33,7 +33,7 @@ class SpruceViewTests: XCTestCase {
         subviews = parentView.getSubviews(recursiveDepth: 5)
         XCTAssertEqual(subviews.count, 1)
         
-        subviews = parentView.getSubviews(recursiveDepth: UnlimitedRecursiveDepth)
+        subviews = parentView.getSubviews(recursiveDepth: .spruceUnlimited)
         XCTAssertEqual(subviews.count, 1)
     }
     
@@ -47,7 +47,7 @@ class SpruceViewTests: XCTestCase {
         subviews = parentView.getSubviews(recursiveDepth: 5)
         XCTAssertEqual(subviews.count, 0)
         
-        subviews = parentView.getSubviews(recursiveDepth: UnlimitedRecursiveDepth)
+        subviews = parentView.getSubviews(recursiveDepth: .spruceUnlimited)
         XCTAssertEqual(subviews.count, 0)
     }
     
@@ -65,7 +65,7 @@ class SpruceViewTests: XCTestCase {
         subviews = parentView.getSubviews(recursiveDepth: 5)
         XCTAssertEqual(subviews.count, 5)
         
-        subviews = parentView.getSubviews(recursiveDepth: UnlimitedRecursiveDepth)
+        subviews = parentView.getSubviews(recursiveDepth: .spruceUnlimited)
         XCTAssertEqual(subviews.count, 5)
     }
     
@@ -99,7 +99,26 @@ class SpruceViewTests: XCTestCase {
         subviews = parentView.getSubviews(recursiveDepth: 5)
         XCTAssertEqual(subviews.count, 25)
         
-        subviews = parentView.getSubviews(recursiveDepth: UnlimitedRecursiveDepth)
+        subviews = parentView.getSubviews(recursiveDepth: .spruceUnlimited)
         XCTAssertEqual(subviews.count, 25)
+    }
+    
+    func testRecursiveCoordinateSpaceRemapping() {
+        let parentView = UIView(frame: CGRect(x: 10.0, y: 10.0, width: 100.0, height: 100.0))
+        let subview1 = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 40.0, height: 40.0)))
+        let subview2 = UIView(frame: CGRect(x: 10.0, y: 10.0, width: 10.0, height: 10.0))
+        let subview3 = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 10.0, height: 10.0)))
+        
+        parentView.addSubview(subview1)
+        subview1.addSubview(subview2)
+        subview2.addSubview(subview3)
+        
+        let subviews = parentView.getSubviews(recursiveDepth: .spruceUnlimited)
+        
+        XCTAssertEqual(subviews.count, 3)
+        
+        XCTAssertEqual(CGPoint(x: 20.0, y: 20.0), subviews[0].referencePoint)
+        XCTAssertEqual(CGPoint(x: 15.0, y: 15.0), subviews[1].referencePoint)
+        XCTAssertEqual(CGPoint(x: 15.0, y: 15.0), subviews[2].referencePoint)
     }
 }

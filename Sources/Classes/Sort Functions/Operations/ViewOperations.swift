@@ -26,31 +26,42 @@
 
 import UIKit
 
-public let UnlimitedRecursiveDepth = -1
+extension Int {
+    static let spruceUnlimited = -1
+}
 
 public extension UIView {
     public func getOcuppiedSubBounds() -> CGRect {
         return CGRect.zero
     }
     
-    public func getSubviews(recursiveDepth: Int) -> [UIView] {
-        guard recursiveDepth > 0 || recursiveDepth == UnlimitedRecursiveDepth else {
-            return self.subviews
+    public func getSubviews(recursiveDepth: Int) -> [SpruceView] {
+        guard recursiveDepth > 0 || recursiveDepth == .spruceUnlimited else {
+            return self.subviews.map {
+                SpruceUIView(view: $0, referencePoint: $0.center)
+            }
         }
-        return UIView.recursiveSubviews(for: self, currentDepth: 0, maxDepth: recursiveDepth)
+        return UIView.recursiveSubviews(for: self, currentDepth: 0, maxDepth: recursiveDepth, coordinateView: self)
     }
     
-    private static func recursiveSubviews(for view: UIView, currentDepth: Int, maxDepth: Int) -> [UIView] {
-        guard currentDepth <= maxDepth || maxDepth == UnlimitedRecursiveDepth else {
+    private static func recursiveSubviews(for view: UIView, currentDepth: Int, maxDepth: Int, coordinateView: UIView) -> [SpruceView] {
+        guard currentDepth <= maxDepth || maxDepth == .spruceUnlimited else {
             return []
         }
         
-        var subviews: [UIView] = []
+        var subviews: [SpruceView] = []
         
         for subview in view.subviews {
-            subviews.append(subview)
+            let referencePoint: CGPoint
+            if let superview = subview.superview {
+                referencePoint = superview.convert(subview.center, to: coordinateView)
+            }
+            else {
+                referencePoint = subview.center
+            }
+            subviews.append(SpruceUIView(view: subview, referencePoint: referencePoint))
             
-            let subSubViews = recursiveSubviews(for: subview, currentDepth: currentDepth + 1, maxDepth: maxDepth)
+            let subSubViews = recursiveSubviews(for: subview, currentDepth: currentDepth + 1, maxDepth: maxDepth, coordinateView: coordinateView)
             subviews.append(contentsOf: subSubViews)
         }
         

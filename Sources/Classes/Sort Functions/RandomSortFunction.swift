@@ -41,7 +41,7 @@ open class RandomSortFunction: SortFunction {
         var timedViews: [SpruceTimedView] = []
         var currentTimeOffset: TimeInterval = 0.0
         for subview in subviews {
-            let timedView = SpruceTimedView(view: subview, timeOffset: currentTimeOffset)
+            let timedView = SpruceTimedView(spruceView: subview, timeOffset: currentTimeOffset)
             timedViews.append(timedView)
             currentTimeOffset += interObjectDelay
         }

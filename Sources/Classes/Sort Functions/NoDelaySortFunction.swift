@@ -30,7 +30,7 @@ open class NoDelaySortFunction: SortFunction {
     open func getTimeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView] {
         let subviews = view.getSubviews(recursiveDepth: recursiveDepth)
         return subviews.flatMap { subView in
-            let timedView = SpruceTimedView(view: subView, timeOffset: 0.0)
+            let timedView = SpruceTimedView(spruceView: subView, timeOffset: 0.0)
             return timedView
         }
     }

@@ -32,7 +32,7 @@ public extension UIView {
     public func sprucePrepare(withRecursiveDepth recursiveDepth: Int = 0, changeFunction: SpruceChangeFunction) {
         let subviews = self.getSubviews(recursiveDepth: recursiveDepth)
         for view in subviews {
-            changeFunction(view)
+            changeFunction(view.view)
         }
     }
     
@@ -41,18 +41,18 @@ public extension UIView {
         timedViews = timedViews.sorted { (left, right) -> Bool in
             return left.timeOffset < right.timeOffset
         }
-        for (index, view) in timedViews.enumerated() {
-            if let exclude = exclude, exclude.reduce(false, { $0 || $1 == view.view }) {
+        for (index, timedView) in timedViews.enumerated() {
+            if let exclude = exclude, exclude.reduce(false, { $0 || $1 == timedView.spruceView.view }) {
                 continue
             }
 
 
             if let prepare = prepare {
-                prepare(view.view)
+                prepare(timedView.spruceView.view)
             }
 
-            animation.animate(delay: view.timeOffset,
-                              view: view.view,
+            animation.animate(delay: timedView.timeOffset,
+                              view: timedView.spruceView.view,
                               completion: ((index == timedViews.count - 1) ? completion : nil))
         }
     }
