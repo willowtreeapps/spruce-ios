@@ -72,6 +72,8 @@ class SortFunctionTestViewController: UIViewController {
     @IBOutlet weak var cornerControlView: UIView!
     @IBOutlet weak var reverseControlView: UIView!
     @IBOutlet weak var directionControlView: UIView!
+    @IBOutlet weak var verticalWeightControlView: UIView!
+    @IBOutlet weak var horizontalWeightControlView: UIView!
 
     // Controls
     @IBOutlet weak var durationSlider: UISlider!
@@ -79,6 +81,8 @@ class SortFunctionTestViewController: UIViewController {
     @IBOutlet weak var positionPicker: UISegmentedControl!
     @IBOutlet weak var directionPicker: UISegmentedControl!
     @IBOutlet weak var cornerPicker: UISegmentedControl!
+    @IBOutlet weak var verticalWeightPicker: UISegmentedControl!
+    @IBOutlet weak var horizontalWeightPicker: UISegmentedControl!
     @IBOutlet weak var reverseSwitch: UISwitch!
     @IBOutlet weak var functionTextField: UITextField!
     @IBOutlet weak var codeLabel: UILabel!
@@ -140,7 +144,7 @@ class SortFunctionTestViewController: UIViewController {
         case .continuous:
             sortFunction = ContinuousSortFunction(position: settings.position, duration: settings.duration)
         case .weightedContinuous:
-            sortFunction = ContinuousWeightedSortFunction(position: settings.position, duration: settings.duration, horizontalWeight: .light, verticalWeight: .heavy)
+            sortFunction = ContinuousWeightedSortFunction(position: settings.position, duration: settings.duration, horizontalWeight: settings.horizontalWeight, verticalWeight: settings.verticalWeight)
         case .random:
             sortFunction = RandomSortFunction(interObjectDelay: settings.delay)
         }
@@ -166,7 +170,7 @@ class SortFunctionTestViewController: UIViewController {
         case .continuous:
             return [functionControlView, durationControlView, positionControlView, reverseControlView]
         case .weightedContinuous:
-            return [functionControlView, durationControlView, positionControlView, reverseControlView]
+            return [functionControlView, durationControlView, positionControlView, horizontalWeightControlView, verticalWeightControlView, reverseControlView]
         case .random:
             return [functionControlView, delayControlView]
         }
@@ -221,6 +225,34 @@ class SortFunctionTestViewController: UIViewController {
             settings.direction = .rightToLeft
         default:
             settings.direction = .topToBottom
+        }
+        reloadSortView()
+    }
+    
+    @IBAction func horizontalWeightDidChange(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            settings.horizontalWeight = .light
+        case 1:
+            settings.horizontalWeight = .medium
+        case 2:
+            settings.horizontalWeight = .heavy
+        default:
+            settings.horizontalWeight = .light
+        }
+        reloadSortView()
+    }
+    
+    @IBAction func verticalWeightDidChange(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            settings.verticalWeight = .light
+        case 1:
+            settings.verticalWeight = .medium
+        case 2:
+            settings.verticalWeight = .heavy
+        default:
+            settings.verticalWeight = .light
         }
         reloadSortView()
     }
@@ -302,6 +334,8 @@ struct SortFunctionTestSettings {
     var position: SprucePosition = .topLeft
     var direction: SpruceDirection = .topToBottom
     var corner: SpruceCorner = .topLeft
+    var horizontalWeight: SpruceWeight = .light
+    var verticalWeight: SpruceWeight = .light
     var reverse: Bool = false
 
 }

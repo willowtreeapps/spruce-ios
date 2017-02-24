@@ -28,10 +28,16 @@ class ExampleCodeGenerator {
             sortFunctionString = String(format: sortFunctionFormatString,
                                         string(forPosition: settings.position),
                                         settings.delay)
-        case .continuous, .weightedContinuous:
+        case .continuous:
             sortFunctionString = String(format: sortFunctionFormatString,
                                         string(forPosition: settings.position),
                                         settings.duration)
+        case .weightedContinuous:
+            sortFunctionString = String(format: sortFunctionFormatString,
+                                        string(forPosition: settings.position),
+                                        settings.duration,
+                                        string(forWeight: settings.horizontalWeight),
+                                        string(forWeight: settings.verticalWeight))
         }
         
         var codeString = "let sortFunction = \(sortFunctionString)"
@@ -64,7 +70,7 @@ class ExampleCodeGenerator {
         case .continuous:
             return "ContinuousSortFunction(position: %@, duration: %.2f)"
         case .weightedContinuous:
-            return "ContinuousWeightedSortFunction(position: %@, duration: %.2f, horizontalWeight: .light, verticalWeight: .heavy)"
+            return "ContinuousWeightedSortFunction(position: %@, duration: %.2f, horizontalWeight: %@, verticalWeight: %@)"
         case .random:
             return "RandomSortFunction(interObjectDelay: %.2f)"
         }
@@ -116,6 +122,19 @@ class ExampleCodeGenerator {
             return ".rightToLeft"
         case .bottomToTop:
             return ".bottomToTop"
+        }
+    }
+    
+    class func string(forWeight weight: SpruceWeight) -> String {
+        switch weight {
+        case .light:
+            return ".light"
+        case .medium:
+            return ".medium"
+        case .heavy:
+            return ".heavy"
+        case .custom(let value):
+            return ".custom(\(value))"
         }
     }
     
