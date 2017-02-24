@@ -49,6 +49,9 @@ open class CorneredSortFunction: BaseDistancedSortFunction {
         let distancedViews = subviews.map {
             return (view: $0, distance: comparisonPoint.euclideanDistance(to: $0.center))
         }.sorted { (left, right) -> Bool in
+            if self.reversed {
+                return left.distance > right.distance
+            }
             return left.distance < right.distance
         }
         
@@ -82,13 +85,6 @@ open class CorneredSortFunction: BaseDistancedSortFunction {
         case .bottomRight:
             distancePoint = CGPoint(x: bounds.size.width, y: bounds.size.height)
         }
-        if let referencePoint = subviews.min(by: {(left, right) in
-            let leftDistance = left.center.euclideanDistance(to: distancePoint)
-            let rightDistance = right.center.euclideanDistance(to: distancePoint)
-            return leftDistance < rightDistance
-        }) {
-            return referencePoint.center
-        }
-        return distancePoint
+        return translate(distancePoint: distancePoint, intoSubviews: subviews)
     }
 }

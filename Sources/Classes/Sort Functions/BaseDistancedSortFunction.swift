@@ -70,6 +70,18 @@ open class BaseDistancedSortFunction: SortFunction {
     }
     
     open func getDistancePoint(view: UIView, subviews: [UIView] = []) -> CGPoint {
-        return CGPoint.zero
+        let distancePoint = CGPoint.zero
+        return translate(distancePoint: distancePoint, intoSubviews: subviews)
+    }
+    
+    open func translate(distancePoint: CGPoint, intoSubviews subviews: [UIView]) -> CGPoint {
+        if let referencePoint = subviews.min(by: {(left, right) in
+            let leftDistance = left.center.euclideanDistance(to: distancePoint)
+            let rightDistance = right.center.euclideanDistance(to: distancePoint)
+            return leftDistance < rightDistance
+        }) {
+            return referencePoint.center
+        }
+        return distancePoint
     }
 }

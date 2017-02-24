@@ -24,7 +24,7 @@
 //  THE SOFTWARE.
 //
 
-import Foundation
+import UIKit
 
 open class ContinuousSortFunction: RadialSortFunction {
 
@@ -36,8 +36,8 @@ open class ContinuousSortFunction: RadialSortFunction {
     }
 
     open override func getTimeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView] {
-        let comparisonPoint = getDistancePoint(view: view)
         let subviews = view.getSubviews(recursiveDepth: recursiveDepth)
+        let comparisonPoint = getDistancePoint(view: view, subviews: subviews)
 
         let distancedViews = subviews.map {
             return (view: $0, distance: comparisonPoint.euclideanDistance(to: $0.center))
@@ -49,7 +49,13 @@ open class ContinuousSortFunction: RadialSortFunction {
 
         var timedViews: [SpruceTimedView] = []
         for view in distancedViews {
-            let normalizedDistance = view.distance / maxDistance
+            let normalizedDistance: Double
+            if reversed {
+                 normalizedDistance = (maxDistance - view.distance) / maxDistance
+            }
+            else {
+                normalizedDistance = view.distance / maxDistance
+            }
             let offset = duration * normalizedDistance
             let timedView = SpruceTimedView(view: view.view, timeOffset: offset)
             timedViews.append(timedView)

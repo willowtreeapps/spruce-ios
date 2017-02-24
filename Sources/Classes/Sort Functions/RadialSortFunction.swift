@@ -47,26 +47,30 @@ open class RadialSortFunction: BaseDistancedSortFunction {
     }
     
     open override func getDistancePoint(view: UIView, subviews: [UIView] = []) -> CGPoint {
+        let distancePoint: CGPoint
         let bounds = view.bounds
+        
         switch position {
         case .topLeft:
-            return CGPoint.zero
+            distancePoint = CGPoint.zero
         case .topMiddle:
-            return CGPoint(x: (bounds.size.width / 2.0), y: 0.0)
+            distancePoint = CGPoint(x: (bounds.size.width / 2.0), y: 0.0)
         case .topRight:
-            return CGPoint(x: bounds.size.width, y: 0.0)
+            distancePoint = CGPoint(x: bounds.size.width, y: 0.0)
         case .left:
-            return CGPoint(x: 0.0, y: (bounds.size.height / 2.0))
+            distancePoint = CGPoint(x: 0.0, y: (bounds.size.height / 2.0))
         case .middle:
-            return CGPoint(x: (bounds.size.width / 2.0), y: (bounds.size.height / 2.0))
+            distancePoint = CGPoint(x: (bounds.size.width / 2.0), y: (bounds.size.height / 2.0))
         case .right:
-            return CGPoint(x: bounds.size.width, y: (bounds.size.height / 2.0))
+            distancePoint = CGPoint(x: bounds.size.width, y: (bounds.size.height / 2.0))
         case .bottomLeft:
-            return CGPoint(x: 0.0, y: bounds.size.height)
+            distancePoint = CGPoint(x: 0.0, y: bounds.size.height)
         case .bottomMiddle:
-            return CGPoint(x: (bounds.size.width / 2.0), y: bounds.size.height)
+            distancePoint = CGPoint(x: (bounds.size.width / 2.0), y: bounds.size.height)
         case .bottomRight:
-            return CGPoint(x: bounds.size.width, y: bounds.size.height)
+            distancePoint = CGPoint(x: bounds.size.width, y: bounds.size.height)
         }
+        
+        return translate(distancePoint: distancePoint, intoSubviews: subviews)
     }
 }

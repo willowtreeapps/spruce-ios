@@ -227,7 +227,7 @@ extension SortFunctionTestViewController {
             view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
             }
             let sortFunction = self.sortFunctionForCurrentSettings()
-            testController.containerView?.spruceSubViews(withSortFunction: sortFunction, animation: animation, completion: nil, exclude: nil)
+            testController.containerView?.spruceUp(withSortFunction: sortFunction, animation: animation)
         }
         testController.customAnimation = animations
         return testController
