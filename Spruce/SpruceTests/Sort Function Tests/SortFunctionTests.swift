@@ -60,4 +60,23 @@ class SortFunctionTests: XCTestCase {
             XCTAssertEqualWithAccuracy(timedView.timeOffset, expectedDelay, accuracy: 0.000001)
         }
     }
+    
+    func printTimedViews(_ timedViews: [SpruceTimedView]) {
+        let timedViews = timedViews.sorted { (left, right) -> Bool in
+            return left.view.tag < right.view.tag
+        }
+        print("[", terminator: "")
+        for index in 0..<timedViews.count {
+            if index == timedViews.count - 1 {
+                print("\(timedViews[index].timeOffset)]", terminator: "")
+            }
+            else {
+                print("\(timedViews[index].timeOffset),", terminator: "")
+            }
+            
+            if index % 5 == 4 {
+                print("")
+            }
+        }
+    }
 }
