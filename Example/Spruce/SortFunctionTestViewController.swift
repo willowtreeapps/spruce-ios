@@ -28,6 +28,38 @@ import Foundation
 import UIKit
 import Spruce
 
+enum SortFunctions {
+    case base
+    case linear
+    case cornered
+    case radial
+    case inline
+    case continuous
+    case weightedContinuous
+    case random
+    
+    var description: String {
+        switch self {
+        case .base:
+            return "Default"
+        case .linear:
+            return "Linear"
+        case .cornered:
+            return "Cornered"
+        case .radial:
+            return "Radial"
+        case .inline:
+            return "Inline"
+        case .continuous:
+            return "Continuous"
+        case .weightedContinuous:
+            return "Weighted Continuous"
+        case .random:
+            return "Random"
+        }
+    }
+}
+
 class SortFunctionTestViewController: UIViewController {
 
     // Control containers
@@ -54,7 +86,7 @@ class SortFunctionTestViewController: UIViewController {
     @IBOutlet weak var sortView: UIView!
 
     // Settings
-    let availableFunctions = ["Default", "Linear", "Cornered", "Radial", "Inline", "Continuous", "Weighted continuous", "Random"]
+    let availableFunctions: [SortFunctions] = [.base, .linear, .cornered, .radial, .continuous, .weightedContinuous, .random]
     var settings = SortFunctionTestSettings()
     var animationController = CustomAnimationViewController()
 
@@ -91,24 +123,22 @@ class SortFunctionTestViewController: UIViewController {
     func sortFunctionForCurrentSettings() -> SortFunction {
         var sortFunction: SortFunction
         switch settings.function {
-        case "Default":
+        case .base:
             sortFunction = DefaultSortFunction(interObjectDelay: settings.delay)
-        case "Linear":
+        case .linear:
             sortFunction = LinearSortFunction(direction: settings.direction, interObjectDelay: settings.delay)
-        case "Cornered":
+        case .cornered:
             sortFunction = CorneredSortFunction(corner: settings.corner, interObjectDelay: settings.delay)
-        case "Radial":
+        case .radial:
             sortFunction = RadialSortFunction(position: settings.position, interObjectDelay: settings.delay)
-        case "Inline":
+        case .inline:
             sortFunction = InlineSortFunction(corner: settings.corner, interObjectDelay: settings.delay)
-        case "Continuous":
+        case .continuous:
             sortFunction = ContinuousSortFunction(position: settings.position, duration: settings.duration)
-        case "Weighted continuous":
+        case .weightedContinuous:
             sortFunction = ContinuousWeightedSortFunction(position: settings.position, duration: settings.duration, horizontalWeight: .light, verticalWeight: .heavy)
-        case "Random":
+        case .random:
             sortFunction = RandomSortFunction(interObjectDelay: settings.delay)
-        default:
-            sortFunction = DefaultSortFunction(interObjectDelay: settings.delay)
         }
 
         if let sortFunction = sortFunction as? BaseDistancedSortFunction {
@@ -119,24 +149,22 @@ class SortFunctionTestViewController: UIViewController {
 
     func controlViewsForCurrentSettings() -> [UIView] {
         switch settings.function {
-        case "Default":
+        case .base:
             return [functionControlView, delayControlView]
-        case "Linear":
+        case .linear:
             return [functionControlView, delayControlView, directionControlView, reverseControlView]
-        case "Cornered":
-            return [functionControlView, delayControlView, cornerControlView]
-        case "Radial":
+        case .cornered:
+            return [functionControlView, delayControlView, cornerControlView, reverseControlView]
+        case .radial:
             return [functionControlView, delayControlView, positionControlView, reverseControlView]
-        case "Inline":
-            return [functionControlView, delayControlView, cornerControlView]
-        case "Continuous":
-            return [functionControlView, durationControlView, positionControlView]
-        case "Weighted continuous":
-            return [functionControlView, durationControlView, positionControlView]
-        case "Random":
+        case .inline:
+            return [functionControlView, delayControlView, cornerControlView, reverseControlView]
+        case .continuous:
+            return [functionControlView, durationControlView, positionControlView, reverseControlView]
+        case .weightedContinuous:
+            return [functionControlView, durationControlView, positionControlView, reverseControlView]
+        case .random:
             return [functionControlView, delayControlView]
-        default:
-            return controlViews
         }
     }
 
@@ -223,8 +251,8 @@ extension SortFunctionTestViewController {
 
         let animations = { [unowned self] in
             let animation = SpringAnimation(duration: 0.5) { view in
-            view.alpha = 1.0
-            view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                view.alpha = 1.0
+                view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
             }
             let sortFunction = self.sortFunctionForCurrentSettings()
             testController.containerView?.spruceUp(withSortFunction: sortFunction, animation: animation)
@@ -238,7 +266,7 @@ extension SortFunctionTestViewController {
 extension SortFunctionTestViewController: UIPickerViewDelegate {
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return availableFunctions[row]
+        return availableFunctions[row].description
     }
 }
 
@@ -254,7 +282,7 @@ extension SortFunctionTestViewController: UIPickerViewDataSource {
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.functionTextField.endEditing(true)
-        self.functionTextField.text = availableFunctions[row]
+        self.functionTextField.text = availableFunctions[row].description
         settings.function = availableFunctions[row]
         reloadSortView()
     }
@@ -264,7 +292,7 @@ extension SortFunctionTestViewController: UIPickerViewDataSource {
 struct SortFunctionTestSettings {
 
     var context: String = "Squares"
-    var function: String = "Default"
+    var function: SortFunctions = .base
     var duration: Double = 1.0
     var delay: Double = 0.025
     var position: SprucePosition = .topLeft

@@ -47,11 +47,13 @@ class CustomAnimationViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        if let customAnimation = self.customAnimation {
-            Timer.scheduledTimer(withTimeInterval: 0.25, repeats: false) { _ in
-                customAnimation()
-            }
+        if customAnimation != nil {
+            Timer.scheduledTimer(timeInterval: 0.25, target: self, selector: #selector(callAnimation), userInfo: nil, repeats: false)
         }
+    }
+    
+    func callAnimation() {
+        customAnimation?()
     }
 }
 
