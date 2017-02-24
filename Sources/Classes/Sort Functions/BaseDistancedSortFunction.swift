@@ -36,7 +36,7 @@ open class BaseDistancedSortFunction: SortFunction {
     }
     
     open func getTimeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView] {
-        let comparisonPoint = getDistancePoint(bounds: view.bounds)
+        let comparisonPoint = getDistancePoint(view: view)
         let subviews = view.getSubviews(recursiveDepth: recursiveDepth)
         
         let distancedViews = subviews.map {
@@ -69,7 +69,7 @@ open class BaseDistancedSortFunction: SortFunction {
         return left.euclideanDistance(to: right)
     }
     
-    open func getDistancePoint(bounds: CGRect) -> CGPoint {
+    open func getDistancePoint(view: UIView, subviews: [UIView] = []) -> CGPoint {
         return CGPoint.zero
     }
 }

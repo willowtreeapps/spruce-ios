@@ -43,7 +43,7 @@ open class CorneredSortFunction: BaseDistancedSortFunction {
     }
     
     open override func getTimeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView] {
-        let comparisonPoint = getDistancePoint(bounds: view.bounds)
+        let comparisonPoint = getDistancePoint(view: view)
         let subviews = view.getSubviews(recursiveDepth: recursiveDepth)
         
         let distancedViews = subviews.map {
@@ -58,7 +58,7 @@ open class CorneredSortFunction: BaseDistancedSortFunction {
         var currentTimeOffset = 0.0
         var timedViews: [SpruceTimedView] = []
         for view in distancedViews {
-            if lastDistance != view.distance {
+            if floor(lastDistance) != floor(view.distance) {
                 lastDistance = view.distance
                 currentTimeOffset += interObjectDelay
             }
@@ -69,16 +69,26 @@ open class CorneredSortFunction: BaseDistancedSortFunction {
         return timedViews
     }
     
-    open override func getDistancePoint(bounds: CGRect) -> CGPoint {
+    open override func getDistancePoint(view: UIView, subviews: [UIView] = []) -> CGPoint {
+        let distancePoint: CGPoint
+        let bounds = view.bounds
         switch corner {
         case .topLeft:
-            return CGPoint.zero
+            distancePoint = CGPoint.zero
         case .topRight:
-            return CGPoint(x: bounds.size.width, y: 0.0)
+            distancePoint = CGPoint(x: bounds.size.width, y: 0.0)
         case .bottomLeft:
-            return CGPoint(x: 0.0, y: bounds.size.height)
+            distancePoint = CGPoint(x: 0.0, y: bounds.size.height)
         case .bottomRight:
-            return CGPoint(x: bounds.size.width, y: bounds.size.height)
+            distancePoint = CGPoint(x: bounds.size.width, y: bounds.size.height)
         }
+        if let referencePoint = subviews.min(by: {(left, right) in
+            let leftDistance = left.center.euclideanDistance(to: distancePoint)
+            let rightDistance = right.center.euclideanDistance(to: distancePoint)
+            return leftDistance < rightDistance
+        }) {
+            return referencePoint.center
+        }
+        return distancePoint
     }
 }

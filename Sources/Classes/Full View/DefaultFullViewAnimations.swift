@@ -202,7 +202,7 @@ public extension UIView {
                 animationFunc(view)
             }
         }
-        self.spruceSubViews(withSortFunction: sortFunction, animation: animationType, completion: completion)
+        self.spruceUp(withSortFunction: sortFunction, animation: animationType, completion: completion)
     }
     
     public func sprucePrepare(withAnimations animations: [SpruceStandardAnimation], recursiveDepth: Int = 0) {

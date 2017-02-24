@@ -30,7 +30,7 @@ import Foundation
 open class InlineSortFunction: CorneredSortFunction {
 
     open override func getTimeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView] {
-        let comparisonPoint = getDistancePoint(bounds: view.bounds)
+        let comparisonPoint = getDistancePoint(view: view)
         let subviews = view.getSubviews(recursiveDepth: recursiveDepth)
 
         let distancedViews = subviews.map {

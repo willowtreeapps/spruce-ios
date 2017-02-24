@@ -55,7 +55,8 @@ open class LinearSortFunction: BaseDistancedSortFunction {
         return left.euclideanDistance(to: right)
     }
     
-    open override func getDistancePoint(bounds: CGRect) -> CGPoint {
+    open override func getDistancePoint(view: UIView, subviews: [UIView] = []) -> CGPoint {
+        let bounds = view.bounds
         switch direction {
         case .topToBottom:
             return CGPoint(x: (bounds.size.width / 2.0), y: 0.0)
