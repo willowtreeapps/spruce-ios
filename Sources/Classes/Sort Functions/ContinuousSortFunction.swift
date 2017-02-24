@@ -2,7 +2,6 @@
 //  ContinuousSortFunction.swift
 //  Spruce
 //
-//  Created by Matt Kauper on 12/21/16.
 //  Copyright (c) 2017 WillowTree, Inc.
 
 //  Permission is hereby granted, free of charge, to any person obtaining a copy

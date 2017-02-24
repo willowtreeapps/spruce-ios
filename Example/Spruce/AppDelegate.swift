@@ -2,7 +2,6 @@
 //  AppDelegate.swift
 //  Spruce
 //
-//  Created by Jackson Taylor on 12/09/2016.
 //  Copyright (c) 2017 WillowTree, Inc.
 
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
