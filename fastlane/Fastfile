@@ -42,10 +42,11 @@
 lane :run_tests do
 	scan(
 		scheme: "Spruce",
-		output_directory: "./artifacts/tests",
+		output_directory: "./artifacts",
 		project: "Spruce/Spruce.xcodeproj",
 		device: "iPhone 6s",
 		output_style: "standard",
-		output_types: "html, junit"
+		output_types: "html, junit",
+		include_simulator_logs: false
 	)
 end

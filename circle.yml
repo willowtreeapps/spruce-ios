@@ -6,4 +6,5 @@ general:
     - artifacts
 test:
   override:
-	 - bundle exec fastlane run_tests
+    - gem install bundler
+    - bundle exec fastlane run_tests
