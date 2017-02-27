@@ -34,8 +34,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
         let sortFunctionController = UIStoryboard(name: "SortFunctionTestViewController", bundle: Bundle.main).instantiateViewController(withIdentifier: "SortFunctionTestViewController")
-        let navController = UINavigationController(rootViewController: sortFunctionController)
-        navController.navigationBar.tintColor = UIColor.spruceGreen
+        let tableController = SpruceTableViewControllerExample(animations: [.slide(.left, .large), .fadeIn])
+        //let tableController = SpruceTableViewControllerExample(animations: [.slide(.up, .medium), .fadeIn])
+        let navController = UINavigationController(rootViewController: tableController)
+        navController.navigationBar.barTintColor = UIColor.spruceGreen
         
         window?.rootViewController = navController
         window?.makeKeyAndVisible()

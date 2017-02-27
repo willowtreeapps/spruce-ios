@@ -90,7 +90,7 @@ class SortFunctionTestViewController: UIViewController {
     @IBOutlet weak var sortView: UIView!
 
     // Settings
-    let availableFunctions: [SortFunctions] = [.base, .linear, .cornered, .radial, .continuous, .weightedContinuous, .random]
+    let availableFunctions: [SortFunctions] = [.base, .linear, .cornered, .radial, .inline, .continuous, .weightedContinuous, .random]
     var settings = SortFunctionTestSettings()
     var animationController = CustomAnimationViewController()
 

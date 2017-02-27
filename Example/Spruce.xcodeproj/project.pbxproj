@@ -15,6 +15,11 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		8D0D1A6A199FC9630A10DED3 /* Pods_Spruce_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDBE5745B9DE9B1EAB8C910C /* Pods_Spruce_Example.framework */; };
+		DB288B831E64860C0038B13E /* SpruceTableViewControllerExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB288B821E64860C0038B13E /* SpruceTableViewControllerExample.swift */; };
+		DB288B851E64861D0038B13E /* ExampleTableViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB288B841E64861D0038B13E /* ExampleTableViewCells.swift */; };
+		DB288B881E64863B0038B13E /* SpruceTableViewControllerExample.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB288B871E64863B0038B13E /* SpruceTableViewControllerExample.xib */; };
+		DB288B8A1E64864B0038B13E /* BaseExampleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB288B891E64864B0038B13E /* BaseExampleTableViewCell.xib */; };
+		DB288B8C1E64A67B0038B13E /* ImageExampleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB288B8B1E64A67B0038B13E /* ImageExampleTableViewCell.xib */; };
 		DB9357EE1DFB026400ADC5BE /* CustomAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9357E51DFB026400ADC5BE /* CustomAnimationViewController.swift */; };
 		DBA608D41E3267B9006207C9 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA608D31E3267B9006207C9 /* Theme.swift */; };
 		DBFA709C1E5F39AE000CF1DB /* ExampleCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFA709B1E5F39AE000CF1DB /* ExampleCodeGenerator.swift */; };
@@ -48,6 +53,11 @@
 		6FCD75E68B76D05C1368631A /* Spruce.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Spruce.podspec; path = ../Spruce.podspec; sourceTree = "<group>"; };
 		763FD0B1F1E8374A748D0636 /* Pods-Spruce_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spruce_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Spruce_Tests/Pods-Spruce_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		810EF25AEB3B66AF72D6DC08 /* Pods-Spruce_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spruce_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Spruce_Example/Pods-Spruce_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		DB288B821E64860C0038B13E /* SpruceTableViewControllerExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpruceTableViewControllerExample.swift; path = "Table View Example/SpruceTableViewControllerExample.swift"; sourceTree = "<group>"; };
+		DB288B841E64861D0038B13E /* ExampleTableViewCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExampleTableViewCells.swift; path = "Table View Example/ExampleTableViewCells.swift"; sourceTree = "<group>"; };
+		DB288B871E64863B0038B13E /* SpruceTableViewControllerExample.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SpruceTableViewControllerExample.xib; path = "Table View Example/Resources/SpruceTableViewControllerExample.xib"; sourceTree = "<group>"; };
+		DB288B891E64864B0038B13E /* BaseExampleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BaseExampleTableViewCell.xib; path = "Table View Example/Resources/BaseExampleTableViewCell.xib"; sourceTree = "<group>"; };
+		DB288B8B1E64A67B0038B13E /* ImageExampleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImageExampleTableViewCell.xib; path = "Table View Example/Resources/ImageExampleTableViewCell.xib"; sourceTree = "<group>"; };
 		DB9357E51DFB026400ADC5BE /* CustomAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CustomAnimationViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DBA608D31E3267B9006207C9 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		DBFA709B1E5F39AE000CF1DB /* ExampleCodeGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleCodeGenerator.swift; sourceTree = "<group>"; };
@@ -112,7 +122,8 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				DBA608D31E3267B9006207C9 /* Theme.swift */,
-				DB9357F31DFB027800ADC5BE /* Test Controllers */,
+				DB9357F31DFB027800ADC5BE /* Sort Function Controller */,
+				DB288B811E6485E90038B13E /* Table View Example */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
@@ -156,7 +167,27 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		DB9357F31DFB027800ADC5BE /* Test Controllers */ = {
+		DB288B811E6485E90038B13E /* Table View Example */ = {
+			isa = PBXGroup;
+			children = (
+				DB288B821E64860C0038B13E /* SpruceTableViewControllerExample.swift */,
+				DB288B841E64861D0038B13E /* ExampleTableViewCells.swift */,
+				DB288B861E6486210038B13E /* Resources */,
+			);
+			name = "Table View Example";
+			sourceTree = "<group>";
+		};
+		DB288B861E6486210038B13E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DB288B871E64863B0038B13E /* SpruceTableViewControllerExample.xib */,
+				DB288B891E64864B0038B13E /* BaseExampleTableViewCell.xib */,
+				DB288B8B1E64A67B0038B13E /* ImageExampleTableViewCell.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		DB9357F31DFB027800ADC5BE /* Sort Function Controller */ = {
 			isa = PBXGroup;
 			children = (
 				DB9357E51DFB026400ADC5BE /* CustomAnimationViewController.swift */,
@@ -164,7 +195,7 @@
 				321671371E0C75F8003E6A0B /* SortFunctionTestViewController.swift */,
 				321671391E0C760F003E6A0B /* SortFunctionTestViewController.storyboard */,
 			);
-			name = "Test Controllers";
+			name = "Sort Function Controller";
 			sourceTree = "<group>";
 		};
 		EE518578DA1F211845F05455 /* Frameworks */ = {
@@ -267,6 +298,9 @@
 			files = (
 				3216713A1E0C760F003E6A0B /* SortFunctionTestViewController.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
+				DB288B8C1E64A67B0038B13E /* ImageExampleTableViewCell.xib in Resources */,
+				DB288B8A1E64864B0038B13E /* BaseExampleTableViewCell.xib in Resources */,
+				DB288B881E64863B0038B13E /* SpruceTableViewControllerExample.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,11 +412,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB288B831E64860C0038B13E /* SpruceTableViewControllerExample.swift in Sources */,
 				DBFA709C1E5F39AE000CF1DB /* ExampleCodeGenerator.swift in Sources */,
 				DB9357EE1DFB026400ADC5BE /* CustomAnimationViewController.swift in Sources */,
 				DBA608D41E3267B9006207C9 /* Theme.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				321671381E0C75F8003E6A0B /* SortFunctionTestViewController.swift in Sources */,
+				DB288B851E64861D0038B13E /* ExampleTableViewCells.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
