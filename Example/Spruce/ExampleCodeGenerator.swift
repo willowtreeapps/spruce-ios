@@ -14,27 +14,28 @@ class ExampleCodeGenerator {
         let sortFunctionString: String
         switch settings.function {
         case .base, .random:
-            sortFunctionString = String(format: sortFunctionFormatString, settings.delay)
+            sortFunctionString = String(format: sortFunctionFormatString,
+                                        string(forDouble: settings.delay, decimals: 3))
         case .linear:
             sortFunctionString = String(format: sortFunctionFormatString,
                                         string(forDirection: settings.direction),
-                                        settings.delay)
+                                        string(forDouble: settings.delay, decimals: 3))
         case .cornered, .inline:
             sortFunctionString = String(format: sortFunctionFormatString,
                                         string(forCorner: settings.corner),
-                                        settings.delay)
+                                        string(forDouble: settings.delay, decimals: 3))
         case .radial:
             sortFunctionString = String(format: sortFunctionFormatString,
                                         string(forPosition: settings.position),
-                                        settings.delay)
+                                        string(forDouble: settings.delay, decimals: 3))
         case .continuous:
             sortFunctionString = String(format: sortFunctionFormatString,
                                         string(forPosition: settings.position),
-                                        settings.duration)
+                                        string(forDouble: settings.duration))
         case .weightedContinuous:
             sortFunctionString = String(format: sortFunctionFormatString,
                                         string(forPosition: settings.position),
-                                        settings.duration,
+                                        string(forDouble: settings.duration),
                                         string(forWeight: settings.horizontalWeight),
                                         string(forWeight: settings.verticalWeight))
         }
@@ -57,21 +58,21 @@ class ExampleCodeGenerator {
     class func formatString(forSortFunction sortFunction: SortFunctions) -> String {
         switch sortFunction {
         case .base:
-            return "DefaultSortFunction(interObjectDelay: %.2f)"
+            return "DefaultSortFunction(interObjectDelay: %@)"
         case .linear:
-            return "LinearSortFunction(direction: %@, interObjectDelay: %.2f)"
+            return "LinearSortFunction(direction: %@, interObjectDelay: %@)"
         case .cornered:
-            return "CorneredSortFunction(corner: %@, interObjectDelay: %.2f)"
+            return "CorneredSortFunction(corner: %@, interObjectDelay: %@)"
         case .radial:
-            return "RadialSortFunction(position: %@, interObjectDelay: %.2f)"
+            return "RadialSortFunction(position: %@, interObjectDelay: %@)"
         case .inline:
-            return "InlineSortFunction(corner: %@, interObjectDelay: %.2f)"
+            return "InlineSortFunction(corner: %@, interObjectDelay: %@)"
         case .continuous:
-            return "ContinuousSortFunction(position: %@, duration: %.2f)"
+            return "ContinuousSortFunction(position: %@, duration: %@)"
         case .weightedContinuous:
-            return "ContinuousWeightedSortFunction(position: %@, duration: %.2f, horizontalWeight: %@, verticalWeight: %@)"
+            return "ContinuousWeightedSortFunction(position: %@, duration: %@, horizontalWeight: %@, verticalWeight: %@)"
         case .random:
-            return "RandomSortFunction(interObjectDelay: %.2f)"
+            return "RandomSortFunction(interObjectDelay: %@)"
         }
     }
     
@@ -142,5 +143,10 @@ class ExampleCodeGenerator {
             return "true"
         }
         return "false"
+    }
+    
+    class func string(forDouble double: Double, decimals: Int = 2) -> String {
+        let format = "%.\(decimals)f"
+        return String(format: format, double)
     }
 }
