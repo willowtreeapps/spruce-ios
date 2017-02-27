@@ -2,7 +2,6 @@
 //  ExampleCodeGenerator.swift
 //  Spruce
 //
-//  Created by Jackson Taylor on 2/23/17.
 //  Copyright © 2017 CocoaPods. All rights reserved.
 //
 
