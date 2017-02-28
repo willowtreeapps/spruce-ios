@@ -26,7 +26,7 @@
 import UIKit
 import Spruce
 
-class SpruceCollectionViewExample: UIViewController {
+class SpruceCollectionViewExample: ExampleViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     let iconColors = [
@@ -38,45 +38,21 @@ class SpruceCollectionViewExample: UIViewController {
         UIColor(red:0.71, green:0.93, blue:0.80, alpha:1.00)
     ]
     
-    let animations: [SpruceStandardAnimation]
-    
     init(animations: [SpruceStandardAnimation]) {
-        self.animations = animations
-        super.init(nibName: "SpruceCollectionViewExample", bundle: nil)
+        super.init(animations: animations, nibName: "SpruceCollectionViewExample")
+        
+        sortFunction = CorneredSortFunction(corner: .topLeft, interObjectDelay: 0.05)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupTableView()
-    }
-    
-    func setupTableView() {
+    override func setup() {
         collectionView.contentInset = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
         collectionView.register(UINib(nibName: "BaseExampleCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "baseCell")
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         
-        collectionView.sprucePrepare(withAnimations: animations)
-        
-        Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(callAnimation), userInfo: nil, repeats: false)
-    }
-    
-    func callAnimation() {
-        let sortFunction = CorneredSortFunction(corner: .topLeft, interObjectDelay: 0.05)
-        let animation = SpringAnimation(duration: 0.7)
-        DispatchQueue.main.async {
-            self.collectionView.spruceUp(withAnimations: self.animations, animationType: animation, sortFunction: sortFunction)
-        }
+        animationView = collectionView
     }
 }
 

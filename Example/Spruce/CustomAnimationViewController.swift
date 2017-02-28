@@ -67,7 +67,7 @@ extension CustomAnimationViewController {
         for row in 0..<squaresPerRow {
             for col in 0..<squaresPerRow {
                 let view = UIView(frame: CGRect(x: CGFloat(col) * (viewSize + spacing), y: CGFloat(row) * (viewSize + spacing), width: viewSize, height: viewSize))
-                view.backgroundColor = UIColor.spruceGreen
+                view.backgroundColor = UIColor(red:0.64, green:0.91, blue:0.69, alpha:1.00)
                 view.layer.cornerRadius = 2.0
                 view.clipsToBounds = true
                 view.alpha = 0.0
