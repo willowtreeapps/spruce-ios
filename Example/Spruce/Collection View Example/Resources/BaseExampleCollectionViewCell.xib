@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Y7I-Va-rCo" customClass="BaseExampleCollectionViewCell" customModule="Spruce_Example" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="80" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="80" height="100"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view clipsSubviews="YES" alpha="0.60000002384185791" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nNR-qz-VYj" userLabel="Image">
+                        <rect key="frame" x="10" y="10" width="60" height="60"/>
+                        <color key="backgroundColor" red="0.2549158037" green="0.71301728490000005" blue="0.5825116038" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="nNR-qz-VYj" secondAttribute="height" multiplier="1:1" id="1rp-cC-BKi"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="7"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wDr-e6-UEF" userLabel="Title">
+                        <rect key="frame" x="10" y="80" width="60" height="10"/>
+                        <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="10" id="af1-r4-Ynk"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="3"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="nNR-qz-VYj" firstAttribute="leading" secondItem="Y7I-Va-rCo" secondAttribute="leading" constant="10" id="188-VZ-1QV"/>
+                <constraint firstAttribute="trailing" secondItem="wDr-e6-UEF" secondAttribute="trailing" constant="10" id="NLf-pH-1HR"/>
+                <constraint firstItem="wDr-e6-UEF" firstAttribute="leading" secondItem="Y7I-Va-rCo" secondAttribute="leading" constant="10" id="ORZ-zP-Tef"/>
+                <constraint firstAttribute="trailing" secondItem="nNR-qz-VYj" secondAttribute="trailing" constant="10" id="Tl9-YT-BnB"/>
+                <constraint firstAttribute="bottom" secondItem="wDr-e6-UEF" secondAttribute="bottom" constant="10" id="b7z-hf-Bwt"/>
+                <constraint firstItem="nNR-qz-VYj" firstAttribute="top" secondItem="Y7I-Va-rCo" secondAttribute="top" constant="10" id="nTW-9K-oqC"/>
+            </constraints>
+            <size key="customSize" width="81" height="98"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="2"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                    <integer key="value" value="3"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                    <real key="value" value="0.050000000000000003"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                    <size key="value" width="0.0" height="0.0"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="NO"/>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="iconView" destination="nNR-qz-VYj" id="6C1-GP-rlP"/>
+            </connections>
+            <point key="canvasLocation" x="-465.5" y="-107"/>
+        </collectionViewCell>
+    </objects>
+</document>
