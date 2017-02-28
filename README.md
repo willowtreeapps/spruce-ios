@@ -1,13 +1,14 @@
 # Spruce iOS Animation Library
 
+[![CircleCI Build Status](https://circleci.com/gh/willowtreeapps/spruce-ios.svg?style=shield)](https://circleci.com/gh/willowtreeapps/spruce-ios)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods compatible](https://img.shields.io/badge/CocoaPods-compatible-4BC51D.svg?style=flat)](https://github.com/CocoaPods/CocoaPods)
-[![License None](https://img.shields.io/badge/License-none-blue.svg?style=flat)]()
+[![License MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)]()
 [![Public No](https://img.shields.io/badge/Public-no-red.svg?style=flat)]()
 
 
 ## What is it?
-Spruce is a very small, lightweight animation library that hopes to handle all of the 
+Spruce is a very small, lightweight animation library that hopes to handle many of the 
 complications of animations for you. So many developers use standard animations because
 they are easy and quick to use. With Spruce, developers will be able to create complex
 animations hopefully with just one line of code. These animations can include variations
