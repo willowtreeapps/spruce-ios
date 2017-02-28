@@ -160,7 +160,7 @@
                                                             <constraint firstAttribute="width" priority="750" constant="200" id="Otc-ex-piz"/>
                                                         </constraints>
                                                         <connections>
-                                                            <action selector="durationDidChange:" destination="Gbe-og-aXE" eventType="valueChanged" id="nIx-g5-lQR"/>
+                                                            <action selector="delayDidChange:" destination="Gbe-og-aXE" eventType="valueChanged" id="ial-G5-76p"/>
                                                         </connections>
                                                     </slider>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MR7-Yb-RvK">
