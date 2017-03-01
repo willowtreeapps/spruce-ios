@@ -20,7 +20,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DvL-Se-L2d">
                         <rect key="frame" x="10" y="5" width="641" height="81"/>
                         <subviews>
-                            <view clipsSubviews="YES" alpha="0.60000002384185791" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M9B-Kq-yXt" userLabel="Title">
+                            <view clipsSubviews="YES" alpha="0.60000002384185791" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M9B-Kq-yXt" userLabel="Image">
                                 <rect key="frame" x="20" y="11" width="60" height="60"/>
                                 <color key="backgroundColor" red="0.2549158037" green="0.71301728490000005" blue="0.5825116038" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -46,7 +46,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="85X-Tf-Rrg" userLabel="Title">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="85X-Tf-Rrg" userLabel="Top Description">
                                 <rect key="frame" x="100" y="45" width="521" height="10"/>
                                 <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -58,7 +58,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tii-Oo-XR1" userLabel="Title">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tii-Oo-XR1" userLabel="Bottom Description">
                                 <rect key="frame" x="100" y="65" width="461" height="10"/>
                                 <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>

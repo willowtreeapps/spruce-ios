@@ -40,6 +40,8 @@ public extension UIView {
         switch self {
         case let tableView as UITableView:
             subviews = tableView.visibleCells
+        case let collectionView as UICollectionView:
+            subviews = collectionView.visibleCells
         default:
             subviews = self.subviews
         }

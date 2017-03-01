@@ -20,6 +20,10 @@
 		DB288B881E64863B0038B13E /* SpruceTableViewControllerExample.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB288B871E64863B0038B13E /* SpruceTableViewControllerExample.xib */; };
 		DB288B8A1E64864B0038B13E /* BaseExampleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB288B891E64864B0038B13E /* BaseExampleTableViewCell.xib */; };
 		DB288B8C1E64A67B0038B13E /* ImageExampleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB288B8B1E64A67B0038B13E /* ImageExampleTableViewCell.xib */; };
+		DB288B8F1E64D49A0038B13E /* SpruceCollectionViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB288B8E1E64D49A0038B13E /* SpruceCollectionViewExample.swift */; };
+		DB288B911E65BC370038B13E /* BaseExampleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB288B901E65BC370038B13E /* BaseExampleCollectionViewCell.xib */; };
+		DB288B941E65BD530038B13E /* BaseExampleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB288B931E65BD530038B13E /* BaseExampleCollectionViewCell.swift */; };
+		DB288B961E65BD8F0038B13E /* SpruceCollectionViewExample.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB288B951E65BD8F0038B13E /* SpruceCollectionViewExample.xib */; };
 		DB9357EE1DFB026400ADC5BE /* CustomAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9357E51DFB026400ADC5BE /* CustomAnimationViewController.swift */; };
 		DBA608D41E3267B9006207C9 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA608D31E3267B9006207C9 /* Theme.swift */; };
 		DBFA709C1E5F39AE000CF1DB /* ExampleCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFA709B1E5F39AE000CF1DB /* ExampleCodeGenerator.swift */; };
@@ -58,6 +62,10 @@
 		DB288B871E64863B0038B13E /* SpruceTableViewControllerExample.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SpruceTableViewControllerExample.xib; path = "Table View Example/Resources/SpruceTableViewControllerExample.xib"; sourceTree = "<group>"; };
 		DB288B891E64864B0038B13E /* BaseExampleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BaseExampleTableViewCell.xib; path = "Table View Example/Resources/BaseExampleTableViewCell.xib"; sourceTree = "<group>"; };
 		DB288B8B1E64A67B0038B13E /* ImageExampleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImageExampleTableViewCell.xib; path = "Table View Example/Resources/ImageExampleTableViewCell.xib"; sourceTree = "<group>"; };
+		DB288B8E1E64D49A0038B13E /* SpruceCollectionViewExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpruceCollectionViewExample.swift; path = "Collection View Example/SpruceCollectionViewExample.swift"; sourceTree = "<group>"; };
+		DB288B901E65BC370038B13E /* BaseExampleCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BaseExampleCollectionViewCell.xib; path = "Collection View Example/Resources/BaseExampleCollectionViewCell.xib"; sourceTree = "<group>"; };
+		DB288B931E65BD530038B13E /* BaseExampleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseExampleCollectionViewCell.swift; path = "Collection View Example/BaseExampleCollectionViewCell.swift"; sourceTree = "<group>"; };
+		DB288B951E65BD8F0038B13E /* SpruceCollectionViewExample.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SpruceCollectionViewExample.xib; path = "Collection View Example/Resources/SpruceCollectionViewExample.xib"; sourceTree = "<group>"; };
 		DB9357E51DFB026400ADC5BE /* CustomAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CustomAnimationViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DBA608D31E3267B9006207C9 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		DBFA709B1E5F39AE000CF1DB /* ExampleCodeGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleCodeGenerator.swift; sourceTree = "<group>"; };
@@ -124,6 +132,7 @@
 				DBA608D31E3267B9006207C9 /* Theme.swift */,
 				DB9357F31DFB027800ADC5BE /* Sort Function Controller */,
 				DB288B811E6485E90038B13E /* Table View Example */,
+				DB288B8D1E64D47C0038B13E /* Collection View Example */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
@@ -183,6 +192,25 @@
 				DB288B871E64863B0038B13E /* SpruceTableViewControllerExample.xib */,
 				DB288B891E64864B0038B13E /* BaseExampleTableViewCell.xib */,
 				DB288B8B1E64A67B0038B13E /* ImageExampleTableViewCell.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		DB288B8D1E64D47C0038B13E /* Collection View Example */ = {
+			isa = PBXGroup;
+			children = (
+				DB288B8E1E64D49A0038B13E /* SpruceCollectionViewExample.swift */,
+				DB288B931E65BD530038B13E /* BaseExampleCollectionViewCell.swift */,
+				DB288B921E65BC3B0038B13E /* Resources */,
+			);
+			name = "Collection View Example";
+			sourceTree = "<group>";
+		};
+		DB288B921E65BC3B0038B13E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DB288B951E65BD8F0038B13E /* SpruceCollectionViewExample.xib */,
+				DB288B901E65BC370038B13E /* BaseExampleCollectionViewCell.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -296,10 +324,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB288B911E65BC370038B13E /* BaseExampleCollectionViewCell.xib in Resources */,
 				3216713A1E0C760F003E6A0B /* SortFunctionTestViewController.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				DB288B8C1E64A67B0038B13E /* ImageExampleTableViewCell.xib in Resources */,
 				DB288B8A1E64864B0038B13E /* BaseExampleTableViewCell.xib in Resources */,
+				DB288B961E65BD8F0038B13E /* SpruceCollectionViewExample.xib in Resources */,
 				DB288B881E64863B0038B13E /* SpruceTableViewControllerExample.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -415,7 +445,9 @@
 				DB288B831E64860C0038B13E /* SpruceTableViewControllerExample.swift in Sources */,
 				DBFA709C1E5F39AE000CF1DB /* ExampleCodeGenerator.swift in Sources */,
 				DB9357EE1DFB026400ADC5BE /* CustomAnimationViewController.swift in Sources */,
+				DB288B8F1E64D49A0038B13E /* SpruceCollectionViewExample.swift in Sources */,
 				DBA608D41E3267B9006207C9 /* Theme.swift in Sources */,
+				DB288B941E65BD530038B13E /* BaseExampleCollectionViewCell.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				321671381E0C75F8003E6A0B /* SortFunctionTestViewController.swift in Sources */,
 				DB288B851E64861D0038B13E /* ExampleTableViewCells.swift in Sources */,
