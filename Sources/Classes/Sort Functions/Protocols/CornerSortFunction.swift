@@ -21,7 +21,7 @@ public protocol CornerSortFunction: DistanceSortFunction {
 }
 
 public extension CornerSortFunction {
-    public func getDistancePoint(view: UIView, subviews: [SpruceView] = []) -> CGPoint {
+    public func distancePoint(view: UIView, subviews: [SpruceView] = []) -> CGPoint {
         let distancePoint: CGPoint
         let bounds = view.bounds
         switch corner {

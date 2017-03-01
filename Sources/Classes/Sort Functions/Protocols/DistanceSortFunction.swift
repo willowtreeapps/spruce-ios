@@ -29,19 +29,19 @@ public protocol DistanceSortFunction: SortFunction {
     var interObjectDelay: TimeInterval { get set }
     var reversed: Bool { get set }
     
-    func getTimeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView]
-    func getDistanceBetweenPoints(left: CGPoint, right: CGPoint) -> Double
-    func getDistancePoint(view: UIView, subviews: [SpruceView]) -> CGPoint
+    func timeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView]
+    func distanceBetween(_ left: CGPoint, and right: CGPoint) -> Double
+    func distancePoint(view: UIView, subviews: [SpruceView]) -> CGPoint
     func translate(distancePoint: CGPoint, intoSubviews subviews: [SpruceView]) -> CGPoint
 }
 
 public extension DistanceSortFunction {
-    func getTimeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView] {
-        let subviews = view.getSubviews(recursiveDepth: recursiveDepth)
-        let comparisonPoint = getDistancePoint(view: view, subviews: subviews)
+    func timeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView] {
+        let subviews = view.subviews(withRecursiveDepth: recursiveDepth)
+        let comparisonPoint = distancePoint(view: view, subviews: subviews)
         
         let distancedViews = subviews.map {
-            return (view: $0, distance: getDistanceBetweenPoints(left: comparisonPoint, right: $0.referencePoint))
+            return (view: $0, distance: distanceBetween(comparisonPoint, and: $0.referencePoint))
             }.sorted { (left, right) -> Bool in
                 if reversed {
                     return left.distance > right.distance
@@ -66,7 +66,7 @@ public extension DistanceSortFunction {
         return timedViews
     }
     
-    func getDistanceBetweenPoints(left: CGPoint, right: CGPoint) -> Double {
+    func distanceBetween(_ left: CGPoint, and right: CGPoint) -> Double {
         return left.euclideanDistance(to: right)
     }
     

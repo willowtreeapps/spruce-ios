@@ -30,11 +30,7 @@ extension Int {
 }
 
 public extension UIView {
-    public func getOcuppiedSubBounds() -> CGRect {
-        return CGRect.zero
-    }
-    
-    public func getSubviews(recursiveDepth: Int) -> [SpruceView] {
+    public func subviews(withRecursiveDepth recursiveDepth: Int) -> [SpruceView] {
         let subviews: [UIView]
         
         switch self {

@@ -42,9 +42,9 @@ public struct ContinuousWeightedSortFunction: PositionSortFunction, WeightSortFu
         self.duration = duration
     }
 
-    public func getTimeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView] {
-        let subviews = view.getSubviews(recursiveDepth: recursiveDepth)
-        let comparisonPoint = getDistancePoint(view: view, subviews: subviews)
+    public func timeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView] {
+        let subviews = view.subviews(withRecursiveDepth: recursiveDepth)
+        let comparisonPoint = distancePoint(view: view, subviews: subviews)
 
         let distancedViews = subviews.map {
             return (view: $0, horizontalDistance: comparisonPoint.horizontalDistance(to: $0.referencePoint) * horizontalWeight.coefficient, verticalDistance: comparisonPoint.verticalDistance(to: $0.referencePoint) * verticalWeight.coefficient)
