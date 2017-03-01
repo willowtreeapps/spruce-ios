@@ -25,16 +25,19 @@
 
 import UIKit
 
-open class ContinuousSortFunction: RadialSortFunction {
+public struct ContinuousSortFunction: PositionSortFunction {
 
-    let duration: TimeInterval
+    public var interObjectDelay: TimeInterval = 0.0
+    public var duration: TimeInterval
+    public var position: SprucePosition
+    public var reversed: Bool = false
 
     public init(position: SprucePosition, duration: TimeInterval) {
         self.duration = duration
-        super.init(position: position, interObjectDelay: 0.0)
+        self.position = position
     }
 
-    open override func getTimeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView] {
+    public func getTimeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView] {
         let subviews = view.getSubviews(recursiveDepth: recursiveDepth)
         let comparisonPoint = getDistancePoint(view: view, subviews: subviews)
 

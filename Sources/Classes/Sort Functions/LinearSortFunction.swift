@@ -32,15 +32,17 @@ public enum SpruceDirection {
     case rightToLeft
 }
 
-open class LinearSortFunction: BaseDistancedSortFunction {
-    let direction: SpruceDirection
+public struct LinearSortFunction: DirectionSortFunction {
+    public var direction: SpruceDirection
+    public var interObjectDelay: TimeInterval
+    public var reversed: Bool = false
     
     public init(direction: SpruceDirection, interObjectDelay: TimeInterval) {
         self.direction = direction
-        super.init(interObjectDelay: interObjectDelay)
+        self.interObjectDelay = interObjectDelay
     }
     
-    open override func getDistanceBetweenPoints(left: CGPoint, right: CGPoint) -> Double {
+    public func getDistanceBetweenPoints(left: CGPoint, right: CGPoint) -> Double {
         var left = left
         var right = right
         switch direction {
@@ -52,19 +54,5 @@ open class LinearSortFunction: BaseDistancedSortFunction {
             right.y = 0.0
         }
         return left.euclideanDistance(to: right)
-    }
-    
-    open override func getDistancePoint(view: UIView, subviews: [SpruceView] = []) -> CGPoint {
-        let bounds = view.bounds
-        switch direction {
-        case .topToBottom:
-            return CGPoint(x: (bounds.size.width / 2.0), y: 0.0)
-        case .bottomToTop:
-            return CGPoint(x: (bounds.size.width / 2.0), y: bounds.size.height)
-        case .leftToRight:
-            return CGPoint(x: 0.0, y: (bounds.size.height / 2.0))
-        case .rightToLeft:
-            return CGPoint(x: bounds.size.width, y: (bounds.size.height / 2.0))
-        }
     }
 }

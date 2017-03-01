@@ -29,7 +29,7 @@ import XCTest
 class InlineSortFunctionTests: SortFunctionTests {
     
     func testInlineSortFunctions(withStartCorner corner: SpruceCorner, expected: [TimeInterval], expectedReversed: [TimeInterval]) {
-        let sortFunction = InlineSortFunction(corner: corner, interObjectDelay: 0.1)
+        var sortFunction = InlineSortFunction(corner: corner, interObjectDelay: 0.1)
         let timedViews = sortFunction.getTimeOffsets(view: animatableView)
         
         compare(timedViews: timedViews, toExpected: expected)
@@ -37,9 +37,6 @@ class InlineSortFunctionTests: SortFunctionTests {
         sortFunction.reversed = true
         let timedViewsReversed = sortFunction.getTimeOffsets(view: animatableView)
         compare(timedViews: timedViewsReversed, toExpected: expectedReversed)
-        
-        printTimedViews(timedViews)
-        printTimedViews(timedViewsReversed)
     }
     
     func testTopLeftInlineSortFunction() {

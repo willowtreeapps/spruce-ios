@@ -26,15 +26,15 @@
 import UIKit
 
 
-open class DefaultSortFunction: SortFunction {
+public struct DefaultSortFunction: SortFunction {
     
-    let interObjectDelay: TimeInterval
+    public var interObjectDelay: TimeInterval
     
-    public init(interObjectDelay: TimeInterval) {
+    public init(interObjectDelay: TimeInterval = 0.0) {
         self.interObjectDelay = interObjectDelay
     }
     
-    open func getTimeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView] {
+    public func getTimeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView] {
         var timedViews: [SpruceTimedView] = []
         var currentTimeOffset: TimeInterval = 0.0
         let subviews = view.getSubviews(recursiveDepth: recursiveDepth)

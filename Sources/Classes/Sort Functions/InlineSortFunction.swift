@@ -26,9 +26,18 @@
 import UIKit
 
 
-open class InlineSortFunction: CorneredSortFunction {
+public struct InlineSortFunction: CornerSortFunction {
 
-    open override func getTimeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView] {
+    public var interObjectDelay: TimeInterval
+    public var reversed: Bool = false
+    public var corner: SpruceCorner
+    
+    public init(corner: SpruceCorner, interObjectDelay: TimeInterval) {
+        self.corner = corner
+        self.interObjectDelay = interObjectDelay
+    }
+    
+    public func getTimeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView] {
         let comparisonPoint = getDistancePoint(view: view)
         let subviews = view.getSubviews(recursiveDepth: recursiveDepth)
 

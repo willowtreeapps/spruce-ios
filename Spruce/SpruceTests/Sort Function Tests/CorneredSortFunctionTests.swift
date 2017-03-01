@@ -29,7 +29,7 @@ import XCTest
 class CorneredSortFunctionTests: SortFunctionTests {
     
     func testCorneredSortFunction(withCorner corner: SpruceCorner, expected: [TimeInterval], expectedReversed: [TimeInterval]) {
-        let sortFunction = CorneredSortFunction(corner: corner, interObjectDelay: 0.1)
+        var sortFunction = CorneredSortFunction(corner: corner, interObjectDelay: 0.1)
         let timedViews = sortFunction.getTimeOffsets(view: animatableView)
         
         compare(timedViews: timedViews, toExpected: expected)

@@ -25,7 +25,7 @@
 
 import UIKit
 
-open class RandomSortFunction: SortFunction {
+public struct RandomSortFunction: SortFunction {
     
     let interObjectDelay: TimeInterval
     
@@ -33,7 +33,7 @@ open class RandomSortFunction: SortFunction {
         self.interObjectDelay = interObjectDelay
     }
     
-    open func getTimeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView] {
+    public func getTimeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView] {
         var subviews = view.getSubviews(recursiveDepth: recursiveDepth)
         subviews.shuffle()
         

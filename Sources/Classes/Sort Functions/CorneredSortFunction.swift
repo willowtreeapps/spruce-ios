@@ -25,23 +25,18 @@
 
 import UIKit
 
-public enum SpruceCorner {
-    case topLeft
-    case topRight
-    case bottomLeft
-    case bottomRight
-}
-
-open class CorneredSortFunction: BaseDistancedSortFunction {
+public struct CorneredSortFunction: CornerSortFunction {
     
-    let corner: SpruceCorner
+    public var corner: SpruceCorner
+    public var interObjectDelay: TimeInterval
+    public var reversed: Bool = false
     
     public init(corner: SpruceCorner, interObjectDelay: TimeInterval) {
         self.corner = corner
-        super.init(interObjectDelay: interObjectDelay)
+        self.interObjectDelay = interObjectDelay
     }
     
-    open override func getTimeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView] {
+    public func getTimeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView] {
         let comparisonPoint = getDistancePoint(view: view)
         let subviews = view.getSubviews(recursiveDepth: recursiveDepth)
         
@@ -71,7 +66,7 @@ open class CorneredSortFunction: BaseDistancedSortFunction {
         return timedViews
     }
     
-    open override func getDistancePoint(view: UIView, subviews: [SpruceView] = []) -> CGPoint {
+    public func getDistancePoint(view: UIView, subviews: [SpruceView] = []) -> CGPoint {
         let distancePoint: CGPoint
         let bounds = view.bounds
         switch corner {

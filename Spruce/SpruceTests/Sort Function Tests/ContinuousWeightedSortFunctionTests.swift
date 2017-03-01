@@ -29,7 +29,7 @@ import XCTest
 class ContinuousWeightedSortFunctionTests: SortFunctionTests {
     
     func testContinuousWeightedSortFunction(withStartPosition position: SprucePosition, horizontalWeight: SpruceWeight, verticalWeight: SpruceWeight, expected: [TimeInterval], expectedReversed: [TimeInterval]) {
-        let sortFunction = ContinuousWeightedSortFunction(position: position, duration: 1.0, horizontalWeight: horizontalWeight, verticalWeight: verticalWeight)
+        var sortFunction = ContinuousWeightedSortFunction(position: position, duration: 1.0, horizontalWeight: horizontalWeight, verticalWeight: verticalWeight)
         let timedViews = sortFunction.getTimeOffsets(view: animatableView)
         
         compare(timedViews: timedViews, toExpected: expected)
@@ -37,12 +37,6 @@ class ContinuousWeightedSortFunctionTests: SortFunctionTests {
         sortFunction.reversed = true
         let timedViewsReversed = sortFunction.getTimeOffsets(view: animatableView)
         compare(timedViews: timedViewsReversed, toExpected: expectedReversed)
-        print("")
-        print("let expected = ", terminator:"")
-        printTimedViews(timedViews)
-        print("let expectedReversed = ", terminator:"")
-        printTimedViews(timedViewsReversed)
-        print("")
     }
     
     func testTopLeftLightHorizontalLightVerticalWeightedContinousSortFunction() {

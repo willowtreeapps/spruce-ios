@@ -148,7 +148,7 @@ class SortFunctionTestViewController: UIViewController {
             sortFunction = RandomSortFunction(interObjectDelay: settings.delay)
         }
 
-        if let sortFunction = sortFunction as? BaseDistancedSortFunction {
+        if var sortFunction = sortFunction as? DistanceSortFunction {
             sortFunction.reversed = settings.reverse
         }
         return sortFunction

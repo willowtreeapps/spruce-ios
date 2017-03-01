@@ -25,51 +25,13 @@
 
 import UIKit
 
-public enum SprucePosition {
-    case topLeft
-    case topMiddle
-    case topRight
-    case left
-    case middle
-    case right
-    case bottomLeft
-    case bottomMiddle
-    case bottomRight
-}
-
-open class RadialSortFunction: BaseDistancedSortFunction {
-    let position: SprucePosition
+public struct RadialSortFunction: PositionSortFunction {
+    public var position: SprucePosition
+    public var interObjectDelay: TimeInterval
+    public var reversed: Bool = false
     
     public init(position: SprucePosition, interObjectDelay: TimeInterval) {
         self.position = position
-        super.init(interObjectDelay: interObjectDelay)
-    }
-    
-    open override func getDistancePoint(view: UIView, subviews: [SpruceView] = []) -> CGPoint {
-        let distancePoint: CGPoint
-        let bounds = view.bounds
-        
-        switch position {
-        case .topLeft:
-            distancePoint = CGPoint.zero
-        case .topMiddle:
-            distancePoint = CGPoint(x: (bounds.size.width / 2.0), y: 0.0)
-        case .topRight:
-            distancePoint = CGPoint(x: bounds.size.width, y: 0.0)
-        case .left:
-            distancePoint = CGPoint(x: 0.0, y: (bounds.size.height / 2.0))
-        case .middle:
-            distancePoint = CGPoint(x: (bounds.size.width / 2.0), y: (bounds.size.height / 2.0))
-        case .right:
-            distancePoint = CGPoint(x: bounds.size.width, y: (bounds.size.height / 2.0))
-        case .bottomLeft:
-            distancePoint = CGPoint(x: 0.0, y: bounds.size.height)
-        case .bottomMiddle:
-            distancePoint = CGPoint(x: (bounds.size.width / 2.0), y: bounds.size.height)
-        case .bottomRight:
-            distancePoint = CGPoint(x: bounds.size.width, y: bounds.size.height)
-        }
-        
-        return translate(distancePoint: distancePoint, intoSubviews: subviews)
+        self.interObjectDelay = interObjectDelay
     }
 }

@@ -25,40 +25,24 @@
 
 import UIKit
 
-public enum SpruceWeight {
-    case light
-    case medium
-    case heavy
-    case custom(Double)
+public struct ContinuousWeightedSortFunction: PositionSortFunction, WeightSortFunction {
     
-    var coefficient: Double {
-        get {
-            switch self {
-            case .light:
-                return 0.5
-            case .medium:
-                return 1.0
-            case .heavy:
-                return 2.0
-            case .custom(let value):
-                return max(0.0, value)
-            }
-        }
-    }
-}
+    public var interObjectDelay: TimeInterval = 0.0
+    public var position: SprucePosition
+    public var reversed: Bool = false
+    public var duration: TimeInterval
 
-open class ContinuousWeightedSortFunction: ContinuousSortFunction {
-
-    let horizontalWeight: SpruceWeight
-    let verticalWeight: SpruceWeight
+    public var horizontalWeight: SpruceWeight
+    public var verticalWeight: SpruceWeight
 
     public init(position: SprucePosition, duration: TimeInterval, horizontalWeight: SpruceWeight = .medium, verticalWeight: SpruceWeight = .medium) {
         self.horizontalWeight = horizontalWeight
         self.verticalWeight = verticalWeight
-        super.init(position: position, duration: duration)
+        self.position = position
+        self.duration = duration
     }
 
-    open override func getTimeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView] {
+    public func getTimeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView] {
         let subviews = view.getSubviews(recursiveDepth: recursiveDepth)
         let comparisonPoint = getDistancePoint(view: view, subviews: subviews)
 
