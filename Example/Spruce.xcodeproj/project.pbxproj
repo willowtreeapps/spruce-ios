@@ -24,6 +24,7 @@
 		DB288B911E65BC370038B13E /* BaseExampleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB288B901E65BC370038B13E /* BaseExampleCollectionViewCell.xib */; };
 		DB288B941E65BD530038B13E /* BaseExampleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB288B931E65BD530038B13E /* BaseExampleCollectionViewCell.swift */; };
 		DB288B961E65BD8F0038B13E /* SpruceCollectionViewExample.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB288B951E65BD8F0038B13E /* SpruceCollectionViewExample.xib */; };
+		DB288B9C1E65E1220038B13E /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB288B9B1E65E1220038B13E /* ExampleViewController.swift */; };
 		DB9357EE1DFB026400ADC5BE /* CustomAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9357E51DFB026400ADC5BE /* CustomAnimationViewController.swift */; };
 		DBA608D41E3267B9006207C9 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA608D31E3267B9006207C9 /* Theme.swift */; };
 		DBFA709C1E5F39AE000CF1DB /* ExampleCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFA709B1E5F39AE000CF1DB /* ExampleCodeGenerator.swift */; };
@@ -66,6 +67,7 @@
 		DB288B901E65BC370038B13E /* BaseExampleCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BaseExampleCollectionViewCell.xib; path = "Collection View Example/Resources/BaseExampleCollectionViewCell.xib"; sourceTree = "<group>"; };
 		DB288B931E65BD530038B13E /* BaseExampleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseExampleCollectionViewCell.swift; path = "Collection View Example/BaseExampleCollectionViewCell.swift"; sourceTree = "<group>"; };
 		DB288B951E65BD8F0038B13E /* SpruceCollectionViewExample.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SpruceCollectionViewExample.xib; path = "Collection View Example/Resources/SpruceCollectionViewExample.xib"; sourceTree = "<group>"; };
+		DB288B9B1E65E1220038B13E /* ExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
 		DB9357E51DFB026400ADC5BE /* CustomAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CustomAnimationViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DBA608D31E3267B9006207C9 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		DBFA709B1E5F39AE000CF1DB /* ExampleCodeGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleCodeGenerator.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				DBA608D31E3267B9006207C9 /* Theme.swift */,
 				DB9357F31DFB027800ADC5BE /* Sort Function Controller */,
+				DB288B9B1E65E1220038B13E /* ExampleViewController.swift */,
 				DB288B811E6485E90038B13E /* Table View Example */,
 				DB288B8D1E64D47C0038B13E /* Collection View Example */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
@@ -451,6 +454,7 @@
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				321671381E0C75F8003E6A0B /* SortFunctionTestViewController.swift in Sources */,
 				DB288B851E64861D0038B13E /* ExampleTableViewCells.swift in Sources */,
+				DB288B9C1E65E1220038B13E /* ExampleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

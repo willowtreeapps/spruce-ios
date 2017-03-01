@@ -26,7 +26,7 @@
 import UIKit
 import Spruce
 
-class SpruceTableViewControllerExample: UIViewController {
+class SpruceTableViewControllerExample: ExampleViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -39,46 +39,22 @@ class SpruceTableViewControllerExample: UIViewController {
         //UIColor(red:0.71, green:0.93, blue:0.80, alpha:1.00)
     ]
     
-    let animations: [SpruceStandardAnimation]
-    
     init(animations: [SpruceStandardAnimation]) {
-        self.animations = animations
-        super.init(nibName: "SpruceTableViewControllerExample", bundle: nil)
+        super.init(animations: animations, nibName: "SpruceTableViewControllerExample")
+        
+        sortFunction = LinearSortFunction(direction: .topToBottom, interObjectDelay: 0.05)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupTableView()
-    }
-    
-    func setupTableView() {
+    override func setup() {
         tableView.contentInset = UIEdgeInsets(top: 5.0, left: 0.0, bottom: 5.0, right: 0.0)
         tableView.register(UINib(nibName: "BaseExampleTableViewCell", bundle: nil), forCellReuseIdentifier: "baseCell")
         tableView.register(UINib(nibName: "ImageExampleTableViewCell", bundle: nil), forCellReuseIdentifier: "imageCell")
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         
-        tableView.sprucePrepare(withAnimations: animations)
-        
-        Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(callAnimation), userInfo: nil, repeats: false)
-    }
-    
-    func callAnimation() {
-        let sortFunction = LinearSortFunction(direction: .topToBottom, interObjectDelay: 0.05)
-        let animation = SpringAnimation(duration: 0.7)
-        DispatchQueue.main.async {
-            self.tableView.spruceUp(withAnimations: self.animations, animationType: animation, sortFunction: sortFunction)
-        }
+        animationView = tableView
     }
 }
 
