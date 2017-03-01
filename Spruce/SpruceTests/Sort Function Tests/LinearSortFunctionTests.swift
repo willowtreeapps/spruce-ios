@@ -30,12 +30,12 @@ class LinearSortFunctionTests: SortFunctionTests {
     
     func testLinearSortFunctions(withDirection direction: SpruceDirection, expected: [TimeInterval], expectedReversed: [TimeInterval]) {
         var sortFunction = LinearSortFunction(direction: direction, interObjectDelay: 0.1)
-        let timedViews = sortFunction.getTimeOffsets(view: animatableView)
+        let timedViews = sortFunction.timeOffsets(view: animatableView)
         
         compare(timedViews: timedViews, toExpected: expected)
         
         sortFunction.reversed = true
-        let timedViewsReversed = sortFunction.getTimeOffsets(view: animatableView)
+        let timedViewsReversed = sortFunction.timeOffsets(view: animatableView)
         compare(timedViews: timedViewsReversed, toExpected: expectedReversed)
     }
     
