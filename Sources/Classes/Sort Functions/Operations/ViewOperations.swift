@@ -35,8 +35,17 @@ public extension UIView {
     }
     
     public func getSubviews(recursiveDepth: Int) -> [SpruceView] {
+        let subviews: [UIView]
+        
+        switch self {
+        case let tableView as UITableView:
+            subviews = tableView.visibleCells
+        default:
+            subviews = self.subviews
+        }
+        
         guard recursiveDepth > 0 || recursiveDepth == .spruceUnlimited else {
-            return self.subviews.map {
+            return subviews.map {
                 SpruceUIView(view: $0, referencePoint: $0.center)
             }
         }

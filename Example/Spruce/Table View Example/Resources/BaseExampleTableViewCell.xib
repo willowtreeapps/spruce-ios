@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="157" id="KQI-tz-rGu">
+            <rect key="frame" x="0.0" y="0.0" width="661" height="157"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KQI-tz-rGu" id="Yxn-a9-4xZ">
+                <rect key="frame" x="0.0" y="0.0" width="661" height="156"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MIo-95-viY">
+                        <rect key="frame" x="10" y="5" width="641" height="146.5"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ycH-xT-VUt" userLabel="Title">
+                                <rect key="frame" x="10" y="35" width="616" height="10"/>
+                                <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="10" id="r6G-mm-beQ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="80t-TQ-879" userLabel="Title">
+                                <rect key="frame" x="10" y="55" width="591" height="10"/>
+                                <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="10" id="V6J-Ws-1fa"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view clipsSubviews="YES" alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="idE-GC-kCL" userLabel="Title">
+                                <rect key="frame" x="10" y="10" width="200" height="10"/>
+                                <color key="backgroundColor" red="0.25491580367088318" green="0.71301728487014771" blue="0.58251160383224487" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="HgJ-R6-2QM"/>
+                                    <constraint firstAttribute="height" constant="10" id="gKw-oK-epo"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="idE-GC-kCL" firstAttribute="leading" secondItem="MIo-95-viY" secondAttribute="leading" constant="10" id="La3-4I-rch"/>
+                            <constraint firstItem="80t-TQ-879" firstAttribute="leading" secondItem="MIo-95-viY" secondAttribute="leading" constant="10" id="Skq-Se-njk"/>
+                            <constraint firstItem="ycH-xT-VUt" firstAttribute="leading" secondItem="MIo-95-viY" secondAttribute="leading" constant="10" id="WOX-tI-cxg"/>
+                            <constraint firstItem="80t-TQ-879" firstAttribute="top" secondItem="ycH-xT-VUt" secondAttribute="bottom" constant="10" id="Zhb-1g-Xk2"/>
+                            <constraint firstItem="idE-GC-kCL" firstAttribute="top" secondItem="MIo-95-viY" secondAttribute="top" constant="10" id="hJ9-6Z-BPU"/>
+                            <constraint firstAttribute="trailing" secondItem="ycH-xT-VUt" secondAttribute="trailing" constant="15" id="hq1-Jv-vH8"/>
+                            <constraint firstItem="ycH-xT-VUt" firstAttribute="top" secondItem="idE-GC-kCL" secondAttribute="bottom" constant="15" id="ikf-48-eAB"/>
+                            <constraint firstAttribute="trailing" secondItem="80t-TQ-879" secondAttribute="trailing" constant="40" id="oj1-Hx-r6W"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                <integer key="value" value="3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                <real key="value" value="0.050000000000000003"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="NO"/>
+                            <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                <size key="value" width="0.0" height="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="MIo-95-viY" secondAttribute="bottom" constant="5" id="9M9-nY-zcK"/>
+                    <constraint firstAttribute="trailing" secondItem="MIo-95-viY" secondAttribute="trailing" constant="10" id="JtV-TG-dXX"/>
+                    <constraint firstItem="MIo-95-viY" firstAttribute="leading" secondItem="Yxn-a9-4xZ" secondAttribute="leading" constant="10" id="g2R-Ba-THG"/>
+                    <constraint firstItem="MIo-95-viY" firstAttribute="top" secondItem="Yxn-a9-4xZ" secondAttribute="top" constant="5" id="tRc-gm-l84"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <point key="canvasLocation" x="-207.5" y="-20.5"/>
+        </tableViewCell>
+    </objects>
+</document>
