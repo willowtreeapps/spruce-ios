@@ -25,13 +25,6 @@
 
 import UIKit
 
-public enum SpruceDirection {
-    case topToBottom
-    case bottomToTop
-    case leftToRight
-    case rightToLeft
-}
-
 public struct LinearSortFunction: DirectionSortFunction {
     public var direction: SpruceDirection
     public var interObjectDelay: TimeInterval

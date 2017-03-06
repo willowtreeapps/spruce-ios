@@ -26,11 +26,20 @@
 import UIKit
 
 open class SpruceViewController: UIViewController {
+    
+    /// an array of spruce stock animations that will be used to animate all of the subviews of the `animationView`
     open var animations: [SpruceStockAnimation] = []
+    
+    /// the length of each of the individual subview animations
     open var duration: TimeInterval = 0.3
+    
+    /// the style of animation that will be apllied to each of the subviews
     open var animationType: SpruceAnimation
+    
+    /// the sort function that should be used for choreographing the animations
     open var sortFunction: SortFunction
     
+    /// the view that Spruce should be called on. This means that the subviews of this view will animate in.
     open var animationView: UIView?
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -43,14 +52,18 @@ open class SpruceViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    /// in the `viewDidLoad` method all of the views are prepared for animation
     override open func viewDidLoad() {
         super.viewDidLoad()
         if animations.count > 0 {
-            animationView?.hideAllSubviews()
             animationView?.sprucePrepare(withAnimations: animations)
         }
     }
     
+    
+    /// a simple overrided method that will call `spruceUp` on the `animationView`. If the `animationView` is not set then nothing will happen. The code should silently fail.
+    ///
+    /// - Parameter animated: If true, the view was added to the window using an animation.
     override open func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         

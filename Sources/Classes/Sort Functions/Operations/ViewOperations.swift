@@ -28,7 +28,7 @@ import UIKit
 extension Int {
     
     /// Used for recursive searching of the view hierarchy. Using this value will make the recursive search only stop once it has found all of the subviews
-    static let spruceUnlimited = -1
+    static let spruceUnlimited = -13
 }
 
 public extension UIView {
@@ -82,6 +82,10 @@ public extension UIView {
             return []
         }
         
+        
+        // Decrease the depth of the search each time, unless the search is unlimited
+        let subDepth = (maxDepth == .spruceUnlimited) ? .spruceUnlimited : maxDepth - 1
+        
         var subviews: [SpruceView] = []
         
         for subview in view.subviews {
@@ -94,7 +98,7 @@ public extension UIView {
             }
             subviews.append(SpruceUIView(view: subview, referencePoint: referencePoint))
             
-            let subSubViews = recursiveSubviews(for: subview, maxDepth: maxDepth - 1, coordinateView: coordinateView)
+            let subSubViews = recursiveSubviews(for: subview, maxDepth: subDepth, coordinateView: coordinateView)
             subviews.append(contentsOf: subSubViews)
         }
         

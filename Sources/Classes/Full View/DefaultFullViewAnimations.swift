@@ -84,6 +84,13 @@ public extension UIView {
         self.spruceUp(withSortFunction: sortFunction, animation: animationType, completion: completion)
     }
     
+    /// Use this method to setup all of your views before the animation occurs. This could include hiding, fading, translating them, etc...
+    /// Given the array of stock animations, the change functions required to prepare those animations will automatically be run for you. No need to specify your own custom change function here.
+    /// - Note: If you run this after the views are visible, then this would cause a slight stutter of the viewport. This could cause UX issues since the views would flash on the screen.
+    ///
+    /// - Parameters:
+    ///   - animations: an array of stock animations
+    ///   - recursiveDepth: an int describing how deep into the view hiearchy the subview search should go
     public func sprucePrepare(withAnimations animations: [SpruceStockAnimation], recursiveDepth: Int = 0) {
         /* Reset the views to prepare for the animations */
         let clearFunction: SpruceChangeFunction = { view in
@@ -93,6 +100,9 @@ public extension UIView {
             }
         }
         
+        /* 
+         As a nicety, if the view is fading in then we know it does not need to be visible. So let's hide the view so that it does not intercept any touch events while it is transparent.
+         */
         let isFading = animations.contains(where: { value in
             switch value {
             case .fadeIn:
@@ -113,6 +123,9 @@ public extension UIView {
         }
     }
     
+    /// Quick method to hide all of the subviews of a view. Use this if you want to make sure that none of the views that will be animated will be shown on screen before you transition them.
+    ///
+    /// - Parameter recursiveDepth: an int describing how deep into the view hiearchy the subview search should go
     public func hideAllSubviews(recursiveDepth: Int = 0) {
         let subviews = self.subviews(withRecursiveDepth: recursiveDepth)
         UIView.performWithoutAnimation {
