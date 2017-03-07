@@ -35,7 +35,10 @@ public extension UIView {
     public func sprucePrepare(withRecursiveDepth recursiveDepth: Int = 0, changeFunction: SpruceChangeFunction) {
         let subviews = self.subviews(withRecursiveDepth: recursiveDepth)
         for view in subviews {
-            changeFunction(view.view)
+            guard let animatedView = view.view else {
+                continue
+            }
+            changeFunction(animatedView)
         }
     }
     
@@ -60,12 +63,16 @@ public extension UIView {
             }
 
 
+            guard let animatedView = timedView.spruceView.view else {
+                continue
+            }
+            
             if let prepare = prepare {
-                prepare(timedView.spruceView.view)
+                prepare(animatedView)
             }
 
             animation.animate(delay: timedView.timeOffset,
-                              view: timedView.spruceView.view,
+                              view: animatedView,
                               completion: ((index == timedViews.count - 1) ? completion : nil))
         }
     }

@@ -46,6 +46,10 @@ class CustomAnimationViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
+        toggleAnimation()
+    }
+    
+    func toggleAnimation() {
         if customAnimation != nil {
             Timer.scheduledTimer(timeInterval: 0.25, target: self, selector: #selector(callAnimation), userInfo: nil, repeats: false)
         }
@@ -53,6 +57,10 @@ class CustomAnimationViewController: UIViewController {
     
     func callAnimation() {
         customAnimation?()
+    }
+    
+    deinit {
+        print("Deallocated view controller")
     }
 }
 

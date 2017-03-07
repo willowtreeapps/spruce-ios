@@ -30,12 +30,12 @@ open class Spruce {
 }
 
 public protocol SpruceView {
-    var view: UIView { get }
+    weak var view: UIView? { get }
     var referencePoint: CGPoint { get set }
 }
 
 public struct SpruceUIView: SpruceView {
-    public let view: UIView
+    public weak var view: UIView?
     public var referencePoint: CGPoint
     
     public init(view: UIView, referencePoint: CGPoint) {

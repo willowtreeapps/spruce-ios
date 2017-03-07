@@ -114,10 +114,13 @@ public extension UIView {
         
         let subviews = self.subviews(withRecursiveDepth: recursiveDepth)
         UIView.performWithoutAnimation {
-            for subView in subviews {
-                clearFunction(subView.view)
+            for subview in subviews {
+                guard let animatedView = subview.view else {
+                    continue
+                }
+                clearFunction(animatedView)
                 if isFading {
-                    subView.view.isHidden = false
+                    animatedView.isHidden = false
                 }
             }
         }
@@ -129,8 +132,11 @@ public extension UIView {
     public func hideAllSubviews(recursiveDepth: Int = 0) {
         let subviews = self.subviews(withRecursiveDepth: recursiveDepth)
         UIView.performWithoutAnimation {
-            for subView in subviews {
-                subView.view.isHidden = true
+            for subview in subviews {
+                guard let animatedView = subview.view else {
+                    continue
+                }
+                animatedView.isHidden = true
             }
         }
     }

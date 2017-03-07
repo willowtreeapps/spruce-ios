@@ -93,7 +93,7 @@ class SortFunctionTestViewController: UIViewController {
     // Settings
     let availableFunctions: [SortFunctions] = [.base, .linear, .cornered, .radial, .inline, .continuous, .weightedContinuous, .random]
     var settings = SortFunctionTestSettings()
-    var animationController = CustomAnimationViewController()
+    var animationController: CustomAnimationViewController?
 
     // Lifecycle
     override func viewDidLoad() {
@@ -110,14 +110,16 @@ class SortFunctionTestViewController: UIViewController {
     }
 
     func reloadSortView() {
-        for subview in sortView.subviews {
-            subview.removeFromSuperview()
-        }
+        
+        animationController?.view.removeFromSuperview()
+        animationController?.removeFromParentViewController()
+        
         let testController = self.animationControllerForCurrentSettings()
         self.addChildViewController(testController)
         self.sortView.addSubview(testController.view)
         testController.view.frame = sortView.bounds
         testController.setup()
+        animationController = testController
 
         let activeControlViews = controlViewsForCurrentSettings()
         for view in controlViews {
@@ -285,14 +287,16 @@ extension SortFunctionTestViewController {
     func animationControllerForCurrentSettings() -> CustomAnimationViewController {
 
         let testController = CustomAnimationViewController(nibName: nil, bundle: nil)
-
-        let animations = { [unowned self] in
+        
+        let animations = { [weak self, weak testController] in
             let animation = SpringAnimation(duration: 0.5) { view in
                 view.alpha = 1.0
                 view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
             }
-            let sortFunction = self.sortFunctionForCurrentSettings()
-            testController.containerView?.spruceUp(withSortFunction: sortFunction, animation: animation)
+            guard let sortFunction = self?.sortFunctionForCurrentSettings() else {
+                return
+            }
+            testController?.containerView?.spruceUp(withSortFunction: sortFunction, animation: animation)
         }
         testController.customAnimation = animations
         return testController
