@@ -40,7 +40,11 @@ public enum SpruceDirection {
     case rightToLeft
 }
 
+
+/// A `DistanceSortFunction` that defines it's `distancePoint` based on a `SpruceDirection`. Any distance based sort functions that use a direction variable in order to determine the setup of the animation should implement this protocol.
 public protocol DirectionSortFunction: DistanceSortFunction {
+    
+    /// the direction that the animation should follow
     var direction: SpruceDirection { get set }
 }
 

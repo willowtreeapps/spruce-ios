@@ -25,6 +25,13 @@
 
 import Foundation
 
+
+/// Represents the weighted values for computation
+///
+/// - light: a small value, 0.5
+/// - medium: a default value, 1.0
+/// - heavy: a large value, 2.0
+/// - custom: you can specify your own value for weight
 public enum SpruceWeight {
     case light
     case medium
@@ -47,6 +54,8 @@ public enum SpruceWeight {
     }
 }
 
+
+/// A `SortFunction` that takes into account the vertical and horizontal weight of the position of views. The lighter the weight the 
 public protocol WeightSortFunction: SortFunction {
     var horizontalWeight: SpruceWeight { get set }
     var verticalWeight: SpruceWeight { get set }
