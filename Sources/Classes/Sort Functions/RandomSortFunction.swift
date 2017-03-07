@@ -25,6 +25,8 @@
 
 import UIKit
 
+
+/// A `SortFunction` that will animate all the views in with a random delay. No 2 views will animate in with the same offset. The views will be placed in an array, shuffled, and then each view will be asigned an offset given the `interObjectDelay`.
 public struct RandomSortFunction: SortFunction {
     
     let interObjectDelay: TimeInterval

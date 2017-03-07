@@ -25,6 +25,10 @@
 
 import UIKit
 
+
+/// A `SortFunction` that has variable `interObjectDelay` values. Unlike other `SortFunction` implementations, for the `ContinuousSortFunction` you specify a `duration` and the `SortFunction` will compute the necessary `interObjectDelay` values for each of the subviews. This means that the offset times will not be multiples of the delay like usual.
+/// - Note: Though `interObjectDelay` is a value on this sort function, it will not be used.
+/// - Note: The delay values used will be calculated and relative based on how far those views are from the selected position. This means that the animation will look a little smoother if you are using it with large scale numbers of `subviews`.
 public struct ContinuousSortFunction: PositionSortFunction {
 
     public var interObjectDelay: TimeInterval = 0.0

@@ -25,6 +25,8 @@
 
 import UIKit
 
+
+/// A `SortFunction` designed to animate in a corner like fashion. The views near the starting corner will animate first. In essence it appears to be a wiping function that will continue diagonally based on that corner. 
 public struct CorneredSortFunction: CornerSortFunction {
     
     public var corner: SpruceCorner

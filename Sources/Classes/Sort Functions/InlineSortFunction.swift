@@ -26,6 +26,8 @@
 import UIKit
 
 
+/// A `SortFunction` that animates the views in as if they were reading text from left to right (based on the corner that you set). 
+/// - Note: If you set any type of right corner, then the views will enter as if you are reading text from right to left.
 public struct InlineSortFunction: CornerSortFunction {
 
     public var interObjectDelay: TimeInterval

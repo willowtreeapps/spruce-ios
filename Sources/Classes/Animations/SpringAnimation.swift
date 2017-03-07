@@ -25,13 +25,16 @@
 
 import UIKit
 
-
+/// A wrapper around the spring `UIViewAnimation` block with options publicly accessible. See, [UIViewAnimation](apple-reference-documentation://hsEaMPVO1d) for more
+/// - Note: `animationOptions` defaults to `[]`. If you do not update this value before calling the animate method than the changes will not be reflected.
+/// - Note: `damping` defaults to 0.5 and `initialVelocity` defaults to 0.7
 open class SpringAnimation: SpruceAnimation {
     
     public var changeFunction: SpruceChangeFunction?
-    let duration: TimeInterval
-    let damping: CGFloat = 0.5
-    let initialVelocity: CGFloat = 0.7
+    public var duration: TimeInterval
+    public var damping: CGFloat = 0.5
+    public var initialVelocity: CGFloat = 0.7
+    public var animationOptions: UIViewAnimationOptions = []
     
     public init(duration: TimeInterval) {
         self.duration = duration
@@ -43,7 +46,7 @@ open class SpringAnimation: SpruceAnimation {
     }
     
     open func animate(delay: TimeInterval, view: UIView, completion: SpruceCompletionHandler?) {
-        UIView.animate(withDuration: duration, delay: delay, usingSpringWithDamping: damping, initialSpringVelocity: initialVelocity, options: [], animations: { [weak self] in
+        UIView.animate(withDuration: duration, delay: delay, usingSpringWithDamping: damping, initialSpringVelocity: initialVelocity, options: animationOptions, animations: { [weak self] in
             self?.changeFunction?(view)
         }, completion: completion)
     }
