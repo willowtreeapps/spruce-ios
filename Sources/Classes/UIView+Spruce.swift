@@ -12,14 +12,10 @@ public extension UIView {
     
     /// Access to all of the Spruce library animations. Use this to call functions such as `.animate` or `.prepare`
     public var spruce: Spruce {
-        get {
-            return Spruce(view: self)
-        }
+        return Spruce(view: self)
     }
     
     public var 🌲: Spruce {
-        get {
-            return spruce
-        }
+        return spruce
     }
 }

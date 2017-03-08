@@ -24,14 +24,10 @@ public extension CGPoint {
     
     /// Access point extensions from Spruce. Call methods such as `.euclideanDistance`.
     public var spruce: SprucePoint {
-        get {
-            return SprucePoint(point: self)
-        }
+        return SprucePoint(point: self)
     }
     
     public var 🌲: SprucePoint {
-        get {
-            return spruce
-        }
+        return spruce
     }
 }
