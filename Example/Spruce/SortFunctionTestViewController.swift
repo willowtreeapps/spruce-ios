@@ -85,7 +85,7 @@ class SortFunctionTestViewController: UIViewController {
     @IBOutlet weak var horizontalWeightPicker: UISegmentedControl!
     @IBOutlet weak var reverseSwitch: UISwitch!
     @IBOutlet weak var functionTextField: UITextField!
-    @IBOutlet weak var codeLabel: UILabel!
+    @IBOutlet weak var codeTextView: UITextView!
 
     // Preview
     @IBOutlet weak var sortView: UIView!
@@ -127,7 +127,7 @@ class SortFunctionTestViewController: UIViewController {
         }
         let codeForFunction = ExampleCodeGenerator.generateCode(forSettings: settings)
         print("\n\(codeForFunction)\n")
-        codeLabel.text = codeForFunction
+        codeTextView.text = codeForFunction
     }
 
     func sortFunctionForCurrentSettings() -> SortFunction {
@@ -328,6 +328,16 @@ extension SortFunctionTestViewController: UIPickerViewDataSource {
         reloadSortView()
     }
 
+}
+
+extension SortFunctionTestViewController: UITextViewDelegate, UITextFieldDelegate {
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        return false
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return false
+    }
 }
 
 struct SortFunctionTestSettings {
