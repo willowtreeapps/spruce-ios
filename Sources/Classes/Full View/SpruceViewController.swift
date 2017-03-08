@@ -56,7 +56,7 @@ open class SpruceViewController: UIViewController {
     override open func viewDidLoad() {
         super.viewDidLoad()
         if animations.count > 0 {
-            animationView?.spruce_prepare(withAnimations: animations)
+            animationView?.sprucePrepare(with: animations)
         }
     }
     
@@ -67,6 +67,6 @@ open class SpruceViewController: UIViewController {
     override open func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        animationView?.spruce_up(withAnimations: animations, duration: duration, animationType: animationType, sortFunction: sortFunction, prepare: false)
+        animationView?.spruceAnimate(animations, duration: duration, animationType: animationType, sortFunction: sortFunction, prepare: false)
     }
 }

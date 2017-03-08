@@ -60,7 +60,7 @@ class ExampleViewController: UIViewController {
     }
     
     func prepareAnimation() {
-        animationView?.spruce_prepare(withAnimations: animations)
+        animationView?.sprucePrepare(with: animations)
         
         timer?.invalidate()
         timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(callAnimation), userInfo: nil, repeats: false)
@@ -72,7 +72,7 @@ class ExampleViewController: UIViewController {
         }
         let animation = SpringAnimation(duration: 0.7)
         DispatchQueue.main.async {
-            self.animationView?.spruce_up(withAnimations: self.animations, animationType: animation, sortFunction: sortFunction)
+            self.animationView?.spruceAnimate(self.animations, animationType: animation, sortFunction: sortFunction)
         }
     }
 }

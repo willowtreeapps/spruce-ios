@@ -36,7 +36,7 @@ public struct RandomSortFunction: SortFunction {
     }
     
     public func timeOffsets(view: UIView, recursiveDepth: Int) -> [TimedView] {
-        var subviews = view.spruce_subviews(withRecursiveDepth: recursiveDepth)
+        var subviews = view.spruceSubviews(withRecursiveDepth: recursiveDepth)
         subviews.shuffle()
         
         var timedViews: [TimedView] = []
