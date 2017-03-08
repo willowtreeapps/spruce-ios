@@ -42,11 +42,11 @@ public struct ContinuousSortFunction: PositionSortFunction {
     }
 
     public func timeOffsets(view: UIView, recursiveDepth: Int) -> [TimedView] {
-        let subviews = view.spruceSubviews(withRecursiveDepth: recursiveDepth)
+        let subviews = view.spruce.subviews(withRecursiveDepth: recursiveDepth)
         let comparisonPoint = distancePoint(view: view, subviews: subviews)
 
         let distancedViews = subviews.map {
-            return (view: $0, distance: comparisonPoint.euclideanDistance(to: $0.referencePoint))
+            return (view: $0, distance: comparisonPoint.spruce.euclideanDistance(to: $0.referencePoint))
         }
 
         guard let maxDistance: Double = distancedViews.max(by: { $0.distance < $1.distance })?.distance , maxDistance > 0 else {

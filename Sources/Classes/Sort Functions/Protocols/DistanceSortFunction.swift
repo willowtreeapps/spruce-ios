@@ -70,7 +70,7 @@ public extension DistanceSortFunction {
     ///   - recursiveDepth: an int describing how deep into the view hiearchy the subview search should go, defaults to 0. A value of 0 is the same as calling the `subviews` on the actual view itself. Therefore a depth of 1 will be getting the subviews of each of the subviews, etc...
     /// - Returns: an array of `TimedView`'s which contain references to the view needed to be animated and the time offset for when the animation of that individual view should start relative to the start of the overall animation
     func timeOffsets(view: UIView, recursiveDepth: Int) -> [TimedView] {
-        let subviews = view.spruceSubviews(withRecursiveDepth: recursiveDepth)
+        let subviews = view.spruce.subviews(withRecursiveDepth: recursiveDepth)
         let comparisonPoint = distancePoint(view: view, subviews: subviews)
         
         let distancedViews = subviews.map {
@@ -100,13 +100,13 @@ public extension DistanceSortFunction {
     }
     
     func distanceBetween(_ left: CGPoint, and right: CGPoint) -> Double {
-        return left.euclideanDistance(to: right)
+        return left.spruce.euclideanDistance(to: right)
     }
     
     func translate(distancePoint: CGPoint, intoSubviews subviews: [View]) -> CGPoint {
         if let referenceView = subviews.min(by: {(left, right) in
-            let leftDistance = left.referencePoint.euclideanDistance(to: distancePoint)
-            let rightDistance = right.referencePoint.euclideanDistance(to: distancePoint)
+            let leftDistance = left.referencePoint.spruce.euclideanDistance(to: distancePoint)
+            let rightDistance = right.referencePoint.spruce.euclideanDistance(to: distancePoint)
             return leftDistance < rightDistance
         }) {
             return referenceView.referencePoint
