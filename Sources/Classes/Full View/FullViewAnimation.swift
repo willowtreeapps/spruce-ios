@@ -27,7 +27,11 @@ import UIKit
 
 public extension UIView {
     
-    // Use this to prepare all of your views for animation. Including hiding them, fading them, translating them, etc...
+    /// Use this method to setup all of your views before the animation occurs. This could include hiding, fading, translating them, etc... 
+    ///
+    /// - Parameters:
+    ///   - recursiveDepth: an int describing how deep into the view hiearchy the subview search should go
+    ///   - changeFunction: a function that should be applied to each of the subviews of `this`
     public func sprucePrepare(withRecursiveDepth recursiveDepth: Int = 0, changeFunction: SpruceChangeFunction) {
         let subviews = self.subviews(withRecursiveDepth: recursiveDepth)
         for view in subviews {
@@ -35,6 +39,16 @@ public extension UIView {
         }
     }
     
+    
+    /// Run a spruce style animation on this view. This is a customized method that allows you to take more control over how the animation progresses.
+    ///
+    /// - Parameters:
+    ///   - sortFunction: the `SortFunction` used to determine the animation offsets for each subview
+    ///   - prepare: a closure that will be called with each subview of `this` parent view
+    ///   - animation: a `SpruceAnimation` that will be used to animate each subview
+    ///   - exclude: an array of views that the animation should skip over
+    ///   - recursiveDepth: an int describing how deep into the view hiearchy the subview search should go, defaults to 0
+    ///   - completion: a closure that is called upon the final animation completing. A `Bool` is passed into the closure letting you know if the animation has completed. **Note:** If you stop animations on the whole animating view, then `false` will be passed into the completion closure. However, if the final animation is allowed to proceed then `true` will be the value passed into the completion closure.
     public func spruceUp(withSortFunction sortFunction: SortFunction, prepare: SprucePrepareHandler? = nil, animation: SpruceAnimation, exclude: [UIView]? = nil, recursiveDepth: Int = 0, completion: SpruceCompletionHandler? = nil) {
         var timedViews = sortFunction.timeOffsets(view: self, recursiveDepth: recursiveDepth)
         timedViews = timedViews.sorted { (left, right) -> Bool in

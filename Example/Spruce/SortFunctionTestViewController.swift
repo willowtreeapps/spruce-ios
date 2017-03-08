@@ -150,6 +150,7 @@ class SortFunctionTestViewController: UIViewController {
 
         if var sortFunction = sortFunction as? DistanceSortFunction {
             sortFunction.reversed = settings.reverse
+            return sortFunction
         }
         return sortFunction
     }
