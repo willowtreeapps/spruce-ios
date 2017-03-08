@@ -296,7 +296,7 @@ extension SortFunctionTestViewController {
             guard let sortFunction = self?.sortFunctionForCurrentSettings() else {
                 return
             }
-            testController?.containerView?.spruceUp(withSortFunction: sortFunction, animation: animation)
+            testController?.containerView?.spruce_up(withSortFunction: sortFunction, animation: animation)
         }
         testController.customAnimation = animations
         return testController

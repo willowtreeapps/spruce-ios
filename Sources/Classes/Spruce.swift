@@ -37,7 +37,7 @@ public protocol View {
     /// The view that should be animating
     weak var view: UIView? { get }
     
-    /// The adjusted for reference point. 
+    /// The adjusted for reference point.
     var referencePoint: CGPoint { get set }
 }
 

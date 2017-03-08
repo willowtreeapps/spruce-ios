@@ -35,7 +35,7 @@ public extension UIView {
     /// // C: []
     /// // D: []
     /// // E: []
-    /// let result = A.subviews(withRecursiveDepth: 1)
+    /// let result = A.spruce_subviews(withRecursiveDepth: 1)
     /// // result: [A, B, D, E, C]
     /// ```
     ///
@@ -43,7 +43,7 @@ public extension UIView {
     /// - Returns: an array of all the subviews in the receiver view. Depending on the `recursiveDepth` this could contain the subviews of subviews also.
     /// - Note: This method will return an array of `View`. These are used so that when we adjust for coordinate space differences, it does not affect the way your screen renders. A `View` is a simple struct with `view: UIView` and `referencePoint: CGPoint` variables.
     /// - Precondition: `recursiveDepth` is an Int >= 0  (0...Int.max).
-    public func subviews(withRecursiveDepth recursiveDepth: Int) -> [View] {
+    public func spruce_subviews(withRecursiveDepth recursiveDepth: Int) -> [View] {
         let subviews: [UIView]
         
         // Handle special cases for UITableView and UICollectionView
@@ -61,7 +61,7 @@ public extension UIView {
                 SpruceUIView(view: $0, referencePoint: $0.center)
             }
         }
-        return UIView.recursiveSubviews(for: self, maxDepth: recursiveDepth, coordinateView: self)
+        return UIView.spruce_recursiveSubviews(for: self, maxDepth: recursiveDepth, coordinateView: self)
     }
     
     /// Search the view hierarchy recursively looking for all the subviews of subviews
@@ -73,7 +73,7 @@ public extension UIView {
     /// - Returns: an array of `View` where each subview will have their coordinate space referencing the `coordinateView`.
     /// - Note: This is a recursive method and could cause memory exceptions if your view hierarchy is too large. Keep in mind that this is rare, but a possiblility. If you run into an issue with this change the depth of your search.
     /// - Precondition: `maxDepth` is an Int >= 0  (0...Int.max)
-    private static func recursiveSubviews(for view: UIView, maxDepth: Int, coordinateView: UIView) -> [View] {
+    private static func spruce_recursiveSubviews(for view: UIView, maxDepth: Int, coordinateView: UIView) -> [View] {
         guard maxDepth >= 0 || maxDepth == .max else {
             return []
         }
@@ -90,7 +90,7 @@ public extension UIView {
             }
             subviews.append(SpruceUIView(view: subview, referencePoint: referencePoint))
             
-            let subSubViews = recursiveSubviews(for: subview, maxDepth: maxDepth - 1, coordinateView: coordinateView)
+            let subSubViews = spruce_recursiveSubviews(for: subview, maxDepth: maxDepth - 1, coordinateView: coordinateView)
             subviews.append(contentsOf: subSubViews)
         }
         
