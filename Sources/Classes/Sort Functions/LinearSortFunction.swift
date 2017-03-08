@@ -42,7 +42,7 @@ public struct LinearSortFunction: DirectionSortFunction {
         self.interObjectDelay = interObjectDelay
     }
     
-    public func getDistanceBetweenPoints(left: CGPoint, right: CGPoint) -> Double {
+    public func distanceBetween(_ left: CGPoint, and right: CGPoint) -> Double {
         var left = left
         var right = right
         switch direction {

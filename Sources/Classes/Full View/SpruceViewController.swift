@@ -26,7 +26,7 @@
 import UIKit
 
 open class SpruceViewController: UIViewController {
-    open var animations: [SpruceStandardAnimation] = []
+    open var animations: [SpruceStockAnimation] = []
     open var duration: TimeInterval = 0.3
     open var animationType: SpruceAnimation
     open var sortFunction: SortFunction

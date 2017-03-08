@@ -26,17 +26,33 @@
 import UIKit
 
 public extension CGPoint {
+    
+    /// Calculate the euclidean distance between two points
+    ///
+    /// ```
+    /// distance = sqrt((x1 - x2)^2 + (y1 - y2)^2)
+    /// ```
+    /// - Parameter point: the end point of the line for calculating the distance
+    /// - Returns: a double value of the euclidean distance between the two points
     public func euclideanDistance(to point: CGPoint) -> Double {
         let x = Double(pow(self.x - point.x, 2.0))
         let y = Double(pow(self.y - point.y, 2.0))
         return sqrt(x + y)
     }
 
+    /// Calculate the horizontal euclidean distance between two points. Esentially the same thing as euclideanDistance except it ignores the `y` components of the two points.
+    ///
+    /// - Parameter point: the end point of the line for calculating the distance
+    /// - Returns: a double value of the distance horizontal euclidena between the two points
     public func horizontalDistance(to point: CGPoint) -> Double {
         let x = Double(pow(self.x - point.x, 2.0))
         return sqrt(x)
     }
 
+    /// Calculate the vertical euclidean distance between two points. Esentially the same thing as euclideanDistance except it ignores the `x` components of the two points.
+    ///
+    /// - Parameter point: the end point of the line for calculating the distance
+    /// - Returns: a double value of the distance vertical euclidena between the two points
     public func verticalDistance(to point: CGPoint) -> Double {
         let y = Double(pow(self.y - point.y, 2.0))
         return sqrt(y)

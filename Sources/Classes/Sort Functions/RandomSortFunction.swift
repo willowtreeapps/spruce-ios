@@ -33,8 +33,8 @@ public struct RandomSortFunction: SortFunction {
         self.interObjectDelay = interObjectDelay
     }
     
-    public func getTimeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView] {
-        var subviews = view.getSubviews(recursiveDepth: recursiveDepth)
+    public func timeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView] {
+        var subviews = view.subviews(withRecursiveDepth: recursiveDepth)
         subviews.shuffle()
         
         var timedViews: [SpruceTimedView] = []
