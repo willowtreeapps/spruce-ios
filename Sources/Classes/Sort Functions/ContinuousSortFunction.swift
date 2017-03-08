@@ -33,15 +33,15 @@ public struct ContinuousSortFunction: PositionSortFunction {
 
     public var interObjectDelay: TimeInterval = 0.0
     public var duration: TimeInterval
-    public var position: SprucePosition
+    public var position: Position
     public var reversed: Bool = false
 
-    public init(position: SprucePosition, duration: TimeInterval) {
+    public init(position: Position, duration: TimeInterval) {
         self.duration = duration
         self.position = position
     }
 
-    public func timeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView] {
+    public func timeOffsets(view: UIView, recursiveDepth: Int) -> [TimedView] {
         let subviews = view.subviews(withRecursiveDepth: recursiveDepth)
         let comparisonPoint = distancePoint(view: view, subviews: subviews)
 
@@ -53,7 +53,7 @@ public struct ContinuousSortFunction: PositionSortFunction {
             return []
         }
 
-        var timedViews: [SpruceTimedView] = []
+        var timedViews: [TimedView] = []
         for view in distancedViews {
             let normalizedDistance: Double
             if reversed {
@@ -63,7 +63,7 @@ public struct ContinuousSortFunction: PositionSortFunction {
                 normalizedDistance = view.distance / maxDistance
             }
             let offset = duration * normalizedDistance
-            let timedView = SpruceTimedView(spruceView: view.view, timeOffset: offset)
+            let timedView = TimedView(spruceView: view.view, timeOffset: offset)
             timedViews.append(timedView)
         }
 

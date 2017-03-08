@@ -51,7 +51,7 @@ public enum SlideDirection {
 /// - medium: the object should move a moderate amount
 /// - large: the object should move very noticeably
 /// - custom: provide your own value that you feel the object should move
-public enum SpruceSize {
+public enum Size {
     /// slightly animate the object
     case small
     
@@ -67,27 +67,27 @@ public enum SpruceSize {
 
 
 /// A few stock animations that you can use with Spruce. We want to make it really easy for you to include animations so we tried to include the basics. Use these stock animations to `slide`, `fade`, `spin`, `expand`, or `contract` your views.
-public enum SpruceStockAnimation {
-    /// Have your view slide to where it currently is. Provide a `SlideDirection` and `SpruceSize` to determine what the animation should look like.
-    case slide(SlideDirection, SpruceSize)
+public enum StockAnimation {
+    /// Have your view slide to where it currently is. Provide a `SlideDirection` and `Size` to determine what the animation should look like.
+    case slide(SlideDirection, Size)
     
     /// Fade the view in
     case fadeIn
     
-    /// Spin the view in the direction of the size. Provide a `SpruceSize` to define how much the view should spin
-    case spin(SpruceSize)
+    /// Spin the view in the direction of the size. Provide a `Size` to define how much the view should spin
+    case spin(Size)
     
-    /// Have the view grow in size. Provide a `SpruceSize` to define by which scale the view should grow
-    case expand(SpruceSize)
+    /// Have the view grow in size. Provide a `Size` to define by which scale the view should grow
+    case expand(Size)
     
-    /// Have the view shrink in size. Provide a `SpruceSize` to define by which scale the view should shrink
-    case contract(SpruceSize)
+    /// Have the view shrink in size. Provide a `Size` to define by which scale the view should shrink
+    case contract(Size)
     
     /// Provide custom prepare and change functions for the view to animate
-    case custom(prepareFunction: SprucePrepareHandler, animateFunction: SpruceChangeFunction)
+    case custom(prepareFunction: PrepareHandler, animateFunction: ChangeFunction)
     
     /// Given the `StockAnimation`, how should Spruce prepare your view for animation. Since we want all of the views to end the animation where they are supposed to be positioned, we have to reverse their animation effect.
-    var prepareFunction: SprucePrepareHandler {
+    var prepareFunction: PrepareHandler {
         get {
             switch self {
             case .slide:
@@ -100,6 +100,7 @@ public enum SpruceStockAnimation {
             case .fadeIn:
                 return { view in
                     view.alpha = 0.0
+                    view.isHidden = true
                 }
             case .spin:
                 let angle = spinAngle
@@ -122,8 +123,8 @@ public enum SpruceStockAnimation {
     }
     
     
-    /// Reset any of the transforms on the view so that the view will end up in its original position. If a `custom` animation is used, then that animation `SpruceChangeFunction` is returned.
-    var animationFunction: SpruceChangeFunction {
+    /// Reset any of the transforms on the view so that the view will end up in its original position. If a `custom` animation is used, then that animation `ChangeFunction` is returned.
+    var animationFunction: ChangeFunction {
         get {
             switch self {
             case .slide:
@@ -132,6 +133,7 @@ public enum SpruceStockAnimation {
                 }
             case .fadeIn:
                 return { view in
+                    view.isHidden = false
                     view.alpha = 1.0
                 }
             case .spin:

@@ -346,11 +346,11 @@ struct SortFunctionTestSettings {
     var function: SortFunctions = .base
     var duration: Double = 1.0
     var delay: Double = 0.025
-    var position: SprucePosition = .topLeft
-    var direction: SpruceDirection = .topToBottom
+    var position: Position = .topLeft
+    var direction: Direction = .topToBottom
     var corner: SpruceCorner = .topLeft
-    var horizontalWeight: SpruceWeight = .light
-    var verticalWeight: SpruceWeight = .light
+    var horizontalWeight: Weight = .light
+    var verticalWeight: Weight = .light
     var reverse: Bool = false
 
 }

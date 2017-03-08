@@ -32,7 +32,7 @@ import Foundation
 /// - medium: a default value, 1.0
 /// - heavy: a large value, 2.0
 /// - custom: you can specify your own value for weight
-public enum SpruceWeight {
+public enum Weight {
     case light
     case medium
     case heavy
@@ -59,8 +59,8 @@ public enum SpruceWeight {
 public protocol WeightSortFunction: SortFunction {
     
     /// the horizontal weight that should be applied to each of the distances between views
-    var horizontalWeight: SpruceWeight { get set }
+    var horizontalWeight: Weight { get set }
     
     /// the vertical weight that should be applied to each of the distances between views
-    var verticalWeight: SpruceWeight { get set }
+    var verticalWeight: Weight { get set }
 }

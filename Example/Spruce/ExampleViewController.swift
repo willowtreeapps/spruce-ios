@@ -27,12 +27,12 @@ import UIKit
 import Spruce
 
 class ExampleViewController: UIViewController {
-    let animations: [SpruceStockAnimation]
+    let animations: [StockAnimation]
     var sortFunction: SortFunction?
     var animationView: UIView?
     var timer: Timer?
     
-    init(animations: [SpruceStockAnimation], nibName: String?) {
+    init(animations: [StockAnimation], nibName: String?) {
         self.animations = animations
         super.init(nibName: nibName, bundle: nil)
     }

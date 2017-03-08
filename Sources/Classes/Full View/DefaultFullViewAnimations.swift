@@ -35,13 +35,13 @@ public extension UIView {
     ///   - Translating
     ///   - Rotating
     ///
-    ///   See `SpruceStockAnimation` for more details
+    ///   See `StockAnimation` for more details
     ///
     /// - Parameters:
     ///   - animations: an array of stock animations
     ///   - duration: duration of each individual animation
     ///   - completion: a closure that is called upon the final animation completing. A `Bool` is passed into the closure letting you know if the animation has completed. **Note:** If you stop animations on the whole animating view, then `false` will be passed into the completion closure. However, if the final animation is allowed to proceed then `true` will be the value passed into the completion closure.
-    public func spruceUp(withAnimations animations: [SpruceStockAnimation], duration: TimeInterval = 0.3, completion: SpruceCompletionHandler? = nil ) {
+    public func spruceUp(withAnimations animations: [StockAnimation], duration: TimeInterval = 0.3, completion: CompletionHandler? = nil ) {
         let animation = StandardAnimation(duration: duration)
         self.spruceUp(withAnimations: animations, duration: duration, animationType: animation, completion: completion)
     }
@@ -53,7 +53,7 @@ public extension UIView {
     ///   - duration: duration of each individual animation
     ///   - animationType: style of animation that each view should follow. Don't worry about setting the `changeFunction`. We will set that using the stock animations that you provide. If you have a value there it will be overwritten. (ex: SpringAnimation)
     ///   - completion: a closure that is called upon the final animation completing. A `Bool` is passed into the closure letting you know if the animation has completed. **Note:** If you stop animations on the whole animating view, then `false` will be passed into the completion closure. However, if the final animation is allowed to proceed then `true` will be the value passed into the completion closure.
-    public func spruceUp(withAnimations animations: [SpruceStockAnimation], duration: TimeInterval = 0.3, animationType: SpruceAnimation, completion: SpruceCompletionHandler? = nil) {
+    public func spruceUp(withAnimations animations: [StockAnimation], duration: TimeInterval = 0.3, animationType: SpruceAnimation, completion: CompletionHandler? = nil) {
         let sortFunction = LinearSortFunction(direction: .topToBottom, interObjectDelay: 0.05)
         self.spruceUp(withAnimations: animations, duration: duration, animationType: animationType, sortFunction: sortFunction, completion: completion)
     }
@@ -67,7 +67,7 @@ public extension UIView {
     ///   - sortFunction: the `sortFunction` to be used when setting the offsets for each subviews animation
     ///   - prepare: a `bool` as to whether we should run `sprucePrepare` on your view for you. If set to `true`, then we will run `sprucePrepare` right before the animation using the stock animations that you provided. If `false`, then `sprucePrepare` will not run. (default is `true`)
     ///   - completion: a closure that is called upon the final animation completing. A `Bool` is passed into the closure letting you know if the animation has completed. **Note:** If you stop animations on the whole animating view, then `false` will be passed into the completion closure. However, if the final animation is allowed to proceed then `true` will be the value passed into the completion closure.
-    public func spruceUp(withAnimations animations: [SpruceStockAnimation], duration: TimeInterval = 0.3, animationType: SpruceAnimation, sortFunction: SortFunction, prepare: Bool = true, completion: SpruceCompletionHandler? = nil) {
+    public func spruceUp(withAnimations animations: [StockAnimation], duration: TimeInterval = 0.3, animationType: SpruceAnimation, sortFunction: SortFunction, prepare: Bool = true, completion: CompletionHandler? = nil) {
         
         if prepare {
             self.sprucePrepare(withAnimations: animations)
@@ -91,26 +91,14 @@ public extension UIView {
     /// - Parameters:
     ///   - animations: an array of stock animations
     ///   - recursiveDepth: an int describing how deep into the view hiearchy the subview search should go
-    public func sprucePrepare(withAnimations animations: [SpruceStockAnimation], recursiveDepth: Int = 0) {
+    public func sprucePrepare(withAnimations animations: [StockAnimation], recursiveDepth: Int = 0) {
         /* Reset the views to prepare for the animations */
-        let clearFunction: SpruceChangeFunction = { view in
+        let clearFunction: ChangeFunction = { view in
             for animation in animations {
                 let clearFunc = animation.prepareFunction
                 clearFunc(view)
             }
         }
-        
-        /* 
-         As a nicety, if the view is fading in then we know it does not need to be visible. So let's hide the view so that it does not intercept any touch events while it is transparent.
-         */
-        let isFading = animations.contains(where: { value in
-            switch value {
-            case .fadeIn:
-                return true
-            default:
-                return false
-            }
-        })
         
         let subviews = self.subviews(withRecursiveDepth: recursiveDepth)
         UIView.performWithoutAnimation {
@@ -119,9 +107,6 @@ public extension UIView {
                     continue
                 }
                 clearFunction(animatedView)
-                if isFading {
-                    animatedView.isHidden = false
-                }
             }
         }
     }

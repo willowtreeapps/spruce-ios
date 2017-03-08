@@ -48,7 +48,7 @@ public protocol DistanceSortFunction: SortFunction {
     ///   - view: the view for which the point coordinates will base their values off of
     ///   - subviews: the subviews that are allocated for the `SortFunction`. The reason these are passed into the function is so that you can actually grab a reference point of a subview that is closest to the comparison point. This is done so that at least one view will start at the 0s marker.
     /// - Returns: a `CGPoint` object that will allow all views to compare their reference point to this returned value. If `translate` was used, this returned value should be equal to one of the `subviews` reference points.
-    func distancePoint(view: UIView, subviews: [SpruceView]) -> CGPoint
+    func distancePoint(view: UIView, subviews: [View]) -> CGPoint
     
     /// Given a point, find the closest subview to that point and then return the reference point of that subview. This way there will be at least one distance calculation that will have a zero value. We want to make sure that the animation will start right when called, thus there needs to be one view with a zero distance.
     ///
@@ -56,7 +56,7 @@ public protocol DistanceSortFunction: SortFunction {
     ///   - distancePoint: the point on the main view
     ///   - subviews: the subviews of the main view
     /// - Returns: the reference point of the subview that is closest to the `distancePoint`
-    func translate(distancePoint: CGPoint, intoSubviews subviews: [SpruceView]) -> CGPoint
+    func translate(distancePoint: CGPoint, intoSubviews subviews: [View]) -> CGPoint
 }
 
 public extension DistanceSortFunction {
@@ -68,8 +68,8 @@ public extension DistanceSortFunction {
     /// - Parameters:
     ///   - view: the view whose subviews should be animated. This view should not be included in the returned array
     ///   - recursiveDepth: an int describing how deep into the view hiearchy the subview search should go, defaults to 0. A value of 0 is the same as calling the `subviews` on the actual view itself. Therefore a depth of 1 will be getting the subviews of each of the subviews, etc...
-    /// - Returns: an array of `SpruceTimedView`'s which contain references to the view needed to be animated and the time offset for when the animation of that individual view should start relative to the start of the overall animation
-    func timeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView] {
+    /// - Returns: an array of `TimedView`'s which contain references to the view needed to be animated and the time offset for when the animation of that individual view should start relative to the start of the overall animation
+    func timeOffsets(view: UIView, recursiveDepth: Int) -> [TimedView] {
         let subviews = view.subviews(withRecursiveDepth: recursiveDepth)
         let comparisonPoint = distancePoint(view: view, subviews: subviews)
         
@@ -86,13 +86,13 @@ public extension DistanceSortFunction {
             return []
         }
         var currentTimeOffset = 0.0
-        var timedViews: [SpruceTimedView] = []
+        var timedViews: [TimedView] = []
         for view in distancedViews {
             if floor(lastDistance) != floor(view.distance) {
                 lastDistance = view.distance
                 currentTimeOffset += interObjectDelay
             }
-            let timedView = SpruceTimedView(spruceView: view.view, timeOffset: currentTimeOffset)
+            let timedView = TimedView(spruceView: view.view, timeOffset: currentTimeOffset)
             timedViews.append(timedView)
         }
         
@@ -103,7 +103,7 @@ public extension DistanceSortFunction {
         return left.euclideanDistance(to: right)
     }
     
-    func translate(distancePoint: CGPoint, intoSubviews subviews: [SpruceView]) -> CGPoint {
+    func translate(distancePoint: CGPoint, intoSubviews subviews: [View]) -> CGPoint {
         if let referenceView = subviews.min(by: {(left, right) in
             let leftDistance = left.referencePoint.euclideanDistance(to: distancePoint)
             let rightDistance = right.referencePoint.euclideanDistance(to: distancePoint)

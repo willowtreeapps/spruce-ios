@@ -39,7 +39,7 @@ public struct InlineSortFunction: CornerSortFunction {
         self.interObjectDelay = interObjectDelay
     }
     
-    public func timeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView] {
+    public func timeOffsets(view: UIView, recursiveDepth: Int) -> [TimedView] {
         let comparisonPoint = distancePoint(view: view)
         let subviews = view.subviews(withRecursiveDepth: recursiveDepth)
 
@@ -59,9 +59,9 @@ public struct InlineSortFunction: CornerSortFunction {
         }
 
         var currentTimeOffset = 0.0
-        var timedViews: [SpruceTimedView] = []
+        var timedViews: [TimedView] = []
         for view in distancedViews {
-            let timedView = SpruceTimedView(spruceView: view.view, timeOffset: currentTimeOffset)
+            let timedView = TimedView(spruceView: view.view, timeOffset: currentTimeOffset)
             timedViews.append(timedView)
             currentTimeOffset += interObjectDelay
         }

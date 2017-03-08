@@ -28,7 +28,7 @@ import UIKit
 open class SpruceViewController: UIViewController {
     
     /// an array of spruce stock animations that will be used to animate all of the subviews of the `animationView`
-    open var animations: [SpruceStockAnimation] = []
+    open var animations: [StockAnimation] = []
     
     /// the length of each of the individual subview animations
     open var duration: TimeInterval = 0.3

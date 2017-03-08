@@ -29,20 +29,20 @@ import UIKit
 /// A `SortFunction` that will animate all the views in with a random delay. No 2 views will animate in with the same offset. The views will be placed in an array, shuffled, and then each view will be asigned an offset given the `interObjectDelay`.
 public struct RandomSortFunction: SortFunction {
     
-    let interObjectDelay: TimeInterval
+    public var interObjectDelay: TimeInterval
     
     public init(interObjectDelay: TimeInterval) {
         self.interObjectDelay = interObjectDelay
     }
     
-    public func timeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView] {
+    public func timeOffsets(view: UIView, recursiveDepth: Int) -> [TimedView] {
         var subviews = view.subviews(withRecursiveDepth: recursiveDepth)
         subviews.shuffle()
         
-        var timedViews: [SpruceTimedView] = []
+        var timedViews: [TimedView] = []
         var currentTimeOffset: TimeInterval = 0.0
         for subview in subviews {
-            let timedView = SpruceTimedView(spruceView: subview, timeOffset: currentTimeOffset)
+            let timedView = TimedView(spruceView: subview, timeOffset: currentTimeOffset)
             timedViews.append(timedView)
             currentTimeOffset += interObjectDelay
         }

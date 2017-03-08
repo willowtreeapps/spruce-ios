@@ -29,13 +29,20 @@ open class Spruce {
     
 }
 
-public protocol SpruceView {
+/// Used to keep track of the `UIView` object and a changing reference point. Since Spruce allows for
+/// recursive subview lookup, we need to handle changing the coordinate space. Once the coordinate space
+/// has been accounted for we can then alter the reference point.
+public protocol View {
+    
+    /// The view that should be animating
     weak var view: UIView? { get }
+    
+    /// The adjusted for reference point. 
     var referencePoint: CGPoint { get set }
 }
 
-public struct SpruceUIView: SpruceView {
-    public weak var view: UIView?
+public struct SpruceUIView: View {
+    public private(set) weak var view: UIView?
     public var referencePoint: CGPoint
     
     public init(view: UIView, referencePoint: CGPoint) {
