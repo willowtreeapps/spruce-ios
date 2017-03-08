@@ -1,5 +1,5 @@
 //
-//  SortFunction.swift
+//  WeightSortFunction.swift
 //  Spruce
 //
 //  Copyright (c) 2017 WillowTree, Inc.
@@ -23,25 +23,31 @@
 //  THE SOFTWARE.
 //
 
-import UIKit
+import Foundation
 
-public struct SpruceTimedView {
-    let spruceView: SpruceView
-    var timeOffset: TimeInterval
-}
-
-public protocol SortFunction {
-    func getTimeOffsets(view: UIView) -> [SpruceTimedView]
-    /*
-     * recursiveDepth -> An integer defining how deep the recursive subview search should go. A value
-     *                   of 0 is the same as calling the `subviews` on the actual view itself. Therefore
-     *                   a depth of 1 will be getting the subviews of each of the subviews, etc...
-     */
-    func getTimeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView]
-}
-
-public extension SortFunction {
-    func getTimeOffsets(view: UIView) -> [SpruceTimedView] {
-        return getTimeOffsets(view: view, recursiveDepth: 0)
+public enum SpruceWeight {
+    case light
+    case medium
+    case heavy
+    case custom(Double)
+    
+    var coefficient: Double {
+        get {
+            switch self {
+            case .light:
+                return 0.5
+            case .medium:
+                return 1.0
+            case .heavy:
+                return 2.0
+            case .custom(let value):
+                return max(0.0, value)
+            }
+        }
     }
+}
+
+public protocol WeightSortFunction: SortFunction {
+    var horizontalWeight: SpruceWeight { get set }
+    var verticalWeight: SpruceWeight { get set }
 }

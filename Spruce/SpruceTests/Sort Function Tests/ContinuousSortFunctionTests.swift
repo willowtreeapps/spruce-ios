@@ -29,17 +29,14 @@ import XCTest
 class ContinuousSortFunctionTests: SortFunctionTests {
     
     func testContinuousSortFunction(withStartPosition position: SprucePosition, expected: [TimeInterval], expectedReversed: [TimeInterval]) {
-        let sortFunction = ContinuousSortFunction(position: position, duration: 0.1)
-        let timedViews = sortFunction.getTimeOffsets(view: animatableView)
+        var sortFunction = ContinuousSortFunction(position: position, duration: 0.1)
+        let timedViews = sortFunction.timeOffsets(view: animatableView)
         
         compare(timedViews: timedViews, toExpected: expected)
         
         sortFunction.reversed = true
-        let timedViewsReversed = sortFunction.getTimeOffsets(view: animatableView)
+        let timedViewsReversed = sortFunction.timeOffsets(view: animatableView)
         compare(timedViews: timedViewsReversed, toExpected: expectedReversed)
-        
-        printTimedViews(timedViews)
-        printTimedViews(timedViewsReversed)
     }
     
     func testTopLeftContinousSortFunction() {

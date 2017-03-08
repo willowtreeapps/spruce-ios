@@ -7,37 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0290063CC2B29EF94FA16F5BB703B705 /* PointOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB0AB7620FB49DF151E2C8FFA15D7A0 /* PointOperations.swift */; };
 		078F2691E7CDB4222B80804FF9E92A0B /* Pods-Spruce_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BF9A148D4AEDCB38BA3D05DC67413C1 /* Pods-Spruce_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1BDF2D41E832E296FAEAEB2330B97651 /* SpruceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C44D5EE71F935571074868AB9EA590 /* SpruceViewController.swift */; };
-		22990D86166BDEAB7112E5F519B75A5F /* RadialSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3E7602CB9309A840F45735AE8FF0D7 /* RadialSortFunction.swift */; };
-		2B8AFF3473E6B049A31ED1D655E37C5A /* SpruceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B662A7F543BAC15E4CAA5A2FC1480DFC /* SpruceButton.swift */; };
-		2F756B13C5AE0963863DA6E9A16C3FF1 /* NoDelaySortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5D23C3D7554DB6B4C6B791D6C48970 /* NoDelaySortFunction.swift */; };
-		407EEBC71ED643BD2835507371417A27 /* InlineSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4163B7335E7063D71ADE215130EECE50 /* InlineSortFunction.swift */; };
-		4C4EC848F51A1E9D8D911C4A5E0BCDAA /* DefaultFullViewAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1197396B17FBB0D28F734753265F14 /* DefaultFullViewAnimations.swift */; };
+		08F8B225ADD0A13B3BD5F8B29CC4F699 /* DirectionSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5765970903C6EC047AF36DE2E93A5E64 /* DirectionSortFunction.swift */; };
+		1682A13AEED9560688FEF20A55D21463 /* Spruce-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F6333719BFEBE96DA2CE3DE523CAC3B5 /* Spruce-dummy.m */; };
+		19FA4293DC8329E640E003AA25BA50E6 /* CornerSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E09C7013FC3142BE5490BC1986D98B /* CornerSortFunction.swift */; };
+		1A208648E780C04E74BB015E3D4EC001 /* InlineSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C1246C4049C10F1D3C9EB0DCFDFB30 /* InlineSortFunction.swift */; };
+		2DDA90BA7573F44A7439DC607B520979 /* RandomSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7862DC855C53A068A4F210E3D41885A6 /* RandomSortFunction.swift */; };
+		2F59C26E8FFECC5B419DE18F24D0E968 /* CorneredSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525DECBAC8EA6CAE26E495AADB60C93C /* CorneredSortFunction.swift */; };
+		44790C24242D00B09893265D6160100E /* SpruceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A6D8C91D5911EFE2E8F9EE6BC1EFC8 /* SpruceButton.swift */; };
+		4491DAE8FEDEC20A8922B13650F3EC3D /* PointOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D81B595BBE8AB27AA41093DC6636CA /* PointOperations.swift */; };
+		4539D9AE66F152753D906137D691BC66 /* DefaultSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EA67D4426DF12CE00BEC5CB8B76D90 /* DefaultSortFunction.swift */; };
 		4D24B97E25ECA4868BC69DFAF6668EB5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		52E8151A7720904C999973FC94CFB1D2 /* DefaultAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4FA6678900585367C389A1C7CCE181 /* DefaultAnimations.swift */; };
+		5014F30E4D63734F2AD3168DF0B64EE5 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ED4749F5D517718CB5FB9B08008F2B /* Animation.swift */; };
 		5A709EE7E34827F7499AEBDFE9BD7259 /* Spruce-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 51FC66F1238696AD6156F15F3C02BE7A /* Spruce-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5CAFC2170BBC5C93BC2D26448C7718AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		5DAB2EF6B59AA2CA006F11C072C244F2 /* Pods-Spruce_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 944201B6552D4C2C2309D0E762D43C34 /* Pods-Spruce_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5DB9DE4A791BD6828BF6F46E3000C096 /* StandardAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6819D6F919185E63375DD90458CA1F1 /* StandardAnimation.swift */; };
-		5F808E7979EA7F6CB13C78EE2D298142 /* Spruce.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0214FF7863E5764C68088E01088A5E /* Spruce.swift */; };
+		63C1CE54C20273DC2F683D18687CC9AE /* StandardAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DC3BBEA9D702D0030D2974221EF133 /* StandardAnimation.swift */; };
+		6BCF634379FACA94CA1EECAFBD3CDBFB /* RadialSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C3943CEF7E569164F62868DBA7767C /* RadialSortFunction.swift */; };
+		6E51D02FE2577B34BD7BC1CDE24B0BC4 /* SortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5535D1AD0E0F24C56509D3FCF2A20851 /* SortFunction.swift */; };
+		70284171ED389CECFA139412E7AC0DB0 /* SpruceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5775C1DC5F2889A45F84DA0DE02246D1 /* SpruceViewController.swift */; };
+		71122C09F663D8B8AB6D69F743150956 /* DefaultAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E02231508A311329D988FDF714CEB27 /* DefaultAnimations.swift */; };
+		72BFE88C51B614CFF08AE7B74AB9568D /* Spruce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50427694125994B93A2A8D05214632E0 /* Spruce.swift */; };
+		7E93E190E7F5CF2C8AA7C4B0F58921A7 /* DistanceSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF661BB46727B203000EDF1D82ABF3B /* DistanceSortFunction.swift */; };
 		7F204E75BBC011BAA3903B7943FBC63F /* Pods-Spruce_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C3EAF5B8C1AD74CE465B95C5C8C3153 /* Pods-Spruce_Tests-dummy.m */; };
-		807492F51186A319E4E33839815AB190 /* ContinuousWeightedSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC3F7DFD9BD8E4A28D00AEC9FB96073 /* ContinuousWeightedSortFunction.swift */; };
-		88F5D14FBEDEE1D9C26F16C40A3F19E7 /* FullViewAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B64CD88B88B83BE23F3A35421E9C48C /* FullViewAnimation.swift */; };
-		892659687DD996D394D5DCA7577FB9FC /* ContinuousSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F117F2D15B50126C22E5AC5D79C42E /* ContinuousSortFunction.swift */; };
-		A703FA730BCC085B616842D960100010 /* CorneredSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81C7A6FF5BDE42AA26493153C8780EA /* CorneredSortFunction.swift */; };
-		AE7A2683B1AEB6B4286C9E8516CF301E /* ViewOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1628DE06606B2C64DC37FC713045831A /* ViewOperations.swift */; };
+		ABD02908EBFFB77CC2C6D3A9DA58FF6B /* ContinuousSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960EF3962F7B4066DB3BBCABF9A1F792 /* ContinuousSortFunction.swift */; };
 		B16549263A0E88866CCB96E761617C6F /* Pods-Spruce_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AD634D3FAD541D877367EDE05F0B8D /* Pods-Spruce_Example-dummy.m */; };
 		B3030EE94920C08E2ED4BA6F93D0B1C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		B6A7AB619D2FD5A6A28F522D31123538 /* DefaultSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CE2E21CB2A55C1E0AE294A0161A651 /* DefaultSortFunction.swift */; };
-		C05496EFB7370F24093247795D85958C /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D85A59035BF096DAB68D64B951A935 /* SpringAnimation.swift */; };
-		C6306F70028F5FDC07DCA6E98DC0F45E /* Spruce-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F6333719BFEBE96DA2CE3DE523CAC3B5 /* Spruce-dummy.m */; };
-		D0380EABEA00FAF38EF18671815121B2 /* RandomSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB836D70BF4CD5CE3910774E0F769403 /* RandomSortFunction.swift */; };
-		E488F893396E5C9B5B9F153B145A70F3 /* SortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079830642C1ED5A51F92278AC0F95230 /* SortFunction.swift */; };
-		F62DC1BB087163D7F85F87C3572873C0 /* LinearSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E1EF915C700729267512DC624ACE34C /* LinearSortFunction.swift */; };
-		F8FF1D70298BE280B8FE60F4265D96ED /* BaseDistancedSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0C8B13A6B2FDE4F9D5502B8E467F4A /* BaseDistancedSortFunction.swift */; };
-		FD326AF0BE034DF2741BA35E2970529E /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5542A698B8DD1A749D982040413F01B /* Animation.swift */; };
+		C3806590833562D63CA0CE2B2D474325 /* FullViewAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6557F088DB8AA8346A394845084F77 /* FullViewAnimation.swift */; };
+		C8F865FA2D5EB0AD8D53E29B084FFD91 /* WeightSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77298011BCD56E9C8494493F88FA5A48 /* WeightSortFunction.swift */; };
+		D8A79E05D89279665CE6AC09771152CE /* ViewOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8EFEB31B30C8DE06877A294837FDE76 /* ViewOperations.swift */; };
+		DE33658780A1C57AECD30E5ADF9A7F22 /* ContinuousWeightedSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482ECDA8BE76FA3C20C6D05548E6DE83 /* ContinuousWeightedSortFunction.swift */; };
+		EE517E4D5662173E715172EC069AC667 /* DefaultFullViewAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE41F7C28C8C4338E045F44BD6BD885 /* DefaultFullViewAnimations.swift */; };
+		F86A8982F3E10D7EF17536F401AD114A /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077D2B54ADED6206DF248567326676B7 /* SpringAnimation.swift */; };
+		FBC6EEC0986F79AC93D2668E96235E06 /* LinearSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32A0DA0EA890B3BCB2072F035609018 /* LinearSortFunction.swift */; };
+		FFBF369B6333987BC5DA79BC6F4FE729 /* PositionSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255FD16576C5C059B4002FF438EB74DF /* PositionSortFunction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,58 +54,61 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		079830642C1ED5A51F92278AC0F95230 /* SortFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SortFunction.swift; sourceTree = "<group>"; };
+		077D2B54ADED6206DF248567326676B7 /* SpringAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpringAnimation.swift; sourceTree = "<group>"; };
 		0CADC92BADB3034E48F38D776995E189 /* Pods-Spruce_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Spruce_Example-frameworks.sh"; sourceTree = "<group>"; };
-		0FB0AB7620FB49DF151E2C8FFA15D7A0 /* PointOperations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PointOperations.swift; sourceTree = "<group>"; };
 		12766F2F2B7B71C85F174F8F4C923EA4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12DC3BBEA9D702D0030D2974221EF133 /* StandardAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StandardAnimation.swift; sourceTree = "<group>"; };
 		1369A2CFA136FAB0229E7C016D3E67F7 /* Pods-Spruce_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Spruce_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		1628DE06606B2C64DC37FC713045831A /* ViewOperations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ViewOperations.swift; sourceTree = "<group>"; };
 		1A64F96EB37BE0A885651008A16F016D /* Pods-Spruce_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Spruce_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		1A714B616BDC0BAFF975CB02927EE0F4 /* Spruce-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Spruce-prefix.pch"; sourceTree = "<group>"; };
-		2E043D2FFC01F0C4DE42254DB8F30569 /* Pods-Spruce_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Spruce_Example.modulemap"; sourceTree = "<group>"; };
+		255FD16576C5C059B4002FF438EB74DF /* PositionSortFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PositionSortFunction.swift; sourceTree = "<group>"; };
+		2E043D2FFC01F0C4DE42254DB8F30569 /* Pods-Spruce_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Spruce_Example.modulemap"; sourceTree = "<group>"; };
 		380FD83C824F896AF4FCD3936BA08B51 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3A5D23C3D7554DB6B4C6B791D6C48970 /* NoDelaySortFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NoDelaySortFunction.swift; sourceTree = "<group>"; };
-		4163B7335E7063D71ADE215130EECE50 /* InlineSortFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InlineSortFunction.swift; sourceTree = "<group>"; };
+		42EA67D4426DF12CE00BEC5CB8B76D90 /* DefaultSortFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DefaultSortFunction.swift; sourceTree = "<group>"; };
 		43C89DFD9CC4FE077BD9DCEADA17EADC /* Spruce.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Spruce.xcconfig; sourceTree = "<group>"; };
-		46D85A59035BF096DAB68D64B951A935 /* SpringAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpringAnimation.swift; sourceTree = "<group>"; };
+		45ED4749F5D517718CB5FB9B08008F2B /* Animation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		482ECDA8BE76FA3C20C6D05548E6DE83 /* ContinuousWeightedSortFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ContinuousWeightedSortFunction.swift; sourceTree = "<group>"; };
+		49A6D8C91D5911EFE2E8F9EE6BC1EFC8 /* SpruceButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpruceButton.swift; sourceTree = "<group>"; };
 		4BF9A148D4AEDCB38BA3D05DC67413C1 /* Pods-Spruce_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Spruce_Tests-umbrella.h"; sourceTree = "<group>"; };
-		4D1197396B17FBB0D28F734753265F14 /* DefaultFullViewAnimations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DefaultFullViewAnimations.swift; sourceTree = "<group>"; };
+		4E02231508A311329D988FDF714CEB27 /* DefaultAnimations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DefaultAnimations.swift; sourceTree = "<group>"; };
+		50427694125994B93A2A8D05214632E0 /* Spruce.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Spruce.swift; sourceTree = "<group>"; };
 		51FC66F1238696AD6156F15F3C02BE7A /* Spruce-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Spruce-umbrella.h"; sourceTree = "<group>"; };
+		525DECBAC8EA6CAE26E495AADB60C93C /* CorneredSortFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CorneredSortFunction.swift; sourceTree = "<group>"; };
+		5535D1AD0E0F24C56509D3FCF2A20851 /* SortFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SortFunction.swift; sourceTree = "<group>"; };
 		55616E35201003565304A5DE3F1F1C3E /* Pods-Spruce_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Spruce_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		57C3CA3BB49F6F52EFB79CC3738B300E /* Spruce.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Spruce.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5CC3F7DFD9BD8E4A28D00AEC9FB96073 /* ContinuousWeightedSortFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ContinuousWeightedSortFunction.swift; sourceTree = "<group>"; };
-		5E0C8B13A6B2FDE4F9D5502B8E467F4A /* BaseDistancedSortFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BaseDistancedSortFunction.swift; sourceTree = "<group>"; };
+		56C3943CEF7E569164F62868DBA7767C /* RadialSortFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RadialSortFunction.swift; sourceTree = "<group>"; };
+		5765970903C6EC047AF36DE2E93A5E64 /* DirectionSortFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DirectionSortFunction.swift; sourceTree = "<group>"; };
+		5775C1DC5F2889A45F84DA0DE02246D1 /* SpruceViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpruceViewController.swift; sourceTree = "<group>"; };
+		57C3CA3BB49F6F52EFB79CC3738B300E /* Spruce.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Spruce.framework; path = Spruce.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		622186B9D0A15D16C664C253DFDDF343 /* Pods-Spruce_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Spruce_Example-resources.sh"; sourceTree = "<group>"; };
+		68C1246C4049C10F1D3C9EB0DCFDFB30 /* InlineSortFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InlineSortFunction.swift; sourceTree = "<group>"; };
 		7346BA1B7FBFE7D742C26AC4EFEA849E /* Pods-Spruce_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Spruce_Tests-resources.sh"; sourceTree = "<group>"; };
 		745C218783730A33D6B82C5E9F1CDF17 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		75BC1B05EE6AA516FFE2F32AD8DAB8BD /* Pods_Spruce_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spruce_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7E1EF915C700729267512DC624ACE34C /* LinearSortFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LinearSortFunction.swift; sourceTree = "<group>"; };
-		7F3E7602CB9309A840F45735AE8FF0D7 /* RadialSortFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RadialSortFunction.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		89BA1067F35A94869E8DD3BADD0255F1 /* Pods_Spruce_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spruce_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		75BC1B05EE6AA516FFE2F32AD8DAB8BD /* Pods_Spruce_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Spruce_Example.framework; path = "Pods-Spruce_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		77298011BCD56E9C8494493F88FA5A48 /* WeightSortFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WeightSortFunction.swift; sourceTree = "<group>"; };
+		7862DC855C53A068A4F210E3D41885A6 /* RandomSortFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RandomSortFunction.swift; sourceTree = "<group>"; };
+		89BA1067F35A94869E8DD3BADD0255F1 /* Pods_Spruce_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Spruce_Tests.framework; path = "Pods-Spruce_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89BEFCEB9618821EA82227F0316BD2EA /* Pods-Spruce_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Spruce_Example.release.xcconfig"; sourceTree = "<group>"; };
-		8B64CD88B88B83BE23F3A35421E9C48C /* FullViewAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FullViewAnimation.swift; sourceTree = "<group>"; };
-		8E4FA6678900585367C389A1C7CCE181 /* DefaultAnimations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DefaultAnimations.swift; sourceTree = "<group>"; };
 		92AD634D3FAD541D877367EDE05F0B8D /* Pods-Spruce_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Spruce_Example-dummy.m"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		944201B6552D4C2C2309D0E762D43C34 /* Pods-Spruce_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Spruce_Example-umbrella.h"; sourceTree = "<group>"; };
-		95F117F2D15B50126C22E5AC5D79C42E /* ContinuousSortFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ContinuousSortFunction.swift; sourceTree = "<group>"; };
+		960EF3962F7B4066DB3BBCABF9A1F792 /* ContinuousSortFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ContinuousSortFunction.swift; sourceTree = "<group>"; };
 		986C2689F32FFD57FDF73E41131712ED /* Pods-Spruce_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Spruce_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		99E09C7013FC3142BE5490BC1986D98B /* CornerSortFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CornerSortFunction.swift; sourceTree = "<group>"; };
+		9BE41F7C28C8C4338E045F44BD6BD885 /* DefaultFullViewAnimations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DefaultFullViewAnimations.swift; sourceTree = "<group>"; };
 		9C147CDF3CF695F8EDBB22607035D46A /* Pods-Spruce_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Spruce_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		9C3EAF5B8C1AD74CE465B95C5C8C3153 /* Pods-Spruce_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Spruce_Tests-dummy.m"; sourceTree = "<group>"; };
 		9CA537CEC3F170238E47E078E7C35E45 /* Pods-Spruce_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Spruce_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		B2CE2E21CB2A55C1E0AE294A0161A651 /* DefaultSortFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DefaultSortFunction.swift; sourceTree = "<group>"; };
-		B5542A698B8DD1A749D982040413F01B /* Animation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
-		B662A7F543BAC15E4CAA5A2FC1480DFC /* SpruceButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpruceButton.swift; sourceTree = "<group>"; };
-		C6819D6F919185E63375DD90458CA1F1 /* StandardAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StandardAnimation.swift; sourceTree = "<group>"; };
-		C81C7A6FF5BDE42AA26493153C8780EA /* CorneredSortFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CorneredSortFunction.swift; sourceTree = "<group>"; };
-		CB7E0533B0EC994AFC086E324A096ADF /* Pods-Spruce_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Spruce_Tests.modulemap"; sourceTree = "<group>"; };
+		C1D81B595BBE8AB27AA41093DC6636CA /* PointOperations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PointOperations.swift; sourceTree = "<group>"; };
+		C8EFEB31B30C8DE06877A294837FDE76 /* ViewOperations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ViewOperations.swift; sourceTree = "<group>"; };
+		CB7E0533B0EC994AFC086E324A096ADF /* Pods-Spruce_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Spruce_Tests.modulemap"; sourceTree = "<group>"; };
 		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		CD0214FF7863E5764C68088E01088A5E /* Spruce.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Spruce.swift; sourceTree = "<group>"; };
+		CDF661BB46727B203000EDF1D82ABF3B /* DistanceSortFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DistanceSortFunction.swift; sourceTree = "<group>"; };
 		D87409DAC88107B4FF98F7EF404BFC12 /* Pods-Spruce_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Spruce_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		DEC4996764F73721FF385EEB6087D2D7 /* Spruce.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Spruce.modulemap; sourceTree = "<group>"; };
+		DEC4996764F73721FF385EEB6087D2D7 /* Spruce.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Spruce.modulemap; sourceTree = "<group>"; };
 		E0BBEF058E73902230A3CE2EA03B1118 /* Pods-Spruce_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Spruce_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		E6C44D5EE71F935571074868AB9EA590 /* SpruceViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpruceViewController.swift; sourceTree = "<group>"; };
-		EB836D70BF4CD5CE3910774E0F769403 /* RandomSortFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RandomSortFunction.swift; sourceTree = "<group>"; };
+		EA6557F088DB8AA8346A394845084F77 /* FullViewAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FullViewAnimation.swift; sourceTree = "<group>"; };
+		F32A0DA0EA890B3BCB2072F035609018 /* LinearSortFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LinearSortFunction.swift; sourceTree = "<group>"; };
 		F6333719BFEBE96DA2CE3DE523CAC3B5 /* Spruce-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Spruce-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,24 +154,50 @@
 			path = "Example/Pods/Target Support Files/Spruce";
 			sourceTree = "<group>";
 		};
-		299F11EA28D6B517A3E0DF4945E08681 /* Classes */ = {
+		060FACD33419956FA85E34082A6BA9FF /* Operations */ = {
 			isa = PBXGroup;
 			children = (
-				CD0214FF7863E5764C68088E01088A5E /* Spruce.swift */,
-				AB156A8CAC5E4B3D6DF7A431F9A4B56E /* Animations */,
-				A3BDADD546F704577005C97348470114 /* Full View */,
-				BBBAE03FF99E522DFCFD1C0E69040A95 /* Sort Functions */,
-				69A53BAA09C660C77AA41F1804AED325 /* UI Elements */,
+				C1D81B595BBE8AB27AA41093DC6636CA /* PointOperations.swift */,
+				C8EFEB31B30C8DE06877A294837FDE76 /* ViewOperations.swift */,
 			);
+			name = Operations;
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		3E18E8D8CD5D26AA01516D8A7A2694EB /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				50427694125994B93A2A8D05214632E0 /* Spruce.swift */,
+				6F5DBB0DF72BFCA26985A39075B5C518 /* Animations */,
+				5209BC2223B018DA3B93E062E85246EC /* Full View */,
+				C83623E44BC36E253B3F5F543DEA7BF9 /* Sort Functions */,
+				EDA05C909C0FFA4E31226EA61ACF97B3 /* UI Elements */,
+			);
+			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		69A53BAA09C660C77AA41F1804AED325 /* UI Elements */ = {
+		5209BC2223B018DA3B93E062E85246EC /* Full View */ = {
 			isa = PBXGroup;
 			children = (
-				B662A7F543BAC15E4CAA5A2FC1480DFC /* SpruceButton.swift */,
+				9BE41F7C28C8C4338E045F44BD6BD885 /* DefaultFullViewAnimations.swift */,
+				EA6557F088DB8AA8346A394845084F77 /* FullViewAnimation.swift */,
+				5775C1DC5F2889A45F84DA0DE02246D1 /* SpruceViewController.swift */,
 			);
-			path = "UI Elements";
+			name = "Full View";
+			path = "Full View";
+			sourceTree = "<group>";
+		};
+		6F5DBB0DF72BFCA26985A39075B5C518 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				45ED4749F5D517718CB5FB9B08008F2B /* Animation.swift */,
+				4E02231508A311329D988FDF714CEB27 /* DefaultAnimations.swift */,
+				077D2B54ADED6206DF248567326676B7 /* SpringAnimation.swift */,
+				12DC3BBEA9D702D0030D2974221EF133 /* StandardAnimation.swift */,
+			);
+			name = Animations;
+			path = Animations;
 			sourceTree = "<group>";
 		};
 		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
@@ -214,52 +246,44 @@
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		A3BDADD546F704577005C97348470114 /* Full View */ = {
-			isa = PBXGroup;
-			children = (
-				4D1197396B17FBB0D28F734753265F14 /* DefaultFullViewAnimations.swift */,
-				8B64CD88B88B83BE23F3A35421E9C48C /* FullViewAnimation.swift */,
-				E6C44D5EE71F935571074868AB9EA590 /* SpruceViewController.swift */,
-			);
-			path = "Full View";
-			sourceTree = "<group>";
-		};
-		AB156A8CAC5E4B3D6DF7A431F9A4B56E /* Animations */ = {
-			isa = PBXGroup;
-			children = (
-				B5542A698B8DD1A749D982040413F01B /* Animation.swift */,
-				8E4FA6678900585367C389A1C7CCE181 /* DefaultAnimations.swift */,
-				46D85A59035BF096DAB68D64B951A935 /* SpringAnimation.swift */,
-				C6819D6F919185E63375DD90458CA1F1 /* StandardAnimation.swift */,
-			);
-			path = Animations;
-			sourceTree = "<group>";
-		};
-		BBBAE03FF99E522DFCFD1C0E69040A95 /* Sort Functions */ = {
-			isa = PBXGroup;
-			children = (
-				5E0C8B13A6B2FDE4F9D5502B8E467F4A /* BaseDistancedSortFunction.swift */,
-				95F117F2D15B50126C22E5AC5D79C42E /* ContinuousSortFunction.swift */,
-				5CC3F7DFD9BD8E4A28D00AEC9FB96073 /* ContinuousWeightedSortFunction.swift */,
-				C81C7A6FF5BDE42AA26493153C8780EA /* CorneredSortFunction.swift */,
-				B2CE2E21CB2A55C1E0AE294A0161A651 /* DefaultSortFunction.swift */,
-				4163B7335E7063D71ADE215130EECE50 /* InlineSortFunction.swift */,
-				7E1EF915C700729267512DC624ACE34C /* LinearSortFunction.swift */,
-				3A5D23C3D7554DB6B4C6B791D6C48970 /* NoDelaySortFunction.swift */,
-				7F3E7602CB9309A840F45735AE8FF0D7 /* RadialSortFunction.swift */,
-				EB836D70BF4CD5CE3910774E0F769403 /* RandomSortFunction.swift */,
-				079830642C1ED5A51F92278AC0F95230 /* SortFunction.swift */,
-				E7AFEEF9ACED30E814CECE94EA414294 /* Operations */,
-			);
-			path = "Sort Functions";
-			sourceTree = "<group>";
-		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C83623E44BC36E253B3F5F543DEA7BF9 /* Sort Functions */ = {
+			isa = PBXGroup;
+			children = (
+				960EF3962F7B4066DB3BBCABF9A1F792 /* ContinuousSortFunction.swift */,
+				482ECDA8BE76FA3C20C6D05548E6DE83 /* ContinuousWeightedSortFunction.swift */,
+				525DECBAC8EA6CAE26E495AADB60C93C /* CorneredSortFunction.swift */,
+				42EA67D4426DF12CE00BEC5CB8B76D90 /* DefaultSortFunction.swift */,
+				68C1246C4049C10F1D3C9EB0DCFDFB30 /* InlineSortFunction.swift */,
+				F32A0DA0EA890B3BCB2072F035609018 /* LinearSortFunction.swift */,
+				56C3943CEF7E569164F62868DBA7767C /* RadialSortFunction.swift */,
+				7862DC855C53A068A4F210E3D41885A6 /* RandomSortFunction.swift */,
+				060FACD33419956FA85E34082A6BA9FF /* Operations */,
+				D5D6514348FA23AE8E8990E4667A94F9 /* Protocols */,
+			);
+			name = "Sort Functions";
+			path = "Sort Functions";
+			sourceTree = "<group>";
+		};
+		D5D6514348FA23AE8E8990E4667A94F9 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				99E09C7013FC3142BE5490BC1986D98B /* CornerSortFunction.swift */,
+				5765970903C6EC047AF36DE2E93A5E64 /* DirectionSortFunction.swift */,
+				CDF661BB46727B203000EDF1D82ABF3B /* DistanceSortFunction.swift */,
+				255FD16576C5C059B4002FF438EB74DF /* PositionSortFunction.swift */,
+				5535D1AD0E0F24C56509D3FCF2A20851 /* SortFunction.swift */,
+				77298011BCD56E9C8494493F88FA5A48 /* WeightSortFunction.swift */,
+			);
+			name = Protocols;
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		E678B8CF1197FFF83684DFE2C32D37C5 /* Spruce */ = {
@@ -272,13 +296,13 @@
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		E7AFEEF9ACED30E814CECE94EA414294 /* Operations */ = {
+		EDA05C909C0FFA4E31226EA61ACF97B3 /* UI Elements */ = {
 			isa = PBXGroup;
 			children = (
-				0FB0AB7620FB49DF151E2C8FFA15D7A0 /* PointOperations.swift */,
-				1628DE06606B2C64DC37FC713045831A /* ViewOperations.swift */,
+				49A6D8C91D5911EFE2E8F9EE6BC1EFC8 /* SpruceButton.swift */,
 			);
-			path = Operations;
+			name = "UI Elements";
+			path = "UI Elements";
 			sourceTree = "<group>";
 		};
 		F785331CA42358FF0DABBBD5044F5349 /* Pods-Spruce_Tests */ = {
@@ -302,8 +326,9 @@
 		FD7BB2320662E5E92BB264F5E91795F1 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				299F11EA28D6B517A3E0DF4945E08681 /* Classes */,
+				3E18E8D8CD5D26AA01516D8A7A2694EB /* Classes */,
 			);
+			name = Sources;
 			path = Sources;
 			sourceTree = "<group>";
 		};
@@ -377,7 +402,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06F74E89843A23C56577F38F566F4B3D /* Build configuration list for PBXNativeTarget "Spruce" */;
 			buildPhases = (
-				9CEB9926D1A39224C44B6A1A8FAA4E5D /* Sources */,
+				72EF159462774CBF66CC9953FA454672 /* Sources */,
 				4FCC6502932DD34E491A20DDEF9EAFEA /* Frameworks */,
 				C0F6477ABA1A9E1E8A4F232728D923CB /* Headers */,
 			);
@@ -452,33 +477,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9CEB9926D1A39224C44B6A1A8FAA4E5D /* Sources */ = {
+		72EF159462774CBF66CC9953FA454672 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD326AF0BE034DF2741BA35E2970529E /* Animation.swift in Sources */,
-				F8FF1D70298BE280B8FE60F4265D96ED /* BaseDistancedSortFunction.swift in Sources */,
-				892659687DD996D394D5DCA7577FB9FC /* ContinuousSortFunction.swift in Sources */,
-				807492F51186A319E4E33839815AB190 /* ContinuousWeightedSortFunction.swift in Sources */,
-				A703FA730BCC085B616842D960100010 /* CorneredSortFunction.swift in Sources */,
-				52E8151A7720904C999973FC94CFB1D2 /* DefaultAnimations.swift in Sources */,
-				4C4EC848F51A1E9D8D911C4A5E0BCDAA /* DefaultFullViewAnimations.swift in Sources */,
-				B6A7AB619D2FD5A6A28F522D31123538 /* DefaultSortFunction.swift in Sources */,
-				88F5D14FBEDEE1D9C26F16C40A3F19E7 /* FullViewAnimation.swift in Sources */,
-				407EEBC71ED643BD2835507371417A27 /* InlineSortFunction.swift in Sources */,
-				F62DC1BB087163D7F85F87C3572873C0 /* LinearSortFunction.swift in Sources */,
-				2F756B13C5AE0963863DA6E9A16C3FF1 /* NoDelaySortFunction.swift in Sources */,
-				0290063CC2B29EF94FA16F5BB703B705 /* PointOperations.swift in Sources */,
-				22990D86166BDEAB7112E5F519B75A5F /* RadialSortFunction.swift in Sources */,
-				D0380EABEA00FAF38EF18671815121B2 /* RandomSortFunction.swift in Sources */,
-				E488F893396E5C9B5B9F153B145A70F3 /* SortFunction.swift in Sources */,
-				C05496EFB7370F24093247795D85958C /* SpringAnimation.swift in Sources */,
-				C6306F70028F5FDC07DCA6E98DC0F45E /* Spruce-dummy.m in Sources */,
-				5F808E7979EA7F6CB13C78EE2D298142 /* Spruce.swift in Sources */,
-				2B8AFF3473E6B049A31ED1D655E37C5A /* SpruceButton.swift in Sources */,
-				1BDF2D41E832E296FAEAEB2330B97651 /* SpruceViewController.swift in Sources */,
-				5DB9DE4A791BD6828BF6F46E3000C096 /* StandardAnimation.swift in Sources */,
-				AE7A2683B1AEB6B4286C9E8516CF301E /* ViewOperations.swift in Sources */,
+				5014F30E4D63734F2AD3168DF0B64EE5 /* Animation.swift in Sources */,
+				ABD02908EBFFB77CC2C6D3A9DA58FF6B /* ContinuousSortFunction.swift in Sources */,
+				DE33658780A1C57AECD30E5ADF9A7F22 /* ContinuousWeightedSortFunction.swift in Sources */,
+				2F59C26E8FFECC5B419DE18F24D0E968 /* CorneredSortFunction.swift in Sources */,
+				19FA4293DC8329E640E003AA25BA50E6 /* CornerSortFunction.swift in Sources */,
+				71122C09F663D8B8AB6D69F743150956 /* DefaultAnimations.swift in Sources */,
+				EE517E4D5662173E715172EC069AC667 /* DefaultFullViewAnimations.swift in Sources */,
+				4539D9AE66F152753D906137D691BC66 /* DefaultSortFunction.swift in Sources */,
+				08F8B225ADD0A13B3BD5F8B29CC4F699 /* DirectionSortFunction.swift in Sources */,
+				7E93E190E7F5CF2C8AA7C4B0F58921A7 /* DistanceSortFunction.swift in Sources */,
+				C3806590833562D63CA0CE2B2D474325 /* FullViewAnimation.swift in Sources */,
+				1A208648E780C04E74BB015E3D4EC001 /* InlineSortFunction.swift in Sources */,
+				FBC6EEC0986F79AC93D2668E96235E06 /* LinearSortFunction.swift in Sources */,
+				4491DAE8FEDEC20A8922B13650F3EC3D /* PointOperations.swift in Sources */,
+				FFBF369B6333987BC5DA79BC6F4FE729 /* PositionSortFunction.swift in Sources */,
+				6BCF634379FACA94CA1EECAFBD3CDBFB /* RadialSortFunction.swift in Sources */,
+				2DDA90BA7573F44A7439DC607B520979 /* RandomSortFunction.swift in Sources */,
+				6E51D02FE2577B34BD7BC1CDE24B0BC4 /* SortFunction.swift in Sources */,
+				F86A8982F3E10D7EF17536F401AD114A /* SpringAnimation.swift in Sources */,
+				1682A13AEED9560688FEF20A55D21463 /* Spruce-dummy.m in Sources */,
+				72BFE88C51B614CFF08AE7B74AB9568D /* Spruce.swift in Sources */,
+				44790C24242D00B09893265D6160100E /* SpruceButton.swift in Sources */,
+				70284171ED389CECFA139412E7AC0DB0 /* SpruceViewController.swift in Sources */,
+				63C1CE54C20273DC2F683D18687CC9AE /* StandardAnimation.swift in Sources */,
+				D8A79E05D89279665CE6AC09771152CE /* ViewOperations.swift in Sources */,
+				C8F865FA2D5EB0AD8D53E29B084FFD91 /* WeightSortFunction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,7 +522,7 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		12914D756594D15C6F2CA12FE5F89F1B /* Debug */ = {
+		59B042A655B7C20CBAB90E385BF4E4C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -530,119 +558,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
-		};
-		452C771F8BD9966ED2AF3A100C29E49B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55616E35201003565304A5DE3F1F1C3E /* Pods-Spruce_Tests.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Spruce_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Spruce_Tests/Pods-Spruce_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Spruce_Tests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		76BA04539EC66C9D7ECD4FFEF3434753 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9C147CDF3CF695F8EDBB22607035D46A /* Pods-Spruce_Example.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Spruce_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Spruce_Example/Pods-Spruce_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Spruce_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		989FDEB4BDE84F08BE62BF21F9D8BBC9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89BEFCEB9618821EA82227F0316BD2EA /* Pods-Spruce_Example.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Spruce_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Spruce_Example/Pods-Spruce_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Spruce_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		A4BF9367C3FB88C4724BE8F25A720DBD /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -676,7 +598,7 @@
 			};
 			name = Release;
 		};
-		CE31CC0F6EDD726CC7368C897039B3D4 /* Release */ = {
+		AC828B0733250EFAAE3CBD4CC435929B /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D87409DAC88107B4FF98F7EF404BFC12 /* Pods-Spruce_Tests.release.xcconfig */;
 			buildSettings = {
@@ -693,7 +615,7 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods-Spruce_Tests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-Spruce_Tests/Pods-Spruce_Tests.modulemap";
@@ -711,7 +633,7 @@
 			};
 			name = Release;
 		};
-		E72E7977875C2D251FC62736BBDDC389 /* Release */ = {
+		B7324857C38B065FEB1EEE3105C2367A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -743,13 +665,84 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
+		};
+		C040370DAC8F70A079A6B16A7C383E09 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89BEFCEB9618821EA82227F0316BD2EA /* Pods-Spruce_Example.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Spruce_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Spruce_Example/Pods-Spruce_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Spruce_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CF485561DB474216C4995BAA1BF681F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C147CDF3CF695F8EDBB22607035D46A /* Pods-Spruce_Example.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Spruce_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Spruce_Example/Pods-Spruce_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Spruce_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		E7FD3C44AC265D64499C3822BAFE5A84 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -784,6 +777,41 @@
 			};
 			name = Debug;
 		};
+		F13FFB9793B981204E5E204D0D791838 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55616E35201003565304A5DE3F1F1C3E /* Pods-Spruce_Tests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Spruce_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Spruce_Tests/Pods-Spruce_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Spruce_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -799,8 +827,8 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				12914D756594D15C6F2CA12FE5F89F1B /* Debug */,
-				E72E7977875C2D251FC62736BBDDC389 /* Release */,
+				59B042A655B7C20CBAB90E385BF4E4C7 /* Debug */,
+				B7324857C38B065FEB1EEE3105C2367A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -808,8 +836,8 @@
 		388BE1A2B65C1F7F2819B54E36F9535B /* Build configuration list for PBXNativeTarget "Pods-Spruce_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				76BA04539EC66C9D7ECD4FFEF3434753 /* Debug */,
-				989FDEB4BDE84F08BE62BF21F9D8BBC9 /* Release */,
+				CF485561DB474216C4995BAA1BF681F9 /* Debug */,
+				C040370DAC8F70A079A6B16A7C383E09 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -817,8 +845,8 @@
 		7D25524F38FBC177AD13396670FC9E2C /* Build configuration list for PBXNativeTarget "Pods-Spruce_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				452C771F8BD9966ED2AF3A100C29E49B /* Debug */,
-				CE31CC0F6EDD726CC7368C897039B3D4 /* Release */,
+				F13FFB9793B981204E5E204D0D791838 /* Debug */,
+				AC828B0733250EFAAE3CBD4CC435929B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

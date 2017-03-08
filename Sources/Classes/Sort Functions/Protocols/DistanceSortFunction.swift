@@ -1,5 +1,5 @@
 //
-//  BaseDistancedSortFunction.swift
+//  DistanceSortFunction.swift
 //  Spruce
 //
 //  Copyright (c) 2017 WillowTree, Inc.
@@ -25,26 +25,28 @@
 
 import UIKit
 
-open class BaseDistancedSortFunction: SortFunction {
+public protocol DistanceSortFunction: SortFunction {
+    var interObjectDelay: TimeInterval { get set }
+    var reversed: Bool { get set }
     
-    let interObjectDelay: TimeInterval
-    open var reversed = false
-    
-    init(interObjectDelay: TimeInterval) {
-        self.interObjectDelay = interObjectDelay
-    }
-    
-    open func getTimeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView] {
-        let comparisonPoint = getDistancePoint(view: view)
-        let subviews = view.getSubviews(recursiveDepth: recursiveDepth)
+    func timeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView]
+    func distanceBetween(_ left: CGPoint, and right: CGPoint) -> Double
+    func distancePoint(view: UIView, subviews: [SpruceView]) -> CGPoint
+    func translate(distancePoint: CGPoint, intoSubviews subviews: [SpruceView]) -> CGPoint
+}
+
+public extension DistanceSortFunction {
+    func timeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView] {
+        let subviews = view.subviews(withRecursiveDepth: recursiveDepth)
+        let comparisonPoint = distancePoint(view: view, subviews: subviews)
         
         let distancedViews = subviews.map {
-            return (view: $0, distance: getDistanceBetweenPoints(left: comparisonPoint, right: $0.referencePoint))
-        }.sorted { (left, right) -> Bool in
-            if reversed {
-                return left.distance > right.distance
-            }
-            return left.distance < right.distance
+            return (view: $0, distance: distanceBetween(comparisonPoint, and: $0.referencePoint))
+            }.sorted { (left, right) -> Bool in
+                if reversed {
+                    return left.distance > right.distance
+                }
+                return left.distance < right.distance
         }
         
         guard var lastDistance = distancedViews.first?.distance else {
@@ -53,7 +55,7 @@ open class BaseDistancedSortFunction: SortFunction {
         var currentTimeOffset = 0.0
         var timedViews: [SpruceTimedView] = []
         for view in distancedViews {
-            if lastDistance != view.distance {
+            if floor(lastDistance) != floor(view.distance) {
                 lastDistance = view.distance
                 currentTimeOffset += interObjectDelay
             }
@@ -64,16 +66,11 @@ open class BaseDistancedSortFunction: SortFunction {
         return timedViews
     }
     
-    open func getDistanceBetweenPoints(left: CGPoint, right: CGPoint) -> Double {
+    func distanceBetween(_ left: CGPoint, and right: CGPoint) -> Double {
         return left.euclideanDistance(to: right)
     }
     
-    open func getDistancePoint(view: UIView, subviews: [SpruceView] = []) -> CGPoint {
-        let distancePoint = CGPoint.zero
-        return translate(distancePoint: distancePoint, intoSubviews: subviews)
-    }
-    
-    open func translate(distancePoint: CGPoint, intoSubviews subviews: [SpruceView]) -> CGPoint {
+    func translate(distancePoint: CGPoint, intoSubviews subviews: [SpruceView]) -> CGPoint {
         if let referenceView = subviews.min(by: {(left, right) in
             let leftDistance = left.referencePoint.euclideanDistance(to: distancePoint)
             let rightDistance = right.referencePoint.euclideanDistance(to: distancePoint)

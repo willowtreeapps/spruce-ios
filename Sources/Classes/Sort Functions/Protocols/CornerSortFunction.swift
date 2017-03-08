@@ -1,5 +1,5 @@
 //
-//  NoDelaySortFunction.swift
+//  CornerSortFunction.swift
 //  Spruce
 //
 //  Copyright (c) 2017 WillowTree, Inc.
@@ -23,14 +23,34 @@
 //  THE SOFTWARE.
 //
 
+import Foundation
 import UIKit
 
-open class NoDelaySortFunction: SortFunction {
-    open func getTimeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView] {
-        let subviews = view.getSubviews(recursiveDepth: recursiveDepth)
-        return subviews.flatMap { subView in
-            let timedView = SpruceTimedView(spruceView: subView, timeOffset: 0.0)
-            return timedView
+public enum SpruceCorner {
+    case topLeft
+    case topRight
+    case bottomLeft
+    case bottomRight
+}
+
+public protocol CornerSortFunction: DistanceSortFunction {
+    var corner: SpruceCorner { get set }
+}
+
+public extension CornerSortFunction {
+    public func distancePoint(view: UIView, subviews: [SpruceView] = []) -> CGPoint {
+        let distancePoint: CGPoint
+        let bounds = view.bounds
+        switch corner {
+        case .topLeft:
+            distancePoint = CGPoint.zero
+        case .topRight:
+            distancePoint = CGPoint(x: bounds.size.width, y: 0.0)
+        case .bottomLeft:
+            distancePoint = CGPoint(x: 0.0, y: bounds.size.height)
+        case .bottomRight:
+            distancePoint = CGPoint(x: bounds.size.width, y: bounds.size.height)
         }
+        return translate(distancePoint: distancePoint, intoSubviews: subviews)
     }
 }

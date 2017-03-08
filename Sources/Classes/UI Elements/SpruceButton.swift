@@ -27,20 +27,20 @@ import UIKit
 
 open class SpruceButton: UIButton {
     
-    open var changeFunction: SpruceDefaultChangeFunction = .grow
-    open var animation: SpruceAnimation = StandardAnimation(duration: 0.2)
+    open var animation: SpruceStockAnimation = .expand(.small)
+    open var animationType: SpruceAnimation = StandardAnimation(duration: 0.2)
     
     override open var isHighlighted: Bool {
         didSet {
             let function: SpruceChangeFunction
             if isHighlighted {
-                function = changeFunction.getAnimationFunction()
+                function = animation.animationFunction
             }
             else {
-                function = changeFunction.getResetFunction()
+                function = animation.prepareFunction
             }
-            animation.changeFunction = function
-            animation.animate(delay: 0.0, view: self, completion: nil)
+            animationType.changeFunction = function
+            animationType.animate(delay: 0.0, view: self, completion: nil)
         }
     }
 }

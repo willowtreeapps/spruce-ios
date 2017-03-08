@@ -30,7 +30,7 @@ class DefaultSortFunctionTests: SortFunctionTests {
     
     func testDefaultSortFunction() {
         let sortFunction = DefaultSortFunction(interObjectDelay: 0.1)
-        let timedViews = sortFunction.getTimeOffsets(view: animatableView)
+        let timedViews = sortFunction.timeOffsets(view: animatableView)
         
         let expected = [0.0,0.1,0.2,0.3,0.4,
                         0.5,0.6,0.7,0.8,0.9,

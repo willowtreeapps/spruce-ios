@@ -1,5 +1,5 @@
 //
-//  NoDelaySortFunctionTests.swift
+//  DirectionSortFunction.swift
 //  Spruce
 //
 //  Copyright (c) 2017 WillowTree, Inc.
@@ -23,20 +23,25 @@
 //  THE SOFTWARE.
 //
 
+import Foundation
+import UIKit
 
-import XCTest
+public protocol DirectionSortFunction: DistanceSortFunction {
+    var direction: SpruceDirection { get set }
+}
 
-class NoDelaySortFunctionTests: SortFunctionTests {
-    
-    func testNoDelaySortFunction() {
-        let sortFunction = NoDelaySortFunction()
-        let timedViews = sortFunction.getTimeOffsets(view: animatableView)
-        
-        let expected = [0.0,0.0,0.0,0.0,0.0,
-                        0.0,0.0,0.0,0.0,0.0,
-                        0.0,0.0,0.0,0.0,0.0,
-                        0.0,0.0,0.0,0.0,0.0,
-                        0.0,0.0,0.0,0.0,0.0]
-        compare(timedViews: timedViews, toExpected: expected)
+public extension DirectionSortFunction {
+    public func distancePoint(view: UIView, subviews: [SpruceView] = []) -> CGPoint {
+        let bounds = view.bounds
+        switch direction {
+        case .topToBottom:
+            return CGPoint(x: (bounds.size.width / 2.0), y: 0.0)
+        case .bottomToTop:
+            return CGPoint(x: (bounds.size.width / 2.0), y: bounds.size.height)
+        case .leftToRight:
+            return CGPoint(x: 0.0, y: (bounds.size.height / 2.0))
+        case .rightToLeft:
+            return CGPoint(x: bounds.size.width, y: (bounds.size.height / 2.0))
+        }
     }
 }

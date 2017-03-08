@@ -44,28 +44,28 @@ class SpruceViewTests: XCTestCase {
         let subview = UIView()
         parentView.addSubview(subview)
         
-        var subviews = parentView.getSubviews(recursiveDepth: 1)
+        var subviews = parentView.subviews(withRecursiveDepth: 1)
         
         XCTAssertEqual(subviews.count, 1)
         
-        subviews = parentView.getSubviews(recursiveDepth: 5)
+        subviews = parentView.subviews(withRecursiveDepth: 5)
         XCTAssertEqual(subviews.count, 1)
         
-        subviews = parentView.getSubviews(recursiveDepth: .spruceUnlimited)
+        subviews = parentView.subviews(withRecursiveDepth: .spruceUnlimited)
         XCTAssertEqual(subviews.count, 1)
     }
     
     func testRecursiveZeroSubviews() {
         let parentView = UIView()
         
-        var subviews = parentView.getSubviews(recursiveDepth: 1)
+        var subviews = parentView.subviews(withRecursiveDepth: 1)
         
         XCTAssertEqual(subviews.count, 0)
         
-        subviews = parentView.getSubviews(recursiveDepth: 5)
+        subviews = parentView.subviews(withRecursiveDepth: 5)
         XCTAssertEqual(subviews.count, 0)
         
-        subviews = parentView.getSubviews(recursiveDepth: .spruceUnlimited)
+        subviews = parentView.subviews(withRecursiveDepth: .spruceUnlimited)
         XCTAssertEqual(subviews.count, 0)
     }
     
@@ -76,14 +76,14 @@ class SpruceViewTests: XCTestCase {
             parentView.addSubview(subview)
         }
         
-        var subviews = parentView.getSubviews(recursiveDepth: 0)
+        var subviews = parentView.subviews(withRecursiveDepth: 0)
         
         XCTAssertEqual(subviews.count, 5)
         
-        subviews = parentView.getSubviews(recursiveDepth: 5)
+        subviews = parentView.subviews(withRecursiveDepth: 5)
         XCTAssertEqual(subviews.count, 5)
         
-        subviews = parentView.getSubviews(recursiveDepth: .spruceUnlimited)
+        subviews = parentView.subviews(withRecursiveDepth: .spruceUnlimited)
         XCTAssertEqual(subviews.count, 5)
     }
     
@@ -104,20 +104,20 @@ class SpruceViewTests: XCTestCase {
             }
         }
         
-        var subviews = parentView.getSubviews(recursiveDepth: 0)
+        var subviews = parentView.subviews(withRecursiveDepth: 0)
         
         XCTAssertEqual(subviews.count, 5)
         
-        subviews = parentView.getSubviews(recursiveDepth: 1)
+        subviews = parentView.subviews(withRecursiveDepth: 1)
         XCTAssertEqual(subviews.count, 15)
         
-        subviews = parentView.getSubviews(recursiveDepth: 2)
+        subviews = parentView.subviews(withRecursiveDepth: 2)
         XCTAssertEqual(subviews.count, 25)
         
-        subviews = parentView.getSubviews(recursiveDepth: 5)
+        subviews = parentView.subviews(withRecursiveDepth: 5)
         XCTAssertEqual(subviews.count, 25)
         
-        subviews = parentView.getSubviews(recursiveDepth: .spruceUnlimited)
+        subviews = parentView.subviews(withRecursiveDepth: .spruceUnlimited)
         XCTAssertEqual(subviews.count, 25)
     }
     
@@ -131,7 +131,7 @@ class SpruceViewTests: XCTestCase {
         subview1.addSubview(subview2)
         subview2.addSubview(subview3)
         
-        let subviews = parentView.getSubviews(recursiveDepth: .spruceUnlimited)
+        let subviews = parentView.subviews(withRecursiveDepth: .spruceUnlimited)
         
         XCTAssertEqual(subviews.count, 3)
         
