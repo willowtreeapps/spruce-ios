@@ -28,4 +28,10 @@ public extension CGPoint {
             return SprucePoint(point: self)
         }
     }
+    
+    public var 🌲: SprucePoint {
+        get {
+            return spruce
+        }
+    }
 }

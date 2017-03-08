@@ -16,4 +16,10 @@ public extension UIView {
             return Spruce(view: self)
         }
     }
+    
+    public var 🌲: Spruce {
+        get {
+            return spruce
+        }
+    }
 }

@@ -41,7 +41,7 @@ public extension Spruce {
     ///   - animations: an array of stock animations
     ///   - duration: duration of each individual animation
     ///   - completion: a closure that is called upon the final animation completing. A `Bool` is passed into the closure letting you know if the animation has completed. **Note:** If you stop animations on the whole animating view, then `false` will be passed into the completion closure. However, if the final animation is allowed to proceed then `true` will be the value passed into the completion closure.
-    public func spruceAnimate(_ animations: [StockAnimation], duration: TimeInterval = 0.3, completion: CompletionHandler? = nil ) {
+    public func animate(_ animations: [StockAnimation], duration: TimeInterval = 0.3, completion: CompletionHandler? = nil ) {
         let animation = StandardAnimation(duration: duration)
         self.animate(animations, duration: duration, animationType: animation, completion: completion)
     }
