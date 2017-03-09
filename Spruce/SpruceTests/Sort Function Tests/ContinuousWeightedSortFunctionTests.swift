@@ -28,7 +28,7 @@ import XCTest
 
 class ContinuousWeightedSortFunctionTests: SortFunctionTests {
     
-    func testContinuousWeightedSortFunction(withStartPosition position: SprucePosition, horizontalWeight: SpruceWeight, verticalWeight: SpruceWeight, expected: [TimeInterval], expectedReversed: [TimeInterval]) {
+    func testContinuousWeightedSortFunction(withStartPosition position: Position, horizontalWeight: Weight, verticalWeight: Weight, expected: [TimeInterval], expectedReversed: [TimeInterval]) {
         var sortFunction = ContinuousWeightedSortFunction(position: position, duration: 1.0, horizontalWeight: horizontalWeight, verticalWeight: verticalWeight)
         let timedViews = sortFunction.timeOffsets(view: animatableView)
         

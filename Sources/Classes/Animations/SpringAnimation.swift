@@ -25,26 +25,31 @@
 
 import UIKit
 
-
-open class SpringAnimation: SpruceAnimation {
+/// A wrapper around the spring `UIViewAnimation` block with options publicly accessible. See, [UIViewAnimation](apple-reference-documentation://hsEaMPVO1d) for more
+/// - Note: `animationOptions` defaults to `[]`. If you do not update this value before calling the animate method than the changes will not be reflected.
+/// - Note: `damping` defaults to 0.5 and `initialVelocity` defaults to 0.7
+public struct SpringAnimation: SpruceAnimation {
     
-    public var changeFunction: SpruceChangeFunction?
-    let duration: TimeInterval
-    let damping: CGFloat = 0.5
-    let initialVelocity: CGFloat = 0.7
+    public var changeFunction: ChangeFunction?
+    public var duration: TimeInterval
+    
+    /// A mask of options indicating how you want to perform the animations
+    public var animationOptions: UIViewAnimationOptions = []
+    public var damping: CGFloat = 0.5
+    public var initialVelocity: CGFloat = 0.7
     
     public init(duration: TimeInterval) {
         self.duration = duration
     }
     
-    public convenience init(duration: TimeInterval, changes: @escaping SpruceChangeFunction) {
+    public init(duration: TimeInterval, changes: @escaping ChangeFunction) {
         self.init(duration: duration)
         self.changeFunction = changes
     }
     
-    open func animate(delay: TimeInterval, view: UIView, completion: SpruceCompletionHandler?) {
-        UIView.animate(withDuration: duration, delay: delay, usingSpringWithDamping: damping, initialSpringVelocity: initialVelocity, options: [], animations: { [weak self] in
-            self?.changeFunction?(view)
+    public func animate(delay: TimeInterval, view: UIView, completion: CompletionHandler?) {
+        UIView.animate(withDuration: duration, delay: delay, usingSpringWithDamping: damping, initialSpringVelocity: initialVelocity, options: animationOptions, animations: { [changeFunction] in
+            changeFunction?(view)
         }, completion: completion)
     }
 }
