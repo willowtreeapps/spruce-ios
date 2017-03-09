@@ -32,7 +32,7 @@
             <a href="../Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Classes/SpruceButton.html">SpruceButton</a>
+                <a href="../Classes/Button.html">Button</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/SpruceViewController.html">SpruceViewController</a>
@@ -44,6 +44,9 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Enums/Angle.html">Angle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Corner.html">Corner</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Enums/Direction.html">Direction</a>
@@ -59,9 +62,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Enums/SlideDirection.html">SlideDirection</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Enums/SpruceCorner.html">SpruceCorner</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Enums/StockAnimation.html">StockAnimation</a>
@@ -86,6 +86,9 @@
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="../Protocols/Animation.html">Animation</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Protocols/CornerSortFunction.html">CornerSortFunction</a>
               </li>
               <li class="nav-group-task">
@@ -99,9 +102,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols/SortFunction.html">SortFunction</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Protocols/SpruceAnimation.html">SpruceAnimation</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols/View.html">View</a>
@@ -239,9 +239,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FV6Spruce6Spruce7animateFT16withSortFunctionPS_12SortFunction_7prepareGSqFCSo6UIViewT__9animationPS_15SpruceAnimation_7excludeGSqGSaS2___14recursiveDepthSi10completionGSqFSbT___T_"></a>
+                    <a name="/s:FV6Spruce6Spruce7animateFT16withSortFunctionPS_12SortFunction_7prepareGSqFCSo6UIViewT__9animationPS_9Animation_7excludeGSqGSaS2___14recursiveDepthSi10completionGSqFSbT___T_"></a>
                     <a name="//apple_ref/swift/Method/animate(withSortFunction:prepare:animation:exclude:recursiveDepth:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FV6Spruce6Spruce7animateFT16withSortFunctionPS_12SortFunction_7prepareGSqFCSo6UIViewT__9animationPS_15SpruceAnimation_7excludeGSqGSaS2___14recursiveDepthSi10completionGSqFSbT___T_">animate(withSortFunction:prepare:animation:exclude:recursiveDepth:completion:)</a>
+                    <a class="token" href="#/s:FV6Spruce6Spruce7animateFT16withSortFunctionPS_12SortFunction_7prepareGSqFCSo6UIViewT__9animationPS_9Animation_7excludeGSqGSaS2___14recursiveDepthSi10completionGSqFSbT___T_">animate(withSortFunction:prepare:animation:exclude:recursiveDepth:completion:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -256,7 +256,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">animate</span><span class="p">(</span><span class="n">withSortFunction</span> <span class="nv">sortFunction</span><span class="p">:</span> <span class="kt"><a href="../Protocols/SortFunction.html">SortFunction</a></span><span class="p">,</span> <span class="nv">prepare</span><span class="p">:</span> <span class="kt">PrepareHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">animation</span><span class="p">:</span> <span class="kt"><a href="../Protocols/SpruceAnimation.html">SpruceAnimation</a></span><span class="p">,</span> <span class="nv">exclude</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIView</span><span class="p">]?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">recursiveDepth</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kt">CompletionHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">animate</span><span class="p">(</span><span class="n">withSortFunction</span> <span class="nv">sortFunction</span><span class="p">:</span> <span class="kt"><a href="../Protocols/SortFunction.html">SortFunction</a></span><span class="p">,</span> <span class="nv">prepare</span><span class="p">:</span> <span class="kt">PrepareHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">animation</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Animation.html">Animation</a></span><span class="p">,</span> <span class="nv">exclude</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIView</span><span class="p">]?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">recursiveDepth</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kt">CompletionHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -298,7 +298,7 @@
                               </td>
                               <td>
                                 <div>
-                                  <p>a <code>SpruceAnimation</code> that will be used to animate each subview</p>
+                                  <p>a <code>Animation</code> that will be used to animate each subview</p>
 
                                 </div>
                               </td>
@@ -556,9 +556,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FV6Spruce6Spruce7animateFTGSaOS_14StockAnimation_8durationSd13animationTypePS_15SpruceAnimation_10completionGSqFSbT___T_"></a>
+                    <a name="/s:FV6Spruce6Spruce7animateFTGSaOS_14StockAnimation_8durationSd13animationTypePS_9Animation_10completionGSqFSbT___T_"></a>
                     <a name="//apple_ref/swift/Method/animate(_:duration:animationType:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FV6Spruce6Spruce7animateFTGSaOS_14StockAnimation_8durationSd13animationTypePS_15SpruceAnimation_10completionGSqFSbT___T_">animate(_:duration:animationType:completion:)</a>
+                    <a class="token" href="#/s:FV6Spruce6Spruce7animateFTGSaOS_14StockAnimation_8durationSd13animationTypePS_9Animation_10completionGSqFSbT___T_">animate(_:duration:animationType:completion:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -579,7 +579,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">animate</span><span class="p">(</span><span class="n">_</span> <span class="nv">animations</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/StockAnimation.html">StockAnimation</a></span><span class="p">],</span> <span class="nv">duration</span><span class="p">:</span> <span class="kt">TimeInterval</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span> <span class="nv">animationType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/SpruceAnimation.html">SpruceAnimation</a></span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kt">CompletionHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">animate</span><span class="p">(</span><span class="n">_</span> <span class="nv">animations</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/StockAnimation.html">StockAnimation</a></span><span class="p">],</span> <span class="nv">duration</span><span class="p">:</span> <span class="kt">TimeInterval</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span> <span class="nv">animationType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Animation.html">Animation</a></span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kt">CompletionHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -648,9 +648,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FV6Spruce6Spruce7animateFTGSaOS_14StockAnimation_8durationSd13animationTypePS_15SpruceAnimation_12sortFunctionPS_12SortFunction_7prepareSb10completionGSqFSbT___T_"></a>
+                    <a name="/s:FV6Spruce6Spruce7animateFTGSaOS_14StockAnimation_8durationSd13animationTypePS_9Animation_12sortFunctionPS_12SortFunction_7prepareSb10completionGSqFSbT___T_"></a>
                     <a name="//apple_ref/swift/Method/animate(_:duration:animationType:sortFunction:prepare:completion:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FV6Spruce6Spruce7animateFTGSaOS_14StockAnimation_8durationSd13animationTypePS_15SpruceAnimation_12sortFunctionPS_12SortFunction_7prepareSb10completionGSqFSbT___T_">animate(_:duration:animationType:sortFunction:prepare:completion:)</a>
+                    <a class="token" href="#/s:FV6Spruce6Spruce7animateFTGSaOS_14StockAnimation_8durationSd13animationTypePS_9Animation_12sortFunctionPS_12SortFunction_7prepareSb10completionGSqFSbT___T_">animate(_:duration:animationType:sortFunction:prepare:completion:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -665,7 +665,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">animate</span><span class="p">(</span><span class="n">_</span> <span class="nv">animations</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/StockAnimation.html">StockAnimation</a></span><span class="p">],</span> <span class="nv">duration</span><span class="p">:</span> <span class="kt">TimeInterval</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span> <span class="nv">animationType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/SpruceAnimation.html">SpruceAnimation</a></span><span class="p">,</span> <span class="nv">sortFunction</span><span class="p">:</span> <span class="kt"><a href="../Protocols/SortFunction.html">SortFunction</a></span><span class="p">,</span> <span class="nv">prepare</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kt">CompletionHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">animate</span><span class="p">(</span><span class="n">_</span> <span class="nv">animations</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/StockAnimation.html">StockAnimation</a></span><span class="p">],</span> <span class="nv">duration</span><span class="p">:</span> <span class="kt">TimeInterval</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span> <span class="nv">animationType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Animation.html">Animation</a></span><span class="p">,</span> <span class="nv">sortFunction</span><span class="p">:</span> <span class="kt"><a href="../Protocols/SortFunction.html">SortFunction</a></span><span class="p">,</span> <span class="nv">prepare</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kt">CompletionHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>

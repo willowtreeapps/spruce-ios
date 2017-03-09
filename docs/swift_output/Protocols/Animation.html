@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>SpruceButton Class Reference</title>
+    <title>Animation Protocol Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/SpruceButton" class="dashAnchor"></a>
-    <a title="SpruceButton Class Reference"></a>
+    <a name="//apple_ref/swift/Protocol/Animation" class="dashAnchor"></a>
+    <a title="Animation Protocol Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">Spruce Docs</a> (100% documented)</p>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">Spruce Reference</a>
         <img id="carat" src="../img/carat.png" />
-        SpruceButton Class Reference
+        Animation Protocol Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -32,7 +32,7 @@
             <a href="../Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Classes/SpruceButton.html">SpruceButton</a>
+                <a href="../Classes/Button.html">Button</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/SpruceViewController.html">SpruceViewController</a>
@@ -44,6 +44,9 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Enums/Angle.html">Angle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Corner.html">Corner</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Enums/Direction.html">Direction</a>
@@ -59,9 +62,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Enums/SlideDirection.html">SlideDirection</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Enums/SpruceCorner.html">SpruceCorner</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Enums/StockAnimation.html">StockAnimation</a>
@@ -86,6 +86,9 @@
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="../Protocols/Animation.html">Animation</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Protocols/CornerSortFunction.html">CornerSortFunction</a>
               </li>
               <li class="nav-group-task">
@@ -99,9 +102,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols/SortFunction.html">SortFunction</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Protocols/SpruceAnimation.html">SpruceAnimation</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols/View.html">View</a>
@@ -163,8 +163,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>SpruceButton</h1>
-            <p>Undocumented</p>
+            <h1>Animation</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Animation</span></code></pre>
+
+                </div>
+              </div>
+            <p>An animation type that handles how the views will change. Most of these are simply wrappers around the standard <code>UIViewAnimation</code> methods. This gives <code><a href="../Structs/Spruce.html">Spruce</a></code> the flexibility to work with any style of animating.</p>
 
           </section>
           <section class="section task-group-section">
@@ -173,9 +179,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC6Spruce12SpruceButton9animationOS_14StockAnimation"></a>
-                    <a name="//apple_ref/swift/Property/animation" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC6Spruce12SpruceButton9animationOS_14StockAnimation">animation</a>
+                    <a name="/s:FP6Spruce9Animation7animateFT5delaySd4viewCSo6UIView10completionGSqFSbT___T_"></a>
+                    <a name="//apple_ref/swift/Method/animate(delay:view:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP6Spruce9Animation7animateFT5delaySd4viewCSo6UIView10completionGSqFSbT___T_">animate(delay:view:completion:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -183,16 +189,62 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>the stock animation that should be applied to the button upon press</p>
+                        <p>Animate the given view using the <code><a href="../Protocols/Animation.html#/s:vP6Spruce9Animation14changeFunctionGSqFCSo6UIViewT__">changeFunction</a></code>.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="k">var</span> <span class="nv">animation</span><span class="p">:</span> <span class="kt"><a href="../Enums/StockAnimation.html">StockAnimation</a></span> <span class="o">=</span> <span class="o">.</span><span class="nf">expand</span><span class="p">(</span><span class="o">.</span><span class="n">slightly</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">animate</span><span class="p">(</span><span class="nv">delay</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">,</span> <span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kt">CompletionHandler</span><span class="p">?)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>delay</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the time interval that this animation should wait to start from the moment this method is called</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>view</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the view to animate</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>a closure that is called upon the animation completing. A <code>Bool</code> is passed into the closure letting you know if the animation has completed.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -200,9 +252,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC6Spruce12SpruceButton13animationTypePS_15SpruceAnimation_"></a>
-                    <a name="//apple_ref/swift/Property/animationType" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC6Spruce12SpruceButton13animationTypePS_15SpruceAnimation_">animationType</a>
+                    <a name="/s:vP6Spruce9Animation14changeFunctionGSqFCSo6UIViewT__"></a>
+                    <a name="//apple_ref/swift/Property/changeFunction" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vP6Spruce9Animation14changeFunctionGSqFCSo6UIViewT__">changeFunction</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -210,35 +262,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>the style of animation that should be used when animating the button</p>
+                        <p>Given a view, this closure will define the manipulations that will happen to that view</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="k">var</span> <span class="nv">animationType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/SpruceAnimation.html">SpruceAnimation</a></span> <span class="o">=</span> <span class="kt"><a href="../Structs/StandardAnimation.html">StandardAnimation</a></span><span class="p">(</span><span class="nv">duration</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">changeFunction</span><span class="p">:</span> <span class="kt">ChangeFunction</span><span class="p">?</span></code></pre>
 
                         </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:vC6Spruce12SpruceButton13isHighlightedSb"></a>
-                    <a name="//apple_ref/swift/Property/isHighlighted" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC6Spruce12SpruceButton13isHighlightedSb">isHighlighted</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
                       </div>
                     </section>
                   </div>

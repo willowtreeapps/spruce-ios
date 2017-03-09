@@ -32,7 +32,7 @@
             <a href="../Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Classes/SpruceButton.html">SpruceButton</a>
+                <a href="../Classes/Button.html">Button</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/SpruceViewController.html">SpruceViewController</a>
@@ -44,6 +44,9 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Enums/Angle.html">Angle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Corner.html">Corner</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Enums/Direction.html">Direction</a>
@@ -59,9 +62,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Enums/SlideDirection.html">SlideDirection</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Enums/SpruceCorner.html">SpruceCorner</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Enums/StockAnimation.html">StockAnimation</a>
@@ -86,6 +86,9 @@
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="../Protocols/Animation.html">Animation</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Protocols/CornerSortFunction.html">CornerSortFunction</a>
               </li>
               <li class="nav-group-task">
@@ -99,9 +102,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols/SortFunction.html">SortFunction</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Protocols/SpruceAnimation.html">SpruceAnimation</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols/View.html">View</a>
@@ -189,14 +189,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>the top left point of the view</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Position</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="n">topLeft</span></code></pre>
 
                         </div>
                       </div>
@@ -220,14 +220,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>the top center point of the view</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Position</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="n">topMiddle</span></code></pre>
 
                         </div>
                       </div>
@@ -251,14 +251,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>the top right point of the view</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Position</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="n">topRight</span></code></pre>
 
                         </div>
                       </div>
@@ -282,14 +282,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>the left point of the view, centered vertically</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Position</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="k">left</span></code></pre>
 
                         </div>
                       </div>
@@ -313,14 +313,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>the absolute center of the view (both horizontally and vertically)</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Position</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="n">middle</span></code></pre>
 
                         </div>
                       </div>
@@ -344,14 +344,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>the right point of the view, centered vertically</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Position</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="k">right</span></code></pre>
 
                         </div>
                       </div>
@@ -375,14 +375,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>the bottom left point of the view</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Position</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="n">bottomLeft</span></code></pre>
 
                         </div>
                       </div>
@@ -406,14 +406,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>the bottom center point of the view</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Position</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="n">bottomMiddle</span></code></pre>
 
                         </div>
                       </div>
@@ -437,14 +437,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>the bottom right point of the view</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Position</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="n">bottomRight</span></code></pre>
 
                         </div>
                       </div>
