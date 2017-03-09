@@ -64,7 +64,7 @@ class SortFunctionTests: XCTestCase {
         XCTAssertEqual(animatableView.subviews.count, squaresPerRow * squaresPerRow)
     }
     
-    func compare(timedViews: [SpruceTimedView], toExpected expected: [TimeInterval]) {
+    func compare(timedViews: [TimedView], toExpected expected: [TimeInterval]) {
         XCTAssertEqual(timedViews.count, expected.count)
         
         guard timedViews.count == expected.count else {
@@ -73,15 +73,23 @@ class SortFunctionTests: XCTestCase {
         }
         
         for timedView in timedViews {
-            let index = timedView.spruceView.view.tag
+            guard let index = timedView.spruceView.view?.tag else {
+                XCTFail("Failed to find UIView Object")
+                continue
+            }
             let expectedDelay = expected[index]
             XCTAssertEqualWithAccuracy(timedView.timeOffset, expectedDelay, accuracy: 0.000001)
         }
     }
     
-    func printTimedViews(_ timedViews: [SpruceTimedView]) {
+    func printTimedViews(_ timedViews: [TimedView]) {
         let timedViews = timedViews.sorted { (left, right) -> Bool in
-            return left.spruceView.view.tag < right.spruceView.view.tag
+            guard let leftTag = left.spruceView.view?.tag,
+                let rightTag = right.spruceView.view?.tag else {
+                XCTFail("Failed to find UIView Object")
+                return false
+            }
+            return leftTag < rightTag
         }
         print("[", terminator: "")
         for index in 0..<timedViews.count {

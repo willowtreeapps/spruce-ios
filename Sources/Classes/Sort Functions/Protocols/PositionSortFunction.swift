@@ -27,7 +27,7 @@ import Foundation
 import UIKit
 
 /// A position on the screen. Use this to define specific locations on the screen where the animation should start
-public enum SprucePosition {
+public enum Position {
     case topLeft
     case topMiddle
     case topRight
@@ -43,11 +43,11 @@ public enum SprucePosition {
 public protocol PositionSortFunction: DistanceSortFunction {
     
     /// the starting position of the animation
-    var position: SprucePosition { get set }
+    var position: Position { get set }
 }
 
 public extension PositionSortFunction {
-    public func distancePoint(view: UIView, subviews: [SpruceView]) -> CGPoint {
+    public func distancePoint(view: UIView, subviews: [View]) -> CGPoint {
         guard subviews.count > 0 else {
             return .zero
         }
