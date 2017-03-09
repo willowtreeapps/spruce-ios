@@ -48,11 +48,11 @@ public extension Spruce {
     /// - Parameters:
     ///   - sortFunction: the `SortFunction` used to determine the animation offsets for each subview
     ///   - prepare: a closure that will be called with each subview of `this` parent view
-    ///   - animation: a `SpruceAnimation` that will be used to animate each subview
+    ///   - animation: a `Animation` that will be used to animate each subview
     ///   - exclude: an array of views that the animation should skip over
     ///   - recursiveDepth: an int describing how deep into the view hiearchy the subview search should go, defaults to 0
     ///   - completion: a closure that is called upon the final animation completing. A `Bool` is passed into the closure letting you know if the animation has completed. **Note:** If you stop animations on the whole animating view, then `false` will be passed into the completion closure. However, if the final animation is allowed to proceed then `true` will be the value passed into the completion closure.
-    public func animate(withSortFunction sortFunction: SortFunction, prepare: PrepareHandler? = nil, animation: SpruceAnimation, exclude: [UIView]? = nil, recursiveDepth: Int = 0, completion: CompletionHandler? = nil) {
+    public func animate(withSortFunction sortFunction: SortFunction, prepare: PrepareHandler? = nil, animation: Animation, exclude: [UIView]? = nil, recursiveDepth: Int = 0, completion: CompletionHandler? = nil) {
         var timedViews = sortFunction.timeOffsets(view: self.view, recursiveDepth: recursiveDepth)
         timedViews = timedViews.sorted { (left, right) -> Bool in
             return left.timeOffset < right.timeOffset

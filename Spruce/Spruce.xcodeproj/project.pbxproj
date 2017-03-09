@@ -51,8 +51,8 @@
 		DB9358521E008E1200ADC5BE /* PointOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB93584F1E008E1200ADC5BE /* PointOperations.swift */; };
 		DB9358531E008E1200ADC5BE /* ViewOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9358501E008E1200ADC5BE /* ViewOperations.swift */; };
 		DB9358541E008E1200ADC5BE /* ViewOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9358501E008E1200ADC5BE /* ViewOperations.swift */; };
-		DB9358561E008E1A00ADC5BE /* SpruceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9358551E008E1A00ADC5BE /* SpruceButton.swift */; };
-		DB9358571E008E1A00ADC5BE /* SpruceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9358551E008E1A00ADC5BE /* SpruceButton.swift */; };
+		DB9358561E008E1A00ADC5BE /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9358551E008E1A00ADC5BE /* Button.swift */; };
+		DB9358571E008E1A00ADC5BE /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9358551E008E1A00ADC5BE /* Button.swift */; };
 		DB9358591E008E1E00ADC5BE /* Spruce.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9358581E008E1E00ADC5BE /* Spruce.swift */; };
 		DB93585A1E008E1E00ADC5BE /* Spruce.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9358581E008E1E00ADC5BE /* Spruce.swift */; };
 		DBAFE66D1E70879D00006353 /* UIView+Spruce.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAFE66C1E70879D00006353 /* UIView+Spruce.swift */; };
@@ -112,7 +112,7 @@
 		DB93583A1E008DF200ADC5BE /* RandomSortFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomSortFunction.swift; sourceTree = "<group>"; };
 		DB93584F1E008E1200ADC5BE /* PointOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointOperations.swift; sourceTree = "<group>"; };
 		DB9358501E008E1200ADC5BE /* ViewOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewOperations.swift; sourceTree = "<group>"; };
-		DB9358551E008E1A00ADC5BE /* SpruceButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpruceButton.swift; sourceTree = "<group>"; };
+		DB9358551E008E1A00ADC5BE /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		DB9358581E008E1E00ADC5BE /* Spruce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spruce.swift; sourceTree = "<group>"; };
 		DBAFE66C1E70879D00006353 /* UIView+Spruce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Spruce.swift"; sourceTree = "<group>"; };
 		DBAFE66F1E7088BE00006353 /* CGPoint+Spruce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Spruce.swift"; sourceTree = "<group>"; };
@@ -249,7 +249,7 @@
 		DB93581C1E008DAD00ADC5BE /* UI Elements */ = {
 			isa = PBXGroup;
 			children = (
-				DB9358551E008E1A00ADC5BE /* SpruceButton.swift */,
+				DB9358551E008E1A00ADC5BE /* Button.swift */,
 			);
 			path = "UI Elements";
 			sourceTree = "<group>";
@@ -418,7 +418,7 @@
 				DB9358421E008DF200ADC5BE /* LinearSortFunction.swift in Sources */,
 				DB288BB01E671B810038B13E /* PositionSortFunction.swift in Sources */,
 				32DC68471E09BA5B00DF8286 /* InlineSortFunction.swift in Sources */,
-				DB9358561E008E1A00ADC5BE /* SpruceButton.swift in Sources */,
+				DB9358561E008E1A00ADC5BE /* Button.swift in Sources */,
 				DB9358311E008DE900ADC5BE /* SpruceViewController.swift in Sources */,
 				3208F65D1E0B145800847FF0 /* ContinuousWeightedSortFunction.swift in Sources */,
 				DB9358281E008DE100ADC5BE /* StandardAnimation.swift in Sources */,
@@ -458,7 +458,7 @@
 				DBFA70941E5CC0BA000CF1DB /* InlineSortFunction.swift in Sources */,
 				DB9358301E008DE900ADC5BE /* FullViewAnimation.swift in Sources */,
 				DB288BB11E671B810038B13E /* PositionSortFunction.swift in Sources */,
-				DB9358571E008E1A00ADC5BE /* SpruceButton.swift in Sources */,
+				DB9358571E008E1A00ADC5BE /* Button.swift in Sources */,
 				DB93585A1E008E1E00ADC5BE /* Spruce.swift in Sources */,
 				DB288BB61E671CC50038B13E /* CornerSortFunction.swift in Sources */,
 				DBAFE66E1E7087A200006353 /* UIView+Spruce.swift in Sources */,

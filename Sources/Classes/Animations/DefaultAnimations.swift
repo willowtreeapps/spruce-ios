@@ -68,13 +68,21 @@ public enum Angle {
 /// How much the scale of an animation should change. This value changes based off of which type of `StockAnimation` is used.
 ///
 /// - slightly: slightly animate the object
-/// - moderately: the object should move a moderate amount
-/// - severely: the object should move very noticeably
+/// - moderately: the object should scale a moderate amount
+/// - severely: the object should scale very noticeably
 /// - toScale: provide your own scale value that you feel the object should grow/shrink
 public enum Scale {
+    
+    /// slightly animate the object
     case slightly
+    
+    /// the object should scale a moderate amount
     case moderately
+    
+    /// the object should scale very noticeably
     case severely
+    
+    /// provide your own scale value that you feel the object should grow/shrink
     case toScale(CGFloat)
 }
 
@@ -85,9 +93,16 @@ public enum Scale {
 /// - severely: the object should move very noticeably
 /// - byPoints: provide your own distance value that you feel the object should slide over
 public enum Distance {
+    /// slightly move the object
     case slightly
+    
+    /// the object should move a moderate amount
     case moderately
+    
+    /// the object should move very noticeably
     case severely
+    
+    /// provide your own distance value that you feel the object should slide over
     case byPoints(CGFloat)
 }
 
@@ -126,7 +141,6 @@ public enum StockAnimation {
             case .fadeIn:
                 return { view in
                     view.alpha = 0.0
-                    view.isHidden = true
                 }
             case .spin:
                 let angle = spinAngle
@@ -159,7 +173,6 @@ public enum StockAnimation {
                 }
             case .fadeIn:
                 return { view in
-                    view.isHidden = false
                     view.alpha = 1.0
                 }
             case .spin:

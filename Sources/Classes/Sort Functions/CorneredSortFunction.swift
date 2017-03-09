@@ -29,11 +29,11 @@ import UIKit
 /// A `SortFunction` designed to animate in a corner like fashion. The views near the starting corner will animate first. In essence it appears to be a wiping function that will continue diagonally based on that corner. 
 public struct CorneredSortFunction: CornerSortFunction {
     
-    public var corner: SpruceCorner
+    public var corner: Corner
     public var interObjectDelay: TimeInterval
     public var reversed: Bool = false
     
-    public init(corner: SpruceCorner, interObjectDelay: TimeInterval) {
+    public init(corner: Corner, interObjectDelay: TimeInterval) {
         self.corner = corner
         self.interObjectDelay = interObjectDelay
     }

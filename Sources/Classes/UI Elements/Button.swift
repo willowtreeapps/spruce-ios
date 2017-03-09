@@ -1,5 +1,5 @@
 //
-//  SpruceButton.swift
+//  Button.swift
 //  Spruce
 //
 //  Copyright (c) 2017 WillowTree, Inc.
@@ -25,13 +25,13 @@
 
 import UIKit
 
-open class SpruceButton: UIButton {
+open class Button: UIButton {
     
     /// the stock animation that should be applied to the button upon press
     open var animation: StockAnimation = .expand(.slightly)
     
     /// the style of animation that should be used when animating the button
-    open var animationType: SpruceAnimation = StandardAnimation(duration: 0.2)
+    open var animationType: Animation = StandardAnimation(duration: 0.2)
     
     override open var isHighlighted: Bool {
         didSet {
