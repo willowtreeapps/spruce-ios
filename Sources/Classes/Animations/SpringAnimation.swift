@@ -30,7 +30,7 @@ import UIKit
 /// - Note: `damping` defaults to 0.5 and `initialVelocity` defaults to 0.7
 public struct SpringAnimation: SpruceAnimation {
     
-    public var changeFunction: SpruceChangeFunction?
+    public var changeFunction: ChangeFunction?
     public var duration: TimeInterval
     
     /// A mask of options indicating how you want to perform the animations
@@ -42,12 +42,12 @@ public struct SpringAnimation: SpruceAnimation {
         self.duration = duration
     }
     
-    public init(duration: TimeInterval, changes: @escaping SpruceChangeFunction) {
+    public init(duration: TimeInterval, changes: @escaping ChangeFunction) {
         self.init(duration: duration)
         self.changeFunction = changes
     }
     
-    public func animate(delay: TimeInterval, view: UIView, completion: SpruceCompletionHandler?) {
+    public func animate(delay: TimeInterval, view: UIView, completion: CompletionHandler?) {
         UIView.animate(withDuration: duration, delay: delay, usingSpringWithDamping: damping, initialSpringVelocity: initialVelocity, options: animationOptions, animations: { [changeFunction] in
             changeFunction?(view)
         }, completion: completion)

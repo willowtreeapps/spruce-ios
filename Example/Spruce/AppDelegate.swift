@@ -38,11 +38,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         sortFunctionController.tabBarItem.titlePositionAdjustment.vertical = -3.0
         
         
-        let tableController = SpruceTableViewControllerExample(animations: [.slide(.left, .large), .fadeIn])
+        let tableController = SpruceTableViewControllerExample(animations: [.slide(.left, .severely), .fadeIn])
         tableController.tabBarItem = UITabBarItem(title: "Table View", image: UIImage(named: "ic_tableView"), tag: 0)
         tableController.tabBarItem.titlePositionAdjustment.vertical = -3.0
         
-        let collectionViewController = SpruceCollectionViewExample(animations: [.slide(.up, .medium), .fadeIn])
+        let collectionViewController = SpruceCollectionViewExample(animations: [.slide(.up, .moderately), .fadeIn])
         collectionViewController.tabBarItem = UITabBarItem(title: "Collection View", image: UIImage(named: "ic_collectionView"), tag: 0)
         collectionViewController.tabBarItem.titlePositionAdjustment.vertical = -3.0
         

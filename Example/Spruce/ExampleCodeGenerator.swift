@@ -89,7 +89,7 @@ class ExampleCodeGenerator {
         }
     }
     
-    class func string(forPosition position: SprucePosition) -> String {
+    class func string(forPosition position: Position) -> String {
         switch position {
         case .topLeft:
             return ".topLeft"
@@ -112,7 +112,7 @@ class ExampleCodeGenerator {
         }
     }
     
-    class func string(forDirection direction: SpruceDirection) -> String {
+    class func string(forDirection direction: Direction) -> String {
         switch direction {
         case .topToBottom:
             return ".topToBottom"
@@ -125,7 +125,7 @@ class ExampleCodeGenerator {
         }
     }
     
-    class func string(forWeight weight: SpruceWeight) -> String {
+    class func string(forWeight weight: Weight) -> String {
         switch weight {
         case .light:
             return ".light"
