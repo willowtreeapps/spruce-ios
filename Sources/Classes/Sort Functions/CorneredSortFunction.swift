@@ -40,7 +40,7 @@ public struct CorneredSortFunction: CornerSortFunction {
     
     public func timeOffsets(view: UIView, recursiveDepth: Int) -> [TimedView] {
         let comparisonPoint = distancePoint(view: view)
-        let subviews = view.spruceSubviews(withRecursiveDepth: recursiveDepth)
+        let subviews = view.spruce.subviews(withRecursiveDepth: recursiveDepth)
         
         let distancedViews = subviews.map {
             return (view: $0, distance: abs(comparisonPoint.x - $0.referencePoint.x) + abs(comparisonPoint.y - $0.referencePoint.y))
