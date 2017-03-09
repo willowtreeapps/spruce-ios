@@ -1,113 +1,114 @@
+![Spruce Logo](http://images.contentful.com/3cttzl4i3k1h/BULglMtODeiGWIqcckwKM/15124327a418c8ee1e272fad40c451c6/Blog_Header_Image_2.png?fl=progressive&w=1400&h=600&q=80&fit=fill&fm=)
+
 # Spruce iOS Animation Library
 
+[![CircleCI Build Status](https://circleci.com/gh/willowtreeapps/spruce-ios.svg?style=shield)](https://circleci.com/gh/willowtreeapps/spruce-ios)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods compatible](https://img.shields.io/badge/CocoaPods-compatible-4BC51D.svg?style=flat)](https://github.com/CocoaPods/CocoaPods)
-[![License None](https://img.shields.io/badge/License-none-blue.svg?style=flat)]()
+[![License MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)]()
 [![Public No](https://img.shields.io/badge/Public-no-red.svg?style=flat)]()
 
 
 ## What is it?
-Spruce is a very small, lightweight animation library that hopes to handle all of the 
-complications of animations for you. So many developers use standard animations because
-they are easy and quick to use. With Spruce, developers will be able to create complex
-animations hopefully with just one line of code. These animations can include variations
-on fading, scale, spin, and many more. A key component of Spruce is that it is entirely
-customizable. If we don't have the exact animation you are looking to build, subclass
-one of our types and everything will just work. 
+Spruce is a lightweight animation library that helps choreograph the animations on the screen. With so many different animation libraries out there, developers need to make sure that each view is animating at the appropriate time. Spruce can help designers request complex multi-view animations and not have the developers kringe at the prototype. 
+
+Here is a quick example of how you can Spruce up your screens!
+
+![Spruce Logo](http://images.contentful.com/3cttzl4i3k1h/3kEmcQ8GpiciaOYKaO4uis/b80fbd52aa54d85d62da2a8b85c33beb/spruce-animations.gif)
+ 
 
 ## Installation Instructions
-To make everything super easy, we currently support both CocoaPods and Carthage. If you want to just do everything yourself without a package manager, checkout our releases page and download the pre-built frameworks there or you can download the exact source from this github project.
+To make everything super easy, we currently support both CocoaPods and Carthage. If you want to just do everything yourself without a package manager, checkout our releases page and download the pre-built frameworks there or you can download the exact source from this Github project.
 
 ### CocoaPods
 Add the following to your `Podfile`.
+
 ```
 pod "Spruce", :git => "https://github.com/willowtreeapps/spruce-ios"
 ```
 
 ### Carthage
 Add the following to your `Cartfile`.
+
 ```
 github "willowtreeapps/spruce-ios"
 ```
 
-## How to use it
+# Getting Started
+Spruce is entirely written in `Swift` and currently only supports `Swift`. `Objective C` wrappers are coming soon.
 
-### UIViewController Subclass
-A lot of developers want to have the basics done for them to get a running example. If this
-is you, then why not simply change your view controllers to subclass `SpruceViewController`
-instead of `UIViewController`. This will add quite a few variables to your class that are to
-be used for animating the entrance of your view. 
+## Basic Usage
+Spruce comes packed with `UIView` extensions meant to make your life easier when calling an animation. Let's say we want to `[.fadeIn, .expand(.slightly)]` our view. We will call that array of animations `ourAnimations`.
 
-The variables added are all mutable and should be updated before the `super.viewDidLoad` call. 
+### Preparing for Animation
+If you want a view to fade in, then you need to make sure that it is already faded out. To do that, we need to `prepare` the view. Spruce makes this easy by calling:
 
-Variable     | Type          | Description
------------- | ------------- | -------------
-animations | `[SpruceStandardAnimation]` | An array of all the animations that should be run when the view appears. See the `SpruceStandardAnimation` enumeration for types.
-duration   | `TimeInterval` | Duration for each of the animations that are applied to the subviews. Default value 0.3s.
-animationType | `SpruceAnimation` | The style of the animation that should be applied to the subviews
-sortFunction | `SortFunction` | The function in which to define the inter-interval timings between each of the subviews
-animationView | `UIView?` | The view that will be used to grab the subviews from
-
-Once the view controller is subclassed, all subviews of the animation view will be cleared on `viewDidLoad`.
-This means that if you are overriding the `viewDidLoad` method then you need to call `super.viewDidLoad` in order
-for the starting point of the animation to be setup. Once the view appears on the screen (`viewDidAppear`) the
-animation blocks will be called for each of the subviews. 
-
-### UIView Extensions
-In order to reduce the need for subclassing anything, Spruce has built in `UIView` extensions so
-that you can easily call all of the spruce methods on any subclass of `UIView`. 
-
-#### .spruceUp(withAnimations: [SpruceStandardAnimation])
-Very basic call that uses all of the default timing functions, sort functions, and animation styles. The only info needed is the type of animations that you would like to run on the subviews.
-
-Example Call:
 ```swift
-let yourView = // this is the view to animate
-yourView.spruceUp(withAnimations: [.fadeIn, .slide(.up, .small), .expand(.small)])
+yourView.spruce.prepare(ourAnimations)
+```
+This `prepare` function will go through each view and set the `alpha = 0.0` and also shrink the view so that when the animation runs the view will revert to it's original position.
+
+### Running the Animation 
+
+Use the following command to run a basic animation on your view.
+
+```swift
+yourView.spruce.animate(ourAnimations)
 ```
 
-#### .spruceUp(withAnimations: [SpruceStandardAnimation], duration: TimeInterval)
-Same as the basic call above except with the ability to override the duration used for the animation. Keep in mind that duration does not mean duration of all the animations combined but the duration of the animation of each UIView that is a subview of the animating view. 
+Checkout [insert link to extensions] for more functions and how to better use the `animate` method.
 
-Example Call:
+## Using a SortFunction
+Luckily, Spruce comes with around 8 `SortFunction` implementations with a wide open possibility to make more! Use the `SortFunction` to change the order in which views animate. Consider the following example:
+
 ```swift
-let yourView = // this is the view to animate
-yourView.spruceUp(withAnimations: [.fadeIn, .slide(.up, .small), .expand(.small)], duration: 0.3)
+let sortFunction = LinearSortFunction(direction: .topToBottom, interObjectDelay: 0.1)
 ```
+In this example we have created a `LinearSortFunction` which will have views animate in from the top to bottom. We can change the look and feel of the animation by using a `RadialSortFunction` instead which will have the views animate in a circular fashion. If we wanted to use this `sortFunction` in an actual Spruce `animate` call then that would look something like:
 
-#### .spruceUp(withAnimations: [SpruceStandardAnimation], duration: TimeInterval, animationType: SpruceAnimation)
-Same as the methods above with the customizable component of `animationType`. Setting the animation type allows you to change the actualy UIViewAnimation that occurs for each of the changes. For example, this could be the difference of a `UIView.animate(withDuration:)` and `UIView.animate(... usingSpringWithDamping:...)`. 
-
-Example Call:
 ```swift
-let yourView = // this is the view to animate
-let animation = StandardAnimation(duration: duration)
-yourView.spruceUp(withAnimations: [.fadeIn, .slide(.up, .small), .expand(.small)], duration: 0.3, animationType: animation)
+yourView.spruce.animate([.fadeIn, .expand(.slightly)], sortFunction: sortFunction)
 ```
+Definitely play around with the stock `SortFunction` implementations until you find the one that is perfect for you! Check out the example app if you want to get previews of what each `SortFunction` will look like.
 
-#### .spruceUp(withAnimations: [SpruceStandardAnimation], duration: TimeInterval, sortFunction: SortFunction)
-Adding on another customizable component is the sortFunction. The sortFunction is used to determine which UIViews are animated when so that you can have cool cascading effects or all subviews can animate at the same time. (See SortFunction for more information). 
+## Using a Custom Animation
+Though Spruce comes with a ton of stock animations, sometimes it is easier to make your own. We definitely encourage customization and Spruce is ready for it! Let's say you want to transform and animate a `UIView` object. To do let's create a `PrepareHandler`:
 
-Example Call:
 ```swift
-let yourView = // this is the view to animate
-let animation = StandardAnimation(duration: duration)
-let sortFunction = LinearSortFunction(direction: .topToBottom, interObjectDelay: 0.05)
-yourView.spruceUp(withAnimations: [.fadeIn, .slide(.up, .small), .expand(.small)], duration: 0.3, animationType: animation, sortFunction: sortFunction)
+let prepareHandler = { view in
+	view.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+}
+```
+The `prepareHandler` will be passed a `UIView` object by Spruce and then it is your functions job to get the view ready to animate. This way our animation will look clean and quick since the view is already scaled down and ready to grow! Now to setup the function to grow the view we need to create a `ChangeFunction`:
+
+```swift
+let changeFunction = { view in
+	view.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+}
+```
+In `changeFunction` the same view will also be passed in by Spruce and then your function will be used to animate the actual view itself. These two functions will be called with each subview of the view you are animating. Now that we have both functions we are ready to create an animation:
+
+```swift
+let animation = StockAnimation.custom(prepareFunction: prepareHandler, animateFunction: changeFunction)
+```
+Once we have the animation all we need to do is pass that animation into Spruce and let the animation begin!
+
+```swift
+yourView.spruce.animate([animation])
 ```
 
 # Basic Concepts
 
 ## Animations
-Given a change function that specifies how the views are modified, you are able to specify any type of animation that you would like. Feel free to implement the `SpruceAnimation` protocol and create your own animation classes.
+Given a change function that specifies how the views are modified, you are able to specify any type of animation that you would like. Feel free to implement the `Animation` protocol and create your own animation classes.
 
-### The SpruceAnimation Protocol
+### The Animation Protocol
 The protocol has one function and a variable that need to be implemented in your class. First is the `changeFunction`. This is a `void` function that takes one parameter of a `UIView`. The change function will specify all of the modifications that are going to be made to that view and this is what you would use to animate the changes. The function `animate` is called when Spruce wants to go ahead and run the animations on the view. It's important that the `changeFunction` is set before this call but Spruce should handle all of that for you. The `completion` parameter in the function call should be called by your function once the animation is complete.
 
 ```swift
-var changeFunction: SpruceChangeFunction? { get set }
+var changeFunction: ChangeFunction? { get set }
 
-func animate(delay: TimeInterval, view: UIView, completion:SpruceCompletionHandler?)
+func animate(delay: TimeInterval, view: UIView, completion: CompletionHandler?)
 ```
 
 ### Standard Animation
@@ -123,96 +124,42 @@ With all different types of animations, especially those dealing with subviews, 
 A very simple protocol that requires classes to implement the following function
 
 ```swift
-func getTimeOffsets(view: UIView, recursive: Bool) -> [SpruceTimedView]
+func timeOffsets(view: UIView, recursiveDepth: Int) -> [TimedView]
 ```
 
 What the above function needs to do is take in a `UIView` and generate a list of subviews. This list of subviews can be generated recursively or not depending on what the boolean has set. Once the list of subviews has been generated, you can define your own sort metric to determine in which order the `UIView`'s should animate. To do so, you need to create an array of `SpruceTimedView`'s. This special struct has two properties: (1) `view: UIView` and (2) `timeOffset: TimeInterval`. Your `SortFunction` can define the `timeOffset` however it likes, but the animation classes will use this to determine how long it should delay the start of that specific view from animating. The best way to learn, is to play around. So why not have some fun and make your own `SortFunction`!
 
+### Stock Sort Functions
+To make sure that developers can use Spruce out of the box, we included about 8 stock `SortFunction` implementations. These are some of the main functions we use at WillowTree and are so excited to see what others come up with!
 
-### Default SortFunction Classes
-This is the list of `SortFunction` classes that come default with Spruce so that you can have a beautiful animation up and running in seconds. 
+- `DefaultSortFunction`
+- `LinearSortFunction`
+- `CorneredSortFunction`
+- `RadialSortFunction`
+- `RandomSortFunction`
+- `InlineSortFunction`
+- `ContinousSortFunction`
+- `ContinuousWeightedSortFunction`
 
-#### Linear Sort Function
-With a `LinearSortFunction` you are able to define a `SpruceDirection` and a `TimeInterval` for which is used to determine the inter object delay. To create a `LinearSortFunction`:
+Check out the docs [here insert link] for more information
 
-```swift
-LinearSortFunction(direction: <SpruceDirection>, interObjectDelay: <TimeInterval>)
+## Stock Animations
+To make everybody's lives easier, the stock animations perform the basic `UIView` animations that a lot of apps use today. Mix and match these animations to get the core motion you are looking for.
 
-// Example
-let sortFunction = LinearSortFunction(direction: .leftToRight, interObjectDelay: 0.2)
-```
+- `.fadeIn`
+- `.slide(<SlideDirection>, <Distance>)`
+- `.spin(<Angle>)`
+- `.expand(<Scale>)`
+- `.contact(<Scale>)`
+- `.custom(prepareFunction: <PrepareHandler>, animateFunction: <ChangeFunction>)`
 
-With the above `sortFunction` we can create a simple animation that looks like.
+Experiment which ones work for you! If you think of anymore feel free to add them to the library yourself!
 
-![Linear Sort Function](https://github.com/willowtreeapps/spruce-ios/blob/develop/imgs/sort-function-linear.gif "Linear Sort Function")
+# Contributing to Spruce
+Contributions are more than welcome! Please see the [Contributing Guidelines](https://github.com/willowtreeapps/PinkyPromise/blob/develop/CONTRIBUTING.md).
 
-Values for `SpruceDirection` include: `.topToBottom`, `.bottomToTop`, `.leftToRight`, and `.rightToLeft`.
+# Issues or Future Ideas
+If part of Spruce is not working correctly be sure to file a Github issue. In the issue provide as many details as possible. This could include example code or the exact steps that you did so that everyone can reproduce the issue. Sample projects are always the best way :). 
+This makes it easy for our developers or someone from the open-soruce community to start working!
 
-#### Cornered Sort Function
-With a `CorneredSortFunction` you can specify a `SpruceCorner` and a `TimeInterval` to determine the inter object delay. To create a `CorneredSortFunction`:
-
-```swift
-CorneredSortFunction(corner: <SpruceCorner>, interObjectDelay: TimeInterval)
-
-// Example
-let sortFunction = CorneredSortFunction(corner: .topLeft, interObjectDelay: 0.2)
-```
-
-With the above `sortFunction` the animation looks like. 
-
-![Cornered Sort Function](https://github.com/willowtreeapps/spruce-ios/blob/develop/imgs/sort-function-cornered.gif "Cornered Sort Function")
-
-Values for `SpruceCorner` include: `.topLeft`, .`topRight`, `.bottomLeft`, `.bottomRight`.
-
-#### Default Sort Function
-A `DefaultSortFunction` gives each view an inter object delay based on where it is located in the `subviews` array. No sorting is done on the `SortFunction` side. To create a `DefaultSortFunction`:
-
-```swift
-DefaultSortFunction(interObjectDelay: <TimeInterval>)
-
-// Example
-let sortFunction = DefaultSortFunction(interObjectDelay: 0.2)
-```
-
-#### Inline Sort Function
-An `InlineSortFunction` animates the views as if they were lines in a paragraph. Meaning that it will finish animating a line before starting the next line. To create an `InlineSortFunction`:
-
-```swift
-InlineSortFunction(interObjectDelay: <TimeInterval>)
-
-// Example
-let sortFunction = InlineSortFunction(interObjectDelay: 0.2)
-```
-
-The above `sortFunction` would make an animation look like. 
-
-![Inline Sort Function](https://github.com/willowtreeapps/spruce-ios/blob/develop/imgs/sort-function-inline.gif "Inline Sort Function")
-
-#### Radial Sort Function
-To create an animation that emits in a circular pattern from a given point, you would want to use a `RadialSortFunction`. Like the other `BaseDistanceSortFunctions` you can use the `reversed` flag to sort the subviews in the initial way and then animate in the opposite direction. This way rather than the views animating outwards, they will start on the outside and then animate in. To create a `RadialSortFunction`:
-
-```swift
-RadialSortFunction(position: <SprucePosition>, interObjectDelay: <TimeInterval>)
-
-// Example
-let sortFunction = RadialSortFunction(position: .topMiddle, interObjectDelay: 0.2)
-```
-
-The above `sortFunction` would make an animation look like: 
-
-![Radial Sort Function](https://github.com/willowtreeapps/spruce-ios/blob/develop/imgs/sort-function-radial.gif "Radial Sort Function")
-
-#### Continuous Sort Function
-To create an animation that radiates from a certain point, using distance from that point as the timing offset value, use the `ContinuousSortFunction`. Rather than specifying an exact value to wait inbetween views, this sort function will make the animation appear smoother because the timing offset is determined by how far the subview is from the point, rather than a discrete value. To create a `ContinuousSortFunction`:
-
-```swift
-ContinuousSortFunction(position: <SprucePosition>, duration: <TimeInterval>)
-
-// Example
-let sortFunction = ContinuousSortFunction(position: .topMiddle, duration: 0.5)
-```
-
-Rather than specifying the `interObjectDelay`, we are specifying how long we want the full animation to last. The above `sortFunction` would make an animation look like:
-
-![Continuous Sort Function](https://github.com/willowtreeapps/spruce-ios/blob/develop/imgs/sort-function-continuous.gif "Continuous Sort Function")
-
+If you have a feature idea submit an issue with a feature request or submit a pull request and we will work with you to merge it in!
