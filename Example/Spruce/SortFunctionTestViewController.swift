@@ -86,6 +86,7 @@ class SortFunctionTestViewController: UIViewController {
     @IBOutlet weak var reverseSwitch: UISwitch!
     @IBOutlet weak var functionTextField: UITextField!
     @IBOutlet weak var codeTextView: UITextView!
+    var pickerView: UIPickerView?
 
     // Preview
     @IBOutlet weak var sortView: UIView!
@@ -97,16 +98,34 @@ class SortFunctionTestViewController: UIViewController {
 
     // Lifecycle
     override func viewDidLoad() {
-        let functionPicker = UIPickerView()
-        functionPicker.dataSource = self
-        functionPicker.delegate = self
-        functionTextField.inputView = functionPicker
+        pickerView = UIPickerView()
+        pickerView?.dataSource = self
+        pickerView?.delegate = self
+        pickerView?.backgroundColor = UIColor.white
+        functionTextField.inputView = pickerView
         let reloadGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(reloadSortView))
         sortView.addGestureRecognizer(reloadGestureRecognizer)
+        
+        addToolbarToSortFunctionField()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         reloadSortView()
+    }
+    
+    func addToolbarToSortFunctionField() {
+        let toolbar = UIToolbar()
+        toolbar.frame.size.height = 44.0
+        toolbar.barStyle = .black
+        toolbar.barTintColor = UIColor.white
+        toolbar.tintColor = UIColor.spruceGreen
+        
+        let doneItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(sortFunctionSelected))
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelPicker))
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
+        toolbar.items = [cancelButton, flexibleSpace, doneItem]
+        functionTextField.inputAccessoryView = toolbar
     }
 
     func reloadSortView() {
@@ -320,12 +339,23 @@ extension SortFunctionTestViewController: UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return availableFunctions.count
     }
-
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    
+    func sortFunctionSelected() {
+        guard let row = pickerView?.selectedRow(inComponent: 0) else {
+            return
+        }
         self.functionTextField.endEditing(true)
         self.functionTextField.text = availableFunctions[row].description
         settings.function = availableFunctions[row]
         reloadSortView()
+    }
+    
+    func cancelPicker() {
+        self.functionTextField.endEditing(true)
+        guard let row = availableFunctions.index(of: settings.function) else {
+            return
+        }
+        pickerView?.selectRow(row, inComponent: 0, animated: true)
     }
 
 }
