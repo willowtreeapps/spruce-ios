@@ -28,7 +28,7 @@ import UIKit
 open class SpruceViewController: UIViewController {
     
     /// an array of spruce stock animations that will be used to animate all of the subviews of the `animationView`
-    open var animations: [SpruceStockAnimation] = []
+    open var animations: [StockAnimation] = []
     
     /// the length of each of the individual subview animations
     open var duration: TimeInterval = 0.3
@@ -56,17 +56,17 @@ open class SpruceViewController: UIViewController {
     override open func viewDidLoad() {
         super.viewDidLoad()
         if animations.count > 0 {
-            animationView?.sprucePrepare(withAnimations: animations)
+            animationView?.spruce.prepare(with: animations)
         }
     }
     
     
-    /// a simple overrided method that will call `spruceUp` on the `animationView`. If the `animationView` is not set then nothing will happen. The code should silently fail.
+    /// a simple overrided method that will call `spruce_up` on the `animationView`. If the `animationView` is not set then nothing will happen. The code should silently fail.
     ///
     /// - Parameter animated: If true, the view was added to the window using an animation.
     override open func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        animationView?.spruceUp(withAnimations: animations, duration: duration, animationType: animationType, sortFunction: sortFunction, prepare: false)
+        animationView?.spruce.animate(animations, duration: duration, animationType: animationType, sortFunction: sortFunction, prepare: false)
     }
 }

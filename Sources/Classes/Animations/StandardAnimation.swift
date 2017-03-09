@@ -29,7 +29,7 @@ import UIKit
 /// - Note: `animationOptions` defaults to `.curveEaseOut`. If you do not update this value before calling the animate method than the changes will not be reflected.
 public struct StandardAnimation: SpruceAnimation {
     
-    public var changeFunction: SpruceChangeFunction?
+    public var changeFunction: ChangeFunction?
     public var duration: TimeInterval
     public var animationOptions: UIViewAnimationOptions = .curveEaseOut
     
@@ -37,12 +37,12 @@ public struct StandardAnimation: SpruceAnimation {
         self.duration = duration
     }
     
-    public init(duration: TimeInterval, changes: @escaping SpruceChangeFunction) {
+    public init(duration: TimeInterval, changes: @escaping ChangeFunction) {
         self.init(duration: duration)
         self.changeFunction = changes
     }
     
-    public func animate(delay: TimeInterval, view: UIView, completion: SpruceCompletionHandler?) {
+    public func animate(delay: TimeInterval, view: UIView, completion: CompletionHandler?) {
         UIView.animate(withDuration: duration, delay: delay, options: animationOptions, animations: {
             self.changeFunction?(view)
         }, completion: completion)

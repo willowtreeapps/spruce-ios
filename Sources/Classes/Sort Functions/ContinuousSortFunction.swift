@@ -33,27 +33,27 @@ public struct ContinuousSortFunction: PositionSortFunction {
 
     public var interObjectDelay: TimeInterval = 0.0
     public var duration: TimeInterval
-    public var position: SprucePosition
+    public var position: Position
     public var reversed: Bool = false
 
-    public init(position: SprucePosition, duration: TimeInterval) {
+    public init(position: Position, duration: TimeInterval) {
         self.duration = duration
         self.position = position
     }
 
-    public func timeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView] {
-        let subviews = view.subviews(withRecursiveDepth: recursiveDepth)
+    public func timeOffsets(view: UIView, recursiveDepth: Int) -> [TimedView] {
+        let subviews = view.spruce.subviews(withRecursiveDepth: recursiveDepth)
         let comparisonPoint = distancePoint(view: view, subviews: subviews)
 
         let distancedViews = subviews.map {
-            return (view: $0, distance: comparisonPoint.euclideanDistance(to: $0.referencePoint))
+            return (view: $0, distance: comparisonPoint.spruce.euclideanDistance(to: $0.referencePoint))
         }
 
         guard let maxDistance: Double = distancedViews.max(by: { $0.distance < $1.distance })?.distance , maxDistance > 0 else {
             return []
         }
 
-        var timedViews: [SpruceTimedView] = []
+        var timedViews: [TimedView] = []
         for view in distancedViews {
             let normalizedDistance: Double
             if reversed {
@@ -63,7 +63,7 @@ public struct ContinuousSortFunction: PositionSortFunction {
                 normalizedDistance = view.distance / maxDistance
             }
             let offset = duration * normalizedDistance
-            let timedView = SpruceTimedView(spruceView: view.view, timeOffset: offset)
+            let timedView = TimedView(spruceView: view.view, timeOffset: offset)
             timedViews.append(timedView)
         }
 

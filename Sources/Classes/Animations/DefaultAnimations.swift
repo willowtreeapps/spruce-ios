@@ -45,49 +45,75 @@ public enum SlideDirection {
     case right
 }
 
-/// How much of an animation change there should be. This value changes based off of which type of `StockAnimation` is used.
+/// How much the angle of an animation should change. This value changes based off of which type of `StockAnimation` is used.
 ///
-/// - small: slightly animate the object
-/// - medium: the object should move a moderate amount
-/// - large: the object should move very noticeably
-/// - custom: provide your own value that you feel the object should move
-public enum SpruceSize {
+/// - slightly: slightly animate the object
+/// - moderately: the object should move a moderate amount
+/// - severely: the object should move very noticeably
+/// - toAngle: provide your own angle value that you feel the object should rotate
+public enum Angle {
     /// slightly animate the object
-    case small
+    case slightly
     
     /// the object should move a moderate amount
-    case medium
+    case moderately
     
     /// the object should move very noticeably
-    case large
+    case severely
     
     /// provide your own value that you feel the object should move. The value you should provide should be a `Double`
-    case custom(Double)
+    case toAngle(CGFloat)
+}
+
+/// How much the scale of an animation should change. This value changes based off of which type of `StockAnimation` is used.
+///
+/// - slightly: slightly animate the object
+/// - moderately: the object should move a moderate amount
+/// - severely: the object should move very noticeably
+/// - toScale: provide your own scale value that you feel the object should grow/shrink
+public enum Scale {
+    case slightly
+    case moderately
+    case severely
+    case toScale(CGFloat)
+}
+
+/// How much the distance of a view animation should change. This value changes based off of which type of `StockAnimation` is used.
+///
+/// - slightly: slightly move the object
+/// - moderately: the object should move a moderate amount
+/// - severely: the object should move very noticeably
+/// - byPoints: provide your own distance value that you feel the object should slide over
+public enum Distance {
+    case slightly
+    case moderately
+    case severely
+    case byPoints(CGFloat)
 }
 
 
 /// A few stock animations that you can use with Spruce. We want to make it really easy for you to include animations so we tried to include the basics. Use these stock animations to `slide`, `fade`, `spin`, `expand`, or `contract` your views.
-public enum SpruceStockAnimation {
-    /// Have your view slide to where it currently is. Provide a `SlideDirection` and `SpruceSize` to determine what the animation should look like.
-    case slide(SlideDirection, SpruceSize)
+public enum StockAnimation {
+    /// Have your view slide to where it currently is. Provide a `SlideDirection` and `Size` to determine what the animation should look like.
+    case slide(SlideDirection, Distance)
     
     /// Fade the view in
     case fadeIn
     
-    /// Spin the view in the direction of the size. Provide a `SpruceSize` to define how much the view should spin
-    case spin(SpruceSize)
+    /// Spin the view in the direction of the size. Provide a `Size` to define how much the view should spin
+    case spin(Angle)
     
-    /// Have the view grow in size. Provide a `SpruceSize` to define by which scale the view should grow
-    case expand(SpruceSize)
+    /// Have the view grow in size. Provide a `Size` to define by which scale the view should grow
+    case expand(Scale)
     
-    /// Have the view shrink in size. Provide a `SpruceSize` to define by which scale the view should shrink
-    case contract(SpruceSize)
+    /// Have the view shrink in size. Provide a `Size` to define by which scale the view should shrink
+    case contract(Scale)
     
     /// Provide custom prepare and change functions for the view to animate
-    case custom(prepareFunction: SprucePrepareHandler, animateFunction: SpruceChangeFunction)
+    case custom(prepareFunction: PrepareHandler, animateFunction: ChangeFunction)
     
     /// Given the `StockAnimation`, how should Spruce prepare your view for animation. Since we want all of the views to end the animation where they are supposed to be positioned, we have to reverse their animation effect.
-    var prepareFunction: SprucePrepareHandler {
+    var prepareFunction: PrepareHandler {
         get {
             switch self {
             case .slide:
@@ -100,6 +126,7 @@ public enum SpruceStockAnimation {
             case .fadeIn:
                 return { view in
                     view.alpha = 0.0
+                    view.isHidden = true
                 }
             case .spin:
                 let angle = spinAngle
@@ -122,8 +149,8 @@ public enum SpruceStockAnimation {
     }
     
     
-    /// Reset any of the transforms on the view so that the view will end up in its original position. If a `custom` animation is used, then that animation `SpruceChangeFunction` is returned.
-    var animationFunction: SpruceChangeFunction {
+    /// Reset any of the transforms on the view so that the view will end up in its original position. If a `custom` animation is used, then that animation `ChangeFunction` is returned.
+    var animationFunction: ChangeFunction {
         get {
             switch self {
             case .slide:
@@ -132,6 +159,7 @@ public enum SpruceStockAnimation {
                 }
             case .fadeIn:
                 return { view in
+                    view.isHidden = false
                     view.alpha = 1.0
                 }
             case .spin:
@@ -155,37 +183,37 @@ public enum SpruceStockAnimation {
             switch self {
             case .slide(let direction, let size):
                 switch (direction, size) {
-                case (.up, .small):
+                case (.up, .slightly):
                     return CGPoint(x: 0.0, y: 10.0)
-                case (.up, .medium):
+                case (.up, .moderately):
                     return CGPoint(x: 0.0, y: 30.0)
-                case (.up, .large):
+                case (.up, .severely):
                     return CGPoint(x: 0.0, y: 50.0)
-                case (.up, .custom(let value)):
+                case (.up, .byPoints(let value)):
                     return CGPoint(x: 0.0, y: -value)
-                case (.down, .small):
+                case (.down, .slightly):
                     return CGPoint(x: 0.0, y: -10.0)
-                case (.down, .medium):
+                case (.down, .moderately):
                     return CGPoint(x: 0.0, y: -30.0)
-                case (.down, .large):
+                case (.down, .severely):
                     return CGPoint(x: 0.0, y: -50.0)
-                case (.down, .custom(let value)):
+                case (.down, .byPoints(let value)):
                     return CGPoint(x: 0.0, y: -value)
-                case (.left, .small):
+                case (.left, .slightly):
                     return CGPoint(x: 10.0, y: 0.0)
-                case (.left, .medium):
+                case (.left, .moderately):
                     return CGPoint(x: 30.0, y: 0.0)
-                case (.left, .large):
+                case (.left, .severely):
                     return CGPoint(x: 50.0, y: 0.0)
-                case (.left, .custom(let value)):
+                case (.left, .byPoints(let value)):
                     return CGPoint(x:  -value, y: 0.0)
-                case (.right, .small):
+                case (.right, .slightly):
                     return CGPoint(x: -10.0, y: 0.0)
-                case (.right, .medium):
+                case (.right, .moderately):
                     return CGPoint(x: -30.0, y: 0.0)
-                case (.right, .large):
+                case (.right, .severely):
                     return CGPoint(x: -50.0, y: 0.0)
-                case (.right, .custom(let value)):
+                case (.right, .byPoints(let value)):
                     return CGPoint(x:  -value, y: 0.0)
                 }
             default:
@@ -201,14 +229,14 @@ public enum SpruceStockAnimation {
             switch self {
             case .spin(let size):
                 switch size {
-                case .small:
+                case .slightly:
                     return CGFloat(M_PI_4)
-                case .medium:
+                case .moderately:
                     return CGFloat(M_PI_2)
-                case .large:
+                case .severely:
                     return CGFloat(M_PI)
-                case .custom(let value):
-                    return CGFloat(value)
+                case .toAngle(let value):
+                    return value
                 }
             default:
                 return 0.0
@@ -221,25 +249,25 @@ public enum SpruceStockAnimation {
         switch self {
         case .contract(let size):
             switch size {
-            case .small:
+            case .slightly:
                 return 1.1
-            case .medium:
+            case .moderately:
                 return 1.3
-            case .large:
+            case .severely:
                 return 1.5
-            case .custom(let value):
-                return CGFloat(value)
+            case .toScale(let value):
+                return value
             }
         case .expand(let size):
             switch size {
-            case .small:
+            case .slightly:
                 return 0.9
-            case .medium:
+            case .moderately:
                 return 0.7
-            case .large:
+            case .severely:
                 return 0.5
-            case .custom(let value):
-                return CGFloat(value)
+            case .toScale(let value):
+                return value
             }
         default:
             return 0.0
