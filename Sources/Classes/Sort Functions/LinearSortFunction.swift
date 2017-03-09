@@ -47,6 +47,6 @@ public struct LinearSortFunction: DirectionSortFunction {
             left.y = 0.0
             right.y = 0.0
         }
-        return left.euclideanDistance(to: right)
+        return left.spruce.euclideanDistance(to: right)
     }
 }

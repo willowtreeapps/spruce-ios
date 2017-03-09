@@ -41,10 +41,10 @@ public struct InlineSortFunction: CornerSortFunction {
     
     public func timeOffsets(view: UIView, recursiveDepth: Int) -> [TimedView] {
         let comparisonPoint = distancePoint(view: view)
-        let subviews = view.subviews(withRecursiveDepth: recursiveDepth)
+        let subviews = view.spruce.subviews(withRecursiveDepth: recursiveDepth)
 
         var distancedViews = subviews.map {
-            return (view: $0, horizontalDistance: comparisonPoint.horizontalDistance(to: $0.referencePoint), verticalDistance: comparisonPoint.verticalDistance(to: $0.referencePoint))
+            return (view: $0, horizontalDistance: comparisonPoint.spruce.horizontalDistance(to: $0.referencePoint), verticalDistance: comparisonPoint.spruce.verticalDistance(to: $0.referencePoint))
             }.sorted { (left, right) -> Bool in
                 if left.verticalDistance < right.verticalDistance {
                     return true

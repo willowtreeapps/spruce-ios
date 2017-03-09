@@ -42,7 +42,7 @@ public struct DefaultSortFunction: SortFunction {
     public func timeOffsets(view: UIView, recursiveDepth: Int) -> [TimedView] {
         var timedViews: [TimedView] = []
         var currentTimeOffset: TimeInterval = 0.0
-        let subviews = view.subviews(withRecursiveDepth: recursiveDepth)
+        let subviews = view.spruce.subviews(withRecursiveDepth: recursiveDepth)
         for subView in subviews {
             let timedView = TimedView(spruceView: subView, timeOffset: currentTimeOffset)
             timedViews.append(timedView)
