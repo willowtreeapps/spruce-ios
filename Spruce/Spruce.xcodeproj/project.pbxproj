@@ -36,7 +36,7 @@
 		DB93582D1E008DE900ADC5BE /* DefaultFullViewAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB93582A1E008DE900ADC5BE /* DefaultFullViewAnimations.swift */; };
 		DB93582F1E008DE900ADC5BE /* FullViewAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB93582B1E008DE900ADC5BE /* FullViewAnimation.swift */; };
 		DB9358301E008DE900ADC5BE /* FullViewAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB93582B1E008DE900ADC5BE /* FullViewAnimation.swift */; };
-		DB9358311E008DE900ADC5BE /* SpruceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB93582C1E008DE900ADC5BE /* SpruceViewController.swift */; };
+		DB9358311E008DE900ADC5BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB93582C1E008DE900ADC5BE /* ViewController.swift */; };
 		DB93583E1E008DF200ADC5BE /* CorneredSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9358341E008DF200ADC5BE /* CorneredSortFunction.swift */; };
 		DB93583F1E008DF200ADC5BE /* CorneredSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9358341E008DF200ADC5BE /* CorneredSortFunction.swift */; };
 		DB9358401E008DF200ADC5BE /* DefaultSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9358351E008DF200ADC5BE /* DefaultSortFunction.swift */; };
@@ -104,7 +104,7 @@
 		DB9358211E008DE000ADC5BE /* StandardAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardAnimation.swift; sourceTree = "<group>"; };
 		DB93582A1E008DE900ADC5BE /* DefaultFullViewAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultFullViewAnimations.swift; sourceTree = "<group>"; };
 		DB93582B1E008DE900ADC5BE /* FullViewAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullViewAnimation.swift; sourceTree = "<group>"; };
-		DB93582C1E008DE900ADC5BE /* SpruceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpruceViewController.swift; sourceTree = "<group>"; };
+		DB93582C1E008DE900ADC5BE /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DB9358341E008DF200ADC5BE /* CorneredSortFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CorneredSortFunction.swift; sourceTree = "<group>"; };
 		DB9358351E008DF200ADC5BE /* DefaultSortFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultSortFunction.swift; sourceTree = "<group>"; };
 		DB9358361E008DF200ADC5BE /* LinearSortFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinearSortFunction.swift; sourceTree = "<group>"; };
@@ -259,7 +259,7 @@
 			children = (
 				DB93582A1E008DE900ADC5BE /* DefaultFullViewAnimations.swift */,
 				DB93582B1E008DE900ADC5BE /* FullViewAnimation.swift */,
-				DB93582C1E008DE900ADC5BE /* SpruceViewController.swift */,
+				DB93582C1E008DE900ADC5BE /* ViewController.swift */,
 			);
 			path = "Full View";
 			sourceTree = "<group>";
@@ -419,7 +419,7 @@
 				DB288BB01E671B810038B13E /* PositionSortFunction.swift in Sources */,
 				32DC68471E09BA5B00DF8286 /* InlineSortFunction.swift in Sources */,
 				DB9358561E008E1A00ADC5BE /* Button.swift in Sources */,
-				DB9358311E008DE900ADC5BE /* SpruceViewController.swift in Sources */,
+				DB9358311E008DE900ADC5BE /* ViewController.swift in Sources */,
 				3208F65D1E0B145800847FF0 /* ContinuousWeightedSortFunction.swift in Sources */,
 				DB9358281E008DE100ADC5BE /* StandardAnimation.swift in Sources */,
 				DB93582F1E008DE900ADC5BE /* FullViewAnimation.swift in Sources */,

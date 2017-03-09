@@ -1,5 +1,5 @@
 //
-//  SpruceViewController.swift
+//  ViewController.swift
 //  Spruce
 //
 //  Copyright (c) 2017 WillowTree, Inc.
@@ -25,7 +25,7 @@
 
 import UIKit
 
-open class SpruceViewController: UIViewController {
+open class ViewController: UIViewController {
     
     /// an array of spruce stock animations that will be used to animate all of the subviews of the `animationView`
     open var animations: [StockAnimation] = []
