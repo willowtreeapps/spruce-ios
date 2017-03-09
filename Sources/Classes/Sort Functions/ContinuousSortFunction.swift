@@ -25,31 +25,35 @@
 
 import UIKit
 
+
+/// A `SortFunction` that has variable `interObjectDelay` values. Unlike other `SortFunction` implementations, for the `ContinuousSortFunction` you specify a `duration` and the `SortFunction` will compute the necessary `interObjectDelay` values for each of the subviews. This means that the offset times will not be multiples of the delay like usual.
+/// - Note: Though `interObjectDelay` is a value on this sort function, it will not be used.
+/// - Note: The delay values used will be calculated and relative based on how far those views are from the selected position. This means that the animation will look a little smoother if you are using it with large scale numbers of `subviews`.
 public struct ContinuousSortFunction: PositionSortFunction {
 
     public var interObjectDelay: TimeInterval = 0.0
     public var duration: TimeInterval
-    public var position: SprucePosition
+    public var position: Position
     public var reversed: Bool = false
 
-    public init(position: SprucePosition, duration: TimeInterval) {
+    public init(position: Position, duration: TimeInterval) {
         self.duration = duration
         self.position = position
     }
 
-    public func timeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView] {
-        let subviews = view.subviews(withRecursiveDepth: recursiveDepth)
+    public func timeOffsets(view: UIView, recursiveDepth: Int) -> [TimedView] {
+        let subviews = view.spruce.subviews(withRecursiveDepth: recursiveDepth)
         let comparisonPoint = distancePoint(view: view, subviews: subviews)
 
         let distancedViews = subviews.map {
-            return (view: $0, distance: comparisonPoint.euclideanDistance(to: $0.referencePoint))
+            return (view: $0, distance: comparisonPoint.spruce.euclideanDistance(to: $0.referencePoint))
         }
 
         guard let maxDistance: Double = distancedViews.max(by: { $0.distance < $1.distance })?.distance , maxDistance > 0 else {
             return []
         }
 
-        var timedViews: [SpruceTimedView] = []
+        var timedViews: [TimedView] = []
         for view in distancedViews {
             let normalizedDistance: Double
             if reversed {
@@ -59,7 +63,7 @@ public struct ContinuousSortFunction: PositionSortFunction {
                 normalizedDistance = view.distance / maxDistance
             }
             let offset = duration * normalizedDistance
-            let timedView = SpruceTimedView(spruceView: view.view, timeOffset: offset)
+            let timedView = TimedView(spruceView: view.view, timeOffset: offset)
             timedViews.append(timedView)
         }
 

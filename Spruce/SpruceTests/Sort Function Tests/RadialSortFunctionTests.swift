@@ -28,7 +28,7 @@ import Foundation
 
 class RadialSortFunctionTests: SortFunctionTests {
     
-    func testRadialSortFunction(withPosition position: SprucePosition, expected: [TimeInterval], expectedReversed: [TimeInterval]) {
+    func testRadialSortFunction(withPosition position: Position, expected: [TimeInterval], expectedReversed: [TimeInterval]) {
         var sortFunction = RadialSortFunction(position: position, interObjectDelay: 0.1)
         let timedViews = sortFunction.timeOffsets(view: animatableView)
         

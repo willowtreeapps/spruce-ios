@@ -33,19 +33,23 @@ import UIKit
 /// - bottomToTop: the animation will run with bottom views animating first and then top views animating last
 /// - leftToRight: the animation will run with left views animating first and right views animating last
 /// - rightToLeft: the animation will run with right views animating first and left views animating last
-public enum SpruceDirection {
+public enum Direction {
     case topToBottom
     case bottomToTop
     case leftToRight
     case rightToLeft
 }
 
+
+/// A `DistanceSortFunction` that defines it's `distancePoint` based on a `Direction`. Any distance based sort functions that use a direction variable in order to determine the setup of the animation should implement this protocol.
 public protocol DirectionSortFunction: DistanceSortFunction {
-    var direction: SpruceDirection { get set }
+    
+    /// the direction that the animation should follow
+    var direction: Direction { get set }
 }
 
 public extension DirectionSortFunction {
-    public func distancePoint(view: UIView, subviews: [SpruceView] = []) -> CGPoint {
+    public func distancePoint(view: UIView, subviews: [View] = []) -> CGPoint {
         let bounds = view.bounds
         switch direction {
         case .topToBottom:

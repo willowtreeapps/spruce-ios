@@ -1,3 +1,4 @@
+
 //
 //  SortFunctionTestViewController.swift
 //  Spruce
@@ -84,7 +85,7 @@ class SortFunctionTestViewController: UIViewController {
     @IBOutlet weak var horizontalWeightPicker: UISegmentedControl!
     @IBOutlet weak var reverseSwitch: UISwitch!
     @IBOutlet weak var functionTextField: UITextField!
-    @IBOutlet weak var codeLabel: UILabel!
+    @IBOutlet weak var codeTextView: UITextView!
 
     // Preview
     @IBOutlet weak var sortView: UIView!
@@ -92,7 +93,7 @@ class SortFunctionTestViewController: UIViewController {
     // Settings
     let availableFunctions: [SortFunctions] = [.base, .linear, .cornered, .radial, .inline, .continuous, .weightedContinuous, .random]
     var settings = SortFunctionTestSettings()
-    var animationController = CustomAnimationViewController()
+    var animationController: CustomAnimationViewController?
 
     // Lifecycle
     override func viewDidLoad() {
@@ -109,14 +110,16 @@ class SortFunctionTestViewController: UIViewController {
     }
 
     func reloadSortView() {
-        for subview in sortView.subviews {
-            subview.removeFromSuperview()
-        }
+        
+        animationController?.view.removeFromSuperview()
+        animationController?.removeFromParentViewController()
+        
         let testController = self.animationControllerForCurrentSettings()
         self.addChildViewController(testController)
         self.sortView.addSubview(testController.view)
         testController.view.frame = sortView.bounds
         testController.setup()
+        animationController = testController
 
         let activeControlViews = controlViewsForCurrentSettings()
         for view in controlViews {
@@ -124,7 +127,7 @@ class SortFunctionTestViewController: UIViewController {
         }
         let codeForFunction = ExampleCodeGenerator.generateCode(forSettings: settings)
         print("\n\(codeForFunction)\n")
-        codeLabel.text = codeForFunction
+        codeTextView.text = codeForFunction
     }
 
     func sortFunctionForCurrentSettings() -> SortFunction {
@@ -284,14 +287,16 @@ extension SortFunctionTestViewController {
     func animationControllerForCurrentSettings() -> CustomAnimationViewController {
 
         let testController = CustomAnimationViewController(nibName: nil, bundle: nil)
-
-        let animations = { [unowned self] in
+        
+        let animations = { [weak self, weak testController] in
             let animation = SpringAnimation(duration: 0.5) { view in
                 view.alpha = 1.0
                 view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
             }
-            let sortFunction = self.sortFunctionForCurrentSettings()
-            testController.containerView?.spruceUp(withSortFunction: sortFunction, animation: animation)
+            guard let sortFunction = self?.sortFunctionForCurrentSettings() else {
+                return
+            }
+            testController?.containerView?.spruce.animate(withSortFunction: sortFunction, animation: animation)
         }
         testController.customAnimation = animations
         return testController
@@ -325,17 +330,27 @@ extension SortFunctionTestViewController: UIPickerViewDataSource {
 
 }
 
+extension SortFunctionTestViewController: UITextViewDelegate, UITextFieldDelegate {
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        return false
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return false
+    }
+}
+
 struct SortFunctionTestSettings {
 
     var context: String = "Squares"
     var function: SortFunctions = .base
     var duration: Double = 1.0
     var delay: Double = 0.025
-    var position: SprucePosition = .topLeft
-    var direction: SpruceDirection = .topToBottom
+    var position: Position = .topLeft
+    var direction: Direction = .topToBottom
     var corner: SpruceCorner = .topLeft
-    var horizontalWeight: SpruceWeight = .light
-    var verticalWeight: SpruceWeight = .light
+    var horizontalWeight: Weight = .light
+    var verticalWeight: Weight = .light
     var reverse: Bool = false
 
 }

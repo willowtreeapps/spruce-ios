@@ -25,6 +25,8 @@
 
 import UIKit
 
+
+/// A `SortFunction` designed to animate in a corner like fashion. The views near the starting corner will animate first. In essence it appears to be a wiping function that will continue diagonally based on that corner. 
 public struct CorneredSortFunction: CornerSortFunction {
     
     public var corner: SpruceCorner
@@ -36,9 +38,9 @@ public struct CorneredSortFunction: CornerSortFunction {
         self.interObjectDelay = interObjectDelay
     }
     
-    public func timeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView] {
+    public func timeOffsets(view: UIView, recursiveDepth: Int) -> [TimedView] {
         let comparisonPoint = distancePoint(view: view)
-        let subviews = view.subviews(withRecursiveDepth: recursiveDepth)
+        let subviews = view.spruce.subviews(withRecursiveDepth: recursiveDepth)
         
         let distancedViews = subviews.map {
             return (view: $0, distance: abs(comparisonPoint.x - $0.referencePoint.x) + abs(comparisonPoint.y - $0.referencePoint.y))
@@ -53,20 +55,20 @@ public struct CorneredSortFunction: CornerSortFunction {
             return []
         }
         var currentTimeOffset = 0.0
-        var timedViews: [SpruceTimedView] = []
+        var timedViews: [TimedView] = []
         for view in distancedViews {
             if floor(lastDistance) != floor(view.distance) {
                 lastDistance = view.distance
                 currentTimeOffset += interObjectDelay
             }
-            let timedView = SpruceTimedView(spruceView: view.view, timeOffset: currentTimeOffset)
+            let timedView = TimedView(spruceView: view.view, timeOffset: currentTimeOffset)
             timedViews.append(timedView)
         }
         
         return timedViews
     }
     
-    public func distancePoint(view: UIView, subviews: [SpruceView] = []) -> CGPoint {
+    public func distancePoint(view: UIView, subviews: [View] = []) -> CGPoint {
         let distancePoint: CGPoint
         let bounds = view.bounds
         switch corner {

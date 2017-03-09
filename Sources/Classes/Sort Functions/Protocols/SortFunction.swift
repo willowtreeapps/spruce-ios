@@ -27,10 +27,10 @@ import UIKit
 
 
 /// An internal struct that is used to relate a view with a time offset. This is used to determine when each view is set to animate.
-public struct SpruceTimedView {
+public struct TimedView {
     
     /// the view that is to be animated
-    let spruceView: SpruceView
+    let spruceView: View
     
     /// the offset of this view animating from the start of the overall animation
     var timeOffset: TimeInterval
@@ -44,20 +44,20 @@ public protocol SortFunction {
     /// - Note: This method simply calls the `timeOffsets(view: UIView, recursiveDepth: Int)` with a `recursiveDepth` of `0`.
     ///
     /// - Parameter view: the view whose subviews should be animated. This view should not be included in the returned array
-    /// - Returns: an array of `SpruceTimedView`'s which contain references to the view needed to be animated and the time offset for when the animation of that individual view should start relative to the start of the overall animation
-    func timeOffsets(view: UIView) -> [SpruceTimedView]
+    /// - Returns: an array of `TimedView`'s which contain references to the view needed to be animated and the time offset for when the animation of that individual view should start relative to the start of the overall animation
+    func timeOffsets(view: UIView) -> [TimedView]
     
     /// Given a view, view sort the subviews in a way that matches the desired specification of the `SortFunction`. In an example case, if you wanted a radial sort function then this method would return an array of the subviews such that their time offets would be smaller near the center of the view and grow as they get further from the center point.
     ///
     /// - Parameters:
     ///   - view: the view whose subviews should be animated. This view should not be included in the returned array
     ///   - recursiveDepth: an int describing how deep into the view hiearchy the subview search should go, defaults to 0. A value of 0 is the same as calling the `subviews` on the actual view itself. Therefore a depth of 1 will be getting the subviews of each of the subviews, etc...
-    /// - Returns: an array of `SpruceTimedView`'s which contain references to the view needed to be animated and the time offset for when the animation of that individual view should start relative to the start of the overall animation
-    func timeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView]
+    /// - Returns: an array of `TimedView`'s which contain references to the view needed to be animated and the time offset for when the animation of that individual view should start relative to the start of the overall animation
+    func timeOffsets(view: UIView, recursiveDepth: Int) -> [TimedView]
 }
 
 public extension SortFunction {
-    func timeOffsets(view: UIView) -> [SpruceTimedView] {
+    func timeOffsets(view: UIView) -> [TimedView] {
         return timeOffsets(view: view, recursiveDepth: 0)
     }
 }

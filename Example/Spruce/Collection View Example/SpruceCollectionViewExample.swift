@@ -38,7 +38,7 @@ class SpruceCollectionViewExample: ExampleViewController {
         UIColor(red:0.71, green:0.93, blue:0.80, alpha:1.00)
     ]
     
-    init(animations: [SpruceStockAnimation]) {
+    init(animations: [StockAnimation]) {
         super.init(animations: animations, nibName: "SpruceCollectionViewExample")
         
         sortFunction = CorneredSortFunction(corner: .topLeft, interObjectDelay: 0.05)

@@ -28,7 +28,7 @@ import XCTest
 
 class LinearSortFunctionTests: SortFunctionTests {
     
-    func testLinearSortFunctions(withDirection direction: SpruceDirection, expected: [TimeInterval], expectedReversed: [TimeInterval]) {
+    func testLinearSortFunctions(withDirection direction: Direction, expected: [TimeInterval], expectedReversed: [TimeInterval]) {
         var sortFunction = LinearSortFunction(direction: direction, interObjectDelay: 0.1)
         let timedViews = sortFunction.timeOffsets(view: animatableView)
         
