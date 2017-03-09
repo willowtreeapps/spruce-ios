@@ -18,7 +18,7 @@
                         <viewControllerLayoutGuide type="bottom" id="YqO-6X-NGg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bj5-Id-Cxl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cBV-JF-gMW" userLabel="sortView">
@@ -28,7 +28,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dYu-BU-nRt">
-                                <rect key="frame" x="0.0" y="375" width="375" height="625"/>
+                                <rect key="frame" x="0.0" y="375" width="375" height="1125"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hKt-JQ-vrw">
                                         <rect key="frame" x="15" y="10" width="345" height="687.5"/>
@@ -42,6 +42,9 @@
                                                         <color key="textColor" red="0.52549019610000003" green="0.72941176470000002" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="Gbe-og-aXE" id="tLJ-FT-sUh"/>
+                                                        </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sort function" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhO-CK-d55" userLabel="functionLabel">
                                                         <rect key="frame" x="15" y="10" width="95" height="30"/>
@@ -458,41 +461,34 @@
                                                 <rect key="frame" x="0.0" y="562" width="345" height="125.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0U-tf-jmP" userLabel="Code Title">
-                                                        <rect key="frame" x="15" y="15" width="41" height="35.5"/>
+                                                        <rect key="frame" x="15" y="15" width="41" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XTm-r9-aaT">
-                                                        <rect key="frame" x="15" y="60.5" width="315" height="65"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8sc-qf-gUA">
-                                                                <rect key="frame" x="0.0" y="0.0" width="48.5" height="18.5"/>
-                                                                <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="16"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="65" id="2zo-o5-Mc2"/>
-                                                            <constraint firstAttribute="trailing" secondItem="8sc-qf-gUA" secondAttribute="trailing" id="BIz-h9-LVo"/>
-                                                            <constraint firstItem="8sc-qf-gUA" firstAttribute="leading" secondItem="XTm-r9-aaT" secondAttribute="leading" id="BK7-Ny-HHb"/>
-                                                            <constraint firstItem="8sc-qf-gUA" firstAttribute="leading" secondItem="XTm-r9-aaT" secondAttribute="leading" id="US6-jD-jLY"/>
-                                                            <constraint firstItem="8sc-qf-gUA" firstAttribute="top" secondItem="XTm-r9-aaT" secondAttribute="top" id="WEu-YV-ZXf"/>
-                                                            <constraint firstItem="8sc-qf-gUA" firstAttribute="top" secondItem="XTm-r9-aaT" secondAttribute="top" id="gXZ-NO-JST"/>
-                                                            <constraint firstAttribute="bottom" secondItem="8sc-qf-gUA" secondAttribute="bottom" id="lId-V6-W0f"/>
-                                                        </constraints>
-                                                    </scrollView>
+                                                    <textView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" scrollEnabled="NO" editable="NO" text="Some code would be here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aFa-Wn-zfW">
+                                                        <rect key="frame" x="15" y="45.5" width="315" height="65.5"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="13"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="Gbe-og-aXE" id="2z1-eH-yy2"/>
+                                                        </connections>
+                                                    </textView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstItem="n0U-tf-jmP" firstAttribute="top" secondItem="U3s-Xs-aAu" secondAttribute="top" constant="15" id="8MW-YR-1OA"/>
-                                                    <constraint firstAttribute="bottom" secondItem="XTm-r9-aaT" secondAttribute="bottom" id="9k1-Yv-GYU"/>
-                                                    <constraint firstItem="XTm-r9-aaT" firstAttribute="leading" secondItem="U3s-Xs-aAu" secondAttribute="leading" constant="15" id="BGf-vu-TL7"/>
-                                                    <constraint firstAttribute="trailing" secondItem="XTm-r9-aaT" secondAttribute="trailing" constant="15" id="ZFB-Sj-BOW"/>
+                                                    <constraint firstItem="aFa-Wn-zfW" firstAttribute="leading" secondItem="U3s-Xs-aAu" secondAttribute="leading" constant="15" id="O2C-UI-5dQ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="aFa-Wn-zfW" secondAttribute="trailing" constant="15" id="Stm-0e-BDg"/>
+                                                    <constraint firstAttribute="bottom" secondItem="aFa-Wn-zfW" secondAttribute="bottom" constant="15" id="W5v-JU-Toj"/>
+                                                    <constraint firstItem="aFa-Wn-zfW" firstAttribute="top" secondItem="n0U-tf-jmP" secondAttribute="bottom" constant="10" id="WEK-3D-tbG"/>
                                                     <constraint firstItem="n0U-tf-jmP" firstAttribute="leading" secondItem="U3s-Xs-aAu" secondAttribute="leading" constant="15" id="qO4-la-WDc"/>
-                                                    <constraint firstItem="XTm-r9-aaT" firstAttribute="top" secondItem="n0U-tf-jmP" secondAttribute="bottom" constant="10" id="yi4-pa-0au"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="luv-qk-UQn" appends="YES" id="U5d-va-Qdi"/>
+                                                </connections>
                                             </view>
                                         </subviews>
                                     </stackView>
@@ -521,9 +517,9 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="1000"/>
+                    <size key="freeformSize" width="375" height="1500"/>
                     <connections>
-                        <outlet property="codeLabel" destination="8sc-qf-gUA" id="gZA-Qo-NHD"/>
+                        <outlet property="codeTextView" destination="aFa-Wn-zfW" id="iIS-Fd-BIX"/>
                         <outlet property="cornerControlView" destination="8KL-tZ-Wtg" id="yRG-WG-HTt"/>
                         <outlet property="cornerPicker" destination="dWL-Mb-CLs" id="7JC-2G-Zzx"/>
                         <outlet property="delayControlView" destination="tPz-Lg-wRu" id="gDS-xa-6AR"/>
@@ -554,6 +550,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qbu-4h-sWw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="luv-qk-UQn">
+                    <connections>
+                        <action selector="selectAll:" destination="aFa-Wn-zfW" id="6ol-t1-Yd3"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-7.2000000000000002" y="87.256371814092958"/>
         </scene>

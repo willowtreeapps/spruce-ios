@@ -32,33 +32,33 @@ import UIKit
 public struct ContinuousWeightedSortFunction: PositionSortFunction, WeightSortFunction {
     
     public var interObjectDelay: TimeInterval = 0.0
-    public var position: SprucePosition
+    public var position: Position
     public var reversed: Bool = false
     public var duration: TimeInterval
 
-    public var horizontalWeight: SpruceWeight
-    public var verticalWeight: SpruceWeight
+    public var horizontalWeight: Weight
+    public var verticalWeight: Weight
 
-    public init(position: SprucePosition, duration: TimeInterval, horizontalWeight: SpruceWeight = .medium, verticalWeight: SpruceWeight = .medium) {
+    public init(position: Position, duration: TimeInterval, horizontalWeight: Weight = .medium, verticalWeight: Weight = .medium) {
         self.horizontalWeight = horizontalWeight
         self.verticalWeight = verticalWeight
         self.position = position
         self.duration = duration
     }
 
-    public func timeOffsets(view: UIView, recursiveDepth: Int) -> [SpruceTimedView] {
-        let subviews = view.subviews(withRecursiveDepth: recursiveDepth)
+    public func timeOffsets(view: UIView, recursiveDepth: Int) -> [TimedView] {
+        let subviews = view.spruce.subviews(withRecursiveDepth: recursiveDepth)
         let comparisonPoint = distancePoint(view: view, subviews: subviews)
 
         let distancedViews = subviews.map {
-            return (view: $0, horizontalDistance: comparisonPoint.horizontalDistance(to: $0.referencePoint) * horizontalWeight.coefficient, verticalDistance: comparisonPoint.verticalDistance(to: $0.referencePoint) * verticalWeight.coefficient)
+            return (view: $0, horizontalDistance: comparisonPoint.spruce.horizontalDistance(to: $0.referencePoint) * horizontalWeight.coefficient, verticalDistance: comparisonPoint.spruce.verticalDistance(to: $0.referencePoint) * verticalWeight.coefficient)
         }
 
         guard let maxHorizontalDistance = distancedViews.max(by: { $0.horizontalDistance < $1.horizontalDistance })?.horizontalDistance, let maxVerticalDistance = distancedViews.max(by: { $0.verticalDistance < $1.verticalDistance })?.verticalDistance, maxHorizontalDistance > 0.0, maxVerticalDistance > 0.0 else {
             return []
         }
 
-        var timedViews: [SpruceTimedView] = []
+        var timedViews: [TimedView] = []
         var maxTimeOffset: TimeInterval = 0.0
         for view in distancedViews {
             let normalizedHorizontalDistance = view.horizontalDistance / maxHorizontalDistance
@@ -67,7 +67,7 @@ public struct ContinuousWeightedSortFunction: PositionSortFunction, WeightSortFu
             if offset > maxTimeOffset {
                 maxTimeOffset = offset
             }
-            let timedView = SpruceTimedView(spruceView: view.view, timeOffset: offset)
+            let timedView = TimedView(spruceView: view.view, timeOffset: offset)
             timedViews.append(timedView)
         }
         

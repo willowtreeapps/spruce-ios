@@ -58,10 +58,6 @@ class CustomAnimationViewController: UIViewController {
     func callAnimation() {
         customAnimation?()
     }
-    
-    deinit {
-        print("Deallocated view controller")
-    }
 }
 
 extension CustomAnimationViewController {

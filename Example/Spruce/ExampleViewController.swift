@@ -27,12 +27,12 @@ import UIKit
 import Spruce
 
 class ExampleViewController: UIViewController {
-    let animations: [SpruceStockAnimation]
+    let animations: [StockAnimation]
     var sortFunction: SortFunction?
     var animationView: UIView?
     var timer: Timer?
     
-    init(animations: [SpruceStockAnimation], nibName: String?) {
+    init(animations: [StockAnimation], nibName: String?) {
         self.animations = animations
         super.init(nibName: nibName, bundle: nil)
     }
@@ -60,7 +60,7 @@ class ExampleViewController: UIViewController {
     }
     
     func prepareAnimation() {
-        animationView?.sprucePrepare(withAnimations: animations)
+        animationView?.spruce.prepare(with: animations)
         
         timer?.invalidate()
         timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(callAnimation), userInfo: nil, repeats: false)
@@ -72,7 +72,7 @@ class ExampleViewController: UIViewController {
         }
         let animation = SpringAnimation(duration: 0.7)
         DispatchQueue.main.async {
-            self.animationView?.spruceUp(withAnimations: self.animations, animationType: animation, sortFunction: sortFunction)
+            self.animationView?.spruce.animate(self.animations, animationType: animation, sortFunction: sortFunction)
         }
     }
 }
