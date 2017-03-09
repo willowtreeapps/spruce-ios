@@ -1,4 +1,4 @@
-![Spruce Logo](https://github.com/willowtreeapps/spruce-ios/raw/feature/new-readme/imgs/header_image.png)
+![Spruce Logo](https://github.com/willowtreeapps/spruce-ios/raw/develop/imgs/header_image.png)
 
 # Spruce iOS Animation Library
 
@@ -14,7 +14,7 @@ Spruce is a lightweight animation library that helps choreograph the animations 
 
 Here is a quick example of how you can Spruce up your screens!
 
-![Example](https://github.com/willowtreeapps/spruce-ios/raw/feature/new-readme/imgs/extensibility-tests.gif)
+![Example](https://github.com/willowtreeapps/spruce-ios/raw/develop/imgs/extensibility-tests.gif)
  
 
 ## Installation Instructions
@@ -156,7 +156,7 @@ To make everybody's lives easier, the stock animations perform the basic `UIView
 Experiment which ones work for you! If you think of anymore feel free to add them to the library yourself!
 
 # Contributing to Spruce
-Contributions are more than welcome! Please see the [Contributing Guidelines](https://github.com/willowtreeapps/spruce-ios/blob/develop/Contributing.md).
+Contributions are more than welcome! Please see the [Contributing Guidelines](https://github.com/willowtreeapps/spruce-ios/blob/develop/Contributing.md) and be mindful of our [Code of Conduct](https://github.com/willowtreeapps/spruce-ios/blob/develop/code-of-conduct.md).
 
 # Issues or Future Ideas
 If part of Spruce is not working correctly be sure to file a Github issue. In the issue provide as many details as possible. This could include example code or the exact steps that you did so that everyone can reproduce the issue. Sample projects are always the best way :). 
