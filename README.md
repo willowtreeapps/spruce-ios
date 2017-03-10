@@ -153,6 +153,11 @@ To make everybody's lives easier, the stock animations perform the basic `UIView
 
 Experiment which ones work for you! If you think of anymore feel free to add them to the library yourself!
 
+# Example App
+Use the [example app](https://github.com/willowtreeapps/spruce-ios/tree/master/Example) to find the right `SortFunction`. In the app you will be able to see how each `SortFunction` is implemented. As you swap among `SortFunction` types, the code will be displayed on the phone and printed to the Xcode console so that you can start adding Spruce to your own app right away! 
+
+Also included in the sample app are the implementations for the two extensibility tests shown above that demonstrate how to use Spruce with a `UITableView` or `UICollectionView`.
+
 # Contributing to Spruce
 Contributions are more than welcome! Please see the [Contributing Guidelines](https://github.com/willowtreeapps/spruce-ios/blob/master/Contributing.md) and be mindful of our [Code of Conduct](https://github.com/willowtreeapps/spruce-ios/blob/master/code-of-conduct.md).
 
