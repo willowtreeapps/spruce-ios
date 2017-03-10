@@ -22,7 +22,7 @@ To make everything super easy, we currently support both CocoaPods and Carthage.
 Add the following to your `Podfile`.
 
 ```
-pod "Spruce", :git => "https://github.com/willowtreeapps/spruce-ios"
+pod "Spruce", '~> 1.0.0'
 ```
 
 ### Carthage
