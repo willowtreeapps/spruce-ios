@@ -31,7 +31,7 @@ public typealias PrepareHandler = (_ view: UIView) -> Void
 
 
 /// An animation type that handles how the views will change. Most of these are simply wrappers around the standard `UIViewAnimation` methods. This gives `Spruce` the flexibility to work with any style of animating.
-public protocol SpruceAnimation {
+public protocol Animation {
     
     /// Animate the given view using the `changeFunction`.
     ///

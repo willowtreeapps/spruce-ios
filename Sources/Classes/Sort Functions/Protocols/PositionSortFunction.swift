@@ -28,14 +28,32 @@ import UIKit
 
 /// A position on the screen. Use this to define specific locations on the screen where the animation should start
 public enum Position {
+    
+    /// the top left point of the view
     case topLeft
+    
+    /// the top center point of the view
     case topMiddle
+    
+    /// the top right point of the view
     case topRight
+    
+    /// the left point of the view, centered vertically
     case left
+    
+    /// the absolute center of the view (both horizontally and vertically)
     case middle
+    
+    /// the right point of the view, centered vertically
     case right
+    
+    /// the bottom left point of the view
     case bottomLeft
+    
+    /// the bottom center point of the view
     case bottomMiddle
+    
+    /// the bottom right point of the view
     case bottomRight
 }
 

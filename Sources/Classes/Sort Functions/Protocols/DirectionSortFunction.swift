@@ -34,9 +34,17 @@ import UIKit
 /// - leftToRight: the animation will run with left views animating first and right views animating last
 /// - rightToLeft: the animation will run with right views animating first and left views animating last
 public enum Direction {
+    
+    /// the animation will run with top views animating first and then bottom views animating last
     case topToBottom
+    
+    /// the animation will run with bottom views animating first and then top views animating last
     case bottomToTop
+    
+    /// the animation will run with left views animating first and right views animating last
     case leftToRight
+    
+    /// the animation will run with right views animating first and left views animating last
     case rightToLeft
 }
 

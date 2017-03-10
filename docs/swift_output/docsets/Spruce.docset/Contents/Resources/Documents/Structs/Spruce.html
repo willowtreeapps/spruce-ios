@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Spruce Struct Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/Spruce" class="dashAnchor"></a>
+    <a title="Spruce Struct Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">Spruce Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/willowtreeapps/spruce-ios"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">Spruce Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        Spruce Struct Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/Button.html">Button</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ViewController.html">ViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/Angle.html">Angle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Corner.html">Corner</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Direction.html">Direction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Distance.html">Distance</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Position.html">Position</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Scale.html">Scale</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/SlideDirection.html">SlideDirection</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/StockAnimation.html">StockAnimation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Weight.html">Weight</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/CGPoint.html">CGPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIView.html">UIView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/Animation.html">Animation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/CornerSortFunction.html">CornerSortFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/DirectionSortFunction.html">DirectionSortFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/DistanceSortFunction.html">DistanceSortFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PositionSortFunction.html">PositionSortFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SortFunction.html">SortFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/View.html">View</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/WeightSortFunction.html">WeightSortFunction</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/ContinuousSortFunction.html">ContinuousSortFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ContinuousWeightedSortFunction.html">ContinuousWeightedSortFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/CorneredSortFunction.html">CorneredSortFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DefaultSortFunction.html">DefaultSortFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InlineSortFunction.html">InlineSortFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/LinearSortFunction.html">LinearSortFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RadialSortFunction.html">RadialSortFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RandomSortFunction.html">RandomSortFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpringAnimation.html">SpringAnimation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Spruce.html">Spruce</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SprucePoint.html">SprucePoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpruceUIView.html">SpruceUIView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/StandardAnimation.html">StandardAnimation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs.html#/s:V6Spruce9TimedView">TimedView</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Spruce</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Spruce</span></code></pre>
+
+                </div>
+              </div>
+            <p>Access to all of the Spruce library animations. Use this to call functions such as <code>.animate</code> or <code>.prepare</code></p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FV6Spruce6Spruce7prepareFT18withRecursiveDepthSi14changeFunctionFCSo6UIViewT__T_"></a>
+                    <a name="//apple_ref/swift/Method/prepare(withRecursiveDepth:changeFunction:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV6Spruce6Spruce7prepareFT18withRecursiveDepthSi14changeFunctionFCSo6UIViewT__T_">prepare(withRecursiveDepth:changeFunction:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Use this method to setup all of your views before the animation occurs. This could include hiding, fading, translating them, etc&hellip; </p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">prepare</span><span class="p">(</span><span class="n">withRecursiveDepth</span> <span class="nv">recursiveDepth</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">changeFunction</span><span class="p">:</span> <span class="kt">ChangeFunction</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>recursiveDepth</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>an int describing how deep into the view hiearchy the subview search should go</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>changeFunction</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>a function that should be applied to each of the subviews of <code>this</code></p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FV6Spruce6Spruce7animateFT16withSortFunctionPS_12SortFunction_7prepareGSqFCSo6UIViewT__9animationPS_9Animation_7excludeGSqGSaS2___14recursiveDepthSi10completionGSqFSbT___T_"></a>
+                    <a name="//apple_ref/swift/Method/animate(withSortFunction:prepare:animation:exclude:recursiveDepth:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV6Spruce6Spruce7animateFT16withSortFunctionPS_12SortFunction_7prepareGSqFCSo6UIViewT__9animationPS_9Animation_7excludeGSqGSaS2___14recursiveDepthSi10completionGSqFSbT___T_">animate(withSortFunction:prepare:animation:exclude:recursiveDepth:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Run a spruce style animation on this view. This is a customized method that allows you to take more control over how the animation progresses.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">animate</span><span class="p">(</span><span class="n">withSortFunction</span> <span class="nv">sortFunction</span><span class="p">:</span> <span class="kt"><a href="../Protocols/SortFunction.html">SortFunction</a></span><span class="p">,</span> <span class="nv">prepare</span><span class="p">:</span> <span class="kt">PrepareHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">animation</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Animation.html">Animation</a></span><span class="p">,</span> <span class="nv">exclude</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIView</span><span class="p">]?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">recursiveDepth</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kt">CompletionHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sortFunction</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the <code>SortFunction</code> used to determine the animation offsets for each subview</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>prepare</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>a closure that will be called with each subview of <code>this</code> parent view</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>animation</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>a <code>Animation</code> that will be used to animate each subview</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>exclude</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>an array of views that the animation should skip over</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>recursiveDepth</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>an int describing how deep into the view hiearchy the subview search should go, defaults to 0</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>a closure that is called upon the final animation completing. A <code>Bool</code> is passed into the closure letting you know if the animation has completed.  If you stop animations on the whole animating view, then <code>false</code> will be passed into the completion closure. However, if the final animation is allowed to proceed then <code>true</code> will be the value passed into the completion closure.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FV6Spruce6Spruce7animateFTGSaOS_14StockAnimation_8durationSd10completionGSqFSbT___T_"></a>
+                    <a name="//apple_ref/swift/Method/animate(_:duration:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV6Spruce6Spruce7animateFTGSaOS_14StockAnimation_8durationSd10completionGSqFSbT___T_">animate(_:duration:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Run a spruce style animation on this view. This method is the most basic form of a spruce animation and allows you to setup your view with stock spruce animations. Feel free to chain together animations that would work nicely together.</p>
+
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    Possible animations include
+
+<ul>
+<li>Fading</li>
+<li>Scaling</li>
+<li>Translating</li>
+<li>Rotating</li>
+</ul>
+
+</div>
+
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    Default animation type is <code><a href="../Structs/StandardAnimation.html">StandardAnimation</a></code> and SortFunction is <code>LinearSortFunction(direction: .topToBottom, interObjectDelay: 0.05)</code>
+
+</div>
+
+<p>See <code><a href="../Enums/StockAnimation.html">StockAnimation</a></code> for more details</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">animate</span><span class="p">(</span><span class="n">_</span> <span class="nv">animations</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/StockAnimation.html">StockAnimation</a></span><span class="p">],</span> <span class="nv">duration</span><span class="p">:</span> <span class="kt">TimeInterval</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kt">CompletionHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span> <span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>animations</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>an array of stock animations</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>duration</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>duration of each individual animation</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>a closure that is called upon the final animation completing. A <code>Bool</code> is passed into the closure letting you know if the animation has completed.  If you stop animations on the whole animating view, then <code>false</code> will be passed into the completion closure. However, if the final animation is allowed to proceed then <code>true</code> will be the value passed into the completion closure.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FV6Spruce6Spruce7animateFTGSaOS_14StockAnimation_12sortFunctionPS_12SortFunction_8durationSd10completionGSqFSbT___T_"></a>
+                    <a name="//apple_ref/swift/Method/animate(_:sortFunction:duration:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV6Spruce6Spruce7animateFTGSaOS_14StockAnimation_12sortFunctionPS_12SortFunction_8durationSd10completionGSqFSbT___T_">animate(_:sortFunction:duration:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Run a spruce style animation on this view. This allows you to setup your view with stock spruce animations. Feel free to chain together animations that would work nicely together.</p>
+
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    Possible animations include
+
+<ul>
+<li>Fading</li>
+<li>Scaling</li>
+<li>Translating</li>
+<li>Rotating</li>
+</ul>
+
+</div>
+
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    Default animation type is <code><a href="../Structs/StandardAnimation.html">StandardAnimation</a></code>
+
+</div>
+
+<p>See <code><a href="../Enums/StockAnimation.html">StockAnimation</a></code> for more details</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">animate</span><span class="p">(</span><span class="n">_</span> <span class="nv">animations</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/StockAnimation.html">StockAnimation</a></span><span class="p">],</span> <span class="nv">sortFunction</span><span class="p">:</span> <span class="kt"><a href="../Protocols/SortFunction.html">SortFunction</a></span><span class="p">,</span> <span class="nv">duration</span><span class="p">:</span> <span class="kt">TimeInterval</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kt">CompletionHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span> <span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>animations</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>an array of stock animations</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>duration</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>duration of each individual animation</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sortFunction</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the <code>sortFunction</code> to be used when setting the offsets for each subviews animation</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>a closure that is called upon the final animation completing. A <code>Bool</code> is passed into the closure letting you know if the animation has completed.  If you stop animations on the whole animating view, then <code>false</code> will be passed into the completion closure. However, if the final animation is allowed to proceed then <code>true</code> will be the value passed into the completion closure.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FV6Spruce6Spruce7animateFTGSaOS_14StockAnimation_8durationSd13animationTypePS_9Animation_10completionGSqFSbT___T_"></a>
+                    <a name="//apple_ref/swift/Method/animate(_:duration:animationType:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV6Spruce6Spruce7animateFTGSaOS_14StockAnimation_8durationSd13animationTypePS_9Animation_10completionGSqFSbT___T_">animate(_:duration:animationType:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Run a spruce style animation on this view. This method allows you to setup your view with stock spruce animations. Feel free to chain together animations that would work nicely together.</p>
+
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    Default SortFunction is <code>LinearSortFunction(direction: .topToBottom, interObjectDelay: 0.05)</code>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">animate</span><span class="p">(</span><span class="n">_</span> <span class="nv">animations</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/StockAnimation.html">StockAnimation</a></span><span class="p">],</span> <span class="nv">duration</span><span class="p">:</span> <span class="kt">TimeInterval</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span> <span class="nv">animationType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Animation.html">Animation</a></span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kt">CompletionHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>animations</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>an array of stock animations</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>duration</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>duration of each individual animation</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>animationType</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>style of animation that each view should follow. Don’t worry about setting the <code>changeFunction</code>. We will set that using the stock animations that you provide. If you have a value there it will be overwritten. (ex: SpringAnimation)</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>a closure that is called upon the final animation completing. A <code>Bool</code> is passed into the closure letting you know if the animation has completed.  If you stop animations on the whole animating view, then <code>false</code> will be passed into the completion closure. However, if the final animation is allowed to proceed then <code>true</code> will be the value passed into the completion closure.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FV6Spruce6Spruce7animateFTGSaOS_14StockAnimation_8durationSd13animationTypePS_9Animation_12sortFunctionPS_12SortFunction_7prepareSb10completionGSqFSbT___T_"></a>
+                    <a name="//apple_ref/swift/Method/animate(_:duration:animationType:sortFunction:prepare:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV6Spruce6Spruce7animateFTGSaOS_14StockAnimation_8durationSd13animationTypePS_9Animation_12sortFunctionPS_12SortFunction_7prepareSb10completionGSqFSbT___T_">animate(_:duration:animationType:sortFunction:prepare:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Run a spruce style animation on this view. This method allows you to setup your view with stock spruce animations. Feel free to chain together animations that would work nicely together.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">animate</span><span class="p">(</span><span class="n">_</span> <span class="nv">animations</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/StockAnimation.html">StockAnimation</a></span><span class="p">],</span> <span class="nv">duration</span><span class="p">:</span> <span class="kt">TimeInterval</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">,</span> <span class="nv">animationType</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Animation.html">Animation</a></span><span class="p">,</span> <span class="nv">sortFunction</span><span class="p">:</span> <span class="kt"><a href="../Protocols/SortFunction.html">SortFunction</a></span><span class="p">,</span> <span class="nv">prepare</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kt">CompletionHandler</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>animations</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>an array of stock animations</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>duration</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>duration of each individual animation</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>animationType</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>style of animation that each view should follow. Don’t worry about setting the <code>changeFunction</code>. We will set that using the stock animations that you provide. If you have a value there it will be overwritten. (ex: SpringAnimation)</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sortFunction</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the <code>sortFunction</code> to be used when setting the offsets for each subviews animation</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>prepare</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>a <code>bool</code> as to whether we should run <code>prepare</code> on your view for you. If set to <code>true</code>, then we will run <code>prepare</code> right before the animation using the stock animations that you provided. If <code>false</code>, then <code>prepare</code> will not run. (default is <code>true</code>)</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>a closure that is called upon the final animation completing. A <code>Bool</code> is passed into the closure letting you know if the animation has completed.  If you stop animations on the whole animating view, then <code>false</code> will be passed into the completion closure. However, if the final animation is allowed to proceed then <code>true</code> will be the value passed into the completion closure.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FV6Spruce6Spruce7prepareFT4withGSaOS_14StockAnimation_14recursiveDepthSi_T_"></a>
+                    <a name="//apple_ref/swift/Method/prepare(with:recursiveDepth:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV6Spruce6Spruce7prepareFT4withGSaOS_14StockAnimation_14recursiveDepthSi_T_">prepare(with:recursiveDepth:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Use this method to setup all of your views before the animation occurs. This could include hiding, fading, translating them, etc&hellip;
+Given the array of stock animations, the change functions required to prepare those animations will automatically be run for you. No need to specify your own custom change function here.
+- Note: If you run this after the views are visible, then this would cause a slight stutter of the viewport. This could cause UX issues since the views would flash on the screen.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">prepare</span><span class="p">(</span><span class="n">with</span> <span class="nv">animations</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/StockAnimation.html">StockAnimation</a></span><span class="p">],</span> <span class="nv">recursiveDepth</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>animations</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>an array of stock animations</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>recursiveDepth</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>an int describing how deep into the view hiearchy the subview search should go</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FV6Spruce6Spruce15hideAllSubviewsFT14recursiveDepthSi_T_"></a>
+                    <a name="//apple_ref/swift/Method/hideAllSubviews(recursiveDepth:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV6Spruce6Spruce15hideAllSubviewsFT14recursiveDepthSi_T_">hideAllSubviews(recursiveDepth:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Quick method to hide all of the subviews of a view. Use this if you want to make sure that none of the views that will be animated will be shown on screen before you transition them.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">hideAllSubviews</span><span class="p">(</span><span class="nv">recursiveDepth</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>recursiveDepth</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>an int describing how deep into the view hiearchy the subview search should go</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FV6Spruce6Spruce8subviewsFT18withRecursiveDepthSi_GSaPS_4View__"></a>
+                    <a name="//apple_ref/swift/Method/subviews(withRecursiveDepth:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FV6Spruce6Spruce8subviewsFT18withRecursiveDepthSi_GSaPS_4View__">subviews(withRecursiveDepth:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The receiver&rsquo;s immediate subviews given the recursive depth. If a subview contains other subviews, they will be listed in the array following their parent view. Consider the following example:
+<code>
+// A: [B, C]
+// B: [D, E]
+// C: []
+// D: []
+// E: []
+let result = A.spruce.subviews(withRecursiveDepth: 1)
+// result: [A, B, D, E, C]
+</code></p>
+
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    This method will return an array of <code><a href="../Protocols/View.html">View</a></code>. These are used so that when we adjust for coordinate space differences, it does not affect the way your screen renders. A <code><a href="../Protocols/View.html">View</a></code> is a simple struct with <code>view: UIView</code> and <code>referencePoint: CGPoint</code> variables.
+
+</div>
+
+<div class="aside aside-precondition">
+    <p class="aside-title">Precondition</p>
+    <code>recursiveDepth</code> is an Int &gt;= 0  (0&hellip;Int.max).
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">subviews</span><span class="p">(</span><span class="n">withRecursiveDepth</span> <span class="nv">recursiveDepth</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt"><a href="../Protocols/View.html">View</a></span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>recursiveDepth</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>an int for how deep into the view hierarchy the subview search should go</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>an array of all the subviews in the receiver view. Depending on the <code>recursiveDepth</code> this could contain the subviews of subviews also.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="https://willowtreeapps.com" target="_blank" rel="external">WillowTree</a>. All rights reserved. (Last updated: 2017-03-09)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

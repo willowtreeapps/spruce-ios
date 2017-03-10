@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>DistanceSortFunction Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Protocol/DistanceSortFunction" class="dashAnchor"></a>
+    <a title="DistanceSortFunction Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">Spruce Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/willowtreeapps/spruce-ios"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">Spruce Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        DistanceSortFunction Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/Button.html">Button</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ViewController.html">ViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/Angle.html">Angle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Corner.html">Corner</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Direction.html">Direction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Distance.html">Distance</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Position.html">Position</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Scale.html">Scale</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/SlideDirection.html">SlideDirection</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/StockAnimation.html">StockAnimation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Weight.html">Weight</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/CGPoint.html">CGPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIView.html">UIView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/Animation.html">Animation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/CornerSortFunction.html">CornerSortFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/DirectionSortFunction.html">DirectionSortFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/DistanceSortFunction.html">DistanceSortFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/PositionSortFunction.html">PositionSortFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/SortFunction.html">SortFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/View.html">View</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/WeightSortFunction.html">WeightSortFunction</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/ContinuousSortFunction.html">ContinuousSortFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ContinuousWeightedSortFunction.html">ContinuousWeightedSortFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/CorneredSortFunction.html">CorneredSortFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DefaultSortFunction.html">DefaultSortFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InlineSortFunction.html">InlineSortFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/LinearSortFunction.html">LinearSortFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RadialSortFunction.html">RadialSortFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RandomSortFunction.html">RandomSortFunction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpringAnimation.html">SpringAnimation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Spruce.html">Spruce</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SprucePoint.html">SprucePoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SpruceUIView.html">SpruceUIView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/StandardAnimation.html">StandardAnimation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs.html#/s:V6Spruce9TimedView">TimedView</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>DistanceSortFunction</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">DistanceSortFunction</span><span class="p">:</span> <span class="kt"><a href="../Protocols/SortFunction.html">SortFunction</a></span></code></pre>
+
+                </div>
+              </div>
+            <p>A <code><a href="../Protocols/SortFunction.html">SortFunction</a></code> implementation that contain basic methods needed for doing distance comparisons. If you are implementing a <code><a href="../Protocols/SortFunction.html">SortFunction</a></code> that considers distance to be one of it&rsquo;s weighting mechanisms for sorting the views on the screen, then implementing this protocol would provide improvements over the standard <code><a href="../Protocols/SortFunction.html">SortFunction</a></code>.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vP6Spruce20DistanceSortFunction16interObjectDelaySd"></a>
+                    <a name="//apple_ref/swift/Property/interObjectDelay" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vP6Spruce20DistanceSortFunction16interObjectDelaySd">interObjectDelay</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>the time interval of delay between each of the objects on the screen when animating</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">interObjectDelay</span><span class="p">:</span> <span class="kt">TimeInterval</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vP6Spruce20DistanceSortFunction8reversedSb"></a>
+                    <a name="//apple_ref/swift/Property/reversed" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vP6Spruce20DistanceSortFunction8reversedSb">reversed</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>a bool value as to whether the animation should proceeed forwards or backwards</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">reversed</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP6Spruce20DistanceSortFunction15distanceBetweenFTVSC7CGPoint3andS1__Sd"></a>
+                    <a name="//apple_ref/swift/Method/distanceBetween(_:and:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP6Spruce20DistanceSortFunction15distanceBetweenFTVSC7CGPoint3andS1__Sd">distanceBetween(_:and:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Compute the distance between two points. This can be any distance metric as long as you keep it consistent. For the default implementation, <code>euclideanDistance</code> is used.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Given a view, view sort the subviews in a way that matches the desired specification of the <code>SortFunction</code>. In an example case, if you wanted a radial sort function then this method would return an array of the subviews such that their time offets would be smaller near the center of the view and grow as they get further from the center point.
+- Note: With a <code>DistanceSortFunction</code> a comparison point is initially found that helps compute the offsets for each of the views. This comparison point is found by calling the method <code>distancePoint</code> on <code>self</code>. From there the default implementation is that the further the distance from the <code>comparisonPoint</code> to the <code>referencePoint</code> of each view the longer the offset. Since this is setup with a <code>interObjectDelay</code> every view with the same distance will have the same delay and those with different distances will have an incrementally large delay. For example, consider the distances [1,2,2,3,4]. If we were to analyze those distances with an <code>interObjectDelay of .1 seconds, then the delays would look like</code>[0, 0.1, 0.1, 0.2, 0.3]`. Notice that those views with the same distance have the same delay.
+- Note: A floor value is taken of the distances when comparing so that floating point operations don&rsquo;t mess up the joining of like distances. Considering that distances are in terms of points on the screen, there was not need to consider half points in reality.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">distanceBetween</span><span class="p">(</span><span class="n">_</span> <span class="nv">left</span><span class="p">:</span> <span class="kt">CGPoint</span><span class="p">,</span> <span class="n">and</span> <span class="nv">right</span><span class="p">:</span> <span class="kt">CGPoint</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Double</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>left</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the left point</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>right</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the right point</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>the distance between the two points.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP6Spruce20DistanceSortFunction13distancePointFT4viewCSo6UIView8subviewsGSaPS_4View___VSC7CGPoint"></a>
+                    <a name="//apple_ref/swift/Method/distancePoint(view:subviews:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP6Spruce20DistanceSortFunction13distancePointFT4viewCSo6UIView8subviewsGSaPS_4View___VSC7CGPoint">distancePoint(view:subviews:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>With a <code>DistanceSortFunction</code> there has to be some main point that all the views are compared to. Since we understand that this point changes based on some value, you need to implement this method that will return a point for the given <code><a href="../Protocols/SortFunction.html">SortFunction</a></code> configuration. The <code>timeOffsets</code> method will use this to grab a comparison point. From there the further the distance from the point the longer the delay for that view to start animating.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">distancePoint</span><span class="p">(</span><span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="nv">subviews</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Protocols/View.html">View</a></span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">CGPoint</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>view</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the view for which the point coordinates will base their values off of</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>subviews</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the subviews that are allocated for the <code>SortFunction</code>. The reason these are passed into the function is so that you can actually grab a reference point of a subview that is closest to the comparison point. This is done so that at least one view will start at the 0s marker.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>a <code>CGPoint</code> object that will allow all views to compare their reference point to this returned value. If <code>translate</code> was used, this returned value should be equal to one of the <code>subviews</code> reference points.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP6Spruce20DistanceSortFunction9translateFT13distancePointVSC7CGPoint12intoSubviewsGSaPS_4View___S1_"></a>
+                    <a name="//apple_ref/swift/Method/translate(distancePoint:intoSubviews:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP6Spruce20DistanceSortFunction9translateFT13distancePointVSC7CGPoint12intoSubviewsGSaPS_4View___S1_">translate(distancePoint:intoSubviews:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Given a point, find the closest subview to that point and then return the reference point of that subview. This way there will be at least one distance calculation that will have a zero value. We want to make sure that the animation will start right when called, thus there needs to be one view with a zero distance.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        <p>Given a view, view sort the subviews in a way that matches the desired specification of the <code>SortFunction</code>. In an example case, if you wanted a radial sort function then this method would return an array of the subviews such that their time offets would be smaller near the center of the view and grow as they get further from the center point.
+- Note: With a <code>DistanceSortFunction</code> a comparison point is initially found that helps compute the offsets for each of the views. This comparison point is found by calling the method <code>distancePoint</code> on <code>self</code>. From there the default implementation is that the further the distance from the <code>comparisonPoint</code> to the <code>referencePoint</code> of each view the longer the offset. Since this is setup with a <code>interObjectDelay</code> every view with the same distance will have the same delay and those with different distances will have an incrementally large delay. For example, consider the distances [1,2,2,3,4]. If we were to analyze those distances with an <code>interObjectDelay of .1 seconds, then the delays would look like</code>[0, 0.1, 0.1, 0.2, 0.3]`. Notice that those views with the same distance have the same delay.
+- Note: A floor value is taken of the distances when comparing so that floating point operations don&rsquo;t mess up the joining of like distances. Considering that distances are in terms of points on the screen, there was not need to consider half points in reality.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">translate</span><span class="p">(</span><span class="nv">distancePoint</span><span class="p">:</span> <span class="kt">CGPoint</span><span class="p">,</span> <span class="n">intoSubviews</span> <span class="nv">subviews</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Protocols/View.html">View</a></span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">CGPoint</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>distancePoint</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the point on the main view</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>subviews</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the subviews of the main view</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>the reference point of the subview that is closest to the <code>distancePoint</code></p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FE6SprucePS_20DistanceSortFunction11timeOffsetsFT4viewCSo6UIView14recursiveDepthSi_GSaVS_9TimedView_"></a>
+                    <a name="//apple_ref/swift/Method/timeOffsets(view:recursiveDepth:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FE6SprucePS_20DistanceSortFunction11timeOffsetsFT4viewCSo6UIView14recursiveDepthSi_GSaVS_9TimedView_">timeOffsets(view:recursiveDepth:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Given a view, view sort the subviews in a way that matches the desired specification of the <code><a href="../Protocols/SortFunction.html">SortFunction</a></code>. In an example case, if you wanted a radial sort function then this method would return an array of the subviews such that their time offets would be smaller near the center of the view and grow as they get further from the center point.
+- Note: With a <code>DistanceSortFunction</code> a comparison point is initially found that helps compute the offsets for each of the views. This comparison point is found by calling the method <code>distancePoint</code> on <code>self</code>. From there the default implementation is that the further the distance from the <code>comparisonPoint</code> to the <code>referencePoint</code> of each view the longer the offset. Since this is setup with a <code><a href="../Protocols/DistanceSortFunction.html#/s:vP6Spruce20DistanceSortFunction16interObjectDelaySd">interObjectDelay</a></code> every view with the same distance will have the same delay and those with different distances will have an incrementally large delay. For example, consider the distances [1,2,2,3,4]. If we were to analyze those distances with an <code>interObjectDelay of .1 seconds, then the delays would look like</code>[0, 0.1, 0.1, 0.2, 0.3]`. Notice that those views with the same distance have the same delay.
+- Note: A floor value is taken of the distances when comparing so that floating point operations don&rsquo;t mess up the joining of like distances. Considering that distances are in terms of points on the screen, there was not need to consider half points in reality.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">timeOffsets</span><span class="p">(</span><span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="nv">recursiveDepth</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt"><a href="../Structs.html#/s:V6Spruce9TimedView">TimedView</a></span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>view</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the view whose subviews should be animated. This view should not be included in the returned array</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>recursiveDepth</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>an int describing how deep into the view hiearchy the subview search should go, defaults to 0. A value of 0 is the same as calling the <code>subviews</code> on the actual view itself. Therefore a depth of 1 will be getting the subviews of each of the subviews, etc…</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>an array of <code><a href="../Structs.html#/s:V6Spruce9TimedView">TimedView</a></code>’s which contain references to the view needed to be animated and the time offset for when the animation of that individual view should start relative to the start of the overall animation</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="https://willowtreeapps.com" target="_blank" rel="external">WillowTree</a>. All rights reserved. (Last updated: 2017-03-09)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.4</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
