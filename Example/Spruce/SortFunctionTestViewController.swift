@@ -378,7 +378,7 @@ struct SortFunctionTestSettings {
     var delay: Double = 0.025
     var position: Position = .topLeft
     var direction: Direction = .topToBottom
-    var corner: SpruceCorner = .topLeft
+    var corner: Corner = .topLeft
     var horizontalWeight: Weight = .light
     var verticalWeight: Weight = .light
     var reverse: Bool = false

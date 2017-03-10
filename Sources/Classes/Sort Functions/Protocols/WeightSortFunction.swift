@@ -33,9 +33,17 @@ import Foundation
 /// - heavy: a large value, 2.0
 /// - custom: you can specify your own value for weight
 public enum Weight {
+    
+    /// a small value, 0.5
     case light
+    
+    /// a default value, 1.0
     case medium
+    
+    /// a large value, 2.0
     case heavy
+    
+    /// you can specify your own value for weight
     case custom(Double)
     
     var coefficient: Double {

@@ -7,42 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		05969B890FE8117618E444F5A4F66179 /* WeightSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23201D86AFEDDD774B3287D49EB021C8 /* WeightSortFunction.swift */; };
+		01B58B837354F2F7ADCAD3782BE5CF3A /* Spruce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A435A5956C7AA32883EE73C05833E /* Spruce.swift */; };
+		0698A4051AB350FB917615D5EBC288F8 /* UIView+Spruce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C112297E332E2B5C9753453AFB3AD8D /* UIView+Spruce.swift */; };
 		078F2691E7CDB4222B80804FF9E92A0B /* Pods-Spruce_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BF9A148D4AEDCB38BA3D05DC67413C1 /* Pods-Spruce_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0CB98D4C96A05102F6CFCC48C51693C8 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DF615408E1F3E7D049FBDABDC0B3A9 /* Animation.swift */; };
-		149A4219DA11411C59E002D323284CCF /* DefaultFullViewAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963ECDF2A47E3D20D29459A611410ADB /* DefaultFullViewAnimations.swift */; };
-		15A056A91EEF6102DE04FCC1AC0A3166 /* CornerSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CB93BB6ABAAB176BA1FB3EE9B5791E /* CornerSortFunction.swift */; };
-		1EC89ACC64E51DA69D0D522A7EB45FB3 /* LinearSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F978DDF037D93D49BA195B6E45E5AA2A /* LinearSortFunction.swift */; };
-		1F3783D31A62DB9CCE8E3906DA1CFB9B /* InlineSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B44E9D29AD2A713419FA084D548E8C /* InlineSortFunction.swift */; };
-		261E7951433531B1747D4667C48B0BAF /* Spruce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A435A5956C7AA32883EE73C05833E /* Spruce.swift */; };
-		2FD20C6CFCBCC43E0B3930C38B36A606 /* ContinuousSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB01302F34E3FEE82814D659C44BC625 /* ContinuousSortFunction.swift */; };
-		3FA4FFB6D4276769F6852CC6E9358B6A /* RadialSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE20E27DE21C530CD2F27D7F14241A5 /* RadialSortFunction.swift */; };
-		4613EC3AAE64D5F17F5F3CFCB5BE8847 /* ContinuousWeightedSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA983C5D2CBEC3A76EB57A08A04833DD /* ContinuousWeightedSortFunction.swift */; };
+		140200DC592D0A7CE3F3AF977E95ADA4 /* PositionSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D0546343C7A1A4A3A07AF39D013DC9 /* PositionSortFunction.swift */; };
+		18C70B609B4A6543FC65AF37C25500B6 /* CorneredSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7C3099D073CA5203985DA478D17F43 /* CorneredSortFunction.swift */; };
+		25A17001450D649FB4637F271251559F /* PointOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4024A0BD42EA58EEA4C45D483D19D7 /* PointOperations.swift */; };
+		29FCD60E1BAA1534F11EB3AA4183DAF3 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DF615408E1F3E7D049FBDABDC0B3A9 /* Animation.swift */; };
+		33C29343DEDC1C25362F53802D706FB9 /* DefaultFullViewAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963ECDF2A47E3D20D29459A611410ADB /* DefaultFullViewAnimations.swift */; };
+		48D7CDD844A590F24CDA731D049B11DE /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B6CCE74AC32C6CA48ACA6C3BB41181 /* SpringAnimation.swift */; };
 		4D24B97E25ECA4868BC69DFAF6668EB5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		5A709EE7E34827F7499AEBDFE9BD7259 /* Spruce-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 51FC66F1238696AD6156F15F3C02BE7A /* Spruce-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5B8EE79E9029306900FD1F8D2B008C6C /* SortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0F0D74E25770C2A15D1764B68A6550 /* SortFunction.swift */; };
 		5CAFC2170BBC5C93BC2D26448C7718AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		5DAB2EF6B59AA2CA006F11C072C244F2 /* Pods-Spruce_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 944201B6552D4C2C2309D0E762D43C34 /* Pods-Spruce_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6C245CE7358BE12CC8ACFBC99150C639 /* FullViewAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDD7CC16239F4426E08D6542DD31CD2 /* FullViewAnimation.swift */; };
-		7B7F6DDD2A319F80EF0D55B30A34CABD /* DefaultSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615C667453F51D588B95FB75A61990C4 /* DefaultSortFunction.swift */; };
+		66B509431912AA7497ACE40B3D43B583 /* RadialSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE20E27DE21C530CD2F27D7F14241A5 /* RadialSortFunction.swift */; };
+		77A529DF34682ADF0EA56FF3DC592600 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9A9400E8946327B8389C289A064954 /* Button.swift */; };
+		78C279D4C8731B075F6A9A4751D36240 /* WeightSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23201D86AFEDDD774B3287D49EB021C8 /* WeightSortFunction.swift */; };
+		7EA580FA6B90039E5A2E0EEFD7E26D7E /* DistanceSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18326DDB0905CBD9FAC9298D77609D6 /* DistanceSortFunction.swift */; };
 		7F204E75BBC011BAA3903B7943FBC63F /* Pods-Spruce_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C3EAF5B8C1AD74CE465B95C5C8C3153 /* Pods-Spruce_Tests-dummy.m */; };
-		7F6E2FEF10739CB6DE19A023A410FFD3 /* DefaultAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2139B2E4CF4E69844165E4D522BC871 /* DefaultAnimations.swift */; };
-		80FA6B77D467CF8291AB4E1A40560E85 /* PointOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4024A0BD42EA58EEA4C45D483D19D7 /* PointOperations.swift */; };
-		8BE7CC7A929FB157A7CD5D6C485261D2 /* ViewOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3662BBDE1BD8AD26FC9BE8A34BDBAEC /* ViewOperations.swift */; };
-		93AF05E550180DFAD4E6DBF716399A3F /* CGPoint+Spruce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331D2E13A0E28542E755C825EA321685 /* CGPoint+Spruce.swift */; };
-		9BC0B32EA5DB5A30B509D203D931845B /* Spruce-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F6333719BFEBE96DA2CE3DE523CAC3B5 /* Spruce-dummy.m */; };
-		9DD8922A95D9FAF7AA2211B3CD0FEBC7 /* SpruceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECAEA7813133CBBAF4BDF0D6D746174 /* SpruceButton.swift */; };
-		A12F8E5AE74AB719006CB65A54BB5719 /* UIView+Spruce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C112297E332E2B5C9753453AFB3AD8D /* UIView+Spruce.swift */; };
-		A965C7696020E1776158EB1E6393FCC8 /* DirectionSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2BDFAD99F3D525CFEBA2D3F0581ADE /* DirectionSortFunction.swift */; };
-		ABE6140587889A927F8D85E5C25EA60B /* RandomSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D7B96F820A9BC16DD8BBB94E2FBCD /* RandomSortFunction.swift */; };
-		AC9AF36557A861C67D3A61903521C3B6 /* SortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE0F0D74E25770C2A15D1764B68A6550 /* SortFunction.swift */; };
+		9FB41C702071CC2C3BD41630B5E4BDB5 /* ViewOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3662BBDE1BD8AD26FC9BE8A34BDBAEC /* ViewOperations.swift */; };
+		A345B6AD0F861D60A99A93C17F1C61F6 /* StandardAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A3C8E18AF2973D5FFF0D53904F228 /* StandardAnimation.swift */; };
+		ADA65C54BF2A9575C9F4239FAF90F2E0 /* CGPoint+Spruce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331D2E13A0E28542E755C825EA321685 /* CGPoint+Spruce.swift */; };
+		AE7C4E768EC9EA03F46960621F49B8EF /* InlineSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B44E9D29AD2A713419FA084D548E8C /* InlineSortFunction.swift */; };
 		B16549263A0E88866CCB96E761617C6F /* Pods-Spruce_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AD634D3FAD541D877367EDE05F0B8D /* Pods-Spruce_Example-dummy.m */; };
 		B3030EE94920C08E2ED4BA6F93D0B1C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		C3C5780D01200733D7CD6C0660212647 /* SpruceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34067F895577D95C9C303F2567FDEA1 /* SpruceViewController.swift */; };
-		C3E7D7BB5B213A05BBB941DA03107A4A /* PositionSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D0546343C7A1A4A3A07AF39D013DC9 /* PositionSortFunction.swift */; };
-		C67E0249ADBC4C8C9E6DE16FE621D45A /* StandardAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A3C8E18AF2973D5FFF0D53904F228 /* StandardAnimation.swift */; };
-		D600CD502E0D345BE3617AEE268402A1 /* DistanceSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18326DDB0905CBD9FAC9298D77609D6 /* DistanceSortFunction.swift */; };
-		F9912DD62B55BD1AE64761B2DEF29249 /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B6CCE74AC32C6CA48ACA6C3BB41181 /* SpringAnimation.swift */; };
-		FB908C3A0A96C01E3C19DAC9CED93676 /* CorneredSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7C3099D073CA5203985DA478D17F43 /* CorneredSortFunction.swift */; };
+		BB166F2BCF743419401D9B210948C781 /* DefaultSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615C667453F51D588B95FB75A61990C4 /* DefaultSortFunction.swift */; };
+		BCBB0382AB27A3904DDF568AA2241612 /* LinearSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F978DDF037D93D49BA195B6E45E5AA2A /* LinearSortFunction.swift */; };
+		CBA029AE104F65BDDCBA691E522CEE57 /* DirectionSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2BDFAD99F3D525CFEBA2D3F0581ADE /* DirectionSortFunction.swift */; };
+		D29F619B6433B12EEC8595812B3DB2BC /* FullViewAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDD7CC16239F4426E08D6542DD31CD2 /* FullViewAnimation.swift */; };
+		D5508C988660390348FCA1CDF07BBEE5 /* CornerSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CB93BB6ABAAB176BA1FB3EE9B5791E /* CornerSortFunction.swift */; };
+		D64570A10F143E3C4C44AC5D2C5DE5D8 /* ContinuousSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB01302F34E3FEE82814D659C44BC625 /* ContinuousSortFunction.swift */; };
+		DD6FAAEC9C6012B4A6F3EC46125132DC /* RandomSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D7B96F820A9BC16DD8BBB94E2FBCD /* RandomSortFunction.swift */; };
+		E78E81ABD67FCB0D2AEC996E82087E3E /* SpruceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34067F895577D95C9C303F2567FDEA1 /* SpruceViewController.swift */; };
+		EB63AA2F53BB18ED27FEC369687DEB41 /* ContinuousWeightedSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA983C5D2CBEC3A76EB57A08A04833DD /* ContinuousWeightedSortFunction.swift */; };
+		F5DD0CE0CA22530C02CFBC151D24927F /* Spruce-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F6333719BFEBE96DA2CE3DE523CAC3B5 /* Spruce-dummy.m */; };
+		F782AAC853D982F27611EB8612D7E9C7 /* DefaultAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2139B2E4CF4E69844165E4D522BC871 /* DefaultAnimations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +59,6 @@
 		049D7B96F820A9BC16DD8BBB94E2FBCD /* RandomSortFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RandomSortFunction.swift; sourceTree = "<group>"; };
 		0C112297E332E2B5C9753453AFB3AD8D /* UIView+Spruce.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+Spruce.swift"; sourceTree = "<group>"; };
 		0CADC92BADB3034E48F38D776995E189 /* Pods-Spruce_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Spruce_Example-frameworks.sh"; sourceTree = "<group>"; };
-		0ECAEA7813133CBBAF4BDF0D6D746174 /* SpruceButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpruceButton.swift; sourceTree = "<group>"; };
 		0EE20E27DE21C530CD2F27D7F14241A5 /* RadialSortFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RadialSortFunction.swift; sourceTree = "<group>"; };
 		12766F2F2B7B71C85F174F8F4C923EA4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12B6CCE74AC32C6CA48ACA6C3BB41181 /* SpringAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SpringAnimation.swift; sourceTree = "<group>"; };
@@ -78,6 +77,7 @@
 		56B44E9D29AD2A713419FA084D548E8C /* InlineSortFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InlineSortFunction.swift; sourceTree = "<group>"; };
 		57C3CA3BB49F6F52EFB79CC3738B300E /* Spruce.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Spruce.framework; path = Spruce.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A7A3C8E18AF2973D5FFF0D53904F228 /* StandardAnimation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StandardAnimation.swift; sourceTree = "<group>"; };
+		5F9A9400E8946327B8389C289A064954 /* Button.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		615C667453F51D588B95FB75A61990C4 /* DefaultSortFunction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DefaultSortFunction.swift; sourceTree = "<group>"; };
 		61DF615408E1F3E7D049FBDABDC0B3A9 /* Animation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		622186B9D0A15D16C664C253DFDDF343 /* Pods-Spruce_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Spruce_Example-resources.sh"; sourceTree = "<group>"; };
@@ -156,15 +156,6 @@
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/Spruce";
-			sourceTree = "<group>";
-		};
-		2648AD20F6C8560F9C44D87FE9AD5844 /* UI Elements */ = {
-			isa = PBXGroup;
-			children = (
-				0ECAEA7813133CBBAF4BDF0D6D746174 /* SpruceButton.swift */,
-			);
-			name = "UI Elements";
-			path = "UI Elements";
 			sourceTree = "<group>";
 		};
 		2B50F05FD359056507165A8DE4CCC94C /* Sort Functions */ = {
@@ -260,7 +251,7 @@
 				71701B8721D8399D6A1A6AA5319EBDE9 /* Animations */,
 				BC857D298739950B2D9B4A346F0426F8 /* Full View */,
 				2B50F05FD359056507165A8DE4CCC94C /* Sort Functions */,
-				2648AD20F6C8560F9C44D87FE9AD5844 /* UI Elements */,
+				FF846F39B57764C84F362A4AE56323BB /* UI Elements */,
 			);
 			name = Classes;
 			path = Classes;
@@ -356,6 +347,15 @@
 			path = "Target Support Files/Pods-Spruce_Example";
 			sourceTree = "<group>";
 		};
+		FF846F39B57764C84F362A4AE56323BB /* UI Elements */ = {
+			isa = PBXGroup;
+			children = (
+				5F9A9400E8946327B8389C289A064954 /* Button.swift */,
+			);
+			name = "UI Elements";
+			path = "UI Elements";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -408,7 +408,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06F74E89843A23C56577F38F566F4B3D /* Build configuration list for PBXNativeTarget "Spruce" */;
 			buildPhases = (
-				EF937821D2FA24C3A7D524234CD281D4 /* Sources */,
+				CBC95E3F595D2271B3672F954DAC6ADC /* Sources */,
 				4FCC6502932DD34E491A20DDEF9EAFEA /* Frameworks */,
 				C0F6477ABA1A9E1E8A4F232728D923CB /* Headers */,
 			);
@@ -483,38 +483,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EF937821D2FA24C3A7D524234CD281D4 /* Sources */ = {
+		CBC95E3F595D2271B3672F954DAC6ADC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CB98D4C96A05102F6CFCC48C51693C8 /* Animation.swift in Sources */,
-				93AF05E550180DFAD4E6DBF716399A3F /* CGPoint+Spruce.swift in Sources */,
-				2FD20C6CFCBCC43E0B3930C38B36A606 /* ContinuousSortFunction.swift in Sources */,
-				4613EC3AAE64D5F17F5F3CFCB5BE8847 /* ContinuousWeightedSortFunction.swift in Sources */,
-				FB908C3A0A96C01E3C19DAC9CED93676 /* CorneredSortFunction.swift in Sources */,
-				15A056A91EEF6102DE04FCC1AC0A3166 /* CornerSortFunction.swift in Sources */,
-				7F6E2FEF10739CB6DE19A023A410FFD3 /* DefaultAnimations.swift in Sources */,
-				149A4219DA11411C59E002D323284CCF /* DefaultFullViewAnimations.swift in Sources */,
-				7B7F6DDD2A319F80EF0D55B30A34CABD /* DefaultSortFunction.swift in Sources */,
-				A965C7696020E1776158EB1E6393FCC8 /* DirectionSortFunction.swift in Sources */,
-				D600CD502E0D345BE3617AEE268402A1 /* DistanceSortFunction.swift in Sources */,
-				6C245CE7358BE12CC8ACFBC99150C639 /* FullViewAnimation.swift in Sources */,
-				1F3783D31A62DB9CCE8E3906DA1CFB9B /* InlineSortFunction.swift in Sources */,
-				1EC89ACC64E51DA69D0D522A7EB45FB3 /* LinearSortFunction.swift in Sources */,
-				80FA6B77D467CF8291AB4E1A40560E85 /* PointOperations.swift in Sources */,
-				C3E7D7BB5B213A05BBB941DA03107A4A /* PositionSortFunction.swift in Sources */,
-				3FA4FFB6D4276769F6852CC6E9358B6A /* RadialSortFunction.swift in Sources */,
-				ABE6140587889A927F8D85E5C25EA60B /* RandomSortFunction.swift in Sources */,
-				AC9AF36557A861C67D3A61903521C3B6 /* SortFunction.swift in Sources */,
-				F9912DD62B55BD1AE64761B2DEF29249 /* SpringAnimation.swift in Sources */,
-				9BC0B32EA5DB5A30B509D203D931845B /* Spruce-dummy.m in Sources */,
-				261E7951433531B1747D4667C48B0BAF /* Spruce.swift in Sources */,
-				9DD8922A95D9FAF7AA2211B3CD0FEBC7 /* SpruceButton.swift in Sources */,
-				C3C5780D01200733D7CD6C0660212647 /* SpruceViewController.swift in Sources */,
-				C67E0249ADBC4C8C9E6DE16FE621D45A /* StandardAnimation.swift in Sources */,
-				A12F8E5AE74AB719006CB65A54BB5719 /* UIView+Spruce.swift in Sources */,
-				8BE7CC7A929FB157A7CD5D6C485261D2 /* ViewOperations.swift in Sources */,
-				05969B890FE8117618E444F5A4F66179 /* WeightSortFunction.swift in Sources */,
+				29FCD60E1BAA1534F11EB3AA4183DAF3 /* Animation.swift in Sources */,
+				77A529DF34682ADF0EA56FF3DC592600 /* Button.swift in Sources */,
+				ADA65C54BF2A9575C9F4239FAF90F2E0 /* CGPoint+Spruce.swift in Sources */,
+				D64570A10F143E3C4C44AC5D2C5DE5D8 /* ContinuousSortFunction.swift in Sources */,
+				EB63AA2F53BB18ED27FEC369687DEB41 /* ContinuousWeightedSortFunction.swift in Sources */,
+				18C70B609B4A6543FC65AF37C25500B6 /* CorneredSortFunction.swift in Sources */,
+				D5508C988660390348FCA1CDF07BBEE5 /* CornerSortFunction.swift in Sources */,
+				F782AAC853D982F27611EB8612D7E9C7 /* DefaultAnimations.swift in Sources */,
+				33C29343DEDC1C25362F53802D706FB9 /* DefaultFullViewAnimations.swift in Sources */,
+				BB166F2BCF743419401D9B210948C781 /* DefaultSortFunction.swift in Sources */,
+				CBA029AE104F65BDDCBA691E522CEE57 /* DirectionSortFunction.swift in Sources */,
+				7EA580FA6B90039E5A2E0EEFD7E26D7E /* DistanceSortFunction.swift in Sources */,
+				D29F619B6433B12EEC8595812B3DB2BC /* FullViewAnimation.swift in Sources */,
+				AE7C4E768EC9EA03F46960621F49B8EF /* InlineSortFunction.swift in Sources */,
+				BCBB0382AB27A3904DDF568AA2241612 /* LinearSortFunction.swift in Sources */,
+				25A17001450D649FB4637F271251559F /* PointOperations.swift in Sources */,
+				140200DC592D0A7CE3F3AF977E95ADA4 /* PositionSortFunction.swift in Sources */,
+				66B509431912AA7497ACE40B3D43B583 /* RadialSortFunction.swift in Sources */,
+				DD6FAAEC9C6012B4A6F3EC46125132DC /* RandomSortFunction.swift in Sources */,
+				5B8EE79E9029306900FD1F8D2B008C6C /* SortFunction.swift in Sources */,
+				48D7CDD844A590F24CDA731D049B11DE /* SpringAnimation.swift in Sources */,
+				F5DD0CE0CA22530C02CFBC151D24927F /* Spruce-dummy.m in Sources */,
+				01B58B837354F2F7ADCAD3782BE5CF3A /* Spruce.swift in Sources */,
+				E78E81ABD67FCB0D2AEC996E82087E3E /* SpruceViewController.swift in Sources */,
+				A345B6AD0F861D60A99A93C17F1C61F6 /* StandardAnimation.swift in Sources */,
+				0698A4051AB350FB917615D5EBC288F8 /* UIView+Spruce.swift in Sources */,
+				9FB41C702071CC2C3BD41630B5E4BDB5 /* ViewOperations.swift in Sources */,
+				78C279D4C8731B075F6A9A4751D36240 /* WeightSortFunction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

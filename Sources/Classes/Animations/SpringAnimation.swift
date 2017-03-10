@@ -28,7 +28,7 @@ import UIKit
 /// A wrapper around the spring `UIViewAnimation` block with options publicly accessible. See, [UIViewAnimation](apple-reference-documentation://hsEaMPVO1d) for more
 /// - Note: `animationOptions` defaults to `[]`. If you do not update this value before calling the animate method than the changes will not be reflected.
 /// - Note: `damping` defaults to 0.5 and `initialVelocity` defaults to 0.7
-public struct SpringAnimation: SpruceAnimation {
+public struct SpringAnimation: Animation {
     
     public var changeFunction: ChangeFunction?
     public var duration: TimeInterval

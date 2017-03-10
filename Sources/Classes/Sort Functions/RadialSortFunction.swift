@@ -32,6 +32,7 @@ public struct RadialSortFunction: PositionSortFunction {
     public var interObjectDelay: TimeInterval
     public var reversed: Bool = false
     
+    
     public init(position: Position, interObjectDelay: TimeInterval) {
         self.position = position
         self.interObjectDelay = interObjectDelay

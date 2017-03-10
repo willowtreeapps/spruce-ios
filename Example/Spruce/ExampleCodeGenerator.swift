@@ -76,7 +76,7 @@ class ExampleCodeGenerator {
         }
     }
     
-    class func string(forCorner corner: SpruceCorner) -> String {
+    class func string(forCorner corner: Corner) -> String {
         switch corner {
         case .topLeft:
             return ".topLeft"

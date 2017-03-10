@@ -28,7 +28,7 @@ import XCTest
 
 class InlineSortFunctionTests: SortFunctionTests {
     
-    func testInlineSortFunctions(withStartCorner corner: SpruceCorner, expected: [TimeInterval], expectedReversed: [TimeInterval]) {
+    func testInlineSortFunctions(withStartCorner corner: Corner, expected: [TimeInterval], expectedReversed: [TimeInterval]) {
         var sortFunction = InlineSortFunction(corner: corner, interObjectDelay: 0.1)
         let timedViews = sortFunction.timeOffsets(view: animatableView)
         
