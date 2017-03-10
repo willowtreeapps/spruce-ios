@@ -1,5 +1,5 @@
 PODS:
-  - Spruce (0.1.0)
+  - Spruce (1.0)
 
 DEPENDENCIES:
   - Spruce (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Spruce: '099ebc4a4ad2620975ee6aaffd7f611744b9a0a5'
+  Spruce: ca7d637d19510fd5367de6a7bf64c3991deeaccf
 
 PODFILE CHECKSUM: '0682d1331d8ffa96d42f660fba6a53ca84d7b1ba'
 
