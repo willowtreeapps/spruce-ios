@@ -163,14 +163,159 @@
         <section>
           <section class="section">
             
-            <a href='#spruce' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='spruce'>Spruce</h1>
-<a href='#swift-library-for-choreographing-animations-on-the-screen' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='swift-library-for-choreographing-animations-on-the-screen'>Swift library for choreographing animations on the screen.</h3>
-<a href='#installation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='installation'>Installation</h3>
-<pre class="highlight ruby"><code><span class="n">pod</span> <span class="s1">'Spruce'</span>
-</code></pre>
-<a href='#authors' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='authors'>Authors</h3>
+            <p><img src="https://github.com/willowtreeapps/spruce-ios/raw/master/imgs/header_image.png" alt="Spruce Logo"></p>
+<a href='#spruce-ios-animation-library' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='spruce-ios-animation-library'>Spruce iOS Animation Library</h1>
 
-<p>WillowTree</p>
+<p><a href="https://circleci.com/gh/willowtreeapps/spruce-ios"><img src="https://circleci.com/gh/willowtreeapps/spruce-ios.svg?style=shield" alt="CircleCI Build Status"></a>
+<a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage compatible"></a>
+<a href="https://github.com/CocoaPods/CocoaPods"><img src="https://img.shields.io/badge/CocoaPods-compatible-4BC51D.svg?style=flat" alt="CocoaPods compatible"></a>
+<a href=""><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=flat" alt="License MIT"></a>
+<a href=""><img src="https://img.shields.io/badge/Public-no-red.svg?style=flat" alt="Public No"></a></p>
+<a href='#what-is-it' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='what-is-it'>What is it?</h2>
+
+<p>Spruce is a lightweight animation library that helps choreograph the animations on the screen. With so many different animation libraries out there, developers need to make sure that each view is animating at the appropriate time. Spruce can help designers request complex multi-view animations and not have the developers cringe at the prototype. </p>
+
+<p>Here is a quick example of how you can Spruce up your screens!</p>
+
+<p><img src="https://github.com/willowtreeapps/spruce-ios/raw/master/imgs/extensibility-tests.gif" alt="Example"></p>
+<a href='#installation-instructions' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='installation-instructions'>Installation Instructions</h2>
+
+<p>To make everything super easy, we currently support both CocoaPods and Carthage. If you want to just do everything yourself without a package manager, checkout our releases page and download the pre-built frameworks there or you can download the exact source from this Github project.</p>
+<a href='#cocoapods' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='cocoapods'>CocoaPods</h3>
+
+<p>Add the following to your <code>Podfile</code>.</p>
+<pre class="highlight plaintext"><code>pod "Spruce", :git =&gt; "https://github.com/willowtreeapps/spruce-ios"
+</code></pre>
+<a href='#carthage' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='carthage'>Carthage</h3>
+
+<p>Add the following to your <code>Cartfile</code>.</p>
+<pre class="highlight plaintext"><code>github "willowtreeapps/spruce-ios"
+</code></pre>
+<a href='#getting-started' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='getting-started'>Getting Started</h1>
+
+<p>Spruce is entirely written in <code>Swift</code> and currently only supports <code>Swift</code>. <code>Objective C</code> wrappers are coming soon.</p>
+<a href='#basic-usage' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='basic-usage'>Basic Usage</h2>
+
+<p>Spruce comes packed with <code>UIView</code> extensions meant to make your life easier when calling an animation. Let&rsquo;s say we want to <code>[.fadeIn, .expand(.slightly)]</code> our view. We will call that array of animations <code>ourAnimations</code>.</p>
+<a href='#preparing-for-animation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='preparing-for-animation'>Preparing for Animation</h3>
+
+<p>If you want a view to fade in, then you need to make sure that it is already faded out. To do that, we need to <code>prepare</code> the view. Spruce makes this easy by calling:</p>
+<pre class="highlight swift"><code><span class="n">yourView</span><span class="o">.</span><span class="n">spruce</span><span class="o">.</span><span class="nf">prepare</span><span class="p">(</span><span class="n">ourAnimations</span><span class="p">)</span>
+</code></pre>
+
+<p>This <code>prepare</code> function will go through each view and set the <code>alpha = 0.0</code> and also shrink the view so that when the animation runs the view will revert to it&rsquo;s original position.</p>
+<a href='#running-the-animation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='running-the-animation'>Running the Animation</h3>
+
+<p>Use the following command to run a basic animation on your view.</p>
+<pre class="highlight swift"><code><span class="n">yourView</span><span class="o">.</span><span class="n">spruce</span><span class="o">.</span><span class="nf">animate</span><span class="p">(</span><span class="n">ourAnimations</span><span class="p">)</span>
+</code></pre>
+
+<p>Checkout <a href="https://willowtreeapps.github.io/spruce-ios/swift_output/Extensions/UIView.html#/s:vE6SpruceCSo6UIView6spruceVS_6Spruce">the documentation</a> for more functions and how to better use the <code>animate</code> method.</p>
+<a href='#using-a-sortfunction' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='using-a-sortfunction'>Using a SortFunction</h2>
+
+<p>Luckily, Spruce comes with around 8 <code>SortFunction</code> implementations with a wide open possibility to make more! Use the <code>SortFunction</code> to change the order in which views animate. Consider the following example:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">sortFunction</span> <span class="o">=</span> <span class="kt">LinearSortFunction</span><span class="p">(</span><span class="nv">direction</span><span class="p">:</span> <span class="o">.</span><span class="n">topToBottom</span><span class="p">,</span> <span class="nv">interObjectDelay</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">)</span>
+</code></pre>
+
+<p>In this example we have created a <code>LinearSortFunction</code> which will have views animate in from the top to bottom. We can change the look and feel of the animation by using a <code>RadialSortFunction</code> instead which will have the views animate in a circular fashion. If we wanted to use this <code>sortFunction</code> in an actual Spruce <code>animate</code> call then that would look something like:</p>
+<pre class="highlight swift"><code><span class="n">yourView</span><span class="o">.</span><span class="n">spruce</span><span class="o">.</span><span class="nf">animate</span><span class="p">([</span><span class="o">.</span><span class="n">fadeIn</span><span class="p">,</span> <span class="o">.</span><span class="nf">expand</span><span class="p">(</span><span class="o">.</span><span class="n">slightly</span><span class="p">)],</span> <span class="nv">sortFunction</span><span class="p">:</span> <span class="n">sortFunction</span><span class="p">)</span>
+</code></pre>
+
+<p>Definitely play around with the stock <code>SortFunction</code> implementations until you find the one that is perfect for you! Check out the example app if you want to get previews of what each <code>SortFunction</code> will look like.</p>
+<a href='#using-a-custom-animation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='using-a-custom-animation'>Using a Custom Animation</h2>
+
+<p>Though Spruce comes with a ton of stock animations, sometimes it is easier to make your own. We definitely encourage customization and Spruce is ready for it! Let&rsquo;s say you want to transform and animate a <code>UIView</code> object. To do let&rsquo;s create a <code>PrepareHandler</code>:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">prepareHandler</span> <span class="o">=</span> <span class="p">{</span> <span class="n">view</span> <span class="k">in</span>
+    <span class="n">view</span><span class="o">.</span><span class="n">transform</span> <span class="o">=</span> <span class="kt">CGAffineTransform</span><span class="p">(</span><span class="nv">scaleX</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>The <code>prepareHandler</code> will be passed a <code>UIView</code> object by Spruce and then it is your functions job to get the view ready to animate. This way our animation will look clean and quick since the view is already scaled down and ready to grow! Now to setup the function to grow the view we need to create a <code>ChangeFunction</code>:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">changeFunction</span> <span class="o">=</span> <span class="p">{</span> <span class="n">view</span> <span class="k">in</span>
+    <span class="n">view</span><span class="o">.</span><span class="n">transform</span> <span class="o">=</span> <span class="kt">CGAffineTransform</span><span class="p">(</span><span class="nv">scaleX</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>In <code>changeFunction</code> the same view will also be passed in by Spruce and then your function will be used to animate the actual view itself. These two functions will be called with each subview of the view you are animating. Now that we have both functions we are ready to create an animation:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">animation</span> <span class="o">=</span> <span class="kt">StockAnimation</span><span class="o">.</span><span class="nf">custom</span><span class="p">(</span><span class="nv">prepareFunction</span><span class="p">:</span> <span class="n">prepareHandler</span><span class="p">,</span> <span class="nv">animateFunction</span><span class="p">:</span> <span class="n">changeFunction</span><span class="p">)</span>
+</code></pre>
+
+<p>Once we have the animation all we need to do is pass that animation into Spruce and let the animation begin!</p>
+<pre class="highlight swift"><code><span class="n">yourView</span><span class="o">.</span><span class="n">spruce</span><span class="o">.</span><span class="nf">animate</span><span class="p">([</span><span class="n">animation</span><span class="p">])</span>
+</code></pre>
+<a href='#basic-concepts' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='basic-concepts'>Basic Concepts</h1>
+<a href='#animations' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='animations'>Animations</h2>
+
+<p>Given a change function that specifies how the views are modified, you are able to specify any type of animation that you would like. Feel free to implement the <code>Animation</code> protocol and create your own animation classes.</p>
+<a href='#the-animation-protocol' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='the-animation-protocol'>The Animation Protocol</h3>
+
+<p>The protocol has one function and a variable that need to be implemented in your class. First is the <code>changeFunction</code>. This is a <code>void</code> function that takes one parameter of a <code>UIView</code>. The change function will specify all of the modifications that are going to be made to that view and this is what you would use to animate the changes. The function <code>animate</code> is called when Spruce wants to go ahead and run the animations on the view. It&rsquo;s important that the <code>changeFunction</code> is set before this call but Spruce should handle all of that for you. The <code>completion</code> parameter in the function call should be called by your function once the animation is complete.</p>
+<pre class="highlight swift"><code><span class="k">var</span> <span class="nv">changeFunction</span><span class="p">:</span> <span class="kt">ChangeFunction</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">animate</span><span class="p">(</span><span class="nv">delay</span><span class="p">:</span> <span class="kt">TimeInterval</span><span class="p">,</span> <span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kt">CompletionHandler</span><span class="p">?)</span>
+</code></pre>
+<a href='#standard-animation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='standard-animation'>Standard Animation</h3>
+
+<p>The <code>StandardAnimation</code> class uses the default <code>UIView.animate</code> function to apply the change function to the view. Use this class if you want to have a stock linear movement of the changes.</p>
+<a href='#spring-animation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='spring-animation'>Spring Animation</h3>
+
+<p>The <code>SpringAnimation</code> class uses the <code>UIView.animate(...usingSpringWithDamping)</code> function. With this class you can edit the <code>springDampening</code> and <code>initialVelocity</code> values so that your views will bounce on the screen.</p>
+<a href='#sort-functions' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='sort-functions'>Sort Functions</h2>
+
+<p>With all different types of animations, especially those dealing with subviews, we have to consider a way in which we want to animate them. Some views can have 0 subviews while others may have hundreds. To handle this, we have the notion of a <code>SortFunction</code>. What this will do is take each of the subviews in the animated view, and apply a mapping from the specific subview to the exact delay that it should wait before animating. Some of these will sort in a radial formation while others may actually sort randomly. This is one of the cool features of Spruce, is you can actually define your own <code>SortFunction</code> and then the animation will look completely different. Luckily, Spruce also comes jam packed with a ton of default <code>SortFunction</code> classes to make everything easier on you as the developer. Take a look at some of the default <code>SortFunction</code> classes we have and see if you can use them or branch off of them for your cool and custom animations!</p>
+<a href='#the-sortfunction-protocol' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='the-sortfunction-protocol'>The SortFunction Protocol</h3>
+
+<p>A very simple protocol that requires classes to implement the following function</p>
+<pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">timeOffsets</span><span class="p">(</span><span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">,</span> <span class="nv">recursiveDepth</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">TimedView</span><span class="p">]</span>
+</code></pre>
+
+<p>What the above function needs to do is take in a <code>UIView</code> and generate a list of subviews. This list of subviews can be generated recursively or not depending on what the boolean has set. Once the list of subviews has been generated, you can define your own sort metric to determine in which order the <code>UIView</code>&lsquo;s should animate. To do so, you need to create an array of <code>SpruceTimedView</code>&rsquo;s. This special struct has two properties: (1) <code>view: UIView</code> and (2) <code>timeOffset: TimeInterval</code>. Your <code>SortFunction</code> can define the <code>timeOffset</code> however it likes, but the animation classes will use this to determine how long it should delay the start of that specific view from animating. The best way to learn, is to play around. So why not have some fun and make your own <code>SortFunction</code>!</p>
+<a href='#stock-sort-functions' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='stock-sort-functions'>Stock Sort Functions</h3>
+
+<p>To make sure that developers can use Spruce out of the box, we included about 8 stock <code>SortFunction</code> implementations. These are some of the main functions we use at WillowTree and are so excited to see what others come up with!</p>
+
+<ul>
+<li><code>DefaultSortFunction</code></li>
+<li><code>LinearSortFunction</code></li>
+<li><code>CorneredSortFunction</code></li>
+<li><code>RadialSortFunction</code></li>
+<li><code>RandomSortFunction</code></li>
+<li><code>InlineSortFunction</code></li>
+<li><code>ContinousSortFunction</code></li>
+<li><code>ContinuousWeightedSortFunction</code></li>
+</ul>
+
+<p>Check out the docs <a href="https://willowtreeapps.github.io/spruce-ios/swift_output/Protocols/SortFunction.html">here</a> for more information</p>
+<a href='#stock-animations' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='stock-animations'>Stock Animations</h2>
+
+<p>To make everybody&rsquo;s lives easier, the stock animations perform the basic <code>UIView</code> animations that a lot of apps use today. Mix and match these animations to get the core motion you are looking for.</p>
+
+<ul>
+<li><code>.fadeIn</code></li>
+<li><code>.slide(&lt;SlideDirection&gt;, &lt;Distance&gt;)</code></li>
+<li><code>.spin(&lt;Angle&gt;)</code></li>
+<li><code>.expand(&lt;Scale&gt;)</code></li>
+<li><code>.contact(&lt;Scale&gt;)</code></li>
+<li><code>.custom(prepareFunction: &lt;PrepareHandler&gt;, animateFunction: &lt;ChangeFunction&gt;)</code></li>
+</ul>
+
+<p>Experiment which ones work for you! If you think of anymore feel free to add them to the library yourself!</p>
+<a href='#contributing-to-spruce' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='contributing-to-spruce'>Contributing to Spruce</h1>
+
+<p>Contributions are more than welcome! Please see the <a href="https://github.com/willowtreeapps/spruce-ios/blob/master/Contributing.md">Contributing Guidelines</a> and be mindful of our <a href="https://github.com/willowtreeapps/spruce-ios/blob/master/code-of-conduct.md">Code of Conduct</a>.</p>
+<a href='#issues-or-future-ideas' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='issues-or-future-ideas'>Issues or Future Ideas</h1>
+
+<p>If part of Spruce is not working correctly be sure to file a Github issue. In the issue provide as many details as possible. This could include example code or the exact steps that you did so that everyone can reproduce the issue. Sample projects are always the best way :). 
+This makes it easy for our developers or someone from the open-source community to start working!</p>
+
+<p>If you have a feature idea submit an issue with a feature request or submit a pull request and we will work with you to merge it in!</p>
+<a href='#about-willowtree' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='about-willowtree'>About WillowTree!</h1>
+
+<p><img src="https://github.com/willowtreeapps/spruce-ios/raw/master/imgs/willowtree_logo.png" alt="WillowTree Logo"></p>
+
+<p>We build apps, responsive sites, bots—any digital product that lives on a screen—for the world’s leading companies. Our elite teams challenge themselves to build extraordinary experiences by bridging the latest strategy and design thinking with enterprise-grade software development.</p>
+
+<p>Interested in working on more unique projects like Spruce? Check out our <a href="http://willowtreeapps.com/careers">careers page</a>.</p>
 
           </section>
         </section>

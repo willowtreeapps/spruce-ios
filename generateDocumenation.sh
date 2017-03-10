@@ -9,4 +9,5 @@ jazzy \
 	--xcodebuild-arguments -scheme,Spruce \
 	--module Spruce \
 	--output docs/swift_output \
-	--source-directory Spruce
+	--source-directory Spruce \
+   --readme ./README.md
