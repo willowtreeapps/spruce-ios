@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = 'Spruce'
   s.version          = '1.0'
-  s.summary          = 'A simple animation library that tries to do everything for you.'
+  s.summary          = 'Swift library for choreographing animations on the screen.'
   s.homepage         = 'https://github.com/willowtreeapps/spruce-ios'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'WillowTree, Inc.' => 'opensource@willowtreeapps.com' }
