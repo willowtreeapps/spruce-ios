@@ -32,7 +32,7 @@ class CustomAnimationViewController: UIViewController {
 
     var containerView: UIView?
     
-    var corner: SpruceCorner = .bottomRight
+    var corner: Corner = .bottomRight
 
     var excludeViews = [UIView]()
 

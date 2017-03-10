@@ -32,9 +32,9 @@ public struct InlineSortFunction: CornerSortFunction {
 
     public var interObjectDelay: TimeInterval
     public var reversed: Bool = false
-    public var corner: SpruceCorner
+    public var corner: Corner
     
-    public init(corner: SpruceCorner, interObjectDelay: TimeInterval) {
+    public init(corner: Corner, interObjectDelay: TimeInterval) {
         self.corner = corner
         self.interObjectDelay = interObjectDelay
     }

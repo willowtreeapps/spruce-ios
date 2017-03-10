@@ -33,10 +33,18 @@ import UIKit
 /// - topRight: top right corner of the view
 /// - bottomLeft: bottom left corner of the view
 /// - bottomRight: bottom right corner of the view
-public enum SpruceCorner {
+public enum Corner {
+    
+    /// top left corner of the view
     case topLeft
+    
+    /// top right corner of the view
     case topRight
+    
+    /// bottom left corner of the view
     case bottomLeft
+    
+    /// bottom right corner of the view
     case bottomRight
 }
 
@@ -45,7 +53,7 @@ public enum SpruceCorner {
 public protocol CornerSortFunction: DistanceSortFunction {
     
     /// The starting corner for the animation. Views will animate vertically and horizontally from this corner.
-    var corner: SpruceCorner { get set }
+    var corner: Corner { get set }
 }
 
 public extension CornerSortFunction {
