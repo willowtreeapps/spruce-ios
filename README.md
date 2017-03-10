@@ -8,14 +8,12 @@
 [![License MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)]()
 [![Public No](https://img.shields.io/badge/Public-no-red.svg?style=flat)]()
 
-
 ## What is it? 
 Spruce is a lightweight animation library that helps choreograph the animations on the screen. With so many different animation libraries out there, developers need to make sure that each view is animating at the appropriate time. Spruce can help designers request complex multi-view animations and not have the developers cringe at the prototype. 
 
 Here is a quick example of how you can Spruce up your screens!
 
 ![Example](https://github.com/willowtreeapps/spruce-ios/raw/develop/imgs/extensibility-tests.gif)
- 
 
 ## Installation Instructions
 To make everything super easy, we currently support both CocoaPods and Carthage. If you want to just do everything yourself without a package manager, checkout our releases page and download the pre-built frameworks there or you can download the exact source from this Github project.
