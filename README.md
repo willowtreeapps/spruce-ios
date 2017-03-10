@@ -9,7 +9,7 @@
 [![Public No](https://img.shields.io/badge/Public-no-red.svg?style=flat)]()
 
 
-## What is it?
+## What is it? 
 Spruce is a lightweight animation library that helps choreograph the animations on the screen. With so many different animation libraries out there, developers need to make sure that each view is animating at the appropriate time. Spruce can help designers request complex multi-view animations and not have the developers cringe at the prototype. 
 
 Here is a quick example of how you can Spruce up your screens!
@@ -160,6 +160,13 @@ Contributions are more than welcome! Please see the [Contributing Guidelines](ht
 
 # Issues or Future Ideas
 If part of Spruce is not working correctly be sure to file a Github issue. In the issue provide as many details as possible. This could include example code or the exact steps that you did so that everyone can reproduce the issue. Sample projects are always the best way :). 
-This makes it easy for our developers or someone from the open-soruce community to start working!
+This makes it easy for our developers or someone from the open-source community to start working!
 
 If you have a feature idea submit an issue with a feature request or submit a pull request and we will work with you to merge it in!
+
+# About WillowTree!
+![WillowTree Logo](https://github.com/willowtreeapps/spruce-ios/raw/develop/imgs/willowtree_logo.png)
+
+We build apps, responsive sites, bots—any digital product that lives on a screen—for the world’s leading companies. Our elite teams challenge themselves to build extraordinary experiences by bridging the latest strategy and design thinking with enterprise-grade software development.
+
+Interested in working on more unique projects like Spruce? Check out our [careers page](http://willowtreeapps.com/careers).
