@@ -1,9 +1,9 @@
 ### Creating the Pull Request
-To contribute, fork our project on GitHub, then submit a pull request to our `develop` branch.
+To contribute, fork our project on GitHub, then submit a pull request to our `master` branch.
 
 ### Before Submitting
-1. make sure you have tested your changes. The `Spruce.xcodeproj` serves as the main way of testing your code. 
-2. If you added a SortFunction or anything that could have unit tests, please be sure to add them to the main project. 
+1. Make sure you have tested your changes. The `Spruce.xcodeproj` serves as the main way of testing your code. 
+2. If you added a `SortFunction` or anything that could have unit tests, please be sure to add them to the main project. 
 3. If you update anything that would add breaking changes to older versions of `Spruce` be sure to declare
 that in your Pull Request description.
 4. Be sure to document your code. This includes adding in Swift markup style comments for those methods that
