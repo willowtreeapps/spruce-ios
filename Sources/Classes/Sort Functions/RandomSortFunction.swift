@@ -2,28 +2,47 @@
 //  RandomSortFunction.swift
 //  Spruce
 //
-//  Created by Jackson Taylor on 11/15/16.
-//  Copyright © 2016 WillowTree Apps, Inc. All rights reserved.
+//  Copyright (c) 2017 WillowTree, Inc.
+
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
 //
 
 import UIKit
 
-open class RandomSortFunction: SortFunction {
+
+/// A `SortFunction` that will animate all the views in with a random delay. No 2 views will animate in with the same offset. The views will be placed in an array, shuffled, and then each view will be asigned an offset given the `interObjectDelay`.
+public struct RandomSortFunction: SortFunction {
     
-    let interObjectDelay: TimeInterval
+    public var interObjectDelay: TimeInterval
     
     public init(interObjectDelay: TimeInterval) {
         self.interObjectDelay = interObjectDelay
     }
     
-    open func getTimeOffsets(view: UIView, recursive: Bool) -> [SpruceTimedView] {
-        var subViews = view.getSubviews(recursive: recursive)
-        subViews.shuffle()
+    public func timeOffsets(view: UIView, recursiveDepth: Int) -> [TimedView] {
+        var subviews = view.spruce.subviews(withRecursiveDepth: recursiveDepth)
+        subviews.shuffle()
         
-        var timedViews: [SpruceTimedView] = []
+        var timedViews: [TimedView] = []
         var currentTimeOffset: TimeInterval = 0.0
-        for subView in subViews {
-            let timedView = SpruceTimedView(view: subView, timeOffset: currentTimeOffset)
+        for subview in subviews {
+            let timedView = TimedView(spruceView: subview, timeOffset: currentTimeOffset)
             timedViews.append(timedView)
             currentTimeOffset += interObjectDelay
         }

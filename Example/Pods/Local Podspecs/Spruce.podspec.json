@@ -12,11 +12,11 @@
     "Jackson Taylor": "jackson.taylor@willowtreeapps.com"
   },
   "source": {
-    "git": "https://github.com/willowtreeapps/Spruce.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/willowtreeapps/spruce-ios.git"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "8.0",
+    "tvos": "9.0"
   },
   "source_files": "Sources/Classes/**/*"
 }

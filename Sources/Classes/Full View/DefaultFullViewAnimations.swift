@@ -2,225 +2,149 @@
 //  DefaultFullViewAnimations.swift
 //  Spruce
 //
-//  Created by Jackson Taylor on 11/14/16.
-//  Copyright © 2016 WillowTree Apps, Inc. All rights reserved.
+//  Copyright (c) 2017 WillowTree, Inc.
+
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
 //
 
 import UIKit
 
-public enum SlideDirection {
-    case up
-    case down
-    case left
-    case right
-}
-
-public enum SpruceSize {
-    case small
-    case medium
-    case large
-}
-
-public enum SpruceStandardAnimation {
-    case slide(SlideDirection, SpruceSize)
+public extension Spruce {
     
-    case fadeIn
-    
-    case spin(SpruceSize)
-    
-    case expand(SpruceSize)
-    case contract(SpruceSize)
-    
-    func getClearFunction() -> SpruceChangeFunction {
-        switch self {
-        case .slide:
-            let offset = getClearSlideOffset()
-            return { view in
-                let currentTransform = view.transform
-                let offsetTransform = CGAffineTransform(translationX: offset.x, y: offset.y)
-                view.transform = currentTransform.concatenating(offsetTransform)
-            }
-        case .fadeIn:
-            return { view in
-                view.alpha = 0.0
-            }
-        case .spin:
-            let angle = getSpinAngle()
-            return { view in
-                let currentTransform = view.transform
-                let spinTransform = CGAffineTransform(rotationAngle: angle)
-                view.transform = currentTransform.concatenating(spinTransform)
-            }
-        case .expand, .contract:
-            let scale = getScale()
-            return { view in
-                let currentTransform = view.transform
-                let scaleTransform = CGAffineTransform(scaleX: scale, y: scale)
-                view.transform = currentTransform.concatenating(scaleTransform)
-            }
-        }
-    }
-    
-    func getAnimationFunction() -> SpruceChangeFunction {
-        switch self {
-        case .slide:
-            return { view in
-                view.transform = CGAffineTransform(translationX: 0.0, y: 0.0)
-            }
-        case .fadeIn:
-            return { view in
-                view.alpha = 1.0
-            }
-        case .spin:
-            return { view in
-                view.transform = CGAffineTransform(rotationAngle: 0.0)
-            }
-        case .expand, .contract:
-            return { view in
-                view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-            }
-        }
-    }
-    
-    func getClearSlideOffset() -> CGPoint {
-        
-        switch self {
-        case .slide(let direction, let size):
-            switch (direction, size) {
-            case (.up, .small):
-                return CGPoint(x: 0.0, y: 10.0)
-            case (.up, .medium):
-                return CGPoint(x: 0.0, y: 30.0)
-            case (.up, .large):
-                return CGPoint(x: 0.0, y: 50.0)
-            case (.down, .small):
-                return CGPoint(x: 0.0, y: -10.0)
-            case (.down, .medium):
-                return CGPoint(x: 0.0, y: -30.0)
-            case (.down, .large):
-                return CGPoint(x: 0.0, y: -50.0)
-            case (.left, .small):
-                return CGPoint(x: 10.0, y: 0.0)
-            case (.left, .medium):
-                return CGPoint(x: 30.0, y: 0.0)
-            case (.left, .large):
-                return CGPoint(x: 50.0, y: 0.0)
-            case (.right, .small):
-                return CGPoint(x: -10.0, y: 0.0)
-            case (.right, .medium):
-                return CGPoint(x: -30.0, y: 0.0)
-            case (.right, .large):
-                return CGPoint(x: -50.0, y: 0.0)
-            }
-        default:
-            return CGPoint.zero
-        }
-    }
-    
-    func getSpinAngle() -> CGFloat {
-        switch self {
-        case .spin(let size):
-            switch size {
-            case .small:
-                return CGFloat(M_PI_4)
-            case .medium:
-                return CGFloat(M_PI_2)
-            case .large:
-                return CGFloat(M_PI)
-            }
-        default:
-            return 0.0
-        }
-    }
-    
-    func getScale() -> CGFloat {
-        switch self {
-        case .contract(let size):
-            switch size {
-            case .small:
-                return 1.1
-            case .medium:
-                return 1.3
-            case .large:
-                return 1.5
-            }
-        case .expand(let size):
-            switch size {
-            case .small:
-                return 0.9
-            case .medium:
-                return 0.7
-            case .large:
-                return 0.5
-            }
-        default:
-            return 0.0
-        }
-    }
-}
-
-public extension UIView {
-    public func spruceUp(withAnimations animations: [SpruceStandardAnimation], duration: TimeInterval = 0.3, completion: SpruceCompletionHandler? = nil ) {
+    /// Run a spruce style animation on this view. This method is the most basic form of a spruce animation and allows you to setup your view with stock spruce animations. Feel free to chain together animations that would work nicely together.
+    ///
+    /// - Note: Possible animations include
+    ///   - Fading
+    ///   - Scaling
+    ///   - Translating
+    ///   - Rotating
+    /// - Note: Default animation type is `StandardAnimation` and SortFunction is `LinearSortFunction(direction: .topToBottom, interObjectDelay: 0.05)`
+    ///
+    ///   See `StockAnimation` for more details
+    ///
+    /// - Parameters:
+    ///   - animations: an array of stock animations
+    ///   - duration: duration of each individual animation
+    ///   - completion: a closure that is called upon the final animation completing. A `Bool` is passed into the closure letting you know if the animation has completed. **Note:** If you stop animations on the whole animating view, then `false` will be passed into the completion closure. However, if the final animation is allowed to proceed then `true` will be the value passed into the completion closure.
+    public func animate(_ animations: [StockAnimation], duration: TimeInterval = 0.3, completion: CompletionHandler? = nil ) {
         let animation = StandardAnimation(duration: duration)
-        self.spruceUp(withAnimations: animations, duration: duration, animationType: animation, completion: completion)
+        self.animate(animations, duration: duration, animationType: animation, completion: completion)
     }
     
-    public func spruceUp(withAnimations animations: [SpruceStandardAnimation], duration: TimeInterval = 0.3, animationType: SpruceAnimation, completion: SpruceCompletionHandler? = nil) {
+    /// Run a spruce style animation on this view. This allows you to setup your view with stock spruce animations. Feel free to chain together animations that would work nicely together.
+    ///
+    /// - Note: Possible animations include
+    ///   - Fading
+    ///   - Scaling
+    ///   - Translating
+    ///   - Rotating
+    /// - Note: Default animation type is `StandardAnimation`
+    ///
+    ///   See `StockAnimation` for more details
+    ///
+    /// - Parameters:
+    ///   - animations: an array of stock animations
+    ///   - duration: duration of each individual animation
+    ///   - sortFunction: the `sortFunction` to be used when setting the offsets for each subviews animation
+    ///   - completion: a closure that is called upon the final animation completing. A `Bool` is passed into the closure letting you know if the animation has completed. **Note:** If you stop animations on the whole animating view, then `false` will be passed into the completion closure. However, if the final animation is allowed to proceed then `true` will be the value passed into the completion closure.
+    public func animate(_ animations: [StockAnimation], sortFunction: SortFunction, duration: TimeInterval = 0.3, completion: CompletionHandler? = nil ) {
+        let animation = StandardAnimation(duration: duration)
+        self.animate(animations, duration: duration, animationType: animation, sortFunction: sortFunction, completion: completion)
+    }
+    
+    /// Run a spruce style animation on this view. This method allows you to setup your view with stock spruce animations. Feel free to chain together animations that would work nicely together.
+    ///
+    /// - Note: Default SortFunction is `LinearSortFunction(direction: .topToBottom, interObjectDelay: 0.05)`
+    /// - Parameters:
+    ///   - animations: an array of stock animations
+    ///   - duration: duration of each individual animation
+    ///   - animationType: style of animation that each view should follow. Don't worry about setting the `changeFunction`. We will set that using the stock animations that you provide. If you have a value there it will be overwritten. (ex: SpringAnimation)
+    ///   - completion: a closure that is called upon the final animation completing. A `Bool` is passed into the closure letting you know if the animation has completed. **Note:** If you stop animations on the whole animating view, then `false` will be passed into the completion closure. However, if the final animation is allowed to proceed then `true` will be the value passed into the completion closure.
+    public func animate(_ animations: [StockAnimation], duration: TimeInterval = 0.3, animationType: Animation, completion: CompletionHandler? = nil) {
         let sortFunction = LinearSortFunction(direction: .topToBottom, interObjectDelay: 0.05)
-        self.spruceUp(withAnimations: animations, duration: duration, animationType: animationType, sortFunction: sortFunction, completion: completion)
+        self.animate(animations, duration: duration, animationType: animationType, sortFunction: sortFunction, completion: completion)
     }
     
-    public func spruceUp(withAnimations animations: [SpruceStandardAnimation], duration: TimeInterval = 0.3, animationType: SpruceAnimation, sortFunction: SortFunction, prepare: Bool = true, completion: SpruceCompletionHandler? = nil) {
+    /// Run a spruce style animation on this view. This method allows you to setup your view with stock spruce animations. Feel free to chain together animations that would work nicely together.
+    ///
+    /// - Parameters:
+    ///   - animations: an array of stock animations
+    ///   - duration: duration of each individual animation
+    ///   - animationType: style of animation that each view should follow. Don't worry about setting the `changeFunction`. We will set that using the stock animations that you provide. If you have a value there it will be overwritten. (ex: SpringAnimation)
+    ///   - sortFunction: the `sortFunction` to be used when setting the offsets for each subviews animation
+    ///   - prepare: a `bool` as to whether we should run `prepare` on your view for you. If set to `true`, then we will run `prepare` right before the animation using the stock animations that you provided. If `false`, then `prepare` will not run. (default is `true`)
+    ///   - completion: a closure that is called upon the final animation completing. A `Bool` is passed into the closure letting you know if the animation has completed. **Note:** If you stop animations on the whole animating view, then `false` will be passed into the completion closure. However, if the final animation is allowed to proceed then `true` will be the value passed into the completion closure.
+    public func animate(_ animations: [StockAnimation], duration: TimeInterval = 0.3, animationType: Animation, sortFunction: SortFunction, prepare: Bool = true, completion: CompletionHandler? = nil) {
         
         if prepare {
-            self.sprucePrepare(withAnimations: animations)
+            self.prepare(with: animations)
         }
         
         /* Create the animations */
         var animationType = animationType
         animationType.changeFunction = { view in
             for animation in animations {
-                let animationFunc = animation.getAnimationFunction()
+                let animationFunc = animation.animationFunction
                 animationFunc(view)
             }
         }
-        self.spruceSubViews(withSortFunction: sortFunction, animation: animationType, completion: completion)
+        self.animate(withSortFunction: sortFunction, animation: animationType, completion: completion)
     }
     
-    public func sprucePrepare(withAnimations animations: [SpruceStandardAnimation], recursive: Bool = false) {
+    /// Use this method to setup all of your views before the animation occurs. This could include hiding, fading, translating them, etc...
+    /// Given the array of stock animations, the change functions required to prepare those animations will automatically be run for you. No need to specify your own custom change function here.
+    /// - Note: If you run this after the views are visible, then this would cause a slight stutter of the viewport. This could cause UX issues since the views would flash on the screen.
+    ///
+    /// - Parameters:
+    ///   - animations: an array of stock animations
+    ///   - recursiveDepth: an int describing how deep into the view hiearchy the subview search should go
+    public func prepare(with animations: [StockAnimation], recursiveDepth: Int = 0) {
         /* Reset the views to prepare for the animations */
-        let clearFunction: SpruceChangeFunction = { view in
+        let clearFunction: ChangeFunction = { view in
             for animation in animations {
-                let clearFunc = animation.getClearFunction()
+                let clearFunc = animation.prepareFunction
                 clearFunc(view)
             }
         }
         
-        let isFading = animations.contains(where: { value in
-            switch value {
-            case .fadeIn:
-                return true
-            default:
-                return false
-            }
-        })
-        
-        let subviews = self.getSubviews(recursive: recursive)
+        let subviews = self.subviews(withRecursiveDepth: recursiveDepth)
         UIView.performWithoutAnimation {
-            for subView in subviews {
-                clearFunction(subView)
-                if isFading {
-                    subView.isHidden = false
+            for subview in subviews {
+                guard let animatedView = subview.view else {
+                    continue
                 }
+                clearFunction(animatedView)
             }
         }
     }
     
-    public func hideAllSubviews(recursive: Bool = false) {
-        let subviews = self.getSubviews(recursive: recursive)
+    /// Quick method to hide all of the subviews of a view. Use this if you want to make sure that none of the views that will be animated will be shown on screen before you transition them.
+    ///
+    /// - Parameter recursiveDepth: an int describing how deep into the view hiearchy the subview search should go
+    public func hideAllSubviews(recursiveDepth: Int = 0) {
+        let subviews = self.subviews(withRecursiveDepth: recursiveDepth)
         UIView.performWithoutAnimation {
-            for subView in subviews {
-                subView.isHidden = true
+            for subview in subviews {
+                guard let animatedView = subview.view else {
+                    continue
+                }
+                animatedView.isHidden = true
             }
         }
     }

@@ -2,35 +2,52 @@
 //  CorneredSortFunction.swift
 //  Spruce
 //
-//  Created by Jackson Taylor on 11/8/16.
-//
+//  Copyright (c) 2017 WillowTree, Inc.
+
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
 //
 
 import UIKit
 
-public enum SpruceCorner {
-    case topLeft
-    case topRight
-    case bottomLeft
-    case bottomRight
-}
 
-open class CorneredSortFunction: BaseDistancedSortFunction {
+/// A `SortFunction` designed to animate in a corner like fashion. The views near the starting corner will animate first. In essence it appears to be a wiping function that will continue diagonally based on that corner. 
+public struct CorneredSortFunction: CornerSortFunction {
     
-    let corner: SpruceCorner
+    public var corner: Corner
+    public var interObjectDelay: TimeInterval
+    public var reversed: Bool = false
     
-    public init(corner: SpruceCorner, interObjectDelay: TimeInterval) {
+    public init(corner: Corner, interObjectDelay: TimeInterval) {
         self.corner = corner
-        super.init(interObjectDelay: interObjectDelay)
+        self.interObjectDelay = interObjectDelay
     }
     
-    open override func getTimeOffsets(view: UIView, recursive: Bool) -> [SpruceTimedView] {
-        let comparisonPoint = getDistancePoint(bounds: view.bounds)
-        let subviews = view.getSubviews(recursive: recursive)
+    public func timeOffsets(view: UIView, recursiveDepth: Int) -> [TimedView] {
+        let comparisonPoint = distancePoint(view: view)
+        let subviews = view.spruce.subviews(withRecursiveDepth: recursiveDepth)
         
         let distancedViews = subviews.map {
-            return (view: $0, distance: comparisonPoint.euclideanDistance($0.center))
+            return (view: $0, distance: abs(comparisonPoint.x - $0.referencePoint.x) + abs(comparisonPoint.y - $0.referencePoint.y))
         }.sorted { (left, right) -> Bool in
+            if self.reversed {
+                return left.distance > right.distance
+            }
             return left.distance < right.distance
         }
         
@@ -38,29 +55,32 @@ open class CorneredSortFunction: BaseDistancedSortFunction {
             return []
         }
         var currentTimeOffset = 0.0
-        var timedViews: [SpruceTimedView] = []
+        var timedViews: [TimedView] = []
         for view in distancedViews {
-            if lastDistance != view.distance {
+            if floor(lastDistance) != floor(view.distance) {
                 lastDistance = view.distance
                 currentTimeOffset += interObjectDelay
             }
-            let timedView = SpruceTimedView(view: view.view, timeOffset: currentTimeOffset)
+            let timedView = TimedView(spruceView: view.view, timeOffset: currentTimeOffset)
             timedViews.append(timedView)
         }
         
         return timedViews
     }
     
-    open override func getDistancePoint(bounds: CGRect) -> CGPoint {
+    public func distancePoint(view: UIView, subviews: [View] = []) -> CGPoint {
+        let distancePoint: CGPoint
+        let bounds = view.bounds
         switch corner {
         case .topLeft:
-            return CGPoint.zero
+            distancePoint = CGPoint.zero
         case .topRight:
-            return CGPoint(x: bounds.size.width, y: 0.0)
+            distancePoint = CGPoint(x: bounds.size.width, y: 0.0)
         case .bottomLeft:
-            return CGPoint(x: 0.0, y: bounds.size.height)
+            distancePoint = CGPoint(x: 0.0, y: bounds.size.height)
         case .bottomRight:
-            return CGPoint(x: bounds.size.width, y: bounds.size.height)
+            distancePoint = CGPoint(x: bounds.size.width, y: bounds.size.height)
         }
+        return translate(distancePoint: distancePoint, intoSubviews: subviews)
     }
 }
