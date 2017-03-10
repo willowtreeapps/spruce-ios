@@ -25,6 +25,8 @@
 
 import UIKit
 
+/// Spruce adds `UIView` extensions so that you can easily access a Spruce animation anywere. To make things
+/// simple all Spruce functions are under the computed variable `spruce` or use our spruce tree emoji!
 public extension UIView {
     
     /// Access to all of the Spruce library animations. Use this to call functions such as `.animate` or `.prepare`

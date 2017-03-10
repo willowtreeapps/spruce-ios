@@ -1,4 +1,4 @@
-![Spruce Logo](https://github.com/willowtreeapps/spruce-ios/raw/develop/imgs/header_image.png)
+![Spruce Logo](https://github.com/willowtreeapps/spruce-ios/raw/master/imgs/header_image.png)
 
 # Spruce iOS Animation Library
 
@@ -13,7 +13,7 @@ Spruce is a lightweight animation library that helps choreograph the animations 
 
 Here is a quick example of how you can Spruce up your screens!
 
-![Example](https://github.com/willowtreeapps/spruce-ios/raw/develop/imgs/extensibility-tests.gif)
+![Example](https://github.com/willowtreeapps/spruce-ios/raw/master/imgs/extensibility-tests.gif)
 
 ## Installation Instructions
 To make everything super easy, we currently support both CocoaPods and Carthage. If you want to just do everything yourself without a package manager, checkout our releases page and download the pre-built frameworks there or you can download the exact source from this Github project.
@@ -54,7 +54,7 @@ Use the following command to run a basic animation on your view.
 yourView.spruce.animate(ourAnimations)
 ```
 
-Checkout [insert link to extensions] for more functions and how to better use the `animate` method.
+Checkout [the documentation](https://willowtreeapps.github.io/spruce-ios/swift_output/Extensions/UIView.html#/s:vE6SpruceCSo6UIView6spruceVS_6Spruce) for more functions and how to better use the `animate` method.
 
 ## Using a SortFunction
 Luckily, Spruce comes with around 8 `SortFunction` implementations with a wide open possibility to make more! Use the `SortFunction` to change the order in which views animate. Consider the following example:
@@ -139,7 +139,7 @@ To make sure that developers can use Spruce out of the box, we included about 8 
 - `ContinousSortFunction`
 - `ContinuousWeightedSortFunction`
 
-Check out the docs [here insert link] for more information
+Check out the docs [here](https://willowtreeapps.github.io/spruce-ios/swift_output/Protocols/SortFunction.html) for more information
 
 ## Stock Animations
 To make everybody's lives easier, the stock animations perform the basic `UIView` animations that a lot of apps use today. Mix and match these animations to get the core motion you are looking for.
@@ -154,7 +154,7 @@ To make everybody's lives easier, the stock animations perform the basic `UIView
 Experiment which ones work for you! If you think of anymore feel free to add them to the library yourself!
 
 # Contributing to Spruce
-Contributions are more than welcome! Please see the [Contributing Guidelines](https://github.com/willowtreeapps/spruce-ios/blob/develop/Contributing.md) and be mindful of our [Code of Conduct](https://github.com/willowtreeapps/spruce-ios/blob/develop/code-of-conduct.md).
+Contributions are more than welcome! Please see the [Contributing Guidelines](https://github.com/willowtreeapps/spruce-ios/blob/master/Contributing.md) and be mindful of our [Code of Conduct](https://github.com/willowtreeapps/spruce-ios/blob/master/code-of-conduct.md).
 
 # Issues or Future Ideas
 If part of Spruce is not working correctly be sure to file a Github issue. In the issue provide as many details as possible. This could include example code or the exact steps that you did so that everyone can reproduce the issue. Sample projects are always the best way :). 
@@ -163,7 +163,7 @@ This makes it easy for our developers or someone from the open-source community 
 If you have a feature idea submit an issue with a feature request or submit a pull request and we will work with you to merge it in!
 
 # About WillowTree!
-![WillowTree Logo](https://github.com/willowtreeapps/spruce-ios/raw/develop/imgs/willowtree_logo.png)
+![WillowTree Logo](https://github.com/willowtreeapps/spruce-ios/raw/master/imgs/willowtree_logo.png)
 
 We build apps, responsive sites, bots—any digital product that lives on a screen—for the world’s leading companies. Our elite teams challenge themselves to build extraordinary experiences by bridging the latest strategy and design thinking with enterprise-grade software development.
 
