@@ -42,7 +42,7 @@
 lane :run_tests do
 	scan(
 		scheme: "Spruce",
-		output_directory: "./artifacts",
+		output_directory: $(CIRCLE_TEST_REPORTS),
 		project: "Spruce/Spruce.xcodeproj",
 		device: "iPhone 6s",
 		output_style: "standard",
