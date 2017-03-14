@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -156,7 +156,7 @@
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.029999999999999999" minValue="0.0" maxValue="0.10000000000000001" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eM7-Gq-K6S" userLabel="durationSlider">
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="0.10000000000000001" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eM7-Gq-K6S" userLabel="durationSlider">
                                                         <rect key="frame" x="109.5" y="10" width="204" height="31"/>
                                                         <color key="tintColor" red="0.52549019610000003" green="0.72941176470000002" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
@@ -523,6 +523,7 @@
                         <outlet property="cornerControlView" destination="8KL-tZ-Wtg" id="yRG-WG-HTt"/>
                         <outlet property="cornerPicker" destination="dWL-Mb-CLs" id="7JC-2G-Zzx"/>
                         <outlet property="delayControlView" destination="tPz-Lg-wRu" id="gDS-xa-6AR"/>
+                        <outlet property="delaySlider" destination="eM7-Gq-K6S" id="sB7-W2-Y4c"/>
                         <outlet property="directionControlView" destination="zha-CL-Bj6" id="9wK-zi-WbR"/>
                         <outlet property="directionPicker" destination="dgV-Mp-SMO" id="lXX-Yu-lXZ"/>
                         <outlet property="durationControlView" destination="11S-of-2Hp" id="yZk-Kc-d1h"/>
