@@ -25,6 +25,7 @@
 
 
 import XCTest
+@testable import Spruce
 
 class InlineSortFunctionTests: SortFunctionTests {
     
@@ -37,6 +38,13 @@ class InlineSortFunctionTests: SortFunctionTests {
         sortFunction.reversed = true
         let timedViewsReversed = sortFunction.timeOffsets(view: animatableView)
         compare(timedViews: timedViewsReversed, toExpected: expectedReversed)
+    }
+    
+    func testInlineSortFunctionWithEmptyView() {
+        let sortFunction = InlineSortFunction(corner: .topLeft, interObjectDelay: 0.1)
+        let timedViews = sortFunction.timeOffsets(view: UIView())
+        
+        XCTAssertEqual(timedViews.count, 0)
     }
     
     func testTopLeftInlineSortFunction() {

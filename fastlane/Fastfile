@@ -47,6 +47,7 @@ lane :run_tests do
 		device: "iPhone 6s",
 		output_style: "standard",
 		output_types: "html, junit",
-		include_simulator_logs: false
+		include_simulator_logs: false,
+		code_coverage: true
 	)
 end

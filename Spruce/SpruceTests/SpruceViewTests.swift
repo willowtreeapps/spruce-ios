@@ -26,6 +26,7 @@
 
 import XCTest
 import UIKit
+import Spruce
 
 class SpruceViewTests: XCTestCase {
     
