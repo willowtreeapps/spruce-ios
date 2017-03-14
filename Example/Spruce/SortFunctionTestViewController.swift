@@ -107,6 +107,8 @@ class SortFunctionTestViewController: UIViewController {
         sortView.addGestureRecognizer(reloadGestureRecognizer)
         
         addToolbarToSortFunctionField()
+        
+        delaySlider.setValue(Float(settings.delay), animated: true)
     }
 
     override func viewDidAppear(_ animated: Bool) {
