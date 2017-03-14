@@ -25,6 +25,7 @@
 
 
 import XCTest
+@testable import Spruce
 
 class ContinuousSortFunctionTests: SortFunctionTests {
     
@@ -37,6 +38,13 @@ class ContinuousSortFunctionTests: SortFunctionTests {
         sortFunction.reversed = true
         let timedViewsReversed = sortFunction.timeOffsets(view: animatableView)
         compare(timedViews: timedViewsReversed, toExpected: expectedReversed)
+    }
+    
+    func testContinuousSortFunctionWithEmptyView() {
+        let sortFunction = ContinuousSortFunction(position: .topLeft, duration: 0.1)
+        let timedViews = sortFunction.timeOffsets(view: UIView())
+        
+        XCTAssertEqual(timedViews.count, 0)
     }
     
     func testTopLeftContinousSortFunction() {

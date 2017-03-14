@@ -25,6 +25,7 @@
 
 
 import XCTest
+@testable import Spruce
 
 class DefaultSortFunctionTests: SortFunctionTests {
     
@@ -39,5 +40,23 @@ class DefaultSortFunctionTests: SortFunctionTests {
                         2.0,2.1,2.2,2.3,2.4]
         compare(timedViews: timedViews, toExpected: expected)
     }
+    
+    func testNoDelaySortFunction() {
+        let sortFunction = DefaultSortFunction()
+        let timedViews = sortFunction.timeOffsets(view: animatableView)
+        
+        let expected = [0.0,0.0,0.0,0.0,0.0,
+                        0.0,0.0,0.0,0.0,0.0,
+                        0.0,0.0,0.0,0.0,0.0,
+                        0.0,0.0,0.0,0.0,0.0,
+                        0.0,0.0,0.0,0.0,0.0]
+        compare(timedViews: timedViews, toExpected: expected)
+    }
 
+    func testDefaultSortFunctionWithEmptyView() {
+        let sortFunction = DefaultSortFunction()
+        let timedViews = sortFunction.timeOffsets(view: UIView())
+        
+        XCTAssertEqual(timedViews.count, 0)
+    }
 }

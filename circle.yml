@@ -8,3 +8,5 @@ test:
   override:
     - gem install bundler
     - bundle exec fastlane run_tests
+  post:
+    - bundle exec slather
