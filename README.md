@@ -173,4 +173,4 @@ If you have a feature idea submit an issue with a feature request or submit a pu
 
 We build apps, responsive sites, bots—any digital product that lives on a screen—for the world’s leading companies. Our elite teams challenge themselves to build extraordinary experiences by bridging the latest strategy and design thinking with enterprise-grade software development.
 
-Interested in working on more unique projects like Spruce? Check out our [careers page](http://willowtreeapps.com/careers).
+Interested in working on more unique projects like Spruce? Check out our [careers page](http://willowtreeapps.com/careers?utm_campaign=spruce-gh).
