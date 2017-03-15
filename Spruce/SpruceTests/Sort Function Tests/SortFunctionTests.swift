@@ -25,6 +25,7 @@
 
 
 import XCTest
+@testable import Spruce
 
 class SortFunctionTests: XCTestCase {
     

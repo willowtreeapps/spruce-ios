@@ -1,0 +1,11 @@
+# .slather.yml
+
+ci_service: circleci
+coverage_service: coveralls
+xcodeproj: Spruce/Spruce.xcodeproj
+scheme: Spruce
+output_directory: <%= ENV["CIRCLE_TEST_REPORTS"] %>
+ignore:
+  - Sources/Classes/Full View/*
+  - Sources/Classes/Animations/*
+  - Sources/Classes/UI Elements/*
