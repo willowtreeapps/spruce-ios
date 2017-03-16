@@ -6,7 +6,7 @@ warn("Big PR") if git.lines_of_code > 200
 
 # check to see if the changelog has been updated
 no_changelog_entry = !git.modified_files.include?("Changelog.md")
-if has_app_changes && no_changelog_entry
+if has_library_changes && no_changelog_entry
   fail("Any changes to the Spruce library need to be documented in the Changelog")
 end
 
