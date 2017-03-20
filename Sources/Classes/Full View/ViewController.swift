@@ -44,7 +44,7 @@ open class ViewController: UIViewController {
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         animationType = StandardAnimation(duration: duration)
-        sortFunction = LinearSortFunction(direction: .topToBottom, interObjectDelay: 0.05)
+        sortFunction = LinearSortFunction(direction: .topToBottom)
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     

@@ -77,7 +77,7 @@ public extension Spruce {
     ///   - animationType: style of animation that each view should follow. Don't worry about setting the `changeFunction`. We will set that using the stock animations that you provide. If you have a value there it will be overwritten. (ex: SpringAnimation)
     ///   - completion: a closure that is called upon the final animation completing. A `Bool` is passed into the closure letting you know if the animation has completed. **Note:** If you stop animations on the whole animating view, then `false` will be passed into the completion closure. However, if the final animation is allowed to proceed then `true` will be the value passed into the completion closure.
     public func animate(_ animations: [StockAnimation], duration: TimeInterval = 0.3, animationType: Animation, completion: CompletionHandler? = nil) {
-        let sortFunction = LinearSortFunction(direction: .topToBottom, interObjectDelay: 0.05)
+        let sortFunction = LinearSortFunction(direction: .topToBottom)
         self.animate(animations, duration: duration, animationType: animationType, sortFunction: sortFunction, completion: completion)
     }
     
@@ -104,7 +104,8 @@ public extension Spruce {
                 animationFunc(view)
             }
         }
-        self.animate(withSortFunction: sortFunction, animation: animationType, completion: completion)
+        let timingFunction = InterItemTimingFunction(interObjectDelay: 0.1)
+        self.animate(withSortFunction: sortFunction, timingFunction: timingFunction, animation: animationType, completion: completion)
     }
     
     /// Use this method to setup all of your views before the animation occurs. This could include hiding, fading, translating them, etc...

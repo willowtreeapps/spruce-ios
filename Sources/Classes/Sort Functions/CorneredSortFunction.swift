@@ -68,6 +68,27 @@ public struct CorneredSortFunction: CornerSortFunction {
         return timedViews
     }
     
+    public func weights(forView view: UIView, recursiveDepth: Int) -> [WeightedView] {
+        let comparisonPoint = distancePoint(view: view)
+        let subviews = view.spruce.subviews(withRecursiveDepth: recursiveDepth)
+        
+        var maxWeight: Double = 0.0
+        
+        let weightedViews: [WeightedView] = subviews.map {
+            let distance = Double(abs(comparisonPoint.x - $0.referencePoint.x) + abs(comparisonPoint.y - $0.referencePoint.y))
+            maxWeight = max(maxWeight, distance)
+            return WeightedView(spruceView: $0, weight: distance)
+        }
+        
+        if reversed {
+            for var weightedView in weightedViews {
+                weightedView.weight = maxWeight - weightedView.weight
+            }
+        }
+        
+        return weightedViews
+    }
+    
     public func distancePoint(view: UIView, subviews: [View] = []) -> CGPoint {
         let distancePoint: CGPoint
         let bounds = view.bounds

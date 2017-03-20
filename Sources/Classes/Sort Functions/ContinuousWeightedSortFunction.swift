@@ -45,41 +45,26 @@ public struct ContinuousWeightedSortFunction: PositionSortFunction, WeightSortFu
         self.position = position
         self.duration = duration
     }
-
-    public func timeOffsets(view: UIView, recursiveDepth: Int) -> [TimedView] {
+    
+    public func weights(forView view: UIView, recursiveDepth: Int) -> [WeightedView] {
         let subviews = view.spruce.subviews(withRecursiveDepth: recursiveDepth)
         let comparisonPoint = distancePoint(view: view, subviews: subviews)
-
-        let distancedViews = subviews.map {
-            return (view: $0, horizontalDistance: comparisonPoint.spruce.horizontalDistance(to: $0.referencePoint) * horizontalWeight.coefficient, verticalDistance: comparisonPoint.spruce.verticalDistance(to: $0.referencePoint) * verticalWeight.coefficient)
-        }
-
-        guard let maxHorizontalDistance = distancedViews.max(by: { $0.horizontalDistance < $1.horizontalDistance })?.horizontalDistance, let maxVerticalDistance = distancedViews.max(by: { $0.verticalDistance < $1.verticalDistance })?.verticalDistance, maxHorizontalDistance > 0.0, maxVerticalDistance > 0.0 else {
-            return []
-        }
-
-        var timedViews: [TimedView] = []
-        var maxTimeOffset: TimeInterval = 0.0
-        for view in distancedViews {
-            let normalizedHorizontalDistance = view.horizontalDistance / maxHorizontalDistance
-            let normalizedVerticalDistance = view.verticalDistance / maxVerticalDistance
-            let offset = duration * (normalizedHorizontalDistance * horizontalWeight.coefficient + normalizedVerticalDistance * verticalWeight.coefficient)
-            if offset > maxTimeOffset {
-                maxTimeOffset = offset
-            }
-            let timedView = TimedView(spruceView: view.view, timeOffset: offset)
-            timedViews.append(timedView)
+        var maxWeight: Double = 0.0
+        
+        let weightedViews: [WeightedView] = subviews.map {
+            let horizontalDistance = comparisonPoint.spruce.horizontalDistance(to: $0.referencePoint) * horizontalWeight.coefficient
+            let verticalDistance = comparisonPoint.spruce.verticalDistance(to: $0.referencePoint) * verticalWeight.coefficient
+            let distance = horizontalDistance + verticalDistance
+            maxWeight = max(maxWeight, distance)
+            return WeightedView(spruceView: $0, weight: distance)
         }
         
-        for index in 0..<timedViews.count {
-            let timeOffset = timedViews[index].timeOffset
-            let normalizedTimeOffset = (timeOffset / maxTimeOffset) * duration
-            timedViews[index].timeOffset = normalizedTimeOffset
-            if reversed {
-                timedViews[index].timeOffset = duration - normalizedTimeOffset
+        if reversed {
+            for var weightedView in weightedViews {
+                weightedView.weight = maxWeight - weightedView.weight
             }
         }
         
-        return timedViews
+        return weightedViews
     }
 }
