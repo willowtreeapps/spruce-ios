@@ -25,21 +25,20 @@
 
 import UIKit
 
-/// A `SortFunction` that has variable `interObjectDelay` values using weights to structure when views should animate. Unlike other `SortFunction` implementations, for the `ContinuousWeightedSortFunction` you specify a `duration` and the `SortFunction` will compute the necessary `interObjectDelay` values for each of the subviews. This means that the offset times will not be multiples of the delay like usual. The lighter the weight the faster the views will animate.
+/// A `SortFunction` that has variable `interObjectDelay` values using weights to structure when views should animate. Unlike other `SortFunction` implementations, for the `WeightedSortFunction` you specify a `duration` and the `SortFunction` will compute the necessary `interObjectDelay` values for each of the subviews. This means that the offset times will not be multiples of the delay like usual. The lighter the weight the faster the views will animate.
 /// - Note: If you had a light `verticalWeight` and a heavy `horizontalWeight`, the views that are vertically aligned with the starting position will animate before those that are horizontally aligned. This allows you to define the exact rigidness of a `radial` like `SortFunction`.
 /// - Note: Though `interObjectDelay` is a value on this sort function, it will not be used.
 /// - Note: The delay values used will be calculated and relative based on how far those views are from the selected position. This means that the animation will look a little smoother if you are using it with large scale numbers of `subviews`.
-public struct ContinuousWeightedSortFunction: PositionSortFunction, WeightSortFunction {
+public struct WeightedSortFunction: PositionSortFunction, WeightSortFunction {
     
     public var interObjectDelay: TimeInterval = 0.0
     public var position: Position
     public var reversed: Bool = false
-    public var duration: TimeInterval
 
     public var horizontalWeight: Weight
     public var verticalWeight: Weight
 
-    public init(position: Position, duration: TimeInterval, horizontalWeight: Weight = .medium, verticalWeight: Weight = .medium) {
+    public init(position: Position, horizontalWeight: Weight = .medium, verticalWeight: Weight = .medium) {
         self.horizontalWeight = horizontalWeight
         self.verticalWeight = verticalWeight
         self.position = position

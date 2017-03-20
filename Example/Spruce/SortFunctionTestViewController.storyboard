@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -31,7 +31,7 @@
                                 <rect key="frame" x="0.0" y="375" width="375" height="1125"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hKt-JQ-vrw">
-                                        <rect key="frame" x="15" y="10" width="345" height="687.5"/>
+                                        <rect key="frame" x="15" y="10" width="345" height="746"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M74-6C-DCr" userLabel="functionControlView">
                                                 <rect key="frame" x="0.0" y="0.0" width="345" height="50"/>
@@ -70,8 +70,44 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="11S-of-2Hp" userLabel="durationControlView">
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yBP-SD-dCC" userLabel="Timing Function Control View">
                                                 <rect key="frame" x="0.0" y="58" width="345" height="50"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Timing Function" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RdI-0Y-dYs" userLabel="durationLabel">
+                                                        <rect key="frame" x="15" y="16" width="116.5" height="19.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="l4t-Xu-0Zs">
+                                                        <rect key="frame" x="185" y="11" width="145" height="29"/>
+                                                        <segments>
+                                                            <segment title="Total"/>
+                                                            <segment title="Inter Item"/>
+                                                        </segments>
+                                                        <color key="tintColor" red="0.2549158037" green="0.71301728490000005" blue="0.5825116038" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <connections>
+                                                            <action selector="timingFunctionDidChange:" destination="Gbe-og-aXE" eventType="valueChanged" id="9Y6-sX-I5x"/>
+                                                        </connections>
+                                                    </segmentedControl>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="l4t-Xu-0Zs" secondAttribute="trailing" constant="15" id="3qT-oK-rPd"/>
+                                                    <constraint firstItem="RdI-0Y-dYs" firstAttribute="centerY" secondItem="yBP-SD-dCC" secondAttribute="centerY" id="AVk-mC-LWU"/>
+                                                    <constraint firstAttribute="height" priority="999" constant="50" id="N2W-4p-j4F"/>
+                                                    <constraint firstItem="l4t-Xu-0Zs" firstAttribute="centerY" secondItem="yBP-SD-dCC" secondAttribute="centerY" id="mUm-fl-cbH"/>
+                                                    <constraint firstItem="l4t-Xu-0Zs" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="RdI-0Y-dYs" secondAttribute="trailing" constant="15" id="rje-ap-WYf"/>
+                                                    <constraint firstItem="RdI-0Y-dYs" firstAttribute="leading" secondItem="yBP-SD-dCC" secondAttribute="leading" constant="15" id="yt3-Vg-I3p"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="11S-of-2Hp" userLabel="durationControlView">
+                                                <rect key="frame" x="0.0" y="116" width="345" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v1V-nt-LIq" userLabel="durationLabel">
                                                         <rect key="frame" x="15" y="15.5" width="62" height="19.5"/>
@@ -108,7 +144,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezs-CS-56e">
-                                                        <rect key="frame" x="317.5" y="18" width="12.5" height="14.5"/>
+                                                        <rect key="frame" x="317.5" y="18.5" width="12.5" height="14.5"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="2">
                                                                 <attributes>
@@ -148,7 +184,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tPz-Lg-wRu" userLabel="delayControlView">
-                                                <rect key="frame" x="0.0" y="116" width="345" height="50"/>
+                                                <rect key="frame" x="0.0" y="174" width="345" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Delay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIf-MU-C5h" userLabel="delayLabel">
                                                         <rect key="frame" x="15" y="15.5" width="40.5" height="19.5"/>
@@ -157,7 +193,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="0.10000000000000001" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eM7-Gq-K6S" userLabel="durationSlider">
-                                                        <rect key="frame" x="109.5" y="10" width="204" height="31"/>
+                                                        <rect key="frame" x="109" y="10" width="204" height="31"/>
                                                         <color key="tintColor" red="0.52549019610000003" green="0.72941176470000002" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" priority="750" constant="200" id="Otc-ex-piz"/>
@@ -167,7 +203,7 @@
                                                         </connections>
                                                     </slider>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MR7-Yb-RvK">
-                                                        <rect key="frame" x="94.5" y="17" width="12.5" height="14.5"/>
+                                                        <rect key="frame" x="93.5" y="17.5" width="12.5" height="14.5"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="0">
                                                                 <attributes>
@@ -185,7 +221,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Reh-zW-Ind">
-                                                        <rect key="frame" x="316.5" y="17.5" width="14" height="14.5"/>
+                                                        <rect key="frame" x="316" y="17.5" width="14" height="14.5"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content=".1">
                                                                 <attributes>
@@ -225,7 +261,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4et-Jb-7wU" userLabel="positionControlView">
-                                                <rect key="frame" x="0.0" y="174" width="345" height="90"/>
+                                                <rect key="frame" x="0.0" y="232" width="345" height="90"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9f-0s-aad" userLabel="positionLabel">
                                                         <rect key="frame" x="15" y="15" width="36" height="19.5"/>
@@ -268,7 +304,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zha-CL-Bj6" userLabel="directionControlView">
-                                                <rect key="frame" x="0.0" y="272" width="345" height="50"/>
+                                                <rect key="frame" x="0.0" y="330" width="345" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Direction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVc-dX-yDz" userLabel="directionLabel">
                                                         <rect key="frame" x="15" y="15.5" width="65.5" height="19.5"/>
@@ -277,7 +313,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dgV-Mp-SMO" userLabel="directionPicker">
-                                                        <rect key="frame" x="223" y="10.5" width="107" height="29"/>
+                                                        <rect key="frame" x="223" y="11" width="107" height="29"/>
                                                         <segments>
                                                             <segment title="↑"/>
                                                             <segment title="↓"/>
@@ -306,7 +342,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8KL-tZ-Wtg" userLabel="cornerControlView">
-                                                <rect key="frame" x="0.0" y="330" width="345" height="50"/>
+                                                <rect key="frame" x="0.0" y="388" width="345" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Corner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iv0-Np-Kwz" userLabel="cornerLabel">
                                                         <rect key="frame" x="15" y="15.5" width="50" height="19.5"/>
@@ -315,7 +351,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dWL-Mb-CLs" userLabel="cornerPicker">
-                                                        <rect key="frame" x="223" y="10.5" width="107" height="29"/>
+                                                        <rect key="frame" x="223" y="11" width="107" height="29"/>
                                                         <segments>
                                                             <segment title="↖"/>
                                                             <segment title="↗"/>
@@ -350,16 +386,16 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aqh-nT-gcK" userLabel="cornerControlView">
-                                                <rect key="frame" x="0.0" y="388" width="345" height="50"/>
+                                                <rect key="frame" x="0.0" y="446" width="345" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vertical" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OcW-hA-BZ6" userLabel="horizontalWeight">
-                                                        <rect key="frame" x="15" y="16" width="55" height="19.5"/>
+                                                        <rect key="frame" x="15" y="15.5" width="55" height="19.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Tzy-FP-d1t" userLabel="cornerPicker">
-                                                        <rect key="frame" x="139" y="10.5" width="191" height="29"/>
+                                                        <rect key="frame" x="139" y="11" width="191" height="29"/>
                                                         <segments>
                                                             <segment title="Light"/>
                                                             <segment title="Medium"/>
@@ -388,7 +424,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sBa-Tb-L3D" userLabel="cornerControlView">
-                                                <rect key="frame" x="0.0" y="446" width="345" height="50"/>
+                                                <rect key="frame" x="0.0" y="504" width="345" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Horizontal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="El7-LC-wFg" userLabel="horizontalWeight">
                                                         <rect key="frame" x="15" y="15.5" width="74.5" height="19.5"/>
@@ -397,7 +433,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="N0z-xT-Vx0" userLabel="cornerPicker">
-                                                        <rect key="frame" x="139" y="10.5" width="191" height="29"/>
+                                                        <rect key="frame" x="139" y="11" width="191" height="29"/>
                                                         <segments>
                                                             <segment title="Light"/>
                                                             <segment title="Medium"/>
@@ -426,16 +462,16 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zBe-hS-hrO" userLabel="reverseControlView">
-                                                <rect key="frame" x="0.0" y="504" width="345" height="50"/>
+                                                <rect key="frame" x="0.0" y="562" width="345" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reversed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scf-WE-LIA" userLabel="reverseLabel">
-                                                        <rect key="frame" x="15" y="15" width="71.5" height="20.5"/>
+                                                        <rect key="frame" x="15" y="15.5" width="71.5" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jWS-dD-FDi" userLabel="reverseSwitch">
-                                                        <rect key="frame" x="281" y="9.5" width="51" height="31"/>
+                                                        <rect key="frame" x="281" y="10" width="51" height="31"/>
                                                         <color key="tintColor" red="0.52549019610000003" green="0.72941176470000002" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="onTintColor" red="0.52549019610000003" green="0.72941176470000002" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                                                         <connections>
@@ -458,7 +494,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U3s-Xs-aAu" userLabel="Code View">
-                                                <rect key="frame" x="0.0" y="562" width="345" height="125.5"/>
+                                                <rect key="frame" x="0.0" y="620" width="345" height="126"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0U-tf-jmP" userLabel="Code Title">
                                                         <rect key="frame" x="15" y="15" width="41" height="20.5"/>
@@ -537,6 +573,7 @@
                         <outlet property="reverseControlView" destination="zBe-hS-hrO" id="1mY-1u-FJc"/>
                         <outlet property="reverseSwitch" destination="jWS-dD-FDi" id="Xct-ds-jDd"/>
                         <outlet property="sortView" destination="cBV-JF-gMW" id="9lj-aY-UTT"/>
+                        <outlet property="timingFunctionControlView" destination="yBP-SD-dCC" id="TDB-Xu-E0P"/>
                         <outlet property="verticalWeightControlView" destination="aqh-nT-gcK" id="X43-U8-Kzw"/>
                         <outlet property="verticalWeightPicker" destination="Tzy-FP-d1t" id="2fr-it-zJ7"/>
                         <outletCollection property="controlViews" destination="4et-Jb-7wU" collectionClass="NSMutableArray" id="u3B-X2-eJM"/>
@@ -548,6 +585,7 @@
                         <outletCollection property="controlViews" destination="zBe-hS-hrO" collectionClass="NSMutableArray" id="fao-UH-Zh7"/>
                         <outletCollection property="controlViews" destination="aqh-nT-gcK" collectionClass="NSMutableArray" id="VM5-D4-AnL"/>
                         <outletCollection property="controlViews" destination="sBa-Tb-L3D" collectionClass="NSMutableArray" id="PeG-ig-vkg"/>
+                        <outletCollection property="controlViews" destination="yBP-SD-dCC" collectionClass="NSMutableArray" id="NlD-Md-dio"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qbu-4h-sWw" userLabel="First Responder" sceneMemberID="firstResponder"/>

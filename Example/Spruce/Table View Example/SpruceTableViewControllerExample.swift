@@ -42,7 +42,7 @@ class SpruceTableViewControllerExample: ExampleViewController {
     init(animations: [StockAnimation]) {
         super.init(animations: animations, nibName: "SpruceTableViewControllerExample")
         
-        sortFunction = LinearSortFunction(direction: .topToBottom, interObjectDelay: 0.05)
+        sortFunction = LinearSortFunction(direction: .topToBottom)
     }
     
     required init?(coder aDecoder: NSCoder) {
