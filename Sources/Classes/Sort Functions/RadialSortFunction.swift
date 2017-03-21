@@ -29,12 +29,10 @@ import UIKit
 /// A `SortFunction` that will offset the views in a circular fashion. This means that rather than looking flat like the `CorneredSortFunction`, there will be a curve going out of the position as if the views were in an expanding circle.
 public struct RadialSortFunction: PositionSortFunction {
     public var position: Position
-    public var interObjectDelay: TimeInterval
     public var reversed: Bool = false
     
     
-    public init(position: Position, interObjectDelay: TimeInterval) {
+    public init(position: Position) {
         self.position = position
-        self.interObjectDelay = interObjectDelay
     }
 }

@@ -1,5 +1,5 @@
 //
-//  WeightedContinuousSortFunction.swift
+//  ContinuousSortFunction.swift
 //  Spruce
 //
 //  Copyright (c) 2017 WillowTree, Inc.
@@ -42,7 +42,6 @@ public struct WeightedSortFunction: PositionSortFunction, WeightSortFunction {
         self.horizontalWeight = horizontalWeight
         self.verticalWeight = verticalWeight
         self.position = position
-        self.duration = duration
     }
     
     public func weights(forView view: UIView, recursiveDepth: Int) -> [WeightedView] {
