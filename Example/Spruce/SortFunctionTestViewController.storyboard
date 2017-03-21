@@ -355,14 +355,8 @@
                                                         <segments>
                                                             <segment title="↖"/>
                                                             <segment title="↗"/>
-                                                            <segment>
-                                                                <string key="title">↙
-                                                                </string>
-                                                            </segment>
-                                                            <segment>
-                                                                <string key="title">↘
-                                                                </string>
-                                                            </segment>
+                                                            <segment title="↙"/>
+                                                            <segment title="↘"/>
                                                         </segments>
                                                         <color key="tintColor" red="0.52549019610000003" green="0.72941176470000002" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                                                         <connections>
