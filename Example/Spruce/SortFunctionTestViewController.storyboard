@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -319,14 +319,8 @@
                                                         <segments>
                                                             <segment title="↖"/>
                                                             <segment title="↗"/>
-                                                            <segment>
-                                                                <string key="title">↙
-                                                                </string>
-                                                            </segment>
-                                                            <segment>
-                                                                <string key="title">↘
-                                                                </string>
-                                                            </segment>
+                                                            <segment title="↙"/>
+                                                            <segment title="↘"/>
                                                         </segments>
                                                         <color key="tintColor" red="0.52549019610000003" green="0.72941176470000002" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                                                         <connections>
