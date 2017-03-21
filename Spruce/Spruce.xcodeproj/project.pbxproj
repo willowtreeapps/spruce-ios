@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3208F65D1E0B145800847FF0 /* ContinuousWeightedSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3208F65C1E0B145800847FF0 /* ContinuousWeightedSortFunction.swift */; };
+		3208F65D1E0B145800847FF0 /* WeightedSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3208F65C1E0B145800847FF0 /* WeightedSortFunction.swift */; };
 		32DC68471E09BA5B00DF8286 /* InlineSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DC68461E09BA5B00DF8286 /* InlineSortFunction.swift */; };
 		DB20E5771E4BADA9004C5A96 /* RadialSortFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB20E5761E4BADA9004C5A96 /* RadialSortFunctionTests.swift */; };
 		DB288BAC1E671B810038B13E /* DirectionSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB288BA81E671B810038B13E /* DirectionSortFunction.swift */; };
@@ -44,7 +44,6 @@
 		DBFA708F1E5CBC44000CF1DB /* DefaultSortFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFA708E1E5CBC44000CF1DB /* DefaultSortFunctionTests.swift */; };
 		DBFA70911E5CBF10000CF1DB /* LinearSortFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFA70901E5CBF10000CF1DB /* LinearSortFunctionTests.swift */; };
 		DBFA70931E5CC052000CF1DB /* InlineSortFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFA70921E5CC052000CF1DB /* InlineSortFunctionTests.swift */; };
-		DBFA70981E5DDE4A000CF1DB /* ContinuousSortFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFA70971E5DDE4A000CF1DB /* ContinuousSortFunctionTests.swift */; };
 		DBFA709A1E5DEBE5000CF1DB /* ContinuousWeightedSortFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFA70991E5DEBE5000CF1DB /* ContinuousWeightedSortFunctionTests.swift */; };
 		DBFAC1311E4A5DEE00F534D5 /* SortFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFAC1301E4A5DEE00F534D5 /* SortFunctionTests.swift */; };
 		DBFAC1371E4A67E600F534D5 /* CorneredSortFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFAC1361E4A67E600F534D5 /* CorneredSortFunctionTests.swift */; };
@@ -61,7 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3208F65C1E0B145800847FF0 /* ContinuousWeightedSortFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContinuousWeightedSortFunction.swift; sourceTree = "<group>"; };
+		3208F65C1E0B145800847FF0 /* WeightedSortFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightedSortFunction.swift; sourceTree = "<group>"; };
 		32DC68461E09BA5B00DF8286 /* InlineSortFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InlineSortFunction.swift; sourceTree = "<group>"; };
 		DB20E5761E4BADA9004C5A96 /* RadialSortFunctionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadialSortFunctionTests.swift; sourceTree = "<group>"; };
 		DB288BA81E671B810038B13E /* DirectionSortFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionSortFunction.swift; sourceTree = "<group>"; };
@@ -101,7 +100,6 @@
 		DBFA708E1E5CBC44000CF1DB /* DefaultSortFunctionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultSortFunctionTests.swift; sourceTree = "<group>"; };
 		DBFA70901E5CBF10000CF1DB /* LinearSortFunctionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinearSortFunctionTests.swift; sourceTree = "<group>"; };
 		DBFA70921E5CC052000CF1DB /* InlineSortFunctionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InlineSortFunctionTests.swift; sourceTree = "<group>"; };
-		DBFA70971E5DDE4A000CF1DB /* ContinuousSortFunctionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContinuousSortFunctionTests.swift; sourceTree = "<group>"; };
 		DBFA70991E5DEBE5000CF1DB /* ContinuousWeightedSortFunctionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContinuousWeightedSortFunctionTests.swift; sourceTree = "<group>"; };
 		DBFAC1301E4A5DEE00F534D5 /* SortFunctionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortFunctionTests.swift; sourceTree = "<group>"; };
 		DBFAC1361E4A67E600F534D5 /* CorneredSortFunctionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CorneredSortFunctionTests.swift; sourceTree = "<group>"; };
@@ -222,7 +220,7 @@
 				DB9358391E008DF200ADC5BE /* RadialSortFunction.swift */,
 				DB93583A1E008DF200ADC5BE /* RandomSortFunction.swift */,
 				32DC68461E09BA5B00DF8286 /* InlineSortFunction.swift */,
-				3208F65C1E0B145800847FF0 /* ContinuousWeightedSortFunction.swift */,
+				3208F65C1E0B145800847FF0 /* WeightedSortFunction.swift */,
 			);
 			path = "Sort Functions";
 			sourceTree = "<group>";
@@ -274,7 +272,6 @@
 				DBFA708E1E5CBC44000CF1DB /* DefaultSortFunctionTests.swift */,
 				DBFA70901E5CBF10000CF1DB /* LinearSortFunctionTests.swift */,
 				DBFA70921E5CC052000CF1DB /* InlineSortFunctionTests.swift */,
-				DBFA70971E5DDE4A000CF1DB /* ContinuousSortFunctionTests.swift */,
 				DBFA70991E5DEBE5000CF1DB /* ContinuousWeightedSortFunctionTests.swift */,
 				DB7C757E1E7858BE0008C75C /* RandomSortFunctionTests.swift */,
 			);
@@ -414,7 +411,7 @@
 				DB9358561E008E1A00ADC5BE /* Button.swift in Sources */,
 				DB9358311E008DE900ADC5BE /* ViewController.swift in Sources */,
 				DBAA34331E8053A60038A6A5 /* InterItemTimingFunction.swift in Sources */,
-				3208F65D1E0B145800847FF0 /* ContinuousWeightedSortFunction.swift in Sources */,
+				3208F65D1E0B145800847FF0 /* WeightedSortFunction.swift in Sources */,
 				DB9358281E008DE100ADC5BE /* StandardAnimation.swift in Sources */,
 				DB93582F1E008DE900ADC5BE /* FullViewAnimation.swift in Sources */,
 				DBAA342F1E80483D0038A6A5 /* TimingFunction.swift in Sources */,
@@ -437,7 +434,6 @@
 				DBFA70911E5CBF10000CF1DB /* LinearSortFunctionTests.swift in Sources */,
 				DBFA70931E5CC052000CF1DB /* InlineSortFunctionTests.swift in Sources */,
 				DB7C757F1E7858BE0008C75C /* RandomSortFunctionTests.swift in Sources */,
-				DBFA70981E5DDE4A000CF1DB /* ContinuousSortFunctionTests.swift in Sources */,
 				DBB4CBE81E3A7D7300C3060B /* SpruceViewTests.swift in Sources */,
 				DBFAC1311E4A5DEE00F534D5 /* SortFunctionTests.swift in Sources */,
 			);

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct InterItemTimingFunction: TimingFunction {
+public struct InterItemTimingFunction: TimingFunction {
     var interObjectDelay: TimeInterval = 0.1
     
     public init() {
@@ -19,7 +19,7 @@ struct InterItemTimingFunction: TimingFunction {
         self.interObjectDelay = interObjectDelay
     }
     
-    func timeOffsets(forViews views: [WeightedView]) -> [TimedView] {
+    public func timeOffsets(forViews views: [WeightedView]) -> [TimedView] {
         let views = views.sorted()
         guard var lastWeight = views.first?.weight else {
             return []

@@ -29,8 +29,8 @@ import XCTest
 
 class CorneredSortFunctionTests: SortFunctionTests {
     
-    func testCorneredSortFunction(withCorner corner: Corner, expected: [TimeInterval], expectedReversed: [TimeInterval]) {
-        var sortFunction = CorneredSortFunction(corner: corner, interObjectDelay: 0.1)
+    func testCorneredSortFunction(withCorner corner: Corner, expected: [Double], expectedReversed: [Double]) {
+        var sortFunction = CorneredSortFunction(corner: corner)
         let timedViews = sortFunction.timeOffsets(view: animatableView)
         
         compare(timedViews: timedViews, toExpected: expected)

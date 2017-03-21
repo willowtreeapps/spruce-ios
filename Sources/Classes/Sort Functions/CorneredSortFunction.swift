@@ -30,42 +30,10 @@ import UIKit
 public struct CorneredSortFunction: CornerSortFunction {
     
     public var corner: Corner
-    public var interObjectDelay: TimeInterval
     public var reversed: Bool = false
     
-    public init(corner: Corner, interObjectDelay: TimeInterval) {
+    public init(corner: Corner) {
         self.corner = corner
-        self.interObjectDelay = interObjectDelay
-    }
-    
-    public func timeOffsets(view: UIView, recursiveDepth: Int) -> [TimedView] {
-        let comparisonPoint = distancePoint(view: view)
-        let subviews = view.spruce.subviews(withRecursiveDepth: recursiveDepth)
-        
-        let distancedViews = subviews.map {
-            return (view: $0, distance: abs(comparisonPoint.x - $0.referencePoint.x) + abs(comparisonPoint.y - $0.referencePoint.y))
-        }.sorted { (left, right) -> Bool in
-            if self.reversed {
-                return left.distance > right.distance
-            }
-            return left.distance < right.distance
-        }
-        
-        guard var lastDistance = distancedViews.first?.distance else {
-            return []
-        }
-        var currentTimeOffset = 0.0
-        var timedViews: [TimedView] = []
-        for view in distancedViews {
-            if floor(lastDistance) != floor(view.distance) {
-                lastDistance = view.distance
-                currentTimeOffset += interObjectDelay
-            }
-            let timedView = TimedView(spruceView: view.view, timeOffset: currentTimeOffset)
-            timedViews.append(timedView)
-        }
-        
-        return timedViews
     }
     
     public func weights(forView view: UIView, recursiveDepth: Int) -> [WeightedView] {

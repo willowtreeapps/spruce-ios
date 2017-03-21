@@ -28,3 +28,20 @@ public protocol TimingFunction {
     /// - Returns: an array of `TimedView`'s that will be animated.
     func timeOffsets(forViews views: [WeightedView]) -> [TimedView]
 }
+
+public enum StockTimingFunction {
+    case total(TimeInterval)
+    case interItemTime(TimeInterval)
+    case custom(TimingFunction)
+    
+    var timingFunction: TimingFunction {
+        switch self {
+        case .total(let duration):
+            return DurationTimingFunction(duration: duration)
+        case .interItemTime(let interObjectDelay):
+            return InterItemTimingFunction(interObjectDelay: interObjectDelay)
+        case .custom(let timingFunction):
+            return timingFunction
+        }
+    }
+}

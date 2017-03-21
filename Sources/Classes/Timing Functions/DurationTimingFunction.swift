@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct DurationTimingFunction: TimingFunction {
+public struct DurationTimingFunction: TimingFunction {
     var duration: TimeInterval = 0.3
     
     public init() {
@@ -19,7 +19,7 @@ struct DurationTimingFunction: TimingFunction {
         self.duration = duration
     }
     
-    func timeOffsets(forViews views: [WeightedView]) -> [TimedView] {
+    public func timeOffsets(forViews views: [WeightedView]) -> [TimedView] {
         let views = views.sorted()
         guard let maxWeight = views.max()?.weight else {
             return []
