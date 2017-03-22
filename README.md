@@ -5,7 +5,7 @@
 [![CircleCI Build Status](https://circleci.com/gh/willowtreeapps/spruce-ios.svg?style=shield)](https://circleci.com/gh/willowtreeapps/spruce-ios)
 [![Coverage Status](https://coveralls.io/repos/github/willowtreeapps/spruce-ios/badge.svg?branch=master)](https://coveralls.io/github/willowtreeapps/spruce-ios?branch=master)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![CocoaPods compatible](https://img.shields.io/badge/CocoaPods-compatible-4BC51D.svg?style=flat)](https://github.com/CocoaPods/CocoaPods)
+[![CocoaPods compatible](https://img.shields.io/badge/pod-v1.0.0-4BC51D.svg)](https://github.com/CocoaPods/CocoaPods)
 [![License MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)]()
 [![Public Yes](https://img.shields.io/badge/Public-yes-green.svg?style=flat)]()
 
