@@ -66,21 +66,21 @@ public extension DistanceSortFunction {
     ///   - view: the view whose subviews should be animated. This view should not be included in the returned array
     ///   - recursiveDepth: an int describing how deep into the view hiearchy the subview search should go, defaults to 0. A value of 0 is the same as calling the `subviews` on the actual view itself. Therefore a depth of 1 will be getting the subviews of each of the subviews, etc...
     /// - Returns: an array of `WeightedView`'s which contain references to the view needed to be animated and the weight for the animation of that individual view relative to the overall animation
-    public func weights(forView view: UIView, recursiveDepth: Int) -> [WeightedView] {
+    public func weights(for view: UIView, recursiveDepth: Int) -> [WeightedView] {
         let subviews = view.spruce.subviews(withRecursiveDepth: recursiveDepth)
         let comparisonPoint = distancePoint(view: view, subviews: subviews)
         
         var maxWeight: Double = 0.0
         
-        let weightedViews: [WeightedView] = subviews.map {
+        var weightedViews: [WeightedView] = subviews.map {
             let distance = distanceBetween(comparisonPoint, and: $0.referencePoint)
             maxWeight = max(maxWeight, distance)
             return WeightedView(spruceView: $0, weight: distance)
         }
         
         if reversed {
-            for var weightedView in weightedViews {
-                weightedView.weight = maxWeight - weightedView.weight
+            for index in 0..<weightedViews.count {
+                weightedViews[index].weight = maxWeight - weightedViews[index].weight
             }
         }
         

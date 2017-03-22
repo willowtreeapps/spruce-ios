@@ -51,11 +51,11 @@ extension WeightedView: Equatable, Comparable {
 public protocol SortFunction {
     
     /// Given a view, view sort the subviews in a way that matches the desired specification of the `SortFunction`. In an example case, if you wanted a radial sort function then this method would return an array of the subviews such that their weights would be smaller near the center of the view and grow as they get further from the center point.
-    /// - Note: This method simply calls the `weights(forView view: UIView, recursiveDepth: Int)` with a `recursiveDepth` of `0`.
+    /// - Note: This method simply calls the `weights(for view: UIView, recursiveDepth: Int)` with a `recursiveDepth` of `0`.
     ///
     /// - Parameter view: the view whose subviews should be animated. This view should not be included in the returned array
     /// - Returns: an array of `WeightedView`'s which contain references to the view needed to be animated and the weight for the animation of that individual view relative to the overall animation
-    func weights(forView view: UIView) -> [WeightedView]
+    func weights(for view: UIView) -> [WeightedView]
     
     /// Given a view, view sort the subviews in a way that matches the desired specification of the `SortFunction`. In an example case, if you wanted a radial sort function then this method would return an array of the subviews such that their weights would be smaller near the center of the view and grow as they get further from the center point.
     ///
@@ -63,11 +63,11 @@ public protocol SortFunction {
     ///   - view: the view whose subviews should be animated. This view should not be included in the returned array
     ///   - recursiveDepth: an int describing how deep into the view hiearchy the subview search should go, defaults to 0. A value of 0 is the same as calling the `subviews` on the actual view itself. Therefore a depth of 1 will be getting the subviews of each of the subviews, etc...
     /// - Returns: an array of `WeightedView`'s which contain references to the view needed to be animated and the weight for the animation of that individual view relative to the overall animation
-    func weights(forView view: UIView, recursiveDepth: Int) -> [WeightedView]
+    func weights(for view: UIView, recursiveDepth: Int) -> [WeightedView]
 }
 
 public extension SortFunction {
-    func weights(forView view: UIView) -> [WeightedView] {
-        return weights(forView: view, recursiveDepth: 0)
+    func weights(for view: UIView) -> [WeightedView] {
+        return weights(for: view, recursiveDepth: 0)
     }
 }

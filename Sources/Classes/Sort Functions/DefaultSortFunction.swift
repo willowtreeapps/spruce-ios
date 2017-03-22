@@ -33,7 +33,7 @@ public struct DefaultSortFunction: SortFunction {
         
     }
     
-    public func weights(forView view: UIView, recursiveDepth: Int) -> [WeightedView] {
+    public func weights(for view: UIView, recursiveDepth: Int) -> [WeightedView] {
         let subviews = view.spruce.subviews(withRecursiveDepth: recursiveDepth)
         var currentWeight: Double = 0.0
         var weightedViews: [WeightedView] = []

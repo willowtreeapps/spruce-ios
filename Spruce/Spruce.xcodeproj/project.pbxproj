@@ -44,7 +44,7 @@
 		DBFA708F1E5CBC44000CF1DB /* DefaultSortFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFA708E1E5CBC44000CF1DB /* DefaultSortFunctionTests.swift */; };
 		DBFA70911E5CBF10000CF1DB /* LinearSortFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFA70901E5CBF10000CF1DB /* LinearSortFunctionTests.swift */; };
 		DBFA70931E5CC052000CF1DB /* InlineSortFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFA70921E5CC052000CF1DB /* InlineSortFunctionTests.swift */; };
-		DBFA709A1E5DEBE5000CF1DB /* ContinuousWeightedSortFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFA70991E5DEBE5000CF1DB /* ContinuousWeightedSortFunctionTests.swift */; };
+		DBFA709A1E5DEBE5000CF1DB /* WeightedSortFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFA70991E5DEBE5000CF1DB /* WeightedSortFunctionTests.swift */; };
 		DBFAC1311E4A5DEE00F534D5 /* SortFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFAC1301E4A5DEE00F534D5 /* SortFunctionTests.swift */; };
 		DBFAC1371E4A67E600F534D5 /* CorneredSortFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFAC1361E4A67E600F534D5 /* CorneredSortFunctionTests.swift */; };
 /* End PBXBuildFile section */
@@ -100,7 +100,7 @@
 		DBFA708E1E5CBC44000CF1DB /* DefaultSortFunctionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultSortFunctionTests.swift; sourceTree = "<group>"; };
 		DBFA70901E5CBF10000CF1DB /* LinearSortFunctionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinearSortFunctionTests.swift; sourceTree = "<group>"; };
 		DBFA70921E5CC052000CF1DB /* InlineSortFunctionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InlineSortFunctionTests.swift; sourceTree = "<group>"; };
-		DBFA70991E5DEBE5000CF1DB /* ContinuousWeightedSortFunctionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContinuousWeightedSortFunctionTests.swift; sourceTree = "<group>"; };
+		DBFA70991E5DEBE5000CF1DB /* WeightedSortFunctionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightedSortFunctionTests.swift; sourceTree = "<group>"; };
 		DBFAC1301E4A5DEE00F534D5 /* SortFunctionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortFunctionTests.swift; sourceTree = "<group>"; };
 		DBFAC1361E4A67E600F534D5 /* CorneredSortFunctionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CorneredSortFunctionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -272,7 +272,7 @@
 				DBFA708E1E5CBC44000CF1DB /* DefaultSortFunctionTests.swift */,
 				DBFA70901E5CBF10000CF1DB /* LinearSortFunctionTests.swift */,
 				DBFA70921E5CC052000CF1DB /* InlineSortFunctionTests.swift */,
-				DBFA70991E5DEBE5000CF1DB /* ContinuousWeightedSortFunctionTests.swift */,
+				DBFA70991E5DEBE5000CF1DB /* WeightedSortFunctionTests.swift */,
 				DB7C757E1E7858BE0008C75C /* RandomSortFunctionTests.swift */,
 			);
 			path = "Sort Function Tests";
@@ -429,7 +429,7 @@
 			files = (
 				DB20E5771E4BADA9004C5A96 /* RadialSortFunctionTests.swift in Sources */,
 				DBFAC1371E4A67E600F534D5 /* CorneredSortFunctionTests.swift in Sources */,
-				DBFA709A1E5DEBE5000CF1DB /* ContinuousWeightedSortFunctionTests.swift in Sources */,
+				DBFA709A1E5DEBE5000CF1DB /* WeightedSortFunctionTests.swift in Sources */,
 				DBFA708F1E5CBC44000CF1DB /* DefaultSortFunctionTests.swift in Sources */,
 				DBFA70911E5CBF10000CF1DB /* LinearSortFunctionTests.swift in Sources */,
 				DBFA70931E5CC052000CF1DB /* InlineSortFunctionTests.swift in Sources */,

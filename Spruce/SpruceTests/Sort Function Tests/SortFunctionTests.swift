@@ -65,26 +65,26 @@ class SortFunctionTests: XCTestCase {
         XCTAssertEqual(animatableView.subviews.count, squaresPerRow * squaresPerRow)
     }
     
-    func compare(timedViews: [Double], toExpected expected: [TimeInterval]) {
-        XCTAssertEqual(timedViews.count, expected.count)
+    func compare(weightedViews: [WeightedView], toExpected expected: [Double]) {
+        XCTAssertEqual(weightedViews.count, expected.count)
         
-        guard timedViews.count == expected.count else {
+        guard weightedViews.count == expected.count else {
             XCTFail("TimedViews not equal to expected")
             return
         }
         
-        for timedView in timedViews {
-            guard let index = timedView.spruceView.view?.tag else {
+        for weightedView in weightedViews {
+            guard let index = weightedView.spruceView.view?.tag else {
                 XCTFail("Failed to find UIView Object")
                 continue
             }
-            let expectedDelay = expected[index]
-            XCTAssertEqualWithAccuracy(timedView.timeOffset, expectedDelay, accuracy: 0.000001)
+            let expectedWeight = expected[index]
+            XCTAssertEqualWithAccuracy(weightedView.weight, expectedWeight, accuracy: 0.000001)
         }
     }
     
-    func printTimedViews(_ timedViews: [Double]) {
-        let timedViews = timedViews.sorted { (left, right) -> Bool in
+    func printWeightedViews(_ weightedViews: [WeightedView]) {
+        let weightedViews = weightedViews.sorted { (left, right) -> Bool in
             guard let leftTag = left.spruceView.view?.tag,
                 let rightTag = right.spruceView.view?.tag else {
                 XCTFail("Failed to find UIView Object")
@@ -93,12 +93,12 @@ class SortFunctionTests: XCTestCase {
             return leftTag < rightTag
         }
         print("[", terminator: "")
-        for index in 0..<timedViews.count {
-            if index == timedViews.count - 1 {
-                print("\(timedViews[index].timeOffset)]", terminator: "")
+        for index in 0..<weightedViews.count {
+            if index == weightedViews.count - 1 {
+                print("\(weightedViews[index].weight)]", terminator: "")
             }
             else {
-                print("\(timedViews[index].timeOffset),", terminator: "")
+                print("\(weightedViews[index].weight),", terminator: "")
             }
             
             if index % 5 == 4 {
