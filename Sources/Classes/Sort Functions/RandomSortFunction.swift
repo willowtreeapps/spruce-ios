@@ -33,7 +33,7 @@ public struct RandomSortFunction: SortFunction {
         
     }
     
-    public func weights(forView view: UIView, recursiveDepth: Int) -> [WeightedView] {
+    public func weights(for view: UIView, recursiveDepth: Int) -> [WeightedView] {
         var subviews = view.spruce.subviews(withRecursiveDepth: recursiveDepth)
         subviews.shuffle()
         

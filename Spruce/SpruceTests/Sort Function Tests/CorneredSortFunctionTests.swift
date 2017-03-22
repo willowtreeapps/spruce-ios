@@ -31,78 +31,85 @@ class CorneredSortFunctionTests: SortFunctionTests {
     
     func testCorneredSortFunction(withCorner corner: Corner, expected: [Double], expectedReversed: [Double]) {
         var sortFunction = CorneredSortFunction(corner: corner)
-        let timedViews = sortFunction.timeOffsets(view: animatableView)
+        let weightedViews = sortFunction.weights(for: animatableView)
         
-        compare(timedViews: timedViews, toExpected: expected)
+        compare(weightedViews: weightedViews, toExpected: expected)
         
         sortFunction.reversed = true
-        let timedViewsReversed = sortFunction.timeOffsets(view: animatableView)
-        compare(timedViews: timedViewsReversed, toExpected: expectedReversed)
+        let weightedViewsReversed = sortFunction.weights(for: animatableView)
+        compare(weightedViews: weightedViewsReversed, toExpected: expectedReversed)
+        
+        print("")
+        print("let expected = ", terminator: "")
+        printWeightedViews(weightedViews)
+        print("let expectedReversed = ", terminator: "")
+        printWeightedViews(weightedViewsReversed)
+        print("")
     }
     
     func testCorneredSortFunctionWithEmptyView() {
-        let sortFunction = CorneredSortFunction(corner: .topLeft, interObjectDelay: 0.1)
-        let timedViews = sortFunction.timeOffsets(view: UIView())
+        let sortFunction = CorneredSortFunction(corner: .topLeft)
+        let timedViews = sortFunction.weights(for: UIView())
         
         XCTAssertEqual(timedViews.count, 0)
     }
     
     func testTopLeftCorneredSortFunction() {
-        let expected = [0.0,0.1,0.2,0.3,0.4,
-                        0.1,0.2,0.3,0.4,0.5,
-                        0.2,0.3,0.4,0.5,0.6,
-                        0.3,0.4,0.5,0.6,0.7,
-                        0.4,0.5,0.6,0.7,0.8]
-        let expectedReversed = [0.8,0.7,0.6,0.5,0.4,
-                                0.7,0.6,0.5,0.4,0.3,
-                                0.6,0.5,0.4,0.3,0.2,
-                                0.5,0.4,0.3,0.2,0.1,
-                                0.4,0.3,0.2,0.1,0.0]
+        let expected = [0.0,100.0,200.0,300.0,400.0,
+                        100.0,200.0,300.0,400.0,500.0,
+                        200.0,300.0,400.0,500.0,600.0,
+                        300.0,400.0,500.0,600.0,700.0,
+                        400.0,500.0,600.0,700.0,800.0]
+        let expectedReversed = [800.0,700.0,600.0,500.0,400.0,
+                                700.0,600.0,500.0,400.0,300.0,
+                                600.0,500.0,400.0,300.0,200.0,
+                                500.0,400.0,300.0,200.0,100.0,
+                                400.0,300.0,200.0,100.0,0.0]
         
         testCorneredSortFunction(withCorner: .topLeft, expected: expected, expectedReversed: expectedReversed)
     }
     
     func testTopRightCorneredSortFunction() {
-        let expected = [0.4,0.3,0.2,0.1,0.0,
-                        0.5,0.4,0.3,0.2,0.1,
-                        0.6,0.5,0.4,0.3,0.2,
-                        0.7,0.6,0.5,0.4,0.3,
-                        0.8,0.7,0.6,0.5,0.4]
-        let expectedReversed = [0.4,0.5,0.6,0.7,0.8,
-                                0.3,0.4,0.5,0.6,0.7,
-                                0.2,0.3,0.4,0.5,0.6,
-                                0.1,0.2,0.3,0.4,0.5,
-                                0.0,0.1,0.2,0.3,0.4]
+        let expected = [400.0,300.0,200.0,100.0,0.0,
+                        500.0,400.0,300.0,200.0,100.0,
+                        600.0,500.0,400.0,300.0,200.0,
+                        700.0,600.0,500.0,400.0,300.0,
+                        800.0,700.0,600.0,500.0,400.0]
+        let expectedReversed = [400.0,500.0,600.0,700.0,800.0,
+                                300.0,400.0,500.0,600.0,700.0,
+                                200.0,300.0,400.0,500.0,600.0,
+                                100.0,200.0,300.0,400.0,500.0,
+                                0.0,100.0,200.0,300.0,400.0]
         
         testCorneredSortFunction(withCorner: .topRight, expected: expected, expectedReversed: expectedReversed)
     }
     
     func testBottomLeftCorneredSortFunction() {
-        let expected = [0.4,0.5,0.6,0.7,0.8,
-                        0.3,0.4,0.5,0.6,0.7,
-                        0.2,0.3,0.4,0.5,0.6,
-                        0.1,0.2,0.3,0.4,0.5,
-                        0.0,0.1,0.2,0.3,0.4]
-        let expectedReversed = [0.4,0.3,0.2,0.1,0.0,
-                                0.5,0.4,0.3,0.2,0.1,
-                                0.6,0.5,0.4,0.3,0.2,
-                                0.7,0.6,0.5,0.4,0.3,
-                                0.8,0.7,0.6,0.5,0.4]
+        let expected = [400.0,500.0,600.0,700.0,800.0,
+                        300.0,400.0,500.0,600.0,700.0,
+                        200.0,300.0,400.0,500.0,600.0,
+                        100.0,200.0,300.0,400.0,500.0,
+                        0.0,100.0,200.0,300.0,400.0]
+        let expectedReversed = [400.0,300.0,200.0,100.0,0.0,
+                                500.0,400.0,300.0,200.0,100.0,
+                                600.0,500.0,400.0,300.0,200.0,
+                                700.0,600.0,500.0,400.0,300.0,
+                                800.0,700.0,600.0,500.0,400.0]
         
         testCorneredSortFunction(withCorner: .bottomLeft, expected: expected, expectedReversed: expectedReversed)
     }
     
     func testBottomRightCorneredSortFunction() {
-        let expected = [0.8,0.7,0.6,0.5,0.4,
-                        0.7,0.6,0.5,0.4,0.3,
-                        0.6,0.5,0.4,0.3,0.2,
-                        0.5,0.4,0.3,0.2,0.1,
-                        0.4,0.3,0.2,0.1,0.0]
-        let expectedReversed = [0.0,0.1,0.2,0.3,0.4,
-                                0.1,0.2,0.3,0.4,0.5,
-                                0.2,0.3,0.4,0.5,0.6,
-                                0.3,0.4,0.5,0.6,0.7,
-                                0.4,0.5,0.6,0.7,0.8]
+        let expected = [800.0,700.0,600.0,500.0,400.0,
+                        700.0,600.0,500.0,400.0,300.0,
+                        600.0,500.0,400.0,300.0,200.0,
+                        500.0,400.0,300.0,200.0,100.0,
+                        400.0,300.0,200.0,100.0,0.0]
+        let expectedReversed = [0.0,100.0,200.0,300.0,400.0,
+                                100.0,200.0,300.0,400.0,500.0,
+                                200.0,300.0,400.0,500.0,600.0,
+                                300.0,400.0,500.0,600.0,700.0,
+                                400.0,500.0,600.0,700.0,800.0]
         
         testCorneredSortFunction(withCorner: .bottomRight, expected: expected, expectedReversed: expectedReversed)
     }

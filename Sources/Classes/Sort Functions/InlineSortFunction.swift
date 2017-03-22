@@ -37,7 +37,7 @@ public struct InlineSortFunction: CornerSortFunction {
         self.corner = corner
     }
     
-    public func weights(forView view: UIView, recursiveDepth: Int) -> [WeightedView] {
+    public func weights(for view: UIView, recursiveDepth: Int) -> [WeightedView] {
         let comparisonPoint = distancePoint(view: view)
         let subviews = view.spruce.subviews(withRecursiveDepth: recursiveDepth)
 

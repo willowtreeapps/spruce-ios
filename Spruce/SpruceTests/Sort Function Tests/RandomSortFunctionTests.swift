@@ -12,15 +12,15 @@ import XCTest
 class RandomSortFunctionTests: SortFunctionTests {
     
     func testRandomSortFunction() {
-        let sortFunction = RandomSortFunction(interObjectDelay: 0.1)
-        let timedViews = sortFunction.timeOffsets(view: animatableView)
+        let sortFunction = RandomSortFunction()
+        let timedViews = sortFunction.weights(for: animatableView)
         
         XCTAssertEqual(timedViews.count, 25)
     }
     
     func testRandomSortFunctionWithEmptyView() {
-        let sortFunction = RandomSortFunction(interObjectDelay: 0.1)
-        let timedViews = sortFunction.timeOffsets(view: UIView())
+        let sortFunction = RandomSortFunction()
+        let timedViews = sortFunction.weights(for: UIView())
         
         XCTAssertEqual(timedViews.count, 0)
     }

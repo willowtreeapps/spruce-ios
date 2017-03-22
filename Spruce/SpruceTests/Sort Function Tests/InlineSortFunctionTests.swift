@@ -30,76 +30,76 @@ import XCTest
 class InlineSortFunctionTests: SortFunctionTests {
     
     func testInlineSortFunctions(withStartCorner corner: Corner, expected: [TimeInterval], expectedReversed: [TimeInterval]) {
-        var sortFunction = InlineSortFunction(corner: corner, interObjectDelay: 0.1)
-        let timedViews = sortFunction.timeOffsets(view: animatableView)
+        var sortFunction = InlineSortFunction(corner: corner)
+        let weightedViews = sortFunction.weights(for: animatableView)
         
-        compare(timedViews: timedViews, toExpected: expected)
+        compare(weightedViews: weightedViews, toExpected: expected)
         
         sortFunction.reversed = true
-        let timedViewsReversed = sortFunction.timeOffsets(view: animatableView)
-        compare(timedViews: timedViewsReversed, toExpected: expectedReversed)
+        let weightedViewsReversed = sortFunction.weights(for: animatableView)
+        compare(weightedViews: weightedViewsReversed, toExpected: expectedReversed)
     }
     
     func testInlineSortFunctionWithEmptyView() {
-        let sortFunction = InlineSortFunction(corner: .topLeft, interObjectDelay: 0.1)
-        let timedViews = sortFunction.timeOffsets(view: UIView())
+        let sortFunction = InlineSortFunction(corner: .topLeft)
+        let timedViews = sortFunction.weights(for: UIView())
         
         XCTAssertEqual(timedViews.count, 0)
     }
     
     func testTopLeftInlineSortFunction() {
-        let expected = [0.0,0.1,0.2,0.3,0.4,
-                        0.5,0.6,0.7,0.8,0.9,
-                        1.0,1.1,1.2,1.3,1.4,
-                        1.5,1.6,1.7,1.8,1.9,
-                        2.0,2.1,2.2,2.3,2.4]
-        let expectedReversed = [2.4,2.3,2.2,2.1,2.0,
-                                1.9,1.8,1.7,1.6,1.5,
-                                1.4,1.3,1.2,1.1,1.0,
-                                0.9,0.8,0.7,0.6,0.5,
-                                0.4,0.3,0.2,0.1,0.0]
+        let expected = [0.0,1.0,2.0,3.0,4.0,
+                        5.0,6.0,7.0,8.0,9.0,
+                        10.0,11.0,12.0,13.0,14.0,
+                        15.0,16.0,17.0,18.0,19.0,
+                        20.0,21.0,22.0,23.0,24.0]
+        let expectedReversed = [24.0,23.0,22.0,21.0,20.0,
+                                19.0,18.0,17.0,16.0,15.0,
+                                14.0,13.0,12.0,11.0,10.0,
+                                9.0,8.0,7.0,6.0,5.0,
+                                4.0,3.0,2.0,1.0,0.0]
         testInlineSortFunctions(withStartCorner: .topLeft, expected: expected, expectedReversed: expectedReversed)
     }
     
     func testTopRightInlineSortFunction() {
-        let expected = [0.4,0.3,0.2,0.1,0.0,
-                        0.9,0.8,0.7,0.6,0.5,
-                        1.4,1.3,1.2,1.1,1.0,
-                        1.9,1.8,1.7,1.6,1.5,
-                        2.4,2.3,2.2,2.1,2.0]
-        let expectedReversed = [2.0,2.1,2.2,2.3,2.4,
-                                1.5,1.6,1.7,1.8,1.9,
-                                1.0,1.1,1.2,1.3,1.4,
-                                0.5,0.6,0.7,0.8,0.9,
-                                0.0,0.1,0.2,0.3,0.4]
+        let expected = [4.0,3.0,2.0,1.0,0.0,
+                        9.0,8.0,7.0,6.0,5.0,
+                        14.0,13.0,12.0,11.0,10.0,
+                        19.0,18.0,17.0,16.0,15.0,
+                        24.0,23.0,22.0,21.0,20.0]
+        let expectedReversed = [20.0,21.0,22.0,23.0,24.0,
+                                15.0,16.0,17.0,18.0,19.0,
+                                10.0,11.0,12.0,13.0,14.0,
+                                5.0,6.0,7.0,8.0,9.0,
+                                0.0,1.0,2.0,3.0,4.0]
         testInlineSortFunctions(withStartCorner: .topRight, expected: expected, expectedReversed: expectedReversed)
     }
     
     func testBottomLeftInlineSortFunction() {
-        let expected = [2.0,2.1,2.2,2.3,2.4,
-                        1.5,1.6,1.7,1.8,1.9,
-                        1.0,1.1,1.2,1.3,1.4,
-                        0.5,0.6,0.7,0.8,0.9,
-                        0.0,0.1,0.2,0.3,0.4]
-        let expectedReversed = [0.4,0.3,0.2,0.1,0.0,
-                                0.9,0.8,0.7,0.6,0.5,
-                                1.4,1.3,1.2,1.1,1.0,
-                                1.9,1.8,1.7,1.6,1.5,
-                                2.4,2.3,2.2,2.1,2.0]
+        let expected = [20.0,21.0,22.0,23.0,24.0,
+                        15.0,16.0,17.0,18.0,19.0,
+                        10.0,11.0,12.0,13.0,14.0,
+                        5.0,6.0,7.0,8.0,9.0,
+                        0.0,1.0,2.0,3.0,4.0]
+        let expectedReversed = [4.0,3.0,2.0,1.0,0.0,
+                                9.0,8.0,7.0,6.0,5.0,
+                                14.0,13.0,12.0,11.0,10.0,
+                                19.0,18.0,17.0,16.0,15.0,
+                                24.0,23.0,22.0,21.0,20.0]
         testInlineSortFunctions(withStartCorner: .bottomLeft, expected: expected, expectedReversed: expectedReversed)
     }
 
     func testBottomRightInlineSortFunction() {
-        let expected = [2.4,2.3,2.2,2.1,2.0,
-                        1.9,1.8,1.7,1.6,1.5,
-                        1.4,1.3,1.2,1.1,1.0,
-                        0.9,0.8,0.7,0.6,0.5,
-                        0.4,0.3,0.2,0.1,0.0]
-        let expectedReversed = [0.0,0.1,0.2,0.3,0.4,
-                                0.5,0.6,0.7,0.8,0.9,
-                                1.0,1.1,1.2,1.3,1.4,
-                                1.5,1.6,1.7,1.8,1.9,
-                                2.0,2.1,2.2,2.3,2.4]
+        let expected = [24.0,23.0,22.0,21.0,20.0,
+                        19.0,18.0,17.0,16.0,15.0,
+                        14.0,13.0,12.0,11.0,10.0,
+                        9.0,8.0,7.0,6.0,5.0,
+                        4.0,3.0,2.0,1.0,0.0]
+        let expectedReversed = [0.0,1.0,2.0,3.0,4.0,
+                                5.0,6.0,7.0,8.0,9.0,
+                                10.0,11.0,12.0,13.0,14.0,
+                                15.0,16.0,17.0,18.0,19.0,
+                                20.0,21.0,22.0,23.0,24.0]
         testInlineSortFunctions(withStartCorner: .bottomRight, expected: expected, expectedReversed: expectedReversed)
     }
 }

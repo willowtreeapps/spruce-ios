@@ -53,7 +53,7 @@ public extension Spruce {
     ///   - recursiveDepth: an int describing how deep into the view hiearchy the subview search should go, defaults to 0
     ///   - completion: a closure that is called upon the final animation completing. A `Bool` is passed into the closure letting you know if the animation has completed. **Note:** If you stop animations on the whole animating view, then `false` will be passed into the completion closure. However, if the final animation is allowed to proceed then `true` will be the value passed into the completion closure.
     public func animate(withSortFunction sortFunction: SortFunction, duration: StockTimingFunction, prepare: PrepareHandler? = nil, animation: Animation, exclude: [UIView]? = nil, recursiveDepth: Int = 0, completion: CompletionHandler? = nil) {
-        let weightedViews = sortFunction.weights(forView: self.view, recursiveDepth: recursiveDepth)
+        let weightedViews = sortFunction.weights(for: self.view, recursiveDepth: recursiveDepth)
         var timedViews = duration.timingFunction.timeOffsets(forViews: weightedViews)
         timedViews = timedViews.sorted { (left, right) -> Bool in
             return left.timeOffset < right.timeOffset
@@ -76,5 +76,8 @@ public extension Spruce {
                               view: animatedView,
                               completion: ((index == timedViews.count - 1) ? completion : nil))
         }
+        
+        let array = [1,2,3,4,5]
+        array.reversed()
     }
 }

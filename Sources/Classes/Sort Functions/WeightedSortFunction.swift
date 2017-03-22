@@ -44,12 +44,12 @@ public struct WeightedSortFunction: PositionSortFunction, WeightSortFunction {
         self.position = position
     }
     
-    public func weights(forView view: UIView, recursiveDepth: Int) -> [WeightedView] {
+    public func weights(for view: UIView, recursiveDepth: Int) -> [WeightedView] {
         let subviews = view.spruce.subviews(withRecursiveDepth: recursiveDepth)
         let comparisonPoint = distancePoint(view: view, subviews: subviews)
         var maxWeight: Double = 0.0
         
-        let weightedViews: [WeightedView] = subviews.map {
+        var weightedViews: [WeightedView] = subviews.map {
             let horizontalDistance = comparisonPoint.spruce.horizontalDistance(to: $0.referencePoint) * horizontalWeight.coefficient
             let verticalDistance = comparisonPoint.spruce.verticalDistance(to: $0.referencePoint) * verticalWeight.coefficient
             let distance = horizontalDistance + verticalDistance
@@ -58,8 +58,8 @@ public struct WeightedSortFunction: PositionSortFunction, WeightSortFunction {
         }
         
         if reversed {
-            for var weightedView in weightedViews {
-                weightedView.weight = maxWeight - weightedView.weight
+            for index in 0..<weightedViews.count {
+                weightedViews[index].weight = maxWeight - weightedViews[index].weight
             }
         }
         

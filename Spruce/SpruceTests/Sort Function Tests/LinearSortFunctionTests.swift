@@ -30,76 +30,83 @@ import XCTest
 class LinearSortFunctionTests: SortFunctionTests {
     
     func testLinearSortFunctions(withDirection direction: Direction, expected: [TimeInterval], expectedReversed: [TimeInterval]) {
-        var sortFunction = LinearSortFunction(direction: direction, interObjectDelay: 0.1)
-        let timedViews = sortFunction.timeOffsets(view: animatableView)
+        var sortFunction = LinearSortFunction(direction: direction)
+        let weightedViews = sortFunction.weights(for: animatableView)
         
-        compare(timedViews: timedViews, toExpected: expected)
+        compare(weightedViews: weightedViews, toExpected: expected)
         
         sortFunction.reversed = true
-        let timedViewsReversed = sortFunction.timeOffsets(view: animatableView)
-        compare(timedViews: timedViewsReversed, toExpected: expectedReversed)
+        let weightedViewsReversed = sortFunction.weights(for: animatableView)
+        compare(weightedViews: weightedViewsReversed, toExpected: expectedReversed)
+        
+        print("")
+        print("let expected = ", terminator: "")
+        printWeightedViews(weightedViews)
+        print("let expectedReversed = ", terminator: "")
+        printWeightedViews(weightedViewsReversed)
+        print("")
     }
     
     func testLinearSortFunctionWithEmptyView() {
-        let sortFunction = LinearSortFunction(direction: .topToBottom, interObjectDelay: 0.1)
-        let timedViews = sortFunction.timeOffsets(view: UIView())
+        let sortFunction = LinearSortFunction(direction: .topToBottom)
+        let timedViews = sortFunction.weights(for: UIView())
         
         XCTAssertEqual(timedViews.count, 0)
     }
     
     func testTopToBottomLinearSortFunction() {
-        let expected = [0.0,0.0,0.0,0.0,0.0,
-                        0.1,0.1,0.1,0.1,0.1,
-                        0.2,0.2,0.2,0.2,0.2,
-                        0.3,0.3,0.3,0.3,0.3,
-                        0.4,0.4,0.4,0.4,0.4]
-        let expectedReversed = [0.4,0.4,0.4,0.4,0.4,
-                                0.3,0.3,0.3,0.3,0.3,
-                                0.2,0.2,0.2,0.2,0.2,
-                                0.1,0.1,0.1,0.1,0.1,
+        let expected = [50.0,50.0,50.0,50.0,50.0,
+                        150.0,150.0,150.0,150.0,150.0,
+                        250.0,250.0,250.0,250.0,250.0,
+                        350.0,350.0,350.0,350.0,350.0,
+                        450.0,450.0,450.0,450.0,450.0]
+        let expectedReversed = [400.0,400.0,400.0,400.0,400.0,
+                                300.0,300.0,300.0,300.0,300.0,
+                                200.0,200.0,200.0,200.0,200.0,
+                                100.0,100.0,100.0,100.0,100.0,
                                 0.0,0.0,0.0,0.0,0.0]
         testLinearSortFunctions(withDirection: .topToBottom, expected: expected, expectedReversed: expectedReversed)
     }
     
     func testBottomToTopLinearSortFunction() {
-        let expected = [0.4,0.4,0.4,0.4,0.4,
-                        0.3,0.3,0.3,0.3,0.3,
-                        0.2,0.2,0.2,0.2,0.2,
-                        0.1,0.1,0.1,0.1,0.1,
-                        0.0,0.0,0.0,0.0,0.0]
+        let expected = [450.0,450.0,450.0,450.0,450.0,
+                        350.0,350.0,350.0,350.0,350.0,
+                        250.0,250.0,250.0,250.0,250.0,
+                        150.0,150.0,150.0,150.0,150.0,
+                        50.0,50.0,50.0,50.0,50.0]
         let expectedReversed = [0.0,0.0,0.0,0.0,0.0,
-                                0.1,0.1,0.1,0.1,0.1,
-                                0.2,0.2,0.2,0.2,0.2,
-                                0.3,0.3,0.3,0.3,0.3,
-                                0.4,0.4,0.4,0.4,0.4]
+                                100.0,100.0,100.0,100.0,100.0,
+                                200.0,200.0,200.0,200.0,200.0,
+                                300.0,300.0,300.0,300.0,300.0,
+                                400.0,400.0,400.0,400.0,400.0]
         testLinearSortFunctions(withDirection: .bottomToTop, expected: expected, expectedReversed: expectedReversed)
     }
     
     func testLeftToRightLinearSortFunction() {
-        let expected = [0.0,0.1,0.2,0.3,0.4,
-                        0.0,0.1,0.2,0.3,0.4,
-                        0.0,0.1,0.2,0.3,0.4,
-                        0.0,0.1,0.2,0.3,0.4,
-                        0.0,0.1,0.2,0.3,0.4]
-        let expectedReversed = [0.4,0.3,0.2,0.1,0.0,
-                                0.4,0.3,0.2,0.1,0.0,
-                                0.4,0.3,0.2,0.1,0.0,
-                                0.4,0.3,0.2,0.1,0.0,
-                                0.4,0.3,0.2,0.1,0.0]
+        let expected = [50.0,150.0,250.0,350.0,450.0,
+                        50.0,150.0,250.0,350.0,450.0,
+                        50.0,150.0,250.0,350.0,450.0,
+                        50.0,150.0,250.0,350.0,450.0,
+                        50.0,150.0,250.0,350.0,450.0]
+        let expectedReversed = [400.0,300.0,200.0,100.0,0.0,
+                                400.0,300.0,200.0,100.0,0.0,
+                                400.0,300.0,200.0,100.0,0.0,
+                                400.0,300.0,200.0,100.0,0.0,
+                                400.0,300.0,200.0,100.0,0.0]
         testLinearSortFunctions(withDirection: .leftToRight, expected: expected, expectedReversed: expectedReversed)
     }
     
     func testRightToLeftLinearSortFunction() {
-        let expected = [0.4,0.3,0.2,0.1,0.0,
-                        0.4,0.3,0.2,0.1,0.0,
-                        0.4,0.3,0.2,0.1,0.0,
-                        0.4,0.3,0.2,0.1,0.0,
-                        0.4,0.3,0.2,0.1,0.0]
-        let expectedReversed = [0.0,0.1,0.2,0.3,0.4,
-                                0.0,0.1,0.2,0.3,0.4,
-                                0.0,0.1,0.2,0.3,0.4,
-                                0.0,0.1,0.2,0.3,0.4,
-                                0.0,0.1,0.2,0.3,0.4]
+        let expected = [450.0,350.0,250.0,150.0,50.0,
+                        450.0,350.0,250.0,150.0,50.0,
+                        450.0,350.0,250.0,150.0,50.0,
+                        450.0,350.0,250.0,150.0,50.0,
+                        450.0,350.0,250.0,150.0,50.0]
+        let expectedReversed = [0.0,100.0,200.0,300.0,400.0,
+                                0.0,100.0,200.0,300.0,400.0,
+                                0.0,100.0,200.0,300.0,400.0,
+                                0.0,100.0,200.0,300.0,400.0,
+                                0.0,100.0,200.0,300.0,400.0]
         testLinearSortFunctions(withDirection: .rightToLeft, expected: expected, expectedReversed: expectedReversed)
     }
 }
