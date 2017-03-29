@@ -1,6 +1,6 @@
 ![Spruce Logo](https://github.com/willowtreeapps/spruce-ios/raw/master/imgs/header_image.png)
 
-# Spruce iOS Animation Library
+# Spruce iOS Animation Library (and [Android](https://github.com/willowtreeapps/spruce-android))
 
 [![CircleCI Build Status](https://circleci.com/gh/willowtreeapps/spruce-ios.svg?style=shield)](https://circleci.com/gh/willowtreeapps/spruce-ios)
 [![Coverage Status](https://coveralls.io/repos/github/willowtreeapps/spruce-ios/badge.svg?branch=master)](https://coveralls.io/github/willowtreeapps/spruce-ios?branch=master)
