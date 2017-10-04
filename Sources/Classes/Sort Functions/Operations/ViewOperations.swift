@@ -44,14 +44,23 @@ public extension Spruce {
     /// - Note: This method will return an array of `View`. These are used so that when we adjust for coordinate space differences, it does not affect the way your screen renders. A `View` is a simple struct with `view: UIView` and `referencePoint: CGPoint` variables.
     /// - Precondition: `recursiveDepth` is an Int >= 0  (0...Int.max).
     public func subviews(withRecursiveDepth recursiveDepth: Int) -> [View] {
-        let subviews: [UIView]
+        var subviews: [UIView]
         
         // Handle special cases for UITableView and UICollectionView
         switch self.view {
         case let tableView as UITableView:
             subviews = tableView.visibleCells
+            if Spruce.includeTableViewSectionHeaders, let indexPaths = tableView.indexPathsForVisibleRows {
+                let sections = Set(indexPaths.map({$0.section}))
+                let sectionHeaders = sections.map({tableView.headerView(forSection: $0)}).filter({$0 != nil}).map({$0!})
+                subviews.append(contentsOf: sectionHeaders as [UIView])
+            }
         case let collectionView as UICollectionView:
             subviews = collectionView.visibleCells
+            if Spruce.includeCollectionViewSectionHeaders {
+                let sectionHeaders = collectionView.visibleSupplementaryViews(ofKind: UICollectionElementKindSectionHeader)
+                subviews.append(contentsOf: sectionHeaders as [UIView])
+            }
         default:
             subviews = self.view.subviews
         }
