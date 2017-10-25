@@ -79,7 +79,7 @@ class SortFunctionTests: XCTestCase {
                 continue
             }
             let expectedDelay = expected[index]
-            XCTAssertEqualWithAccuracy(timedView.timeOffset, expectedDelay, accuracy: 0.000001)
+            XCTAssertEqual(timedView.timeOffset, expectedDelay, accuracy: 0.000001)
         }
     }
     
