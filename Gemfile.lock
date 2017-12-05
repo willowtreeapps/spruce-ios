@@ -198,11 +198,12 @@ GEM
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.0)
     slack-notifier (1.5.1)
-    slather (2.3.0)
+    slather (2.4.4)
+      CFPropertyList (~> 2.2)
       activesupport (>= 4.0.2, < 5)
       clamp (~> 0.6)
-      nokogiri (~> 1.6.3)
-      xcodeproj (>= 0.20, < 2.0.0)
+      nokogiri (>= 1.6, < 1.7)
+      xcodeproj (~> 1.4)
     term-ansicolor (1.4.0)
       tins (~> 1.0)
     terminal-notifier (1.7.1)
@@ -241,4 +242,4 @@ DEPENDENCIES
   slather
 
 BUNDLED WITH
-   1.14.3
+   1.16.0
