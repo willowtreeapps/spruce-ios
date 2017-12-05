@@ -1,6 +1,6 @@
 machine:
   xcode:
-    version: "8.1"
+    version: "9.1"
 general:
   artifacts:
     - artifacts
