@@ -35,6 +35,9 @@ public struct Spruce {
     internal init(view: UIView) {
         self.view = view
     }
+    
+    public static var includeTableViewSectionHeaders = false
+    public static var includeCollectionViewSectionHeaders = false
 }
 
 /// Used to keep track of the `UIView` object and a changing reference point. Since Spruce allows for
