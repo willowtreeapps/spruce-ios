@@ -28,9 +28,6 @@ import UIKit
 /// A `SortFunction` implementation that contain basic methods needed for doing distance comparisons. If you are implementing a `SortFunction` that considers distance to be one of it's weighting mechanisms for sorting the views on the screen, then implementing this protocol would provide improvements over the standard `SortFunction`.
 public protocol DistanceSortFunction: SortFunction {
     
-    /// the time interval of delay between each of the objects on the screen when animating
-    var interObjectDelay: TimeInterval { get set }
-    
     /// a bool value as to whether the animation should proceeed forwards or backwards
     var reversed: Bool { get set }
     
@@ -61,42 +58,33 @@ public protocol DistanceSortFunction: SortFunction {
 
 public extension DistanceSortFunction {
     
-    /// Given a view, view sort the subviews in a way that matches the desired specification of the `SortFunction`. In an example case, if you wanted a radial sort function then this method would return an array of the subviews such that their time offets would be smaller near the center of the view and grow as they get further from the center point.
+    /// Given a view, view sort the subviews in a way that matches the desired specification of the `SortFunction`. In an example case, if you wanted a radial sort function then this method would return an array of the subviews such that their weights would be smaller near the center of the view and grow as they get further from the center point.
     /// - Note: With a `DistanceSortFunction` a comparison point is initially found that helps compute the offsets for each of the views. This comparison point is found by calling the method `distancePoint` on `self`. From there the default implementation is that the further the distance from the `comparisonPoint` to the `referencePoint` of each view the longer the offset. Since this is setup with a `interObjectDelay` every view with the same distance will have the same delay and those with different distances will have an incrementally large delay. For example, consider the distances [1,2,2,3,4]. If we were to analyze those distances with an `interObjectDelay of .1 seconds, then the delays would look like `[0, 0.1, 0.1, 0.2, 0.3]`. Notice that those views with the same distance have the same delay.
     /// - Note: A floor value is taken of the distances when comparing so that floating point operations don't mess up the joining of like distances. Considering that distances are in terms of points on the screen, there was not need to consider half points in reality.
     ///
     /// - Parameters:
     ///   - view: the view whose subviews should be animated. This view should not be included in the returned array
     ///   - recursiveDepth: an int describing how deep into the view hiearchy the subview search should go, defaults to 0. A value of 0 is the same as calling the `subviews` on the actual view itself. Therefore a depth of 1 will be getting the subviews of each of the subviews, etc...
-    /// - Returns: an array of `TimedView`'s which contain references to the view needed to be animated and the time offset for when the animation of that individual view should start relative to the start of the overall animation
-    func timeOffsets(view: UIView, recursiveDepth: Int) -> [TimedView] {
+    /// - Returns: an array of `WeightedView`'s which contain references to the view needed to be animated and the weight for the animation of that individual view relative to the overall animation
+    public func weights(forView view: UIView, recursiveDepth: Int) -> [WeightedView] {
         let subviews = view.spruce.subviews(withRecursiveDepth: recursiveDepth)
         let comparisonPoint = distancePoint(view: view, subviews: subviews)
         
-        let distancedViews = subviews.map {
-            return (view: $0, distance: distanceBetween(comparisonPoint, and: $0.referencePoint))
-            }.sorted { (left, right) -> Bool in
-                if reversed {
-                    return left.distance > right.distance
-                }
-                return left.distance < right.distance
+        var maxWeight: Double = 0.0
+        
+        let weightedViews: [WeightedView] = subviews.map {
+            let distance = distanceBetween(comparisonPoint, and: $0.referencePoint)
+            maxWeight = max(maxWeight, distance)
+            return WeightedView(spruceView: $0, weight: distance)
         }
         
-        guard var lastDistance = distancedViews.first?.distance else {
-            return []
-        }
-        var currentTimeOffset = 0.0
-        var timedViews: [TimedView] = []
-        for view in distancedViews {
-            if floor(lastDistance) != floor(view.distance) {
-                lastDistance = view.distance
-                currentTimeOffset += interObjectDelay
+        if reversed {
+            for var weightedView in weightedViews {
+                weightedView.weight = maxWeight - weightedView.weight
             }
-            let timedView = TimedView(spruceView: view.view, timeOffset: currentTimeOffset)
-            timedViews.append(timedView)
         }
         
-        return timedViews
+        return weightedViews
     }
     
     func distanceBetween(_ left: CGPoint, and right: CGPoint) -> Double {

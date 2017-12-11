@@ -28,12 +28,10 @@ import UIKit
 /// A `Linear` wiping `SortFunction`. This will consider the rows or columns of the views rather than looking at their exact coordinates. Views that have the same vertical or horizontal components, based on the `direction`, will animate in at the same time.
 public struct LinearSortFunction: DirectionSortFunction {
     public var direction: Direction
-    public var interObjectDelay: TimeInterval
     public var reversed: Bool = false
     
-    public init(direction: Direction, interObjectDelay: TimeInterval) {
+    public init(direction: Direction) {
         self.direction = direction
-        self.interObjectDelay = interObjectDelay
     }
     
     public func distanceBetween(_ left: CGPoint, and right: CGPoint) -> Double {

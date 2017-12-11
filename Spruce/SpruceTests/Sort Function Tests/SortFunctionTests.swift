@@ -65,7 +65,7 @@ class SortFunctionTests: XCTestCase {
         XCTAssertEqual(animatableView.subviews.count, squaresPerRow * squaresPerRow)
     }
     
-    func compare(timedViews: [TimedView], toExpected expected: [TimeInterval]) {
+    func compare(timedViews: [Double], toExpected expected: [TimeInterval]) {
         XCTAssertEqual(timedViews.count, expected.count)
         
         guard timedViews.count == expected.count else {
@@ -83,7 +83,7 @@ class SortFunctionTests: XCTestCase {
         }
     }
     
-    func printTimedViews(_ timedViews: [TimedView]) {
+    func printTimedViews(_ timedViews: [Double]) {
         let timedViews = timedViews.sorted { (left, right) -> Bool in
             guard let leftTag = left.spruceView.view?.tag,
                 let rightTag = right.spruceView.view?.tag else {

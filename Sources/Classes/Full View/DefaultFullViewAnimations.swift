@@ -42,8 +42,8 @@ public extension Spruce {
     ///   - animations: an array of stock animations
     ///   - duration: duration of each individual animation
     ///   - completion: a closure that is called upon the final animation completing. A `Bool` is passed into the closure letting you know if the animation has completed. **Note:** If you stop animations on the whole animating view, then `false` will be passed into the completion closure. However, if the final animation is allowed to proceed then `true` will be the value passed into the completion closure.
-    public func animate(_ animations: [StockAnimation], duration: TimeInterval = 0.3, completion: CompletionHandler? = nil ) {
-        let animation = StandardAnimation(duration: duration)
+    public func animate(_ animations: [StockAnimation], duration: StockTimingFunction = .interItemTime(0.1), completion: CompletionHandler? = nil ) {
+        let animation = StandardAnimation(duration: 0.3)
         self.animate(animations, duration: duration, animationType: animation, completion: completion)
     }
     
@@ -63,8 +63,8 @@ public extension Spruce {
     ///   - duration: duration of each individual animation
     ///   - sortFunction: the `sortFunction` to be used when setting the offsets for each subviews animation
     ///   - completion: a closure that is called upon the final animation completing. A `Bool` is passed into the closure letting you know if the animation has completed. **Note:** If you stop animations on the whole animating view, then `false` will be passed into the completion closure. However, if the final animation is allowed to proceed then `true` will be the value passed into the completion closure.
-    public func animate(_ animations: [StockAnimation], sortFunction: SortFunction, duration: TimeInterval = 0.3, completion: CompletionHandler? = nil ) {
-        let animation = StandardAnimation(duration: duration)
+    public func animate(_ animations: [StockAnimation], sortFunction: SortFunction, duration: StockTimingFunction = .interItemTime(0.1), completion: CompletionHandler? = nil ) {
+        let animation = StandardAnimation(duration: 0.3)
         self.animate(animations, duration: duration, animationType: animation, sortFunction: sortFunction, completion: completion)
     }
     
@@ -76,8 +76,8 @@ public extension Spruce {
     ///   - duration: duration of each individual animation
     ///   - animationType: style of animation that each view should follow. Don't worry about setting the `changeFunction`. We will set that using the stock animations that you provide. If you have a value there it will be overwritten. (ex: SpringAnimation)
     ///   - completion: a closure that is called upon the final animation completing. A `Bool` is passed into the closure letting you know if the animation has completed. **Note:** If you stop animations on the whole animating view, then `false` will be passed into the completion closure. However, if the final animation is allowed to proceed then `true` will be the value passed into the completion closure.
-    public func animate(_ animations: [StockAnimation], duration: TimeInterval = 0.3, animationType: Animation, completion: CompletionHandler? = nil) {
-        let sortFunction = LinearSortFunction(direction: .topToBottom, interObjectDelay: 0.05)
+    public func animate(_ animations: [StockAnimation], duration: StockTimingFunction = .interItemTime(0.1), animationType: Animation, completion: CompletionHandler? = nil) {
+        let sortFunction = LinearSortFunction(direction: .topToBottom)
         self.animate(animations, duration: duration, animationType: animationType, sortFunction: sortFunction, completion: completion)
     }
     
@@ -90,7 +90,7 @@ public extension Spruce {
     ///   - sortFunction: the `sortFunction` to be used when setting the offsets for each subviews animation
     ///   - prepare: a `bool` as to whether we should run `prepare` on your view for you. If set to `true`, then we will run `prepare` right before the animation using the stock animations that you provided. If `false`, then `prepare` will not run. (default is `true`)
     ///   - completion: a closure that is called upon the final animation completing. A `Bool` is passed into the closure letting you know if the animation has completed. **Note:** If you stop animations on the whole animating view, then `false` will be passed into the completion closure. However, if the final animation is allowed to proceed then `true` will be the value passed into the completion closure.
-    public func animate(_ animations: [StockAnimation], duration: TimeInterval = 0.3, animationType: Animation, sortFunction: SortFunction, prepare: Bool = true, completion: CompletionHandler? = nil) {
+    public func animate(_ animations: [StockAnimation], duration: StockTimingFunction = .interItemTime(0.1), animationType: Animation, sortFunction: SortFunction, prepare: Bool = true, completion: CompletionHandler? = nil) {
         
         if prepare {
             self.prepare(with: animations)
@@ -104,7 +104,7 @@ public extension Spruce {
                 animationFunc(view)
             }
         }
-        self.animate(withSortFunction: sortFunction, animation: animationType, completion: completion)
+        self.animate(withSortFunction: sortFunction, duration: duration, animation: animationType, completion: completion)
     }
     
     /// Use this method to setup all of your views before the animation occurs. This could include hiding, fading, translating them, etc...

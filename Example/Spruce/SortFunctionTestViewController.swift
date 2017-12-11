@@ -34,7 +34,6 @@ enum SortFunctions {
     case cornered
     case radial
     case inline
-    case continuous
     case weightedContinuous
     case random
     
@@ -50,8 +49,6 @@ enum SortFunctions {
             return "Radial"
         case .inline:
             return "Inline"
-        case .continuous:
-            return "Continuous"
         case .weightedContinuous:
             return "Weighted Continuous"
         case .random:
@@ -74,6 +71,7 @@ class SortFunctionTestViewController: UIViewController {
     @IBOutlet weak var directionControlView: UIView!
     @IBOutlet weak var verticalWeightControlView: UIView!
     @IBOutlet weak var horizontalWeightControlView: UIView!
+    @IBOutlet weak var timingFunctionControlView: UIView!
 
     // Controls
     @IBOutlet weak var durationSlider: UISlider!
@@ -92,7 +90,7 @@ class SortFunctionTestViewController: UIViewController {
     @IBOutlet weak var sortView: UIView!
 
     // Settings
-    let availableFunctions: [SortFunctions] = [.base, .linear, .cornered, .radial, .inline, .continuous, .weightedContinuous, .random]
+    let availableFunctions: [SortFunctions] = [.base, .linear, .cornered, .radial, .inline, .weightedContinuous, .random]
     var settings = SortFunctionTestSettings()
     var animationController: CustomAnimationViewController?
 
@@ -142,34 +140,36 @@ class SortFunctionTestViewController: UIViewController {
         testController.setup()
         animationController = testController
 
+        reloadControlViews()
+        let codeForFunction = ExampleCodeGenerator.generateCode(forSettings: settings)
+        print("\n\(codeForFunction)\n")
+        codeTextView.text = codeForFunction
+    }
+    
+    func reloadControlViews() {
         let activeControlViews = controlViewsForCurrentSettings()
         for view in controlViews {
             view.isHidden = !activeControlViews.contains(view)
         }
-        let codeForFunction = ExampleCodeGenerator.generateCode(forSettings: settings)
-        print("\n\(codeForFunction)\n")
-        codeTextView.text = codeForFunction
     }
 
     func sortFunctionForCurrentSettings() -> SortFunction {
         var sortFunction: SortFunction
         switch settings.function {
         case .base:
-            sortFunction = DefaultSortFunction(interObjectDelay: settings.delay)
+            sortFunction = DefaultSortFunction()
         case .linear:
-            sortFunction = LinearSortFunction(direction: settings.direction, interObjectDelay: settings.delay)
+            sortFunction = LinearSortFunction(direction: settings.direction)
         case .cornered:
-            sortFunction = CorneredSortFunction(corner: settings.corner, interObjectDelay: settings.delay)
+            sortFunction = CorneredSortFunction(corner: settings.corner)
         case .radial:
-            sortFunction = RadialSortFunction(position: settings.position, interObjectDelay: settings.delay)
+            sortFunction = RadialSortFunction(position: settings.position)
         case .inline:
-            sortFunction = InlineSortFunction(corner: settings.corner, interObjectDelay: settings.delay)
-        case .continuous:
-            sortFunction = ContinuousSortFunction(position: settings.position, duration: settings.duration)
+            sortFunction = InlineSortFunction(corner: settings.corner)
         case .weightedContinuous:
-            sortFunction = ContinuousWeightedSortFunction(position: settings.position, duration: settings.duration, horizontalWeight: settings.horizontalWeight, verticalWeight: settings.verticalWeight)
+            sortFunction = WeightedSortFunction(position: settings.position, horizontalWeight: settings.horizontalWeight, verticalWeight: settings.verticalWeight)
         case .random:
-            sortFunction = RandomSortFunction(interObjectDelay: settings.delay)
+            sortFunction = RandomSortFunction()
         }
 
         if var sortFunction = sortFunction as? DistanceSortFunction {
@@ -180,34 +180,46 @@ class SortFunctionTestViewController: UIViewController {
     }
 
     func controlViewsForCurrentSettings() -> [UIView] {
+        
+        var timeView: UIView
+        
+        switch settings.timingFunction {
+        case .total:
+            timeView = durationControlView
+        case .interItemTime:
+            timeView = delayControlView
+        default:
+            return []
+        }
+        
         switch settings.function {
         case .base:
-            return [functionControlView, delayControlView]
+            return [functionControlView, timingFunctionControlView, timeView]
         case .linear:
-            return [functionControlView, delayControlView, directionControlView, reverseControlView]
+            return [functionControlView, timingFunctionControlView, timeView, directionControlView, reverseControlView]
         case .cornered:
-            return [functionControlView, delayControlView, cornerControlView, reverseControlView]
+            return [functionControlView, timingFunctionControlView, timeView, cornerControlView, reverseControlView]
         case .radial:
-            return [functionControlView, delayControlView, positionControlView, reverseControlView]
+            return [functionControlView, timingFunctionControlView, timeView, positionControlView, reverseControlView]
         case .inline:
-            return [functionControlView, delayControlView, cornerControlView, reverseControlView]
-        case .continuous:
-            return [functionControlView, durationControlView, positionControlView, reverseControlView]
+            return [functionControlView, timingFunctionControlView, timeView, cornerControlView, reverseControlView]
         case .weightedContinuous:
-            return [functionControlView, durationControlView, positionControlView, horizontalWeightControlView, verticalWeightControlView, reverseControlView]
+            return [functionControlView, timingFunctionControlView, timeView, positionControlView, horizontalWeightControlView, verticalWeightControlView, reverseControlView]
         case .random:
-            return [functionControlView, delayControlView]
+            return [functionControlView, timingFunctionControlView, timeView]
         }
     }
 
     // Actions
     @IBAction func durationDidChange(_ sender: UISlider) {
         settings.duration = Double(sender.value)
+        settings.timingFunction = .total(TimeInterval(sender.value))
         reloadSortView()
     }
 
     @IBAction func delayDidChange(_ sender: UISlider) {
         settings.delay = Double(sender.value)
+        settings.timingFunction = .interItemTime(TimeInterval(sender.value))
         reloadSortView()
     }
 
@@ -301,6 +313,19 @@ class SortFunctionTestViewController: UIViewController {
         settings.reverse = sender.isOn
         reloadSortView()
     }
+    
+    @IBAction func timingFunctionDidChange(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            settings.timingFunction = .total(TimeInterval(settings.duration))
+        case 1:
+            settings.timingFunction = .interItemTime(TimeInterval(settings.delay))
+        default:
+            return
+        }
+        
+        reloadSortView()
+    }
 }
 
 extension SortFunctionTestViewController {
@@ -317,7 +342,10 @@ extension SortFunctionTestViewController {
             guard let sortFunction = self?.sortFunctionForCurrentSettings() else {
                 return
             }
-            testController?.containerView?.spruce.animate(withSortFunction: sortFunction, animation: animation)
+            guard let settings = self?.settings else {
+                return
+            }
+            testController?.containerView?.spruce.animate(withSortFunction: sortFunction, duration: settings.timingFunction, animation: animation)
         }
         testController.customAnimation = animations
         return testController
@@ -384,5 +412,5 @@ struct SortFunctionTestSettings {
     var horizontalWeight: Weight = .light
     var verticalWeight: Weight = .light
     var reverse: Bool = false
-
+    var timingFunction: StockTimingFunction = .total(0.025)
 }

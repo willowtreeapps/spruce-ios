@@ -41,7 +41,7 @@ class SpruceCollectionViewExample: ExampleViewController {
     init(animations: [StockAnimation]) {
         super.init(animations: animations, nibName: "SpruceCollectionViewExample")
         
-        sortFunction = CorneredSortFunction(corner: .topLeft, interObjectDelay: 0.05)
+        sortFunction = CorneredSortFunction(corner: .topLeft)
     }
     
     required init?(coder aDecoder: NSCoder) {

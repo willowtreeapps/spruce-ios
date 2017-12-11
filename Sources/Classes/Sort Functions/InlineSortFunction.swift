@@ -30,16 +30,14 @@ import UIKit
 /// - Note: If you set any type of right corner, then the views will enter as if you are reading text from right to left.
 public struct InlineSortFunction: CornerSortFunction {
 
-    public var interObjectDelay: TimeInterval
     public var reversed: Bool = false
     public var corner: Corner
     
-    public init(corner: Corner, interObjectDelay: TimeInterval) {
+    public init(corner: Corner) {
         self.corner = corner
-        self.interObjectDelay = interObjectDelay
     }
     
-    public func timeOffsets(view: UIView, recursiveDepth: Int) -> [TimedView] {
+    public func weights(forView view: UIView, recursiveDepth: Int) -> [WeightedView] {
         let comparisonPoint = distancePoint(view: view)
         let subviews = view.spruce.subviews(withRecursiveDepth: recursiveDepth)
 
@@ -58,14 +56,14 @@ public struct InlineSortFunction: CornerSortFunction {
             distancedViews.reverse()
         }
 
-        var currentTimeOffset = 0.0
-        var timedViews: [TimedView] = []
+        var currentWeight = 0.0
+        var weightedViews: [WeightedView] = []
         for view in distancedViews {
-            let timedView = TimedView(spruceView: view.view, timeOffset: currentTimeOffset)
-            timedViews.append(timedView)
-            currentTimeOffset += interObjectDelay
+            let timedView = WeightedView(spruceView: view.view, weight: currentWeight)
+            weightedViews.append(timedView)
+            currentWeight += 1.0
         }
 
-        return timedViews
+        return weightedViews
     }
 }

@@ -28,10 +28,6 @@ class ExampleCodeGenerator {
             sortFunctionString = String(format: sortFunctionFormatString,
                                         string(forPosition: settings.position),
                                         string(forDouble: settings.delay, decimals: 3))
-        case .continuous:
-            sortFunctionString = String(format: sortFunctionFormatString,
-                                        string(forPosition: settings.position),
-                                        string(forDouble: settings.duration))
         case .weightedContinuous:
             sortFunctionString = String(format: sortFunctionFormatString,
                                         string(forPosition: settings.position),
@@ -67,8 +63,6 @@ class ExampleCodeGenerator {
             return "RadialSortFunction(position: %@, interObjectDelay: %@)"
         case .inline:
             return "InlineSortFunction(corner: %@, interObjectDelay: %@)"
-        case .continuous:
-            return "ContinuousSortFunction(position: %@, duration: %@)"
         case .weightedContinuous:
             return "ContinuousWeightedSortFunction(position: %@, duration: %@, horizontalWeight: %@, verticalWeight: %@)"
         case .random:
