@@ -49,19 +49,21 @@ public extension Spruce {
     ///   - sortFunction: the `SortFunction` used to determine the animation offsets for each subview
     ///   - prepare: a closure that will be called with each subview of `this` parent view
     ///   - animation: a `Animation` that will be used to animate each subview
-    ///   - exclude: an array of views that the animation should skip over
+    ///   - options: an array of AnimationOptions that should be applied to the Spruce animation
     ///   - recursiveDepth: an int describing how deep into the view hiearchy the subview search should go, defaults to 0
     ///   - completion: a closure that is called upon the final animation completing. A `Bool` is passed into the closure letting you know if the animation has completed. **Note:** If you stop animations on the whole animating view, then `false` will be passed into the completion closure. However, if the final animation is allowed to proceed then `true` will be the value passed into the completion closure.
-    public func animate(withSortFunction sortFunction: SortFunction, prepare: PrepareHandler? = nil, animation: Animation, exclude: [UIView]? = nil, recursiveDepth: Int = 0, completion: CompletionHandler? = nil) {
-        var timedViews = sortFunction.timeOffsets(view: self.view, recursiveDepth: recursiveDepth)
+    public func animate(withSortFunction sortFunction: SortFunction, prepare: PrepareHandler? = nil, animation: Animation, options: [AnimationOption] = [], completion: CompletionHandler? = nil) {
+        
+        let optionsObject = AnimationOptionObject(options: options)
+        
+        var timedViews = sortFunction.timeOffsets(view: self.view, recursiveDepth: optionsObject.recursiveDepth)
         timedViews = timedViews.sorted { (left, right) -> Bool in
             return left.timeOffset < right.timeOffset
         }
         for (index, timedView) in timedViews.enumerated() {
-            if let exclude = exclude, exclude.reduce(false, { $0 || $1 == timedView.spruceView.view }) {
+            if optionsObject.excludedViews.reduce(false, { $0 || $1 == timedView.spruceView.view }) {
                 continue
             }
-
 
             guard let animatedView = timedView.spruceView.view else {
                 continue
