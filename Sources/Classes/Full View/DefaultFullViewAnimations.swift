@@ -90,9 +90,11 @@ public extension Spruce {
     ///   - sortFunction: the `sortFunction` to be used when setting the offsets for each subviews animation
     ///   - prepare: a `bool` as to whether we should run `prepare` on your view for you. If set to `true`, then we will run `prepare` right before the animation using the stock animations that you provided. If `false`, then `prepare` will not run. (default is `true`)
     ///   - completion: a closure that is called upon the final animation completing. A `Bool` is passed into the closure letting you know if the animation has completed. **Note:** If you stop animations on the whole animating view, then `false` will be passed into the completion closure. However, if the final animation is allowed to proceed then `true` will be the value passed into the completion closure.
-    public func animate(_ animations: [StockAnimation], duration: TimeInterval = 0.3, animationType: Animation, sortFunction: SortFunction, prepare: Bool = true, completion: CompletionHandler? = nil) {
+    public func animate(_ animations: [StockAnimation], duration: TimeInterval = 0.3, animationType: Animation, sortFunction: SortFunction, options: [AnimationOption] = [], completion: CompletionHandler? = nil) {
         
-        if prepare {
+        let animationObject = AnimationOptionObject(options: options)
+        
+        if animationObject.shouldPrepare {
             self.prepare(with: animations)
         }
         

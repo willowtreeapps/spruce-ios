@@ -10,6 +10,7 @@
 		3208F65B1E0B144600847FF0 /* ContinuousSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3208F65A1E0B144600847FF0 /* ContinuousSortFunction.swift */; };
 		3208F65D1E0B145800847FF0 /* ContinuousWeightedSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3208F65C1E0B145800847FF0 /* ContinuousWeightedSortFunction.swift */; };
 		32DC68471E09BA5B00DF8286 /* InlineSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DC68461E09BA5B00DF8286 /* InlineSortFunction.swift */; };
+		629CE9F6201FACC700C045D2 /* SpruceAnimationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629CE9F5201FACC700C045D2 /* SpruceAnimationOptions.swift */; };
 		DB20E5771E4BADA9004C5A96 /* RadialSortFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB20E5761E4BADA9004C5A96 /* RadialSortFunctionTests.swift */; };
 		DB288BAC1E671B810038B13E /* DirectionSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB288BA81E671B810038B13E /* DirectionSortFunction.swift */; };
 		DB288BAE1E671B810038B13E /* DistanceSortFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB288BA91E671B810038B13E /* DistanceSortFunction.swift */; };
@@ -62,6 +63,7 @@
 		3208F65A1E0B144600847FF0 /* ContinuousSortFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContinuousSortFunction.swift; sourceTree = "<group>"; };
 		3208F65C1E0B145800847FF0 /* ContinuousWeightedSortFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContinuousWeightedSortFunction.swift; sourceTree = "<group>"; };
 		32DC68461E09BA5B00DF8286 /* InlineSortFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InlineSortFunction.swift; sourceTree = "<group>"; };
+		629CE9F5201FACC700C045D2 /* SpruceAnimationOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpruceAnimationOptions.swift; sourceTree = "<group>"; };
 		DB20E5761E4BADA9004C5A96 /* RadialSortFunctionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadialSortFunctionTests.swift; sourceTree = "<group>"; };
 		DB288BA81E671B810038B13E /* DirectionSortFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionSortFunction.swift; sourceTree = "<group>"; };
 		DB288BA91E671B810038B13E /* DistanceSortFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceSortFunction.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				DB9358581E008E1E00ADC5BE /* Spruce.swift */,
+				629CE9F5201FACC700C045D2 /* SpruceAnimationOptions.swift */,
 				DBAFE66C1E70879D00006353 /* UIView+Spruce.swift */,
 				DB93581D1E008DB600ADC5BE /* Full View */,
 				DB93581C1E008DAD00ADC5BE /* UI Elements */,
@@ -402,6 +405,7 @@
 				3208F65D1E0B145800847FF0 /* ContinuousWeightedSortFunction.swift in Sources */,
 				DB9358281E008DE100ADC5BE /* StandardAnimation.swift in Sources */,
 				DB93582F1E008DE900ADC5BE /* FullViewAnimation.swift in Sources */,
+				629CE9F6201FACC700C045D2 /* SpruceAnimationOptions.swift in Sources */,
 				DB9358511E008E1200ADC5BE /* PointOperations.swift in Sources */,
 				DB93582D1E008DE900ADC5BE /* DefaultFullViewAnimations.swift in Sources */,
 				DB288BB81E671F2F0038B13E /* WeightSortFunction.swift in Sources */,
