@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-               BuildableName = "Spruce_Example.app"
-               BlueprintName = "Spruce_Example"
-               ReferencedContainer = "container:Spruce.xcodeproj">
+               BuildableName = "Spruce-Example_Example.app"
+               BlueprintName = "Spruce-Example_Example"
+               ReferencedContainer = "container:Spruce-Example.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "Spruce_Tests.xctest"
-               BlueprintName = "Spruce_Tests"
-               ReferencedContainer = "container:Spruce.xcodeproj">
+               BuildableName = "Spruce-Example_Tests.xctest"
+               BlueprintName = "Spruce-Example_Tests"
+               ReferencedContainer = "container:Spruce-Example.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "Spruce_Tests.xctest"
-               BlueprintName = "Spruce_Tests"
-               ReferencedContainer = "container:Spruce.xcodeproj">
+               BuildableName = "Spruce-Example_Tests.xctest"
+               BlueprintName = "Spruce-Example_Tests"
+               ReferencedContainer = "container:Spruce-Example.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "Spruce_Example.app"
-            BlueprintName = "Spruce_Example"
-            ReferencedContainer = "container:Spruce.xcodeproj">
+            BuildableName = "Spruce-Example_Example.app"
+            BlueprintName = "Spruce-Example_Example"
+            ReferencedContainer = "container:Spruce-Example.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "Spruce_Example.app"
-            BlueprintName = "Spruce_Example"
-            ReferencedContainer = "container:Spruce.xcodeproj">
+            BuildableName = "Spruce-Example_Example.app"
+            BlueprintName = "Spruce-Example_Example"
+            ReferencedContainer = "container:Spruce-Example.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -99,9 +99,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "Spruce_Example.app"
-            BlueprintName = "Spruce_Example"
-            ReferencedContainer = "container:Spruce.xcodeproj">
+            BuildableName = "Spruce-Example_Example.app"
+            BlueprintName = "Spruce-Example_Example"
+            ReferencedContainer = "container:Spruce-Example.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
