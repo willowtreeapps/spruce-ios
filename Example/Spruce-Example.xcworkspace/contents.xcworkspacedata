@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Spruce.xcodeproj">
+      location = "group:/Users/rafaelcabezas/Development/spruce-ios/Example/Spruce-Example.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
