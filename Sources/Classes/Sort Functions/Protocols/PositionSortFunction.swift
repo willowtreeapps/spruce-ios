@@ -65,7 +65,7 @@ public protocol PositionSortFunction: DistanceSortFunction {
 }
 
 public extension PositionSortFunction {
-    public func distancePoint(view: UIView, subviews: [View]) -> CGPoint {
+    func distancePoint(view: UIView, subviews: [View]) -> CGPoint {
         guard subviews.count > 0 else {
             return .zero
         }
