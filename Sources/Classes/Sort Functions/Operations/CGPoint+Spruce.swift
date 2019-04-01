@@ -40,11 +40,11 @@ public struct SprucePoint {
 public extension CGPoint {
     
     /// Access point extensions from Spruce. Call methods such as `.euclideanDistance`.
-    public var spruce: SprucePoint {
+    var spruce: SprucePoint {
         return SprucePoint(point: self)
     }
     
-    public var 🌲: SprucePoint {
+    var 🌲: SprucePoint {
         return spruce
     }
 }

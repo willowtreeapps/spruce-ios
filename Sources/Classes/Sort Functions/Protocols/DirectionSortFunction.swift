@@ -57,7 +57,7 @@ public protocol DirectionSortFunction: DistanceSortFunction {
 }
 
 public extension DirectionSortFunction {
-    public func distancePoint(view: UIView, subviews: [View] = []) -> CGPoint {
+    func distancePoint(view: UIView, subviews: [View] = []) -> CGPoint {
         let bounds = view.bounds
         switch direction {
         case .topToBottom:

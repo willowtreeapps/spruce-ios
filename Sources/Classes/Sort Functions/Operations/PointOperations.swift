@@ -34,7 +34,7 @@ public extension SprucePoint {
     /// ```
     /// - Parameter point: the end point of the line for calculating the distance
     /// - Returns: a double value of the euclidean distance between the two points
-    public func euclideanDistance(to point: CGPoint) -> Double {
+    func euclideanDistance(to point: CGPoint) -> Double {
         let x = Double(pow(self.point.x - point.x, 2.0))
         let y = Double(pow(self.point.y - point.y, 2.0))
         return sqrt(x + y)
@@ -44,7 +44,7 @@ public extension SprucePoint {
     ///
     /// - Parameter point: the end point of the line for calculating the distance
     /// - Returns: a double value of the distance horizontal euclidean between the two points
-    public func horizontalDistance(to point: CGPoint) -> Double {
+    func horizontalDistance(to point: CGPoint) -> Double {
         let x = Double(self.point.x - point.x)
         return abs(x)
     }
@@ -53,7 +53,7 @@ public extension SprucePoint {
     ///
     /// - Parameter point: the end point of the line for calculating the distance
     /// - Returns: a double value of the distance vertical euclidean between the two points
-    public func verticalDistance(to point: CGPoint) -> Double {
+    func verticalDistance(to point: CGPoint) -> Double {
         let y = Double(self.point.y - point.y)
         return abs(y)
     }

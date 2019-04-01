@@ -30,12 +30,12 @@ import UIKit
 public extension UIView {
     
     /// Access to all of the Spruce library animations. Use this to call functions such as `.animate` or `.prepare`
-    public var spruce: Spruce {
+    var spruce: Spruce {
         return Spruce(view: self)
     }
     
     /// Access to all of the Spruce library animations. Use this to call functions such as `.animate` or `.prepare`
-    public var 🌲: Spruce {
+    var 🌲: Spruce {
         return spruce
     }
 }
