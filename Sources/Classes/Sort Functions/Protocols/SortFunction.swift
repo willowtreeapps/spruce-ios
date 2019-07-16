@@ -26,7 +26,7 @@
 import UIKit
 
 
-/// An internal struct that is used to relate a view with a time offset. This is used to determine when each view is set to animate.
+/// A struct that is used to relate a view with a time offset. This is used to determine when each view is set to animate.
 public struct TimedView {
     
     /// the view that is to be animated
@@ -34,6 +34,12 @@ public struct TimedView {
     
     /// the offset of this view animating from the start of the overall animation
     var timeOffset: TimeInterval
+
+    /// A publically accessible way of initializing this struct (otherwise it will be inaccessible from outside the module)
+    public init(spruceView: View, timeOffset: TimeInterval) {
+        self.spruceView = spruceView
+        self.timeOffset = timeOffset
+    }
 }
 
 
