@@ -169,7 +169,8 @@ GEM
       concurrent-ruby (~> 1.0)
     json (2.2.0)
     jwt (2.1.0)
-    kramdown (2.1.0)
+    kramdown (2.3.0)
+      rexml
     kramdown-parser-gfm (1.0.1)
       kramdown (~> 2.0)
     memoist (0.16.0)
@@ -201,6 +202,7 @@ GEM
       declarative-option (< 0.2.0)
       uber (< 0.2.0)
     retriable (3.1.2)
+    rexml (3.2.4)
     rouge (2.0.7)
     ruby-macho (1.4.0)
     rubyzip (1.2.2)
