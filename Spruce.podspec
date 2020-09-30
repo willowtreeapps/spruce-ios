@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.swift_version    = '5.0'
   s.source           = { :git => 'https://github.com/willowtreeapps/spruce-ios.git', :tag => s.version }
 
-  s.platforms = { :ios => "8.0", :tvos => "9.0" }
+  s.platforms = { :ios => "9.0", :tvos => "9.0" }
 
   s.source_files = 'Sources/Classes/**/*'
 end
