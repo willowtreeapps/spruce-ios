@@ -130,13 +130,13 @@ class SortFunctionTestViewController: UIViewController {
         functionTextField.inputAccessoryView = toolbar
     }
 
-    func reloadSortView() {
+    @objc func reloadSortView() {
         
         animationController?.view.removeFromSuperview()
-        animationController?.removeFromParentViewController()
+        animationController?.removeFromParent()
         
         let testController = self.animationControllerForCurrentSettings()
-        self.addChildViewController(testController)
+        self.addChild(testController)
         self.sortView.addSubview(testController.view)
         testController.view.frame = sortView.bounds
         testController.setup()
@@ -342,7 +342,7 @@ extension SortFunctionTestViewController: UIPickerViewDataSource {
         return availableFunctions.count
     }
     
-    func sortFunctionSelected() {
+    @objc func sortFunctionSelected() {
         guard let row = pickerView?.selectedRow(inComponent: 0) else {
             return
         }
@@ -352,9 +352,9 @@ extension SortFunctionTestViewController: UIPickerViewDataSource {
         reloadSortView()
     }
     
-    func cancelPicker() {
+    @objc func cancelPicker() {
         self.functionTextField.endEditing(true)
-        guard let row = availableFunctions.index(of: settings.function) else {
+        guard let row = availableFunctions.firstIndex(of: settings.function) else {
             return
         }
         pickerView?.selectRow(row, inComponent: 0, animated: true)

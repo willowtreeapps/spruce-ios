@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
         let sortFunctionController = UIStoryboard(name: "SortFunctionTestViewController", bundle: Bundle.main).instantiateViewController(withIdentifier: "SortFunctionTestViewController")
         sortFunctionController.tabBarItem = UITabBarItem(title: "Sort Functions", image: UIImage(named: "ic_sortFunction"), tag: 0)
