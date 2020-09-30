@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02DD10118CA54D984DB1B059 /* Pods_Spruce_Example_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE055DACABD01C7D5403864 /* Pods_Spruce_Example_Tests.framework */; };
 		321671381E0C75F8003E6A0B /* SortFunctionTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321671371E0C75F8003E6A0B /* SortFunctionTestViewController.swift */; };
 		3216713A1E0C760F003E6A0B /* SortFunctionTestViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 321671391E0C760F003E6A0B /* SortFunctionTestViewController.storyboard */; };
-		4A43C1DAC694719AE6B7A749 /* Pods_Spruce_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B828A1EFFD048AD3A2E0675 /* Pods_Spruce_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		8D0D1A6A199FC9630A10DED3 /* Pods_Spruce_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDBE5745B9DE9B1EAB8C910C /* Pods_Spruce_Example.framework */; };
+		7DA90D04C29AC4C87FBBEACC /* Pods_Spruce_Example_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2337110612396DB2F78BDF5 /* Pods_Spruce_Example_Example.framework */; };
 		DB288B831E64860C0038B13E /* SpruceTableViewControllerExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB288B821E64860C0038B13E /* SpruceTableViewControllerExample.swift */; };
 		DB288B851E64861D0038B13E /* ExampleTableViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB288B841E64861D0038B13E /* ExampleTableViewCells.swift */; };
 		DB288B881E64863B0038B13E /* SpruceTableViewControllerExample.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB288B871E64863B0038B13E /* SpruceTableViewControllerExample.xib */; };
@@ -45,7 +45,8 @@
 		1A7230AE9B3F14A5CD036320 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		321671371E0C75F8003E6A0B /* SortFunctionTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortFunctionTestViewController.swift; sourceTree = "<group>"; };
 		321671391E0C760F003E6A0B /* SortFunctionTestViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SortFunctionTestViewController.storyboard; sourceTree = "<group>"; };
-		4B828A1EFFD048AD3A2E0675 /* Pods_Spruce_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spruce_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		33D8FDE93C9D1B53FDC1D032 /* Pods-Spruce-Example_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spruce-Example_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Spruce-Example_Tests/Pods-Spruce-Example_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		39ACE0E6A7B32E6E64060E60 /* Pods-Spruce-Example_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spruce-Example_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Spruce-Example_Example/Pods-Spruce-Example_Example.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* Spruce-Example_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Spruce-Example_Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +59,9 @@
 		6FCD75E68B76D05C1368631A /* Spruce.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Spruce.podspec; path = ../Spruce.podspec; sourceTree = "<group>"; };
 		763FD0B1F1E8374A748D0636 /* Pods-Spruce_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spruce_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Spruce_Tests/Pods-Spruce_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		810EF25AEB3B66AF72D6DC08 /* Pods-Spruce_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spruce_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Spruce_Example/Pods-Spruce_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		9BBD82F6FE0594C3D30F57C4 /* Pods-Spruce-Example_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spruce-Example_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Spruce-Example_Example/Pods-Spruce-Example_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		B2337110612396DB2F78BDF5 /* Pods_Spruce_Example_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spruce_Example_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C37324974CAE1216DAA4FCF8 /* Pods-Spruce-Example_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spruce-Example_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Spruce-Example_Tests/Pods-Spruce-Example_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		DB288B821E64860C0038B13E /* SpruceTableViewControllerExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpruceTableViewControllerExample.swift; path = "Table View Example/SpruceTableViewControllerExample.swift"; sourceTree = "<group>"; };
 		DB288B841E64861D0038B13E /* ExampleTableViewCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExampleTableViewCells.swift; path = "Table View Example/ExampleTableViewCells.swift"; sourceTree = "<group>"; };
 		DB288B871E64863B0038B13E /* SpruceTableViewControllerExample.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SpruceTableViewControllerExample.xib; path = "Table View Example/Resources/SpruceTableViewControllerExample.xib"; sourceTree = "<group>"; };
@@ -71,8 +75,8 @@
 		DB9357E51DFB026400ADC5BE /* CustomAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CustomAnimationViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DBA608D31E3267B9006207C9 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		DBFA709B1E5F39AE000CF1DB /* ExampleCodeGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleCodeGenerator.swift; sourceTree = "<group>"; };
+		EAE055DACABD01C7D5403864 /* Pods_Spruce_Example_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spruce_Example_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4D59F4B84B3E292C02F5FD8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		FDBE5745B9DE9B1EAB8C910C /* Pods_Spruce_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spruce_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D0D1A6A199FC9630A10DED3 /* Pods_Spruce_Example.framework in Frameworks */,
+				7DA90D04C29AC4C87FBBEACC /* Pods_Spruce_Example_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,7 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A43C1DAC694719AE6B7A749 /* Pods_Spruce_Tests.framework in Frameworks */,
+				02DD10118CA54D984DB1B059 /* Pods_Spruce_Example_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +106,10 @@
 				180431F59A6BB6C1511A5258 /* Pods-Spruce_Example.release.xcconfig */,
 				6C04A6F7ABEF198F183B1617 /* Pods-Spruce_Tests.debug.xcconfig */,
 				763FD0B1F1E8374A748D0636 /* Pods-Spruce_Tests.release.xcconfig */,
+				9BBD82F6FE0594C3D30F57C4 /* Pods-Spruce-Example_Example.debug.xcconfig */,
+				39ACE0E6A7B32E6E64060E60 /* Pods-Spruce-Example_Example.release.xcconfig */,
+				C37324974CAE1216DAA4FCF8 /* Pods-Spruce-Example_Tests.debug.xcconfig */,
+				33D8FDE93C9D1B53FDC1D032 /* Pods-Spruce-Example_Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -232,8 +240,8 @@
 		EE518578DA1F211845F05455 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FDBE5745B9DE9B1EAB8C910C /* Pods_Spruce_Example.framework */,
-				4B828A1EFFD048AD3A2E0675 /* Pods_Spruce_Tests.framework */,
+				B2337110612396DB2F78BDF5 /* Pods_Spruce_Example_Example.framework */,
+				EAE055DACABD01C7D5403864 /* Pods_Spruce_Example_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -250,7 +258,6 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				C19B8AAEFD4E174686B43512 /* [CP] Embed Pods Frameworks */,
-				25DC382DA6004DE75AF26E20 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -269,8 +276,6 @@
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				8303BC710AAD4BA36B83C52A /* [CP] Embed Pods Frameworks */,
-				4AFFE815B5667BCBE75D81FE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -349,64 +354,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		25DC382DA6004DE75AF26E20 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Spruce_Example/Pods-Spruce_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4AFFE815B5667BCBE75D81FE /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Spruce_Tests/Pods-Spruce_Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		7E5EF7BD0477E292EED1C40A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Spruce-Example_Example-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		8303BC710AAD4BA36B83C52A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Spruce_Tests/Pods-Spruce_Tests-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A6198F741EA712B9FBA222FE /* [CP] Check Pods Manifest.lock */ = {
@@ -415,13 +378,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Spruce-Example_Tests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C19B8AAEFD4E174686B43512 /* [CP] Embed Pods Frameworks */ = {
@@ -430,13 +396,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Spruce-Example_Example/Pods-Spruce-Example_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Spruce/Spruce.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spruce.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Spruce_Example/Pods-Spruce_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Spruce-Example_Example/Pods-Spruce-Example_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -580,7 +549,7 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 810EF25AEB3B66AF72D6DC08 /* Pods-Spruce_Example.debug.xcconfig */;
+			baseConfigurationReference = 9BBD82F6FE0594C3D30F57C4 /* Pods-Spruce-Example_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
@@ -596,7 +565,7 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 180431F59A6BB6C1511A5258 /* Pods-Spruce_Example.release.xcconfig */;
+			baseConfigurationReference = 39ACE0E6A7B32E6E64060E60 /* Pods-Spruce-Example_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
@@ -612,7 +581,7 @@
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6C04A6F7ABEF198F183B1617 /* Pods-Spruce_Tests.debug.xcconfig */;
+			baseConfigurationReference = C37324974CAE1216DAA4FCF8 /* Pods-Spruce-Example_Tests.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -632,7 +601,7 @@
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 763FD0B1F1E8374A748D0636 /* Pods-Spruce_Tests.release.xcconfig */;
+			baseConfigurationReference = 33D8FDE93C9D1B53FDC1D032 /* Pods-Spruce-Example_Tests.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
