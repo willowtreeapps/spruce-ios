@@ -59,14 +59,14 @@ class ExampleViewController: UIViewController {
         prepareAnimation()
     }
     
-    func prepareAnimation() {
+    @objc func prepareAnimation() {
         animationView?.spruce.prepare(with: animations)
         
         timer?.invalidate()
         timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(callAnimation), userInfo: nil, repeats: false)
     }
     
-    func callAnimation() {
+    @objc func callAnimation() {
         guard let sortFunction = sortFunction else {
             return
         }

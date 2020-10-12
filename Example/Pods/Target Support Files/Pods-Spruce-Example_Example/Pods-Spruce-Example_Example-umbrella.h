@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_Spruce_TestsVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_Spruce_TestsVersionString[];
+FOUNDATION_EXPORT double Pods_Spruce_Example_ExampleVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_Spruce_Example_ExampleVersionString[];
 

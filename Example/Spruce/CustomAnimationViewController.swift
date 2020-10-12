@@ -55,7 +55,7 @@ class CustomAnimationViewController: UIViewController {
         }
     }
     
-    func callAnimation() {
+    @objc func callAnimation() {
         customAnimation?()
     }
 }
