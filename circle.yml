@@ -1,13 +1,21 @@
-machine:
-  xcode:
-    version: "9.1"
-general:
-  artifacts:
-    - artifacts
-test:
-  override:
-    - gem install bundler
-    - bundle exec danger
-    - bundle exec fastlane run_tests
-  post:
-    - bundle exec slather
+version: 2.1
+jobs:
+  build-and-test: 
+    macos: 
+      xcode: 12.0.0
+    environment: 
+      FL_OUTPUT_DIR: output
+      FASTLANE_LANE: test
+    steps:
+      - checkout
+      - run: gem install bundler:1.17.2
+      - run: bundle install
+      - run: bundle exec danger
+      - run: bundle exec fastlane run_tests
+      - run: bundle exec slather
+      - store_artifacts:
+          path: artifacts
+workflows:
+  build-test:
+    jobs:
+      - build-and-test
